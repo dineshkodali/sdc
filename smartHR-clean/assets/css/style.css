@@ -14808,6 +14808,14 @@ button.swal2-cancel {
     top: 0;
   }
 }
+.sidebar-menu ul li a i {
+    font-size: 18px;
+    margin-right: 12px;      /* ICON → TEXT SPACING */
+    width: 20px;             /* maintain fixed width for alignment */
+    display: inline-block;
+    text-align: center;
+}
+
 .sidebar .slimScrollDiv .sidebar-menu {
   margin-top: 0;
   padding: 0 0 16px;

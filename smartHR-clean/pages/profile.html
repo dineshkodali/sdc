@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | SmartHR Clean</title>
+
+    <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/tabler-icons/tabler-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/fontawesome/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="main-wrapper">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-left">
+          <a href="index.html" class="logo">
+            <img src="../assets/img/logo.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+          <span class="bar-icon"><span></span><span></span><span></span></span>
+        </a>
+
+        <ul class="nav user-menu">
+          <li class="nav-item dropdown has-arrow">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+            >
+              <span class="avatar avatar-sm">
+                <img
+                  src="../assets/img/profiles/avatar-12.jpg"
+                  class="rounded-circle"
+                  alt="User"
+                />
+              </span>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="profile.html">My Profile</a>
+              <a class="dropdown-item" href="profile-settings.html">Settings</a>
+              <a class="dropdown-item" href="login.html">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- /Header -->
+
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+          <a href="index.html" class="logo logo-normal">
+            <img src="../assets/img/logo.svg" alt="Logo" />
+          </a>
+          <a href="index.html" class="logo-small">
+            <img src="../assets/img/logo-small.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="sidebar-inner slimscroll">
+          <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+              <li class="menu-title">
+                <span>MAIN</span>
+              </li>
+
+              <li>
+                <a href="index.html">
+                  <i class="ti ti-smart-home"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>COMPANY</span>
+              </li>
+              <li>
+                <a href="companies.html">
+                  <i class="ti ti-building"></i>
+                  <span>Companies</span>
+                </a>
+              </li>
+              <li>
+                <a href="company-details.html">
+                  <i class="ti ti-building-community"></i>
+                  <span>Company Details</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>CONTACTS</span>
+              </li>
+              <li>
+                <a href="contacts.html">
+                  <i class="ti ti-user"></i>
+                  <span>Contacts</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>EMPLOYEES</span>
+              </li>
+              <li>
+                <a href="employees.html">
+                  <i class="ti ti-users"></i>
+                  <span>Employees</span>
+                </a>
+              </li>
+              <li>
+                <a href="employee-details.html">
+                  <i class="ti ti-user-circle"></i>
+                  <span>Employee Details</span>
+                </a>
+              </li>
+              <li>
+                <a href="employee-dashboard.html">
+                  <i class="ti ti-layout-dashboard"></i>
+                  <span>Employee Dashboard</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>PROJECTS</span>
+              </li>
+              <li>
+                <a href="projects.html">
+                  <i class="ti ti-box"></i>
+                  <span>Projects</span>
+                </a>
+              </li>
+              <li>
+                <a href="tasks.html">
+                  <i class="ti ti-list-check"></i>
+                  <span>Tasks</span>
+                </a>
+              </li>
+              <li>
+                <a href="activities.html">
+                  <i class="ti ti-activity"></i>
+                  <span>Activities</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>REPORTS</span>
+              </li>
+              <li>
+                <a href="employee-report.html">
+                  <i class="ti ti-file-analytics"></i>
+                  <span>Employee Report</span>
+                </a>
+              </li>
+              <li>
+                <a href="user-report.html">
+                  <i class="ti ti-report"></i>
+                  <span>User Report</span>
+                </a>
+              </li>
+              <li>
+                <a href="company-report.html">
+                  <i class="ti ti-report-money"></i>
+                  <span>Company Report</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>PROFILE</span>
+              </li>
+              <li>
+                <a href="profile.html">
+                  <i class="ti ti-user-circle"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <a href="profile-settings.html">
+                  <i class="ti ti-settings"></i>
+                  <span>Profile Settings</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>AUTH</span>
+              </li>
+              <li>
+                <a href="login.html">
+                  <i class="ti ti-login"></i>
+                  <span>Login</span>
+                </a>
+              </li>
+              <li>
+                <a href="register.html">
+                  <i class="ti ti-forms"></i>
+                  <span>Register</span>
+                </a>
+              </li>
+              <li>
+                <a href="forgot-password.html">
+                  <i class="ti ti-lock"></i>
+                  <span>Forgot Password</span>
+                </a>
+              </li>
+              <li>
+                <a href="reset-password.html">
+                  <i class="ti ti-key"></i>
+                  <span>Reset Password</span>
+                </a>
+              </li>
+              <li>
+                <a href="two-step-verification.html">
+                  <i class="ti ti-shield-check"></i>
+                  <span>Two-Step Verification</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /Sidebar -->
+
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          <!-- Page Header -->
+          <div class="page-header">
+            <h3 class="page-title">User Profile</h3>
+          </div>
+
+          <!-- Profile Header -->
+          <div class="card p-4 mb-4">
+            <div class="d-flex align-items-center">
+              <div class="avatar avatar-xxl me-3">
+                <img
+                  src="../assets/img/profiles/avatar-12.jpg"
+                  class="rounded-circle"
+                  alt="User"
+                />
+              </div>
+              <div>
+                <h4 class="mb-1">Kevin Larry</h4>
+                <p class="text-muted mb-1">Senior Developer</p>
+                <p class="text-muted mb-0">
+                  <i class="ti ti-mail"></i> warren@example.com
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Tabs -->
+          <div class="card">
+            <div class="card-body pb-0">
+              <ul class="nav nav-tabs nav-tabs-solid">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    data-bs-toggle="tab"
+                    href="#overview_tab"
+                    >Overview</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#activity_tab"
+                    >Activity</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content p-4">
+              <!-- Overview -->
+              <div id="overview_tab" class="tab-pane fade show active">
+                <h5 class="mb-3">Personal Information</h5>
+
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <p><strong>Full Name:</strong> Kevin Larry</p>
+                    <p><strong>Email:</strong> warren@example.com</p>
+                    <p><strong>Phone:</strong> +91 9876543210</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p><strong>Gender:</strong> Male</p>
+                    <p><strong>Role:</strong> Senior Developer</p>
+                    <p><strong>Department:</strong> IT</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Activity -->
+              <div id="activity_tab" class="tab-pane fade">
+                <h5 class="mb-3">Recent Activity</h5>
+
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <i class="ti ti-check text-success me-2"></i>
+                    Completed the "API Integration" task — 1 hour ago
+                  </li>
+                  <li class="list-group-item">
+                    <i class="ti ti-user text-info me-2"></i>
+                    Updated profile picture — 4 hours ago
+                  </li>
+                  <li class="list-group-item">
+                    <i class="ti ti-edit text-primary me-2"></i>
+                    Edited personal details — Yesterday
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- /Tabs -->
+        </div>
+      </div>
+      <!-- /Page Wrapper -->
+    </div>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/theme-script.js"></script>
+  </body>
+</html>

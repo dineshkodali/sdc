@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>Complaints - Operations Hub</title>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/favicon.png"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+
+    <!-- Feather CSS -->
+    <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+
+    <!-- Tabler Icons -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/tabler-icons/tabler-icons.min.css"
+    />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/fontawesome/css/all.min.css"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <style>
+      /* Sidebar scroll fix */
+      .sidebar-inner {
+        overflow-y: auto !important;
+        height: calc(100vh - 60px) !important;
+      }
+
+      /* Active link - grey background */
+      .sidebar-menu ul li a.active {
+        background: #f5f5f5 !important;
+        color: #333 !important;
+      }
+
+      /* Hover override */
+      .sidebar-menu ul li a:hover {
+        background: #f0f0f0 !important;
+        color: #333 !important;
+      }
+
+      /* Collapse text hide */
+      body.mini-sidebar .sidebar .sidebar-menu span {
+        display: none !important;
+      }
+      body.mini-sidebar .sidebar {
+        width: 60px !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-wrapper">
+      <!-- Header -->
+      <div class="header">
+        <div class="main-header">
+          <div class="header-left">
+            <a href="index.html" class="logo">
+              <img src="../assets/img/logo.svg" alt="Logo" />
+            </a>
+            <a href="index.html" class="dark-logo">
+              <img src="../assets/img/logo-white.svg" alt="Logo" />
+            </a>
+          </div>
+
+          <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+            <span class="bar-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </a>
+
+          <div class="header-user">
+            <div class="nav user-menu nav-list">
+              <div class="me-auto d-flex align-items-center" id="header-search">
+                <a
+                  id="toggle_btn"
+                  href="javascript:void(0);"
+                  class="btn btn-menubar me-1"
+                >
+                  <i class="ti ti-arrow-bar-to-left"></i>
+                </a>
+
+                <div class="input-group input-group-flat d-inline-flex me-1">
+                  <span class="input-icon-addon">
+                    <i class="ti ti-search"></i>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search in HRMS"
+                  />
+                  <span class="input-group-text">
+                    <kbd>CTRL + /</kbd>
+                  </span>
+                </div>
+
+                <a href="profile-settings.html" class="btn btn-menubar">
+                  <i class="ti ti-settings-cog"></i>
+                </a>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-menubar btnFullscreen">
+                  <i class="ti ti-maximize"></i>
+                </a>
+                <a href="chat.html" class="btn btn-menubar position-relative">
+                  <i class="ti ti-brand-hipchat"></i>
+                  <span class="badge bg-info rounded-pill header-badge">5</span>
+                </a>
+                <a href="email.html" class="btn btn-menubar">
+                  <i class="ti ti-mail"></i>
+                </a>
+
+                <div class="dropdown profile-dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle d-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    <span class="avatar avatar-sm online">
+                      <img
+                        src="../assets/img/profiles/avatar-12.jpg"
+                        class="rounded-circle"
+                        alt=""
+                      />
+                    </span>
+                  </a>
+                  <div class="dropdown-menu shadow-none">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="profile-settings.html"
+                      >Settings</a
+                    >
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Header -->
+
+      <!-- Sidebar -->
+       <div class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+          <a href="index.html" class="logo logo-normal">
+            <img src="../assets/img/logo.svg" alt="Logo" />
+          </a>
+          <a href="index.html" class="logo-small">
+            <img src="../assets/img/logo-small.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="sidebar-inner slimscroll">
+          <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+              <li class="menu-title">
+                <span>MAIN</span>
+              </li>
+
+              <li>
+                <a href="index.html">
+                  <i class="ti ti-smart-home"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>COMPANY</span>
+              </li>
+              <li>
+                <a href="companies.html">
+                  <i class="ti ti-building"></i>
+                  <span>Properties</span>
+                </a>
+              </li>
+              <li>
+                <a href="company-details.html">
+                  <i class="ti ti-building-community"></i>
+                  <span>Property Details</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>CONTACTS</span>
+              </li>
+              <li>
+                <a href="contacts.html">
+                  <i class="ti ti-user"></i>
+                  <span>Contacts</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>OPERATION HUB</span>
+              </li>
+              <li>
+                <a href="maintenance.html">
+                  <i class="ti ti-settings"></i>
+                  <span>Maintenance</span>
+                </a>
+              </li>
+              <li>
+                <a href="compliance.html">
+                  <i class="ti ti-user-check"></i>
+                  <span>Compliance</span>
+                </a>
+              </li>
+              <li>
+                <a href="complaints.html">
+                  <i class="ti ti-filter"></i>
+                  <span>Complaints</span>
+                </a>
+              </li>
+              <li>
+                <a href="airetasks.html">
+                  <i class="ti ti-device-analytics"></i>
+                  <span>AIRE Tasks</span>
+                </a>
+              </li>
+              <li>
+                <a href="litigation.html">
+                  <i class="ti ti-briefcase"></i>
+                  <span>Litigation</span>
+                </a>
+              </li>
+              <li>
+                <a href="safeguarding.html">
+                  <i class="ti ti-activity"></i>
+                  <span>Safeguarding</span>
+                </a>
+              </li>
+              <li>
+                <a href="migranthelp.html">
+                  <i class="ti ti-target"></i>
+                  <span>Migrant Help</span>
+                </a>
+              </li>
+              <li>
+                <a href="employees.html">
+                  <i class="ti ti-users"></i>
+                  <span>Employees</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>Service Users</span>
+              </li>
+              <li>
+                <a href="suprofiles.html">
+                  <i class="ti ti-user-circle"></i>
+                  <span>SU Profiles</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="demographics.html">
+                  <i class="ti ti-heart"></i>
+                  <span>Demographics & Health</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="accommodation.html">
+                  <i class="ti ti-home"></i>
+                  <span>Accommodation History</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="casedocumentation.html">
+                  <i class="ti ti-file-description"></i>
+                  <span>Case Documents</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>INCIDENET MANAGEMENT</span>
+              </li>
+              <li>
+                <a href="incidents.html">
+                  <i class="ti ti-alert-circle"></i>
+                  <span>Incidents</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="complaintsfromincidents.html">
+                  <i class="ti ti-message"></i>
+                  <span>Complaints</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="vcsorganisations.html">
+                  <i class="ti ti-building"></i>
+                  <span>VCS Organisations</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>PROJECTS</span>
+              </li>
+              <li>
+                <a href="projects.html">
+                  <i class="ti ti-box"></i>
+                  <span>Projects</span>
+                </a>
+              </li>
+              <li>
+                <a href="tasks.html">
+                  <i class="ti ti-list-check"></i>
+                  <span>Tasks</span>
+                </a>
+              </li>
+              <li>
+                <a href="activities.html">
+                  <i class="ti ti-activity"></i>
+                  <span>Activities</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>REPORTS</span>
+              </li>
+              <li>
+                <a href="employee-report.html">
+                  <i class="ti ti-file-analytics"></i>
+                  <span>Employee Report</span>
+                </a>
+              </li>
+              <li>
+                <a href="user-report.html">
+                  <i class="ti ti-report"></i>
+                  <span>User Report</span>
+                </a>
+              </li>
+              <li>
+                <a href="company-report.html">
+                  <i class="ti ti-report-money"></i>
+                  <span>Company Report</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>PROFILE</span>
+              </li>
+              <li>
+                <a href="profile.html">
+                  <i class="ti ti-user-circle"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <a href="profile-settings.html">
+                  <i class="ti ti-settings"></i>
+                  <span>Profile Settings</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>AUTH</span>
+              </li>
+              <li>
+                <a href="login.html">
+                  <i class="ti ti-login"></i>
+                  <span>Login</span>
+                </a>
+              </li>
+              <li>
+                <a href="register.html">
+                  <i class="ti ti-forms"></i>
+                  <span>Register</span>
+                </a>
+              </li>
+              <li>
+                <a href="forgot-password.html">
+                  <i class="ti ti-lock"></i>
+                  <span>Forgot Password</span>
+                </a>
+              </li>
+              <li>
+                <a href="reset-password.html">
+                  <i class="ti ti-key"></i>
+                  <span>Reset Password</span>
+                </a>
+              </li>
+              <li>
+                <a href="two-step-verification.html">
+                  <i class="ti ti-shield-check"></i>
+                  <span>Two-Step Verification</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /Sidebar -->
+
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          <!-- Page Header -->
+          <div class="page-header">
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="page-title">Operations Hub / Complaints</h3>
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item">Operations Hub</li>
+                  <li class="breadcrumb-item active">Complaints</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- /Page Header -->
+
+          <!-- Stats Cards -->
+          <div class="row g-3 mb-4">
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>Total Complaints</span>
+                <h3 class="mt-2">7</h3>
+                <p class="text-success">
+                  <i class="ti ti-trending-up"></i> 14% active
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>High Priority</span>
+                <h3 class="text-danger mt-2">3</h3>
+                <p class="text-danger">
+                  <i class="ti ti-alert-triangle"></i> urgent items
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>Medium Priority</span>
+                <h3 class="text-warning mt-2">2</h3>
+                <p class="text-warning">
+                  <i class="ti ti-clock"></i> attention needed
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>Low Priority</span>
+                <h3 class="text-success mt-2">2</h3>
+                <p class="text-success">
+                  <i class="ti ti-check"></i> manageable
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Database -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="mb-0">
+              Complaints Database <span class="text-muted">7 items</span>
+            </h4>
+
+            <div class="d-flex gap-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search complaints..."
+                style="width: 240px"
+              />
+              <button class="btn btn-light">
+                <i class="ti ti-filter"></i> Filter
+              </button>
+              <button class="btn btn-light">
+                <i class="ti ti-layout-grid"></i> View
+              </button>
+              <button class="btn btn-success">
+                <i class="ti ti-plus"></i> New
+              </button>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <ul class="nav nav-tabs mb-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Table</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Widgets</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Live BI</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+          </ul>
+
+          <!-- Table -->
+          <div class="card">
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                  <thead>
+                    <tr>
+                      <th>Complaint Title</th>
+                      <th>Submitted</th>
+                      <th>Priority</th>
+                      <th>Site</th>
+                      <th>Room</th>
+                      <th>Raised By</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                      <th>Due Date</th>
+                      <th>Closed</th>
+                      <th>Options</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <!-- HIGH -->
+                    <tr style="border-left: 4px solid #d32f2f">
+                      <td>Noise Disturbance</td>
+                      <td>20/11/25</td>
+                      <td style="color: #d32f2f; font-weight: 600">HIGH</td>
+                      <td>Building A</td>
+                      <td>Flat 201</td>
+                      <td>Tenant</td>
+                      <td>Open</td>
+                      <td>Pending</td>
+                      <td>25/11/25</td>
+                      <td>-</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <tr style="border-left: 4px solid #d32f2f">
+                      <td>Water Leakage</td>
+                      <td>18/11/25</td>
+                      <td style="color: #d32f2f; font-weight: 600">HIGH</td>
+                      <td>Building C</td>
+                      <td>Flat 310</td>
+                      <td>Tenant</td>
+                      <td>In Review</td>
+                      <td>Inspection</td>
+                      <td>23/11/25</td>
+                      <td>-</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <tr style="border-left: 4px solid #d32f2f">
+                      <td>Broken Entrance Lock</td>
+                      <td>17/11/25</td>
+                      <td style="color: #d32f2f; font-weight: 600">HIGH</td>
+                      <td>Building B</td>
+                      <td>Main Gate</td>
+                      <td>Security</td>
+                      <td>Open</td>
+                      <td>Urgent Fix</td>
+                      <td>22/11/25</td>
+                      <td>-</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- MEDIUM -->
+                    <tr style="border-left: 4px solid #f4b400">
+                      <td>Parking Slot Issue</td>
+                      <td>15/11/25</td>
+                      <td style="color: #d49a00; font-weight: 600">MEDIUM</td>
+                      <td>Building A</td>
+                      <td>-</td>
+                      <td>Resident</td>
+                      <td>Open</td>
+                      <td>Review</td>
+                      <td>28/11/25</td>
+                      <td>-</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <tr style="border-left: 4px solid #f4b400">
+                      <td>Garbage Not Collected</td>
+                      <td>16/11/25</td>
+                      <td style="color: #d49a00; font-weight: 600">MEDIUM</td>
+                      <td>Building D</td>
+                      <td>Service Area</td>
+                      <td>Resident</td>
+                      <td>Open</td>
+                      <td>Pending</td>
+                      <td>26/11/25</td>
+                      <td>-</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- LOW -->
+                    <tr style="border-left: 4px solid #4caf50">
+                      <td>Lighting Request</td>
+                      <td>12/11/25</td>
+                      <td style="color: #2e7d32; font-weight: 600">LOW</td>
+                      <td>Building E</td>
+                      <td>Lobby</td>
+                      <td>Resident</td>
+                      <td>Completed</td>
+                      <td>Closed</td>
+                      <td>14/11/25</td>
+                      <td>14/11/25</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <tr style="border-left: 4px solid #4caf50">
+                      <td>General Query</td>
+                      <td>10/11/25</td>
+                      <td style="color: #2e7d32; font-weight: 600">LOW</td>
+                      <td>Building F</td>
+                      <td>-</td>
+                      <td>Visitor</td>
+                      <td>Closed</td>
+                      <td>Resolved</td>
+                      <td>13/11/25</td>
+                      <td>13/11/25</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Wrapper -->
+    </div>
+
+    <!-- JS -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+      $("#toggle_btn").on("click", function () {
+        $("body").toggleClass("mini-sidebar");
+      });
+    </script>
+  </body>
+</html>

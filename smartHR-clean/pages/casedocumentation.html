@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <title>Service Users - Case Documentation</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/img/favicon.png" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+
+  <!-- Feather Icons -->
+  <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="../assets/plugins/tabler-icons/tabler-icons.min.css" />
+
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="../assets/plugins/fontawesome/css/all.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <style>
+    .sidebar-inner { overflow-y: auto !important; height: calc(100vh - 60px) !important; }
+    .badge-pending {
+      background:#fff6e6; color:#d49a00; padding:4px 8px; border-radius:14px; font-weight:600;
+    }
+    .badge-completed {
+      background:#e7f6ea; color:#2e7d32; padding:4px 8px; border-radius:14px; font-weight:600;
+    }
+    .badge-urgent {
+      background:#ffe7e7; color:#d32f2f; padding:4px 8px; border-radius:14px; font-weight:600;
+    }
+    .badge-expired {
+      background:#ececec; color:#6b6b6b; padding:4px 8px; border-radius:14px; font-weight:600;
+    }
+
+    /* Mini sidebar collapse */
+.mini-sidebar .sidebar {
+  width: 60px !important;
+}
+
+.mini-sidebar .sidebar .sidebar-menu ul li a span {
+  display: none !important;      /* hide menu text */
+}
+
+.mini-sidebar .sidebar .sidebar-menu ul li a i {
+  margin-right: 0 !important;
+  font-size: 20px;
+}
+
+  </style>
+</head>
+
+<body>
+<div class="main-wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="main-header">
+      <div class="header-left">
+        <a href="index.html" class="logo"><img src="../assets/img/logo.svg" alt="Logo" /></a>
+        <a href="index.html" class="dark-logo"><img src="../assets/img/logo-white.svg" alt="Logo" /></a>
+      </div>
+
+      <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+        <span class="bar-icon"><span></span><span></span><span></span></span>
+      </a>
+
+      <div class="header-user">
+        <div class="nav user-menu nav-list">
+
+          <div class="me-auto d-flex align-items-center" id="header-search">
+            <a id="toggle_btn" href="javascript:void(0);" class="btn btn-menubar me-1">
+              <i class="ti ti-arrow-bar-to-left"></i>
+            </a>
+
+            <div class="input-group input-group-flat d-inline-flex me-1">
+              <span class="input-icon-addon"><i class="ti ti-search"></i></span>
+              <input type="text" class="form-control" placeholder="Search in HRMS" />
+              <span class="input-group-text"><kbd>CTRL + /</kbd></span>
+            </div>
+
+            <a href="profile-settings.html" class="btn btn-menubar"><i class="ti ti-settings-cog"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Header -->
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+          <a href="index.html" class="logo logo-normal">
+            <img src="../assets/img/logo.svg" alt="Logo" />
+          </a>
+          <a href="index.html" class="logo-small">
+            <img src="../assets/img/logo-small.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="sidebar-inner slimscroll">
+          <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+              <li class="menu-title">
+                <span>MAIN</span>
+              </li>
+
+              <li>
+                <a href="index.html">
+                  <i class="ti ti-smart-home"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>HOTELS</span>
+              </li>
+              <li>
+                <a href="hotels.html">
+                  <i class="ti ti-building"></i>
+                  <span>Hotels</span>
+                </a>
+              </li>
+              <li>
+                <a href="hoteldetails.html">
+                  <i class="ti ti-building-community"></i>
+                  <span>Hotel Details</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>CONTACTS</span>
+              </li>
+              <li>
+                <a href="contacts.html">
+                  <i class="ti ti-user"></i>
+                  <span>Contacts</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>OPERATION HUB</span>
+              </li>
+              <li>
+                <a href="maintenance.html">
+                  <i class="ti ti-settings"></i>
+                  <span>Maintenance</span>
+                </a>
+              </li>
+              <li>
+                <a href="compliance.html">
+                  <i class="ti ti-user-check"></i>
+                  <span>Compliance</span>
+                </a>
+              </li>
+              <li>
+                <a href="complaints.html">
+                  <i class="ti ti-filter"></i>
+                  <span>Complaints</span>
+                </a>
+              </li>
+              <li>
+                <a href="airetasks.html">
+                  <i class="ti ti-device-analytics"></i>
+                  <span>AIRE Tasks</span>
+                </a>
+              </li>
+              <li>
+                <a href="litigation.html">
+                  <i class="ti ti-briefcase"></i>
+                  <span>Litigation</span>
+                </a>
+              </li>
+              <li>
+                <a href="safeguarding.html">
+                  <i class="ti ti-activity"></i>
+                  <span>Safeguarding</span>
+                </a>
+              </li>
+              <li>
+                <a href="migranthelp.html">
+                  <i class="ti ti-target"></i>
+                  <span>Migrant Help</span>
+                </a>
+              </li>
+              <li>
+                <a href="employees.html">
+                  <i class="ti ti-users"></i>
+                  <span>Employees</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>Service Users</span>
+              </li>
+              <li>
+                <a href="suprofiles.html">
+                  <i class="ti ti-user-circle"></i>
+                  <span>SU Profiles</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="demographics.html">
+                  <i class="ti ti-heart"></i>
+                  <span>Demographics & Health</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="accommodation.html">
+                  <i class="ti ti-home"></i>
+                  <span>Accommodation History</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="casedocumentation.html">
+                  <i class="ti ti-file-description"></i>
+                  <span>Case Documents</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>INCIDENET MANAGEMENT</span>
+              </li>
+              <li>
+                <a href="incidents.html">
+                  <i class="ti ti-alert-circle"></i>
+                  <span>Incidents</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="complaintsfromincidents.html">
+                  <i class="ti ti-message"></i>
+                  <span>Complaints</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="vcsorganisations.html">
+                  <i class="ti ti-building"></i>
+                  <span>VCS Organisations</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>PROJECTS</span>
+              </li>
+              <li>
+                <a href="projects.html">
+                  <i class="ti ti-box"></i>
+                  <span>Projects</span>
+                </a>
+              </li>
+              <li>
+                <a href="tasks.html">
+                  <i class="ti ti-list-check"></i>
+                  <span>Tasks</span>
+                </a>
+              </li>
+              <li>
+                <a href="activities.html">
+                  <i class="ti ti-activity"></i>
+                  <span>Activities</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>REPORTS</span>
+              </li>
+              <li>
+                <a href="employee-report.html">
+                  <i class="ti ti-file-analytics"></i>
+                  <span>Employee Report</span>
+                </a>
+              </li>
+              <li>
+                <a href="user-report.html">
+                  <i class="ti ti-report"></i>
+                  <span>User Report</span>
+                </a>
+              </li>
+              <li>
+                <a href="company-report.html">
+                  <i class="ti ti-report-money"></i>
+                  <span>Company Report</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>PROFILE</span>
+              </li>
+              <li>
+                <a href="profile.html">
+                  <i class="ti ti-user-circle"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <a href="profile-settings.html">
+                  <i class="ti ti-settings"></i>
+                  <span>Profile Settings</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>AUTH</span>
+              </li>
+              <li>
+                <a href="login.html">
+                  <i class="ti ti-login"></i>
+                  <span>Login</span>
+                </a>
+              </li>
+              <li>
+                <a href="register.html">
+                  <i class="ti ti-forms"></i>
+                  <span>Register</span>
+                </a>
+              </li>
+              <li>
+                <a href="forgot-password.html">
+                  <i class="ti ti-lock"></i>
+                  <span>Forgot Password</span>
+                </a>
+              </li>
+              <li>
+                <a href="reset-password.html">
+                  <i class="ti ti-key"></i>
+                  <span>Reset Password</span>
+                </a>
+              </li>
+              <li>
+                <a href="two-step-verification.html">
+                  <i class="ti ti-shield-check"></i>
+                  <span>Two-Step Verification</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+  <!-- Page Wrapper -->
+  <div class="page-wrapper">
+    <div class="content container-fluid">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row align-items-center">
+          <div class="col">
+            <h3 class="page-title">Service Users / Case Documents</h3>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item">Service Users</li>
+              <li class="breadcrumb-item active">Case Documents</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+<!-- Summary Cards -->
+<div class="row g-3 mb-4">
+  <div class="col-xl-3 col-md-6">
+    <div class="card card-body">
+      <span>Total Documents</span>
+      <h3 class="mt-2">342</h3>
+      <p class="text-muted">Uploaded across all service users</p>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6">
+    <div class="card card-body">
+      <span>Pending Review</span>
+      <h3 class="text-warning mt-2">42</h3>
+      <p class="text-warning"><i class="ti ti-clock"></i> Awaiting verification</p>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6">
+    <div class="card card-body">
+      <span>Urgent Documents</span>
+      <h3 class="text-danger mt-2">6</h3>
+      <p class="text-danger"><i class="ti ti-alert-triangle"></i> Action required</p>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6">
+    <div class="card card-body">
+      <span>Completed</span>
+      <h3 class="text-success mt-2">294</h3>
+      <p class="text-muted">All documents validated</p>
+    </div>
+  </div>
+</div>
+
+<!-- Tabs -->
+<ul class="nav nav-tabs mb-3">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Table</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Timeline</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Files</a>
+  </li>
+</ul>
+
+<!-- Table -->
+<div class="card">
+  <div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table table-hover mb-0">
+        <thead>
+          <tr>
+            <th>Document Title</th>
+            <th>Category</th>
+            <th>Uploaded By</th>
+            <th>Uploaded On</th>
+            <th>Status</th>
+            <th>Notes</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+<!-- Urgent -->
+<tr style="border-left:4px solid #d32f2f">
+  <td>Incident Report - Safety Breach</td>
+  <td>Safeguarding</td>
+  <td>Maria Lopez</td>
+  <td>08/02/2025</td>
+  <td><span class="badge-urgent">URGENT</span></td>
+  <td>Requires immediate management review</td>
+  <td><i class="ti ti-eye me-2"></i><i class="ti ti-trash"></i></td>
+</tr>
+
+<!-- Pending -->
+<tr style="border-left:4px solid #d49a00">
+  <td>Proof of Address</td>
+  <td>Verification</td>
+  <td>John Carter</td>
+  <td>02/02/2025</td>
+  <td><span class="badge-pending">PENDING</span></td>
+  <td>Awaiting approval</td>
+  <td><i class="ti ti-eye me-2"></i><i class="ti ti-trash"></i></td>
+</tr>
+
+<!-- Completed -->
+<tr style="border-left:4px solid #2e7d32">
+  <td>Medical Record Summary</td>
+  <td>Health</td>
+  <td>Dr. Sameera Patel</td>
+  <td>28/01/2025</td>
+  <td><span class="badge-completed">COMPLETED</span></td>
+  <td>Reviewed & filed</td>
+  <td><i class="ti ti-eye me-2"></i><i class="ti ti-trash"></i></td>
+</tr>
+
+<!-- Expired -->
+<tr style="border-left:4px solid #6b6b6b">
+  <td>ID Proof - Old (Expired)</td>
+  <td>Identity</td>
+  <td>Aisha Rahman</td>
+  <td>10/11/2024</td>
+  <td><span class="badge-expired">EXPIRED</span></td>
+  <td>Replacement uploaded on 02/02</td>
+  <td><i class="ti ti-eye me-2"></i><i class="ti ti-trash"></i></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- JS -->
+<script src="../assets/js/jquery-3.7.1.min.js"></script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/script.js"></script>
+
+<script>
+  // Sidebar toggle (collapse / expand)
+  $(document).on("click", "#toggle_btn", function () {
+      $("body").toggleClass("mini-sidebar");
+
+      if (!$("body").hasClass("mini-sidebar")) {
+          $(".subdrop + ul").slideDown();
+      } else {
+          $(".subdrop + ul").slideUp();
+      }
+
+      return false;
+  });
+</script>
+
+
+</body>
+</html>

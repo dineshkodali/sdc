@@ -6,10 +6,14 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
-    <title>Service Users - Demographics & Health</title>
+    <title>Hotels</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../assets/img/favicon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/favicon.png"
+    />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
@@ -42,34 +46,46 @@
         background: #f5f5f5 !important;
         color: #333 !important;
       }
-      .sidebar-menu ul li a:hover {
-        background: #f0f0f0 !important;
-        color: #333 !important;
+
+      /* Hotel Card Styling */
+      .hotel-card {
+        border-radius: 10px;
+        transition: all 0.25s ease;
+        cursor: pointer;
+      }
+      /* .hotel-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+      } */
+      .hotel-icon {
+        font-size: 48px;
+        color: #7d7d7d; /* grey icon */
+      }
+      .contact-icon {
+        color: #6f6f6f !important;
+        font-size: 16px;
+      }
+      .load-more-btn:hover {
+        opacity: 0.8;
+      }
+      .hotel-card-link {
+        text-decoration: none;
+        color: inherit;
       }
 
-      /* Health level badge colors */
-      .badge-critical {
-        background: #ffe7e7;
-        color: #d32f2f;
-        font-weight: 600;
-        border-radius: 14px;
-        padding: 4px 8px;
-      }
-      .badge-moderate {
-        background: #fff6e6;
-        color: #d49a00;
-        font-weight: 600;
-        border-radius: 14px;
-        padding: 4px 8px;
-      }
-      .badge-stable {
-        background: #eaf7ea;
-        color: #2e7d32;
-        font-weight: 600;
-        border-radius: 14px;
-        padding: 4px 8px;
+      .hotel-card-link:hover {
+        text-decoration: none;
       }
 
+      .hotel-card {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .hotel-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      }
       /* Mini sidebar collapse */
       .mini-sidebar .sidebar {
         width: 60px !important;
@@ -88,7 +104,7 @@
 
   <body>
     <div class="main-wrapper">
-      <!-- Header -->
+      <!-- HEADER -->
       <div class="header">
         <div class="main-header">
           <div class="header-left">
@@ -101,9 +117,9 @@
           </div>
 
           <a id="mobile_btn" class="mobile_btn" href="#sidebar">
-            <span class="bar-icon"
-              ><span></span><span></span><span></span
-            ></span>
+            <span class="bar-icon">
+              <span></span><span></span><span></span>
+            </span>
           </a>
 
           <div class="header-user">
@@ -124,7 +140,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Search in HRMS"
+                    placeholder="Search…"
                   />
                   <span class="input-group-text"><kbd>CTRL + /</kbd></span>
                 </div>
@@ -140,10 +156,12 @@
                 </a>
                 <a href="chat.html" class="btn btn-menubar position-relative">
                   <i class="ti ti-brand-hipchat"></i>
+                  <span class="badge bg-info rounded-pill header-badge">5</span>
                 </a>
                 <a href="email.html" class="btn btn-menubar">
                   <i class="ti ti-mail"></i>
                 </a>
+
                 <div class="dropdown profile-dropdown">
                   <a
                     href="#"
@@ -171,9 +189,9 @@
           </div>
         </div>
       </div>
-      <!-- /Header -->
+      <!-- /HEADER -->
 
-      <!-- Sidebar -->
+      <!-- SIDEBAR -->
       <div class="sidebar" id="sidebar">
         <div class="sidebar-logo">
           <a href="index.html" class="logo logo-normal">
@@ -428,200 +446,235 @@
           </div>
         </div>
       </div>
-      <!-- /Sidebar -->
+      <!-- /SIDEBAR -->
 
-      <!-- Page Wrapper -->
+      <!-- PAGE WRAPPER -->
       <div class="page-wrapper">
         <div class="content container-fluid">
-          <!-- Page Header -->
-          <div class="page-header">
-            <div class="row align-items-center">
-              <div class="col">
-                <h3 class="page-title">
-                  Service Users / Demographics & Health
-                </h3>
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item">Service Users</li>
-                  <li class="breadcrumb-item active">Demographics & Health</li>
+          <!-- PAGE HEADER -->
+          <div
+            class="page-header d-flex justify-content-between align-items-center"
+          >
+            <div>
+              <h3 class="page-title">Hotels</h3>
+              <ul class="breadcrumb">
+                <!-- <li class="breadcrumb-item active">Hotels</li> -->
+              </ul>
+            </div>
+
+            <div class="d-flex gap-2">
+              <!-- List / Grid Toggle -->
+              <button class="btn btn-light">
+                <i class="ti ti-layout-list"></i>
+              </button>
+              <button class="btn btn-orange text-white">
+                <i class="ti ti-layout-grid"></i>
+              </button>
+
+              <!-- Export -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  <i class="ti ti-download"></i> Export
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item">PDF</a></li>
+                  <li><a class="dropdown-item">Excel</a></li>
+                  <li><a class="dropdown-item">CSV</a></li>
                 </ul>
               </div>
+
+              <!-- Add Hotel -->
+              <button class="btn btn-success text-white">
+                <i class="ti ti-plus"></i> New Hotel
+              </button>
+
+              <!-- Settings Icon -->
+              <button class="btn btn-light">
+                <i class="ti ti-settings"></i>
+              </button>
             </div>
           </div>
 
-          <!-- Cards -->
-          <div class="row g-3 mb-4">
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Total Service Users</span>
-                <h3 class="mt-2">124</h3>
-                <p class="text-muted">Across all demographics</p>
-              </div>
-            </div>
+          <!-- SORT BAR -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="fw-bold">Hotel Directory</h4>
+            <select class="form-select" style="width: 200px">
+              <option>Sort By : Last 7 Days</option>
+              <option>A → Z</option>
+              <option>Z → A</option>
+              <option>Newest</option>
+            </select>
+          </div>
 
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Critical Health Cases</span>
-                <h3 class="text-danger mt-2">6</h3>
-                <p class="text-danger">
-                  <i class="ti ti-alert-triangle"></i> Immediate support
-                  required
+          <!-- HOTEL GRID -->
+          <div class="row g-4">
+            <!-- ===== ROW 1 ===== -->
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building hotel-icon"></i>
+                <h5 class="mt-3">The Grand Hyatt</h5>
+                <p class="text-muted">5-Star Luxury Hotel</p>
+                <p>
+                  <i class="ti ti-mail contact-icon"></i> contact@grandhyatt.com
                 </p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 98765 43210</p>
               </div>
             </div>
 
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Moderate Health Needs</span>
-                <h3 class="mt-2">21</h3>
-                <p class="text-warning">Medical follow-ups ongoing</p>
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building-skyscraper hotel-icon"></i>
+                <h5 class="mt-3">Royal Orchid Suites</h5>
+                <p class="text-muted">Premium Business Hotel</p>
+                <p>
+                  <i class="ti ti-mail contact-icon"></i> info@royalorchid.com
+                </p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 91234 56789</p>
               </div>
             </div>
 
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Stable Cases</span>
-                <h3 class="text-success mt-2">97</h3>
-                <p class="text-muted">No urgent intervention</p>
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building-bank hotel-icon"></i>
+                <h5 class="mt-3">Taj Gateway</h5>
+                <p class="text-muted">Heritage & Luxury Stay</p>
+                <p>
+                  <i class="ti ti-mail contact-icon"></i> contact@tajgateway.com
+                </p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 99887 66554</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building-community hotel-icon"></i>
+                <h5 class="mt-3">Marriott Waterfront</h5>
+                <p class="text-muted">Premium Waterfront Hotel</p>
+                <p>
+                  <i class="ti ti-mail contact-icon"></i> booking@marriottwf.com
+                </p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 90000 22222</p>
+              </div>
+            </div>
+
+            <!-- ===== ROW 2 ===== -->
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-home-heart hotel-icon"></i>
+                <h5 class="mt-3">Sheraton Skyline</h5>
+                <p class="text-muted">Skyline Luxury Stay</p>
+                <p><i class="ti ti-mail contact-icon"></i> stay@sheraton.com</p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 77889 11223</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building-arch hotel-icon"></i>
+                <h5 class="mt-3">Hilton Imperial</h5>
+                <p class="text-muted">Imperial Luxury Stay</p>
+                <p><i class="ti ti-mail contact-icon"></i> hello@hilton.com</p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 88990 33445</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building-pavilion hotel-icon"></i>
+                <h5 class="mt-3">The Oberoi Palace</h5>
+                <p class="text-muted">Luxury Palace Hotel</p>
+                <p><i class="ti ti-mail contact-icon"></i> palace@oberoi.com</p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 93456 88776</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building-store hotel-icon"></i>
+                <h5 class="mt-3">ITC Grand Chola</h5>
+                <p class="text-muted">Elite Heritage Stay</p>
+                <p>
+                  <i class="ti ti-mail contact-icon"></i> grand@itchotels.com
+                </p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 76543 22334</p>
+              </div>
+            </div>
+
+            <!-- ===== ROW 3 ===== -->
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building-fortress hotel-icon"></i>
+                <h5 class="mt-3">Novotel Prime</h5>
+                <p class="text-muted">Business & Family Hotel</p>
+                <p><i class="ti ti-mail contact-icon"></i> info@novotel.com</p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 77882 11223</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building-bridge hotel-icon"></i>
+                <h5 class="mt-3">Trident Elite</h5>
+                <p class="text-muted">Premium Executive Stay</p>
+                <p><i class="ti ti-mail contact-icon"></i> hello@trident.com</p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 92345 66778</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building-castle hotel-icon"></i>
+                <h5 class="mt-3">Leela Grand</h5>
+                <p class="text-muted">Ultra Luxury Resort</p>
+                <p><i class="ti ti-mail contact-icon"></i> stay@leela.com</p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 93456 77889</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3">
+              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
+                <i class="ti ti-building-sketch hotel-icon"></i>
+                <h5 class="mt-3">Ritz Heritage</h5>
+                <p class="text-muted">Royal Designer Suites</p>
+                <p>
+                  <i class="ti ti-mail contact-icon"></i> info@ritzheritage.com
+                </p>
+                <p><i class="ti ti-phone contact-icon"></i> +91 88776 55443</p>
               </div>
             </div>
           </div>
-          <!-- Tabs -->
-          <ul class="nav nav-tabs mb-3">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Table</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Charts</a>
-            </li>
-          </ul>
 
-          <!-- Table -->
-          <div class="card">
-            <div class="card-body p-0">
-              <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Age</th>
-                      <th>Gender</th>
-                      <th>Nationality</th>
-                      <th>Ethnicity</th>
-                      <th>Health Status</th>
-                      <th>Medical Notes</th>
-                      <th>Last Check</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <!-- Row 1 -->
-                    <tr style="border-left: 4px solid #d32f2f">
-                      <td>John Carter</td>
-                      <td>42</td>
-                      <td>Male</td>
-                      <td>British</td>
-                      <td>White</td>
-                      <td><span class="badge-critical">CRITICAL</span></td>
-                      <td>Severe asthma, requires weekly monitoring</td>
-                      <td>12/02/2025</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
-
-                    <!-- Row 2 -->
-                    <tr style="border-left: 4px solid #f4b400">
-                      <td>Aisha Rahman</td>
-                      <td>29</td>
-                      <td>Female</td>
-                      <td>Bangladeshi</td>
-                      <td>Asian</td>
-                      <td><span class="badge-moderate">MODERATE</span></td>
-                      <td>Post-surgery follow-up needed</td>
-                      <td>18/02/2025</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
-
-                    <!-- Row 3 -->
-                    <tr style="border-left: 4px solid #2e7d32">
-                      <td>Maria Hernandez</td>
-                      <td>34</td>
-                      <td>Female</td>
-                      <td>Spanish</td>
-                      <td>Hispanic</td>
-                      <td><span class="badge-stable">STABLE</span></td>
-                      <td>No current medical concerns</td>
-                      <td>10/01/2025</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
-
-                    <!-- Row 4 -->
-                    <tr style="border-left: 4px solid #f4b400">
-                      <td>Samuel Osei</td>
-                      <td>51</td>
-                      <td>Male</td>
-                      <td>Ghanaian</td>
-                      <td>Black</td>
-                      <td><span class="badge-moderate">MODERATE</span></td>
-                      <td>Blood pressure under observation</td>
-                      <td>05/02/2025</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
-
-                    <!-- Row 5 -->
-                    <tr style="border-left: 4px solid #d32f2f">
-                      <td>Emma Wilson</td>
-                      <td>67</td>
-                      <td>Female</td>
-                      <td>British</td>
-                      <td>White</td>
-                      <td><span class="badge-critical">CRITICAL</span></td>
-                      <td>Mobility issues, requires daily support</td>
-                      <td>20/02/2025</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
-
-                    <!-- Row 6 -->
-                    <tr style="border-left: 4px solid #2e7d32">
-                      <td>Mohammed Ali</td>
-                      <td>25</td>
-                      <td>Male</td>
-                      <td>Syrian</td>
-                      <td>Middle Eastern</td>
-                      <td><span class="badge-stable">STABLE</span></td>
-                      <td>Regular wellbeing checks only</td>
-                      <td>15/02/2025</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+          <!-- LOAD MORE BUTTON -->
+          <div class="text-center mt-4 mb-5">
+            <button
+              class="btn btn-outline-primary px-4 py-2 load-more-btn"
+              onclick="reloadHotels()"
+            >
+              Load More
+            </button>
           </div>
         </div>
       </div>
-      <!-- /Page Wrapper -->
     </div>
-    <!-- /Main Wrapper -->
 
-    <!-- JS -->
+    <!-- JS Files -->
+    <script>
+      function reloadHotels() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setTimeout(() => {
+          location.reload();
+        }, 500);
+      }
+    </script>
+    <script>
+      function goToHotelDetails() {
+        window.location.href = "hoteldetails.html";
+      }
+    </script>
+
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/script.js"></script>

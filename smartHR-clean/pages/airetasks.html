@@ -51,6 +51,20 @@
         background: #f0f0f0 !important;
         color: #333 !important;
       }
+
+      /* Mini sidebar collapse */
+      .mini-sidebar .sidebar {
+        width: 60px !important;
+      }
+
+      .mini-sidebar .sidebar .sidebar-menu ul li a span {
+        display: none !important; /* hide menu text */
+      }
+
+      .mini-sidebar .sidebar .sidebar-menu ul li a i {
+        margin-right: 0 !important;
+        font-size: 20px;
+      }
     </style>
   </head>
 
@@ -172,18 +186,18 @@
               </li>
 
               <li class="menu-title">
-                <span>COMPANY</span>
+                <span>HOTELS</span>
               </li>
               <li>
-                <a href="companies.html">
+                <a href="hotels.html">
                   <i class="ti ti-building"></i>
-                  <span>Properties</span>
+                  <span>Hotels</span>
                 </a>
               </li>
               <li>
-                <a href="company-details.html">
+                <a href="hoteldetails.html">
                   <i class="ti ti-building-community"></i>
-                  <span>Property Details</span>
+                  <span>Hotel Details</span>
                 </a>
               </li>
 
@@ -423,7 +437,9 @@
               <div class="card card-body">
                 <span>Total Tasks</span>
                 <h3 class="mt-2">6</h3>
-                <p class="text-success"><i class="ti ti-trending-up"></i> 100% active</p>
+                <p class="text-success">
+                  <i class="ti ti-trending-up"></i> 100% active
+                </p>
               </div>
             </div>
 
@@ -431,7 +447,9 @@
               <div class="card card-body">
                 <span>Overdue</span>
                 <h3 class="text-danger mt-2">2</h3>
-                <p class="text-danger"><i class="ti ti-alert-triangle"></i> 33% of total</p>
+                <p class="text-danger">
+                  <i class="ti ti-alert-triangle"></i> 33% of total
+                </p>
               </div>
             </div>
 
@@ -439,7 +457,9 @@
               <div class="card card-body">
                 <span>Due This Week</span>
                 <h3 class="mt-2">1</h3>
-                <p class="text-warning"><i class="ti ti-clock"></i> 17% of total</p>
+                <p class="text-warning">
+                  <i class="ti ti-clock"></i> 17% of total
+                </p>
               </div>
             </div>
 
@@ -447,7 +467,9 @@
               <div class="card card-body">
                 <span>Completed</span>
                 <h3 class="text-success mt-2">1</h3>
-                <p class="text-success"><i class="ti ti-check"></i> 17% of total</p>
+                <p class="text-success">
+                  <i class="ti ti-check"></i> 17% of total
+                </p>
               </div>
             </div>
           </div>
@@ -517,7 +539,6 @@
                   </thead>
 
                   <tbody>
-
                     <!-- Row 1 – CAT1 RED -->
                     <tr style="border-left: 4px solid #d32f2f">
                       <td>Passport & VISA Verification</td>
@@ -540,7 +561,7 @@
                     <tr style="border-left: 4px solid #f4b400">
                       <td>Resident Data Update</td>
                       <td>10/03/24</td>
-                      <td style="color:#d49a00;font-weight:600;">CAT2</td>
+                      <td style="color: #d49a00; font-weight: 600">CAT2</td>
                       <td>Building A</td>
                       <td>102</td>
                       <td>Admin Staff</td>
@@ -558,7 +579,7 @@
                     <tr style="border-left: 4px solid #4caf50">
                       <td>AIRE Annual Reporting</td>
                       <td>01/03/24</td>
-                      <td style="color:#2e7d32;font-weight:600;">CAT3</td>
+                      <td style="color: #2e7d32; font-weight: 600">CAT3</td>
                       <td>City Office</td>
                       <td>-</td>
                       <td>Compliance Desk</td>
@@ -594,7 +615,7 @@
                     <tr style="border-left: 4px solid #f4b400">
                       <td>Address Verification Support</td>
                       <td>05/03/24</td>
-                      <td style="color:#d49a00;font-weight:600;">CAT2</td>
+                      <td style="color: #d49a00; font-weight: 600">CAT2</td>
                       <td>Building C</td>
                       <td>-</td>
                       <td>Support Unit</td>
@@ -612,7 +633,7 @@
                     <tr style="border-left: 4px solid #4caf50">
                       <td>Residency Renewal Assistance</td>
                       <td>07/03/24</td>
-                      <td style="color:#2e7d32;font-weight:600;">CAT3</td>
+                      <td style="color: #2e7d32; font-weight: 600">CAT3</td>
                       <td>Help Desk</td>
                       <td>-</td>
                       <td>Public Support</td>
@@ -625,13 +646,11 @@
                         <i class="ti ti-trash"></i>
                       </td>
                     </tr>
-
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-
         </div>
       </div>
       <!-- /Page Wrapper -->
@@ -641,6 +660,19 @@
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/script.js"></script>
+    <script>
+      // Sidebar toggle (collapse / expand)
+      $(document).on("click", "#toggle_btn", function () {
+        $("body").toggleClass("mini-sidebar");
 
+        if (!$("body").hasClass("mini-sidebar")) {
+          $(".subdrop + ul").slideDown();
+        } else {
+          $(".subdrop + ul").slideUp();
+        }
+
+        return false;
+      });
+    </script>
   </body>
 </html>

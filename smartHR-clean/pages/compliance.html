@@ -43,6 +43,21 @@
   color: #333 !important;
 }
 
+/* Mini sidebar collapse */
+.mini-sidebar .sidebar {
+  width: 60px !important;
+}
+
+.mini-sidebar .sidebar .sidebar-menu ul li a span {
+  display: none !important;      /* hide menu text */
+}
+
+.mini-sidebar .sidebar .sidebar-menu ul li a i {
+  margin-right: 0 !important;
+  font-size: 20px;
+}
+
+
 </style>
 
 <body>
@@ -126,7 +141,7 @@
 <!-- /Header -->
 
 <!-- Sidebar -->
- <div class="sidebar" id="sidebar">
+<div class="sidebar" id="sidebar">
         <div class="sidebar-logo">
           <a href="index.html" class="logo logo-normal">
             <img src="../assets/img/logo.svg" alt="Logo" />
@@ -151,18 +166,18 @@
               </li>
 
               <li class="menu-title">
-                <span>COMPANY</span>
+                <span>HOTELS</span>
               </li>
               <li>
-                <a href="companies.html">
+                <a href="hotels.html">
                   <i class="ti ti-building"></i>
-                  <span>Properties</span>
+                  <span>Hotels</span>
                 </a>
               </li>
               <li>
-                <a href="company-details.html">
+                <a href="hoteldetails.html">
                   <i class="ti ti-building-community"></i>
-                  <span>Property Details</span>
+                  <span>Hotel Details</span>
                 </a>
               </li>
 
@@ -539,6 +554,20 @@
 <script src="../assets/js/jquery-3.7.1.min.js"></script>
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/script.js"></script>
+<script>
+  // Sidebar toggle (collapse / expand)
+  $(document).on("click", "#toggle_btn", function () {
+      $("body").toggleClass("mini-sidebar");
+
+      if (!$("body").hasClass("mini-sidebar")) {
+          $(".subdrop + ul").slideDown();
+      } else {
+          $(".subdrop + ul").slideUp();
+      }
+
+      return false;
+  });
+</script>
 
 </body>
 </html>

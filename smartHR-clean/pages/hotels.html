@@ -50,8 +50,9 @@
       /* Hotel Card Styling */
       .hotel-card {
         border-radius: 10px;
-        transition: all 0.25s ease;
+        transition: all 0.25s ease-in-out;
         cursor: pointer;
+        min-height: 250px;
       }
       /* .hotel-card:hover {
         transform: translateY(-4px);
@@ -77,14 +78,30 @@
         text-decoration: none;
       }
 
-      .hotel-card {
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-      }
-
       .hotel-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      }
+
+      .hotel-card .avatar {
+        width: 65px;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hotel-card .form-check-input {
+        margin-top: 5px;
+      }
+
+      .avatar-sm {
+        width: 28px !important;
+        height: 28px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
       }
       /* Mini sidebar collapse */
       .mini-sidebar .sidebar {
@@ -499,7 +516,7 @@
           </div>
 
           <!-- SORT BAR -->
-          <div class="d-flex justify-content-between align-items-center mb-3">
+          <!-- <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="fw-bold">Hotel Directory</h4>
             <select class="form-select" style="width: 200px">
               <option>Sort By : Last 7 Days</option>
@@ -507,142 +524,1263 @@
               <option>Z → A</option>
               <option>Newest</option>
             </select>
+          </div> -->
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="d-flex align-items-center justify-content-between">
+                <h5>Hotel Directory</h5>
+                <div class="dropdown">
+                  <a
+                    href="javascript:void(0);"
+                    class="dropdown-toggle btn btn-sm btn-white d-inline-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    Sort By : Last 7 Days
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end p-3">
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Recently Added</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Ascending</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Desending</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Last Month</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Last 7 Days</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- HOTEL GRID -->
           <div class="row g-4">
+
+             <div class="col-xl-3 col-lg-4 col-md-6">
+						 <div class="card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-start mb-2">
+									<div class="form-check form-check-md">
+										<input class="form-check-input" type="checkbox">
+									</div>
+									<div>
+										<a href="hoteldetails.html" class="avatar avatar-xl avatar-rounded online border rounded-circle">
+											<img src="../assets/img/company/company-12.svg" class="img-fluid h-auto w-auto" alt="img">
+										</a>
+									</div>
+									<div class="dropdown">
+										<button class="btn btn-icon btn-sm rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="ti ti-dots-vertical"></i>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-end p-3">
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_company"><i class="ti ti-edit me-1"></i>Edit</a>
+											</li>
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="ti ti-trash me-1"></i>Delete</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="text-center mb-3">
+									<h6 class="mb-1"><a href="hoteldetails.html">The Grand Hyatt</a></h6>
+									<div class="avatar-list-stacked avatar-group-sm">
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-13.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-14.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-15.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-16.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-17.jpg" alt="img">
+										</span>
+										<a class="avatar bg-primary avatar-rounded text-fixed-white fs-12" href="javascript:void(0);">
+											+1
+										</a>
+									</div>
+								</div>
+								<div class="d-flex flex-column">
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-mail-forward text-gray-5 me-2"></i>
+										contact@grandhyatt.com
+									</p>
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-phone text-gray-5 me-2"></i>
+										+91 98765 43210
+									</p>
+									<p class="text-dark d-inline-flex align-items-center">
+										<i class="ti ti-map-pin text-gray-5 me-2"></i>
+										Hyderabad
+									</p>
+								</div>
+								<div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">
+									<div class="icons-social d-flex align-items-center">
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-mail"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-phone-call"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-message-2"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-brand-skype"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm"><i class="ti ti-brand-facebook"></i></a>
+									</div>
+									<span class="d-inline-flex align-items-center"><i class="ti ti-star-filled text-warning me-1"></i>3.0</span>
+								</div>
+							</div>
+						</div>
+					</div>
             <!-- ===== ROW 1 ===== -->
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building hotel-icon"></i>
-                <h5 class="mt-3">The Grand Hyatt</h5>
-                <p class="text-muted">5-Star Luxury Hotel</p>
-                <p>
-                  <i class="ti ti-mail contact-icon"></i> contact@grandhyatt.com
-                </p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 98765 43210</p>
-              </div>
-            </div>
+         
 
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building-skyscraper hotel-icon"></i>
-                <h5 class="mt-3">Royal Orchid Suites</h5>
-                <p class="text-muted">Premium Business Hotel</p>
-                <p>
-                  <i class="ti ti-mail contact-icon"></i> info@royalorchid.com
-                </p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 91234 56789</p>
-              </div>
-            </div>
+             <div class="col-xl-3 col-lg-4 col-md-6">
+						 <div class="card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-start mb-2">
+									<div class="form-check form-check-md">
+										<input class="form-check-input" type="checkbox">
+									</div>
+									<div>
+										<a href="hoteldetails.html" class="avatar avatar-xl avatar-rounded online border rounded-circle">
+											<img src="../assets/img/company/company-13.svg" class="img-fluid h-auto w-auto" alt="img">
+										</a>
+									</div>
+									<div class="dropdown">
+										<button class="btn btn-icon btn-sm rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="ti ti-dots-vertical"></i>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-end p-3">
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_company"><i class="ti ti-edit me-1"></i>Edit</a>
+											</li>
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="ti ti-trash me-1"></i>Delete</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="text-center mb-3">
+									<h6 class="mb-1"><a href="hoteldetails.html">Royal Orchid Suites</a></h6>
+									<div class="avatar-list-stacked avatar-group-sm">
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-13.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-14.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-15.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-16.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-17.jpg" alt="img">
+										</span>
+										<a class="avatar bg-primary avatar-rounded text-fixed-white fs-12" href="javascript:void(0);">
+											+1
+										</a>
+									</div>
+								</div>
+								<div class="d-flex flex-column">
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-mail-forward text-gray-5 me-2"></i>
+										info@royalorchid.com
+									</p>
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-phone text-gray-5 me-2"></i>
+										 +91 91234 56789
+									</p>
+									<p class="text-dark d-inline-flex align-items-center">
+										<i class="ti ti-map-pin text-gray-5 me-2"></i>
+										Bangalore
+									</p>
+								</div>
+								<div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">
+									<div class="icons-social d-flex align-items-center">
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-mail"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-phone-call"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-message-2"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-brand-skype"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm"><i class="ti ti-brand-facebook"></i></a>
+									</div>
+									<span class="d-inline-flex align-items-center"><i class="ti ti-star-filled text-warning me-1"></i>3.0</span>
+								</div>
+							</div>
+						</div>
+					</div>
 
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building-bank hotel-icon"></i>
-                <h5 class="mt-3">Taj Gateway</h5>
-                <p class="text-muted">Heritage & Luxury Stay</p>
-                <p>
-                  <i class="ti ti-mail contact-icon"></i> contact@tajgateway.com
-                </p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 99887 66554</p>
-              </div>
-            </div>
+          
 
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building-community hotel-icon"></i>
-                <h5 class="mt-3">Marriott Waterfront</h5>
-                <p class="text-muted">Premium Waterfront Hotel</p>
-                <p>
-                  <i class="ti ti-mail contact-icon"></i> booking@marriottwf.com
-                </p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 90000 22222</p>
-              </div>
-            </div>
+
+             <div class="col-xl-3 col-lg-4 col-md-6">
+						 <div class="card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-start mb-2">
+									<div class="form-check form-check-md">
+										<input class="form-check-input" type="checkbox">
+									</div>
+									<div>
+										<a href="hoteldetails.html" class="avatar avatar-xl avatar-rounded online border rounded-circle">
+											<img src="../assets/img/company/company-14.svg" class="img-fluid h-auto w-auto" alt="img">
+										</a>
+									</div>
+									<div class="dropdown">
+										<button class="btn btn-icon btn-sm rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="ti ti-dots-vertical"></i>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-end p-3">
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_company"><i class="ti ti-edit me-1"></i>Edit</a>
+											</li>
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="ti ti-trash me-1"></i>Delete</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="text-center mb-3">
+									<h6 class="mb-1"><a href="hoteldetails.html">Taj Gateway</a></h6>
+									<div class="avatar-list-stacked avatar-group-sm">
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-13.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-14.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-15.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-16.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-17.jpg" alt="img">
+										</span>
+										<a class="avatar bg-primary avatar-rounded text-fixed-white fs-12" href="javascript:void(0);">
+											+1
+										</a>
+									</div>
+								</div>
+								<div class="d-flex flex-column">
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-mail-forward text-gray-5 me-2"></i>
+										contact@tajgateway.com
+									</p>
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-phone text-gray-5 me-2"></i>
+										+91 99887 66554
+									</p>
+									<p class="text-dark d-inline-flex align-items-center">
+										<i class="ti ti-map-pin text-gray-5 me-2"></i>
+										Mumbai
+									</p>
+								</div>
+								<div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">
+									<div class="icons-social d-flex align-items-center">
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-mail"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-phone-call"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-message-2"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-brand-skype"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm"><i class="ti ti-brand-facebook"></i></a>
+									</div>
+									<span class="d-inline-flex align-items-center"><i class="ti ti-star-filled text-warning me-1"></i>3.0</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+           
+             <div class="col-xl-3 col-lg-4 col-md-6">
+						 <div class="card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-start mb-2">
+									<div class="form-check form-check-md">
+										<input class="form-check-input" type="checkbox">
+									</div>
+									<div>
+										<a href="hoteldetails.html" class="avatar avatar-xl avatar-rounded online border rounded-circle">
+											<img src="../assets/img/company/company-15.svg" class="img-fluid h-auto w-auto" alt="img">
+										</a>
+									</div>
+									<div class="dropdown">
+										<button class="btn btn-icon btn-sm rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="ti ti-dots-vertical"></i>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-end p-3">
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_company"><i class="ti ti-edit me-1"></i>Edit</a>
+											</li>
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="ti ti-trash me-1"></i>Delete</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="text-center mb-3">
+									<h6 class="mb-1"><a href="hoteldetails.html">Marriott Waterfront</a></h6>
+									<div class="avatar-list-stacked avatar-group-sm">
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-13.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-14.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-15.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-16.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-17.jpg" alt="img">
+										</span>
+										<a class="avatar bg-primary avatar-rounded text-fixed-white fs-12" href="javascript:void(0);">
+											+1
+										</a>
+									</div>
+								</div>
+								<div class="d-flex flex-column">
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-mail-forward text-gray-5 me-2"></i>
+										booking@marriottwf.com
+									</p>
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-phone text-gray-5 me-2"></i>
+										+1 206-443-5000
+									</p>
+									<p class="text-dark d-inline-flex align-items-center">
+										<i class="ti ti-map-pin text-gray-5 me-2"></i>
+										USA
+									</p>
+								</div>
+								<div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">
+									<div class="icons-social d-flex align-items-center">
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-mail"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-phone-call"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-message-2"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-brand-skype"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm"><i class="ti ti-brand-facebook"></i></a>
+									</div>
+									<span class="d-inline-flex align-items-center"><i class="ti ti-star-filled text-warning me-1"></i>3.0</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+            
 
             <!-- ===== ROW 2 ===== -->
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-home-heart hotel-icon"></i>
-                <h5 class="mt-3">Sheraton Skyline</h5>
-                <p class="text-muted">Skyline Luxury Stay</p>
-                <p><i class="ti ti-mail contact-icon"></i> stay@sheraton.com</p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 77889 11223</p>
-              </div>
-            </div>
 
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building-arch hotel-icon"></i>
-                <h5 class="mt-3">Hilton Imperial</h5>
-                <p class="text-muted">Imperial Luxury Stay</p>
-                <p><i class="ti ti-mail contact-icon"></i> hello@hilton.com</p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 88990 33445</p>
-              </div>
-            </div>
+             <div class="col-xl-3 col-lg-4 col-md-6">
+						 <div class="card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-start mb-2">
+									<div class="form-check form-check-md">
+										<input class="form-check-input" type="checkbox">
+									</div>
+									<div>
+										<a href="hoteldetails.html" class="avatar avatar-xl avatar-rounded online border rounded-circle">
+											<img src="../assets/img/company/company-20.svg" class="img-fluid h-auto w-auto" alt="img">
+										</a>
+									</div>
+									<div class="dropdown">
+										<button class="btn btn-icon btn-sm rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="ti ti-dots-vertical"></i>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-end p-3">
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_company"><i class="ti ti-edit me-1"></i>Edit</a>
+											</li>
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="ti ti-trash me-1"></i>Delete</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="text-center mb-3">
+									<h6 class="mb-1"><a href="hoteldetails.html">Sheraton Skyline</a></h6>
+									<div class="avatar-list-stacked avatar-group-sm">
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-13.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-14.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-15.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-16.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-17.jpg" alt="img">
+										</span>
+										<a class="avatar bg-primary avatar-rounded text-fixed-white fs-12" href="javascript:void(0);">
+											+1
+										</a>
+									</div>
+								</div>
+								<div class="d-flex flex-column">
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-mail-forward text-gray-5 me-2"></i>
+										stay@sheraton.com
+									</p>
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-phone text-gray-5 me-2"></i>
+										+44 20 8759 2535
+									</p>
+									<p class="text-dark d-inline-flex align-items-center">
+										<i class="ti ti-map-pin text-gray-5 me-2"></i>
+										United Kingdom
+									</p>
+								</div>
+								<div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">
+									<div class="icons-social d-flex align-items-center">
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-mail"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-phone-call"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-message-2"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-brand-skype"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm"><i class="ti ti-brand-facebook"></i></a>
+									</div>
+									<span class="d-inline-flex align-items-center"><i class="ti ti-star-filled text-warning me-1"></i>3.0</span>
+								</div>
+							</div>
+						</div>
+					</div>
 
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building-pavilion hotel-icon"></i>
-                <h5 class="mt-3">The Oberoi Palace</h5>
-                <p class="text-muted">Luxury Palace Hotel</p>
-                <p><i class="ti ti-mail contact-icon"></i> palace@oberoi.com</p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 93456 88776</p>
-              </div>
-            </div>
+          <div class="col-xl-3 col-lg-4 col-md-6">
+						 <div class="card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-start mb-2">
+									<div class="form-check form-check-md">
+										<input class="form-check-input" type="checkbox">
+									</div>
+									<div>
+										<a href="hoteldetails.html" class="avatar avatar-xl avatar-rounded online border rounded-circle">
+											<img src="../assets/img/company/company-21.svg" class="img-fluid h-auto w-auto" alt="img">
+										</a>
+									</div>
+									<div class="dropdown">
+										<button class="btn btn-icon btn-sm rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="ti ti-dots-vertical"></i>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-end p-3">
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_company"><i class="ti ti-edit me-1"></i>Edit</a>
+											</li>
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="ti ti-trash me-1"></i>Delete</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="text-center mb-3">
+									<h6 class="mb-1"><a href="hoteldetails.html">Hilton Imperial</a></h6>
+									<div class="avatar-list-stacked avatar-group-sm">
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-13.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-14.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-15.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-16.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-17.jpg" alt="img">
+										</span>
+										<a class="avatar bg-primary avatar-rounded text-fixed-white fs-12" href="javascript:void(0);">
+											+1
+										</a>
+									</div>
+								</div>
+								<div class="d-flex flex-column">
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-mail-forward text-gray-5 me-2"></i>
+										hello@hilton.com
+									</p>
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-phone text-gray-5 me-2"></i>
+										+44 20 8759 2589
+									</p>
+									<p class="text-dark d-inline-flex align-items-center">
+										<i class="ti ti-map-pin text-gray-5 me-2"></i>
+										United Kingdom
+									</p>
+								</div>
+								<div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">
+									<div class="icons-social d-flex align-items-center">
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-mail"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-phone-call"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-message-2"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-brand-skype"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm"><i class="ti ti-brand-facebook"></i></a>
+									</div>
+									<span class="d-inline-flex align-items-center"><i class="ti ti-star-filled text-warning me-1"></i>3.0</span>
+								</div>
+							</div>
+						</div>
+					</div>
 
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building-store hotel-icon"></i>
-                <h5 class="mt-3">ITC Grand Chola</h5>
-                <p class="text-muted">Elite Heritage Stay</p>
-                <p>
-                  <i class="ti ti-mail contact-icon"></i> grand@itchotels.com
-                </p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 76543 22334</p>
-              </div>
-            </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6">
+						 <div class="card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-start mb-2">
+									<div class="form-check form-check-md">
+										<input class="form-check-input" type="checkbox">
+									</div>
+									<div>
+										<a href="hoteldetails.html" class="avatar avatar-xl avatar-rounded online border rounded-circle">
+											<img src="../assets/img/company/company-22.svg" class="img-fluid h-auto w-auto" alt="img">
+										</a>
+									</div>
+									<div class="dropdown">
+										<button class="btn btn-icon btn-sm rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="ti ti-dots-vertical"></i>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-end p-3">
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_company"><i class="ti ti-edit me-1"></i>Edit</a>
+											</li>
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="ti ti-trash me-1"></i>Delete</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="text-center mb-3">
+									<h6 class="mb-1"><a href="hoteldetails.html">The Oberoi Palace</a></h6>
+									<div class="avatar-list-stacked avatar-group-sm">
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-13.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-14.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-15.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-16.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-17.jpg" alt="img">
+										</span>
+										<a class="avatar bg-primary avatar-rounded text-fixed-white fs-12" href="javascript:void(0);">
+											+1
+										</a>
+									</div>
+								</div>
+								<div class="d-flex flex-column">
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-mail-forward text-gray-5 me-2"></i>
+										stay@sheraton.com
+									</p>
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-phone text-gray-5 me-2"></i>
+										+44 20 8759 2885
+									</p>
+									<p class="text-dark d-inline-flex align-items-center">
+										<i class="ti ti-map-pin text-gray-5 me-2"></i>
+										United Kingdom
+									</p>
+								</div>
+								<div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">
+									<div class="icons-social d-flex align-items-center">
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-mail"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-phone-call"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-message-2"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-brand-skype"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm"><i class="ti ti-brand-facebook"></i></a>
+									</div>
+									<span class="d-inline-flex align-items-center"><i class="ti ti-star-filled text-warning me-1"></i>3.0</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+         
+
+          <div class="col-xl-3 col-lg-4 col-md-6">
+						 <div class="card">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-start mb-2">
+									<div class="form-check form-check-md">
+										<input class="form-check-input" type="checkbox">
+									</div>
+									<div>
+										<a href="hoteldetails.html" class="avatar avatar-xl avatar-rounded online border rounded-circle">
+											<img src="../assets/img/company/company-23.svg" class="img-fluid h-auto w-auto" alt="img">
+										</a>
+									</div>
+									<div class="dropdown">
+										<button class="btn btn-icon btn-sm rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="ti ti-dots-vertical"></i>
+										</button>
+										<ul class="dropdown-menu dropdown-menu-end p-3">
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_company"><i class="ti ti-edit me-1"></i>Edit</a>
+											</li>
+											<li>
+												<a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="ti ti-trash me-1"></i>Delete</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="text-center mb-3">
+									<h6 class="mb-1"><a href="hoteldetails.html">ITC Grand Chola</a></h6>
+									<div class="avatar-list-stacked avatar-group-sm">
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-13.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-14.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-15.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-16.jpg" alt="img">
+										</span>
+										<span class="avatar avatar-rounded">
+											<img class="border border-white" src="../assets/img/profiles/avatar-17.jpg" alt="img">
+										</span>
+										<a class="avatar bg-primary avatar-rounded text-fixed-white fs-12" href="javascript:void(0);">
+											+1
+										</a>
+									</div>
+								</div>
+								<div class="d-flex flex-column">
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-mail-forward text-gray-5 me-2"></i>
+										grand@itchotels.com
+									</p>
+									<p class="text-dark d-inline-flex align-items-center mb-2">
+										<i class="ti ti-phone text-gray-5 me-2"></i>
+										+44 20 8759 3185
+									</p>
+									<p class="text-dark d-inline-flex align-items-center">
+										<i class="ti ti-map-pin text-gray-5 me-2"></i>
+										United Kingdom
+									</p>
+								</div>
+								<div class="d-flex align-items-center justify-content-between border-top pt-3 mt-3">
+									<div class="icons-social d-flex align-items-center">
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-mail"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-phone-call"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-message-2"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm me-1"><i class="ti ti-brand-skype"></i></a>
+										<a href="#" class="avatar avatar-rounded avatar-sm"><i class="ti ti-brand-facebook"></i></a>
+									</div>
+									<span class="d-inline-flex align-items-center"><i class="ti ti-star-filled text-warning me-1"></i>3.0</span>
+								</div>
+							</div>
+						</div>
+					</div>
 
             <!-- ===== ROW 3 ===== -->
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building-fortress hotel-icon"></i>
-                <h5 class="mt-3">Novotel Prime</h5>
-                <p class="text-muted">Business & Family Hotel</p>
-                <p><i class="ti ti-mail contact-icon"></i> info@novotel.com</p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 77882 11223</p>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <div class="form-check form-check-md">
+                      <input class="form-check-input" type="checkbox" />
+                    </div>
+                    <div>
+                      <a
+                        href="hoteldetails.html"
+                        class="avatar avatar-xl avatar-rounded online border rounded-circle"
+                      >
+                        <img
+                          src="../assets/img/company/company-16.svg"
+                          class="img-fluid h-auto w-auto"
+                          alt="img"
+                        />
+                      </a>
+                    </div>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-icon btn-sm rounded-circle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="ti ti-dots-vertical"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end p-3">
+                        <li>
+                          <a
+                            class="dropdown-item rounded-1"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_company"
+                            ><i class="ti ti-edit me-1"></i>Edit</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item rounded-1"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash me-1"></i>Delete</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="text-center mb-3">
+                    <h6 class="mb-1">
+                      <a href="hoteldetails.html">Novotel Prime</a>
+                    </h6>
+                    <div class="avatar-list-stacked avatar-group-sm">
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-13.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-14.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-15.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-16.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-17.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <a
+                        class="avatar bg-primary avatar-rounded text-fixed-white fs-12"
+                        href="javascript:void(0);"
+                      >
+                        +1
+                      </a>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-column">
+                    <p class="text-dark d-inline-flex align-items-center mb-2">
+                      <i class="ti ti-mail-forward text-gray-5 me-2"></i>
+                      info@novotel.com
+                    </p>
+                    <p class="text-dark d-inline-flex align-items-center mb-2">
+                      <i class="ti ti-phone text-gray-5 me-2"></i>
+                      +91 77882 11223
+                    </p>
+                    <p class="text-dark d-inline-flex align-items-center">
+                      <i class="ti ti-map-pin text-gray-5 me-2"></i>
+                      Vijayawada
+                    </p>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-between border-top pt-3 mt-3"
+                  >
+                    <div class="icons-social d-flex align-items-center">
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-mail"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-phone-call"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-message-2"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-brand-skype"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm"
+                        ><i class="ti ti-brand-facebook"></i
+                      ></a>
+                    </div>
+                    <span class="d-inline-flex align-items-center"
+                      ><i class="ti ti-star-filled text-warning me-1"></i
+                      >3.0</span
+                    >
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building-bridge hotel-icon"></i>
-                <h5 class="mt-3">Trident Elite</h5>
-                <p class="text-muted">Premium Executive Stay</p>
-                <p><i class="ti ti-mail contact-icon"></i> hello@trident.com</p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 92345 66778</p>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <div class="form-check form-check-md">
+                      <input class="form-check-input" type="checkbox" />
+                    </div>
+                    <div>
+                      <a
+                        href="hoteldetails.html"
+                        class="avatar avatar-xl avatar-rounded online border rounded-circle"
+                      >
+                        <img
+                          src="../assets/img/company/company-17.svg"
+                          class="img-fluid h-auto w-auto"
+                          alt="img"
+                        />
+                      </a>
+                    </div>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-icon btn-sm rounded-circle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="ti ti-dots-vertical"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end p-3">
+                        <li>
+                          <a
+                            class="dropdown-item rounded-1"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_company"
+                            ><i class="ti ti-edit me-1"></i>Edit</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item rounded-1"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash me-1"></i>Delete</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="text-center mb-3">
+                    <h6 class="mb-1">
+                      <a href="hoteldetails.html">Trident Elite</a>
+                    </h6>
+                    <div class="avatar-list-stacked avatar-group-sm">
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-13.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-14.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-15.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-16.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-17.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <a
+                        class="avatar bg-primary avatar-rounded text-fixed-white fs-12"
+                        href="javascript:void(0);"
+                      >
+                        +1
+                      </a>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-column">
+                    <p class="text-dark d-inline-flex align-items-center mb-2">
+                      <i class="ti ti-mail-forward text-gray-5 me-2"></i>
+                      hello@trident.com
+                    </p>
+                    <p class="text-dark d-inline-flex align-items-center mb-2">
+                      <i class="ti ti-phone text-gray-5 me-2"></i>
+                      +91 92345 66778
+                    </p>
+                    <p class="text-dark d-inline-flex align-items-center">
+                      <i class="ti ti-map-pin text-gray-5 me-2"></i>
+                      Vijayawada
+                    </p>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-between border-top pt-3 mt-3"
+                  >
+                    <div class="icons-social d-flex align-items-center">
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-mail"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-phone-call"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-message-2"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-brand-skype"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm"
+                        ><i class="ti ti-brand-facebook"></i
+                      ></a>
+                    </div>
+                    <span class="d-inline-flex align-items-center"
+                      ><i class="ti ti-star-filled text-warning me-1"></i
+                      >3.0</span
+                    >
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building-castle hotel-icon"></i>
-                <h5 class="mt-3">Leela Grand</h5>
-                <p class="text-muted">Ultra Luxury Resort</p>
-                <p><i class="ti ti-mail contact-icon"></i> stay@leela.com</p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 93456 77889</p>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <div class="form-check form-check-md">
+                      <input class="form-check-input" type="checkbox" />
+                    </div>
+                    <div>
+                      <a
+                        href="hoteldetails.html"
+                        class="avatar avatar-xl avatar-rounded online border rounded-circle"
+                      >
+                        <img
+                          src="../assets/img/company/company-18.svg"
+                          class="img-fluid h-auto w-auto"
+                          alt="img"
+                        />
+                      </a>
+                    </div>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-icon btn-sm rounded-circle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="ti ti-dots-vertical"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end p-3">
+                        <li>
+                          <a
+                            class="dropdown-item rounded-1"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_company"
+                            ><i class="ti ti-edit me-1"></i>Edit</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item rounded-1"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash me-1"></i>Delete</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="text-center mb-3">
+                    <h6 class="mb-1">
+                      <a href="hoteldetails.html">Leela Grand</a>
+                    </h6>
+                    <div class="avatar-list-stacked avatar-group-sm">
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-13.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-14.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-15.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-16.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-17.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <a
+                        class="avatar bg-primary avatar-rounded text-fixed-white fs-12"
+                        href="javascript:void(0);"
+                      >
+                        +1
+                      </a>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-column">
+                    <p class="text-dark d-inline-flex align-items-center mb-2">
+                      <i class="ti ti-mail-forward text-gray-5 me-2"></i>
+                      stay@leela.com
+                    </p>
+                    <p class="text-dark d-inline-flex align-items-center mb-2">
+                      <i class="ti ti-phone text-gray-5 me-2"></i>
+                      +91 93456 77889
+                    </p>
+                    <p class="text-dark d-inline-flex align-items-center">
+                      <i class="ti ti-map-pin text-gray-5 me-2"></i>
+                      Vijayawada
+                    </p>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-between border-top pt-3 mt-3"
+                  >
+                    <div class="icons-social d-flex align-items-center">
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-mail"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-phone-call"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-message-2"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-brand-skype"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm"
+                        ><i class="ti ti-brand-facebook"></i
+                      ></a>
+                    </div>
+                    <span class="d-inline-flex align-items-center"
+                      ><i class="ti ti-star-filled text-warning me-1"></i
+                      >3.0</span
+                    >
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="col-xl-3">
-              <div class="card p-4 hotel-card" onclick="goToHotelDetails()">
-                <i class="ti ti-building-sketch hotel-icon"></i>
-                <h5 class="mt-3">Ritz Heritage</h5>
-                <p class="text-muted">Royal Designer Suites</p>
-                <p>
-                  <i class="ti ti-mail contact-icon"></i> info@ritzheritage.com
-                </p>
-                <p><i class="ti ti-phone contact-icon"></i> +91 88776 55443</p>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <div class="form-check form-check-md">
+                      <input class="form-check-input" type="checkbox" />
+                    </div>
+                    <div>
+                      <a
+                        href="hoteldetails.html"
+                        class="avatar avatar-xl avatar-rounded online border rounded-circle"
+                      >
+                        <img
+                          src="../assets/img/company/company-19.svg"
+                          class="img-fluid h-auto w-auto"
+                          alt="img"
+                        />
+                      </a>
+                    </div>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-icon btn-sm rounded-circle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="ti ti-dots-vertical"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end p-3">
+                        <li>
+                          <a
+                            class="dropdown-item rounded-1"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_company"
+                            ><i class="ti ti-edit me-1"></i>Edit</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item rounded-1"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash me-1"></i>Delete</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="text-center mb-3">
+                    <h6 class="mb-1">
+                      <a href="hoteldetails.html">Ritz Heritage</a>
+                    </h6>
+                    <div class="avatar-list-stacked avatar-group-sm">
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-13.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-14.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-15.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-16.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <span class="avatar avatar-rounded">
+                        <img
+                          class="border border-white"
+                          src="../assets/img/profiles/avatar-17.jpg"
+                          alt="img"
+                        />
+                      </span>
+                      <a
+                        class="avatar bg-primary avatar-rounded text-fixed-white fs-12"
+                        href="javascript:void(0);"
+                      >
+                        +1
+                      </a>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-column">
+                    <p class="text-dark d-inline-flex align-items-center mb-2">
+                      <i class="ti ti-mail-forward text-gray-5 me-2"></i>
+                      info@ritzheritage.com
+                    </p>
+                    <p class="text-dark d-inline-flex align-items-center mb-2">
+                      <i class="ti ti-phone text-gray-5 me-2"></i>
+                      +91 88776 55443
+                    </p>
+                    <p class="text-dark d-inline-flex align-items-center">
+                      <i class="ti ti-map-pin text-gray-5 me-2"></i>
+                      Vijayawada
+                    </p>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-between border-top pt-3 mt-3"
+                  >
+                    <div class="icons-social d-flex align-items-center">
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-mail"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-phone-call"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-message-2"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm me-1"
+                        ><i class="ti ti-brand-skype"></i
+                      ></a>
+                      <a href="#" class="avatar avatar-rounded avatar-sm"
+                        ><i class="ti ti-brand-facebook"></i
+                      ></a>
+                    </div>
+                    <span class="d-inline-flex align-items-center"
+                      ><i class="ti ti-star-filled text-warning me-1"></i
+                      >3.0</span
+                    >
+                  </div>
+                </div>
               </div>
             </div>
           </div>

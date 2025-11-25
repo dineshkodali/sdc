@@ -63,6 +63,106 @@
     body.mini-sidebar .sidebar .sidebar-menu i {
       margin-right: 0 !important;
     }
+
+    .kanban-header-box {
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .kanban-count {
+      background: #fff;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .kanban-column {
+      padding: 10px;
+      border-radius: 12px;
+      background: transparent;
+    }
+
+    .kanban-card-container {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 18px;
+      border: none;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      margin-bottom: 16px;
+    }
+
+    /* CATEGORY LABELS */
+    .cat1 {
+      background: #fde1e1;
+      color: #c64a4a;
+    }
+    .cat2 {
+      background: #fff5c7;
+      color: #b38a00;
+    }
+    .cat3 {
+      background: #dbffe7;
+      color: #2e7d32;
+    }
+
+    .cat-pill {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+   .metric-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 24px;
+  border: 1px solid #e5e5e5;
+  transition: 0.2s ease;
+}
+
+.metric-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.metric-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metric-number {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.metric-icon {
+  font-size: 32px;
+  opacity: 0.9;
+}
+
+.metric-title {
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #445;
+}
+
+.metric-previous {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #999;
+}
+
+
   </style>
 
   <body>
@@ -160,7 +260,7 @@
       <!-- /Header -->
 
       <!-- Sidebar -->
-       <div class="sidebar" id="sidebar">
+      <div class="sidebar" id="sidebar">
         <div class="sidebar-logo">
           <a href="index.html" class="logo logo-normal">
             <img src="../assets/img/logo.svg" alt="Logo" />
@@ -502,158 +602,469 @@
           </div>
 
           <!-- Tabs -->
-          <ul class="nav nav-tabs mb-3">
+          <ul class="nav nav-tabs mb-3" id="taskTabs">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Table</a>
+              <a class="nav-link active" data-view="table" href="#">
+                <i class="ti ti-table me-1"></i> Table
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="#">Board</a>
+              <a class="nav-link" data-view="board" href="#">
+                <i class="ti ti-layout-board me-1"></i> Board
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="#">Dashboard</a>
+              <a class="nav-link" data-view="dashboard" href="#">
+                <i class="ti ti-chart-bar me-1"></i> Dashboard
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="#">Widgets</a>
+              <a class="nav-link" data-view="widgets" href="#">
+                <i class="ti ti-grid-dots me-1"></i> Widgets
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="#">Live BI</a>
+              <a class="nav-link" data-view="livebi" href="#">
+                <i class="ti ti-trending-up me-1"></i> Live BI
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="#">Settings</a>
+              <a class="nav-link" data-view="settings" href="#">
+                <i class="ti ti-settings me-1"></i> Settings
+              </a>
             </li>
           </ul>
 
           <!-- Table -->
-          <div class="card">
-            <div class="card-body p-0">
-              <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                  <thead>
-                    <tr>
-                      <th>Task Title</th>
-                      <th>Start Date</th>
-                      <th>Category</th>
-                      <th>Site Name</th>
-                      <th>Room No</th>
-                      <th>Raised By</th>
-                      <th>Status</th>
-                      <th>Action</th>
-                      <th>Due Date</th>
-                      <th>Closed</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- Row 1 -->
-                    <tr style="border-left: 4px solid #d32f2f">
-                      <td>Electrical Safety Audit</td>
-                      <td>20/02/24</td>
-                      <td class="text-danger fw-bold">CAT1</td>
-                      <td>Building C</td>
-                      <td>Main Panel</td>
-                      <td>Maintenance Team</td>
-                      <td>Under Review</td>
-                      <td>Review</td>
-                      <td>12/03/24</td>
-                      <td>-</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
+          <div id="tableView">
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover mb-0">
+                    <thead>
+                      <tr>
+                        <th>
+                          <i class="ti ti-file-description me-1"></i> Task Title
+                        </th>
 
-                    <!-- Row 2 -->
-                    <tr style="border-left: 4px solid #d32f2f">
-                      <td>Plumbing System Review</td>
-                      <td>01/03/24</td>
-                      <td class="text-danger fw-bold">CAT1</td>
-                      <td>Building B</td>
-                      <td>Flat 301</td>
-                      <td>Tenant Report</td>
-                      <td>In Progress</td>
-                      <td>Under Repair</td>
-                      <td>18/03/24</td>
-                      <td>-</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
+                        <th>
+                          <i class="ti ti-calendar-event me-1"></i> Start Date
+                        </th>
 
-                    <!-- Row 3 -->
-                    <tr style="border-left: 4px solid #f4b400">
-                      <td>Fire Safety Equipment</td>
-                      <td>04/09/25</td>
-                      <td style="color: #d49a00; font-weight: 600">CAT2</td>
-                      <td>Parmiter</td>
-                      <td>Room 100</td>
-                      <td>Safety Officer</td>
-                      <td>Open</td>
-                      <td>Pending</td>
-                      <td>30/09/25</td>
-                      <td>-</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
+                        <th><i class="ti ti-tag me-1"></i> Category</th>
 
-                    <!-- Row 4 -->
-                    <tr style="border-left: 4px solid #4caf50">
-                      <td>Generator Testing</td>
-                      <td>08/03/24</td>
-                      <td style="color: #2e7d32; font-weight: 600">CAT3</td>
-                      <td>Building D</td>
-                      <td>Generator Room</td>
-                      <td>Scheduled Maintenance</td>
-                      <td>Completed</td>
-                      <td>Closed</td>
-                      <td>10/03/24</td>
-                      <td>10/03/24</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
+                        <th><i class="ti ti-building me-1"></i> Site Name</th>
 
-                    <!-- Row 5 -->
-                    <tr style="border-left: 4px solid #f4b400">
-                      <td>Fire Safety Equipment</td>
-                      <td>10/03/24</td>
-                      <td class="text-danger fw-bold">CAT1</td>
-                      <td>Building A</td>
-                      <td>Flat 203</td>
-                      <td>Safety Officer</td>
-                      <td>Open</td>
-                      <td>Pending</td>
-                      <td>25/03/24</td>
-                      <td>-</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
+                        <th><i class="ti ti-home me-1"></i> Room No</th>
 
-                    <!-- Row 6 -->
-                    <tr style="border-left: 4px solid #f4b400">
-                      <td>Fire Safety Equipment</td>
-                      <td>10/03/24</td>
-                      <td class="text-danger fw-bold">CAT1</td>
-                      <td>Building A</td>
-                      <td>Flat 203</td>
-                      <td>Safety Officer</td>
-                      <td>Open</td>
-                      <td>Pending</td>
-                      <td>25/03/24</td>
-                      <td>-</td>
-                      <td>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                        <th><i class="ti ti-user me-1"></i> Raised By</th>
+
+                        <th><i class="ti ti-activity me-1"></i> Status</th>
+
+                        <th><i class="ti ti-tool me-1"></i> Action</th>
+
+                        <th>
+                          <i class="ti ti-calendar-time me-1"></i> Due Date
+                        </th>
+
+                        <th><i class="ti ti-clock me-1"></i> Closed</th>
+
+                        <th><i class="ti ti-dots me-1"></i> Actions</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <!-- Row 1 -->
+                      <tr style="border-left: 4px solid #d32f2f">
+                        <td>Electrical Safety Audit</td>
+                        <td>20/02/24</td>
+                        <td class="text-danger fw-bold">CAT1</td>
+                        <td>Building C</td>
+                        <td>Main Panel</td>
+                        <td>Maintenance Team</td>
+                        <td>Under Review</td>
+                        <td>Review</td>
+                        <td>12/03/24</td>
+                        <td>-</td>
+                        <td>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </td>
+                      </tr>
+
+                      <!-- Row 2 -->
+                      <tr style="border-left: 4px solid #d32f2f">
+                        <td>Plumbing System Review</td>
+                        <td>01/03/24</td>
+                        <td class="text-danger fw-bold">CAT1</td>
+                        <td>Building B</td>
+                        <td>Flat 301</td>
+                        <td>Tenant Report</td>
+                        <td>In Progress</td>
+                        <td>Under Repair</td>
+                        <td>18/03/24</td>
+                        <td>-</td>
+                        <td>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </td>
+                      </tr>
+
+                      <!-- Row 3 -->
+                      <tr style="border-left: 4px solid #f4b400">
+                        <td>Fire Safety Equipment</td>
+                        <td>04/09/25</td>
+                        <td style="color: #d49a00; font-weight: 600">CAT2</td>
+                        <td>Parmiter</td>
+                        <td>Room 100</td>
+                        <td>Safety Officer</td>
+                        <td>Open</td>
+                        <td>Pending</td>
+                        <td>30/09/25</td>
+                        <td>-</td>
+                        <td>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </td>
+                      </tr>
+
+                      <!-- Row 4 -->
+                      <tr style="border-left: 4px solid #4caf50">
+                        <td>Generator Testing</td>
+                        <td>08/03/24</td>
+                        <td style="color: #2e7d32; font-weight: 600">CAT3</td>
+                        <td>Building D</td>
+                        <td>Generator Room</td>
+                        <td>Scheduled Maintenance</td>
+                        <td>Completed</td>
+                        <td>Closed</td>
+                        <td>10/03/24</td>
+                        <td>10/03/24</td>
+                        <td>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </td>
+                      </tr>
+
+                      <!-- Row 5 -->
+                      <tr style="border-left: 4px solid #f4b400">
+                        <td>Fire Safety Equipment</td>
+                        <td>10/03/24</td>
+                        <td class="text-danger fw-bold">CAT1</td>
+                        <td>Building A</td>
+                        <td>Flat 203</td>
+                        <td>Safety Officer</td>
+                        <td>Open</td>
+                        <td>Pending</td>
+                        <td>25/03/24</td>
+                        <td>-</td>
+                        <td>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </td>
+                      </tr>
+
+                      <!-- Row 6 -->
+                      <tr style="border-left: 4px solid #f4b400">
+                        <td>Fire Safety Equipment</td>
+                        <td>10/03/24</td>
+                        <td class="text-danger fw-bold">CAT1</td>
+                        <td>Building A</td>
+                        <td>Flat 203</td>
+                        <td>Safety Officer</td>
+                        <td>Open</td>
+                        <td>Pending</td>
+                        <td>25/03/24</td>
+                        <td>-</td>
+                        <td>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
+            </div>
+          </div>
+
+          <div id="boardView" style="display: none">
+            <div class="row g-4">
+              <!-- OPEN -->
+              <div class="col-md-3">
+                <!-- HEADER ONLY (colored) -->
+                <div class="kanban-header-box" style="background: #f6f7f9">
+                  <span>Open</span>
+                  <span class="kanban-count">1</span>
+                </div>
+
+                <!-- WHITE CARDS AREA -->
+                <div class="kanban-column">
+                  <div class="kanban-card-container">
+                    <div class="d-flex justify-content-between">
+                      <h6 class="fw-semibold">Fire Safety Equipment</h6>
+                      <div>
+                        <i class="ti ti-edit me-2"></i>
+                        <i class="ti ti-trash"></i>
+                      </div>
+                    </div>
+
+                    <span class="cat-pill cat2">CAT2</span>
+
+                    <p class="small">
+                      <i class="ti ti-calendar-event me-1"></i> Sep 30
+                    </p>
+
+                    <p class="small"><strong>Site:</strong> Parmiter</p>
+                    <p class="small"><strong>Room:</strong> Room 100</p>
+                    <p class="small mb-0">
+                      <strong>Raised By:</strong> Safety Officer
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- IN PROGRESS -->
+              <div class="col-md-3">
+                <!-- HEADER (colored only) -->
+                <div class="kanban-header-box" style="background: #e6f0ff">
+                  <span>In Progress</span>
+                  <span class="kanban-count">0</span>
+                </div>
+
+                <!-- WHITE CONTENT AREA -->
+                <div class="kanban-column">
+                  <p class="text-center text-muted mt-5">No tasks</p>
+                </div>
+              </div>
+
+              <!-- UNDER REVIEW -->
+              <div class="col-md-3">
+                <!-- HEADER (colored only) -->
+                <div class="kanban-header-box" style="background: #f3eaff">
+                  <span>Under Review</span>
+                  <span class="kanban-count">1</span>
+                </div>
+
+                <!-- WHITE CONTENT AREA -->
+                <div class="kanban-column">
+                  <div class="kanban-card-container shadow-sm mb-3">
+                    <div class="d-flex justify-content-between">
+                      <h6 class="fw-semibold">Electrical Safety Audit</h6>
+                      <div>
+                        <i class="ti ti-edit me-2"></i>
+                        <i class="ti ti-trash"></i>
+                      </div>
+                    </div>
+
+                    <span class="cat-pill cat1">CAT1</span>
+
+                    <p class="small">
+                      <i class="ti ti-calendar-event me-1"></i> Mar 12
+                    </p>
+
+                    <p class="small"><strong>Site:</strong> Building C</p>
+                    <p class="small"><strong>Room:</strong> Main Panel</p>
+                    <p class="small mb-0">
+                      <strong>Raised By:</strong> Maintenance Team
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- COMPLETED -->
+              <div class="col-md-3">
+                <!-- HEADER (colored only) -->
+                <div class="kanban-header-box" style="background: #e7ffe9">
+                  <span>Completed</span>
+                  <span class="kanban-count">1</span>
+                </div>
+
+                <!-- WHITE CARD AREA -->
+                <div class="kanban-column">
+                  <div class="kanban-card-container shadow-sm mb-3">
+                    <div class="d-flex justify-content-between">
+                      <h6 class="fw-semibold">Generator Testing</h6>
+                      <div>
+                        <i class="ti ti-edit me-2"></i>
+                        <i class="ti ti-trash"></i>
+                      </div>
+                    </div>
+
+                    <span class="cat-pill cat3">CAT3</span>
+
+                    <p class="small">
+                      <i class="ti ti-calendar-event me-1"></i> Mar 10
+                    </p>
+
+                    <p class="small"><strong>Site:</strong> Building D</p>
+                    <p class="small"><strong>Room:</strong> Generator Room</p>
+                    <p class="small mb-0">
+                      <strong>Raised By:</strong> Scheduled Maintenance
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DASHBOARD -->
+          <div id="dashboardView" style="display: none">
+            <div class="card mb-3">
+              <div
+                class="card-body d-flex justify-content-between align-items-center"
+              >
+                <div>
+                  <strong>Compare Period:</strong>
+                  <select class="form-select d-inline-block w-auto ms-2">
+                    <option>Month-over-Month</option>
+                    <option>Year-over-Year</option>
+                  </select>
+
+                  <button class="btn btn-light ms-2">
+                    Nov 2025 vs Oct 2025
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- METRICS ROW -->
+            <!-- <div class="row g-3">
+              <div class="col-md-3">
+                <div class="card p-3 text-center">
+                  <h5 class="mb-0">0</h5>
+                  <small>Total Tasks</small>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card p-3 text-center">
+                  <h5 class="mb-0">0</h5>
+                  <small>Completed</small>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card p-3 text-center">
+                  <h5 class="mb-0">0</h5>
+                  <small>In Progress</small>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card p-3 text-center">
+                  <h5 class="mb-0">0</h5>
+                  <small>Overdue</small>
+                </div>
+              </div>
+            </div> -->
+            <!-- DASHBOARD METRICS -->
+            <div class="row g-4 mb-4">
+
+  <!-- Total Tasks -->
+  <div class="col-md-3">
+    <div class="metric-card">
+      <div class="metric-top">
+        <span class="metric-number">0</span>
+        <i class="ti ti-chart-bar metric-icon text-info"></i>
+      </div>
+      <div class="metric-title">Total Tasks</div>
+      <div class="metric-previous">0 Previous</div>
+    </div>
+  </div>
+
+  <!-- Completed -->
+  <div class="col-md-3">
+    <div class="metric-card">
+      <div class="metric-top">
+        <span class="metric-number">0</span>
+        <i class="ti ti-circle-check metric-icon text-success"></i>
+      </div>
+      <div class="metric-title">Completed</div>
+      <div class="metric-previous">0 Previous</div>
+    </div>
+  </div>
+
+  <!-- In Progress -->
+  <div class="col-md-3">
+    <div class="metric-card">
+      <div class="metric-top">
+        <span class="metric-number">0</span>
+        <i class="ti ti-trending-up metric-icon" style="color:#ff8b47;"></i>
+      </div>
+      <div class="metric-title">In Progress</div>
+      <div class="metric-previous">0 Previous</div>
+    </div>
+  </div>
+
+  <!-- Overdue -->
+  <div class="col-md-3">
+    <div class="metric-card">
+      <div class="metric-top">
+        <span class="metric-number">0</span>
+        <i class="ti ti-alert-circle metric-icon text-danger"></i>
+      </div>
+      <div class="metric-title">Overdue</div>
+      <div class="metric-previous">0 Previous</div>
+    </div>
+  </div>
+
+</div>
+
+
+            <!-- CHART ROW -->
+            <div class="row g-3 mt-3">
+              <div class="col-md-6">
+                <div class="card p-3">
+                  <h6>Priority Distribution</h6>
+                  <div class="mt-4">
+                    <p>CAT1 <span class="float-end">0 (0%)</span></p>
+                    <p>CAT2 <span class="float-end">0 (0%)</span></p>
+                    <p>CAT3 <span class="float-end">0 (0%)</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card p-3">
+                  <h6>Status Distribution</h6>
+                  <div class="mt-4">
+                    <p>Open <span class="float-end">0 (0%)</span></p>
+                    <p>In Progress <span class="float-end">0 (0%)</span></p>
+                    <p>Under Review <span class="float-end">0 (0%)</span></p>
+                    <p>Completed <span class="float-end">0 (0%)</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM CHARTS -->
+            <div class="row g-3 mt-3">
+              <div class="col-md-6">
+                <div class="card p-3" style="height: 320px">
+                  <h6>Defects Summary</h6>
+                  <div class="text-center mt-5 text-muted">Chart Area</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="card p-3" style="height: 320px">
+                  <h6>Priority Breakdown</h6>
+                  <div class="text-center mt-5 text-muted">Chart Area</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card p-3 mt-3">
+              <h6>Top Raised Defects</h6>
+              <p class="text-center text-muted mt-4">
+                No defects data available
+              </p>
             </div>
           </div>
         </div>
@@ -683,6 +1094,59 @@
           } else {
             $("body").addClass("mini-sidebar");
             $(".sidebar").css("width", "60px");
+          }
+        });
+      });
+    </script>
+
+    <script>
+      document.querySelectorAll("#taskTabs .nav-link").forEach((tab) => {
+        tab.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Remove active class from all tabs
+          document
+            .querySelectorAll("#taskTabs .nav-link")
+            .forEach((t) => t.classList.remove("active"));
+
+          // Add active to clicked tab
+          this.classList.add("active");
+
+          const view = this.getAttribute("data-view");
+
+          // Toggle views
+          document.getElementById("tableView").style.display =
+            view === "table" ? "block" : "none";
+          document.getElementById("boardView").style.display =
+            view === "board" ? "block" : "none";
+        });
+      });
+    </script>
+
+    <script>
+      document.querySelectorAll("#taskTabs .nav-link").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          // Remove active state
+          document
+            .querySelectorAll("#taskTabs .nav-link")
+            .forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+
+          let view = this.getAttribute("data-view");
+
+          // Hide all views
+          document.getElementById("tableView").style.display = "none";
+          document.getElementById("boardView").style.display = "none";
+          document.getElementById("dashboardView").style.display = "none";
+
+          if (view === "table") {
+            document.getElementById("tableView").style.display = "block";
+          }
+          if (view === "board") {
+            document.getElementById("boardView").style.display = "block";
+          }
+          if (view === "dashboard") {
+            document.getElementById("dashboardView").style.display = "block";
           }
         });
       });

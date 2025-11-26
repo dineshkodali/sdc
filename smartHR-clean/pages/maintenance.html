@@ -64,6 +64,84 @@
       margin-right: 0 !important;
     }
 
+    /* Card-style background for the whole tab bar */
+    #taskTabs {
+      background: #f5f7fa; /* light card background */
+      padding: 8px 10px;
+      border-radius: 10px;
+      display: inline-flex;
+      gap: 8px;
+      border: 1px solid #e3e6eb;
+    }
+
+    /* Individual tabs */
+    #taskTabs .nav-link {
+      border-radius: 8px;
+      color: #444;
+      font-weight: 500;
+      padding: 8px 14px;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Active tab (white card look) */
+    #taskTabs .nav-link.active {
+      background: #ffffff;
+      color: #000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Hover effect */
+    #taskTabs .nav-link:hover {
+      background: #ffffff;
+    }
+
+    /* Hide dots initially */
+    .header-menu-btn {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s;
+      border: none;
+      background: #f3f4f6;
+      padding: 4px 6px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+    }
+
+    .table-th:hover .header-menu-btn {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .header-dropdown {
+      position: absolute;
+      top: 110%;
+      right: 0;
+      width: 170px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      padding: 6px 0;
+      z-index: 9999;
+    }
+
+    .header-dropdown .dropdown-item {
+      padding: 8px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .header-dropdown .dropdown-item:hover {
+      background: #f3f4f6;
+    }
+
     .kanban-header-box {
       border-radius: 12px;
       padding: 14px 18px;
@@ -120,49 +198,176 @@
       margin-bottom: 10px;
     }
 
-   .metric-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 22px 24px;
-  border: 1px solid #e5e5e5;
-  transition: 0.2s ease;
-}
+    .metric-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px 24px;
+      border: 1px solid #e5e5e5;
+      transition: 0.2s ease;
+    }
 
-.metric-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
+    .metric-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
 
-.metric-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .metric-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.metric-number {
-  font-size: 26px;
-  font-weight: 700;
-  color: #1c1c1c;
-}
+    .metric-number {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1c1c1c;
+    }
 
-.metric-icon {
-  font-size: 32px;
-  opacity: 0.9;
-}
+    .metric-icon {
+      font-size: 32px;
+      opacity: 0.9;
+    }
 
-.metric-title {
-  margin-top: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #445;
-}
+    .metric-title {
+      margin-top: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #445;
+    }
 
-.metric-previous {
-  margin-top: 4px;
-  font-size: 13px;
-  color: #999;
-}
+    .metric-previous {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #999;
+    }
+    /* Dots stay same */
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
 
+    .dot-red {
+      background-color: #ff4d4f;
+    }
+    .dot-yellow {
+      background-color: #f6c23e;
+    }
+    .dot-green {
+      background-color: #1cc88a;
+    }
+    .dot-gray {
+      background-color: #6c757d;
+    }
+    .dot-blue {
+      background-color: #4e73df;
+    }
+    .dot-purple {
+      background-color: #9b51e0;
+    }
 
+    /* ✅ EXACT PLAIN GREY BAR LIKE YOUR 2ND IMAGE */
+    .progress-custom {
+      width: 180px;
+      height: 8px;
+      border-radius: 10px;
+      background-color: #e5e7eb; /* light grey */
+      overflow: hidden;
+    }
+
+    /* ✅ KILLS BOOTSTRAP ORANGE COMPLETELY */
+    .bar-grey {
+      background-color: #e5e7eb !important; /* SAME as container */
+      width: 100% !important; /* FULL BAR ALWAYS */
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    /* ✅ EXTRA SAFETY: remove Bootstrap fill effect */
+    .progress-bar {
+      background-image: none !important;
+      box-shadow: none !important;
+    }
+
+    /* ✅ Force both cards to same height */
+    .equal-height-card {
+      min-height: 240px; /* adjust if needed */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ✅ Vertical spacing inside cards like reference */
+    .equal-height-card .d-flex {
+      margin-bottom: 16px;
+    }
+
+    .equal-height-card .d-flex:last-child {
+      margin-bottom: 0;
+    }
+    .priority-breakdown-card {
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-placeholder {
+      flex: 1; /* takes full empty space */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .priority-legend {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-box {
+      width: 14px;
+      height: 10px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .legend-box.red {
+      background-color: #ff4d4f;
+    }
+
+    .legend-box.yellow {
+      background-color: #f6c23e;
+    }
+
+    .legend-box.green {
+      background-color: #1cc88a;
+    }
+
+    /* Widget dashboard */
+    .widget-placeholder {
+      background: #f8fafc;
+      border: 2px dashed #d1d5db;
+      border-radius: 14px;
+      padding: 60px 20px;
+    }
+
+    .widget-box {
+      text-align: center;
+      color: #6b7280;
+    }
+
+    .widget-icon {
+      font-size: 42px;
+      color: #9ca3af;
+    }
   </style>
 
   <body>
@@ -652,27 +857,309 @@
                           <i class="ti ti-file-description me-1"></i> Task Title
                         </th>
 
-                        <th>
-                          <i class="ti ti-calendar-event me-1"></i> Start Date
+                        <!-- Start Date -->
+                        <th style="position: relative" class="header-th" data-col="1">
+                          <div class="d-flex align-items-center gap-1 th-label">
+                            <i class="ti ti-calendar-event me-1"></i>
+                            <span>Start Date</span>
+                            <i class="ti ti-chevron-down header-arrow"></i>
+                            <button
+                              class="category-menu-btn"
+                              type="button"
+                              onclick="toggleGenericMenu(event, this)"
+                            >
+                              <i class="ti ti-dots"></i>
+                            </button>
+                          </div>
+
+                          <div class="category-dropdown d-none">
+                            <div
+                              class="dropdown-item"
+                              onclick="toggleGenericSort(this)"
+                            >
+                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
+                            </div>
+                            <div
+                              class="dropdown-item d-flex justify-content-between"
+                            >
+                              <span><i class="ti ti-filter"></i> Filter</span>
+                              <i class="ti ti-chevron-right"></i>
+                            </div>
+                            <div
+                              class="dropdown-item text-danger"
+                              onclick="hideGenericColumn(this)"
+                            >
+                              <i class="ti ti-eye-off"></i> Hide
+                            </div>
+                          </div>
                         </th>
 
-                        <th><i class="ti ti-tag me-1"></i> Category</th>
+                        <!-- CATEGORY  -->
+                        <th style="position: relative" class="category-th">
+                          <div class="d-flex align-items-center gap-1 th-label">
+                            <i class="ti ti-tag me-1"></i>
+                            <span>Category</span>
+                            <i class="ti ti-chevron-down category-arrow"></i>
+                            <button
+                              class="category-menu-btn"
+                              onclick="toggleCategoryMenu(event)"
+                              type="button"
+                            >
+                              <i class="ti ti-dots"></i>
+                            </button>
+                          </div>
 
-                        <th><i class="ti ti-building me-1"></i> Site Name</th>
+                          <div
+                            class="category-dropdown d-none"
+                            id="categoryDropdown"
+                          >
+                            <div
+                              class="dropdown-item"
+                              onclick="toggleCategorySort()"
+                              id="categorySortBtn"
+                            >
+                              <i class="ti ti-arrows-sort"></i>
+                              <span id="sortLabel">Sort A → Z</span>
+                            </div>
 
-                        <th><i class="ti ti-home me-1"></i> Room No</th>
+                            <div
+                              class="dropdown-item d-flex justify-content-between align-items-center"
+                            >
+                              <span><i class="ti ti-filter"></i> Filter</span>
+                              <i class="ti ti-chevron-right"></i>
+                            </div>
 
-                        <th><i class="ti ti-user me-1"></i> Raised By</th>
-
-                        <th><i class="ti ti-activity me-1"></i> Status</th>
-
-                        <th><i class="ti ti-tool me-1"></i> Action</th>
-
-                        <th>
-                          <i class="ti ti-calendar-time me-1"></i> Due Date
+                            <div class="dropdown-item text-danger">
+                              <i class="ti ti-eye-off"></i> Hide
+                            </div>
+                          </div>
                         </th>
 
-                        <th><i class="ti ti-clock me-1"></i> Closed</th>
+                        <!-- Site Name -->
+                        <th
+                          style="position: relative"
+                          class="header-th"
+                          data-col="3"
+                        >
+                          <div class="d-flex align-items-center gap-1 th-label">
+                            <i class="ti ti-building me-1"></i>
+                            <span>Site Name</span>
+                            <i class="ti ti-chevron-down header-arrow"></i>
+                            <button
+                              class="category-menu-btn"
+                              type="button"
+                              onclick="toggleGenericMenu(event, this)"
+                            >
+                              <i class="ti ti-dots"></i>
+                            </button>
+                          </div>
+
+                          <div class="category-dropdown d-none">
+                            <div
+                              class="dropdown-item"
+                              onclick="toggleGenericSort(this)"
+                            >
+                              <i class="ti ti-arrows-sort"></i>
+                              <span class="sort-label">Sort A → Z</span>
+                            </div>
+                            <div
+                              class="dropdown-item d-flex justify-content-between"
+                            >
+                              <span><i class="ti ti-filter"></i> Filter</span>
+                              <i class="ti ti-chevron-right"></i>
+                            </div>
+                            <div class="dropdown-item text-danger">
+                              <i class="ti ti-eye-off"></i> Hide
+                            </div>
+                          </div>
+                        </th>
+
+                        <!-- Room No -->
+                        <th style="position: relative" class="header-th" data-col="4">
+                          <div class="d-flex align-items-center gap-1 th-label">
+                            <i class="ti ti-home me-1"></i>
+                            <span>Room No</span>
+                            <i class="ti ti-chevron-down header-arrow"></i>
+                            <button
+                              class="category-menu-btn"
+                              type="button"
+                              onclick="toggleGenericMenu(event, this)"
+                            >
+                              <i class="ti ti-dots"></i>
+                            </button>
+                          </div>
+
+                          <div class="category-dropdown d-none">
+                            <div class="dropdown-item" onclick="toggleGenericSort(this)">
+                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
+                            </div>
+                            <div
+                              class="dropdown-item d-flex justify-content-between"
+                            >
+                              <span><i class="ti ti-filter"></i> Filter</span>
+                              <i class="ti ti-chevron-right"></i>
+                            </div>
+                            <div class="dropdown-item text-danger">
+                              <i class="ti ti-eye-off"></i> Hide
+                            </div>
+                          </div>
+                        </th>
+
+                        <!-- Raised By -->
+                        <th style="position: relative" class="header-th" data-col="5">
+                          <div class="d-flex align-items-center gap-1 th-label">
+                            <i class="ti ti-user me-1"></i>
+                            <span>Raised By</span>
+                            <i class="ti ti-chevron-down header-arrow"></i>
+                            <button
+                              class="category-menu-btn"
+                              type="button"
+                              onclick="toggleGenericMenu(event, this)"
+                            >
+                              <i class="ti ti-dots"></i>
+                            </button>
+                          </div>
+
+                          <div class="category-dropdown d-none">
+                            <div class="dropdown-item" onclick="toggleGenericSort(this)">
+                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
+                            </div>
+                            <div
+                              class="dropdown-item d-flex justify-content-between"
+                            >
+                              <span><i class="ti ti-filter"></i> Filter</span>
+                              <i class="ti ti-chevron-right"></i>
+                            </div>
+                            <div class="dropdown-item text-danger">
+                              <i class="ti ti-eye-off"></i> Hide
+                            </div>
+                          </div>
+                        </th>
+
+                        <!-- Status -->
+                        <th style="position: relative" class="header-th" data-col="6">
+                          <div class="d-flex align-items-center gap-1 th-label">
+                            <i class="ti ti-activity me-1"></i>
+                            <span>Status</span>
+                            <i class="ti ti-chevron-down header-arrow"></i>
+                            <button
+                              class="category-menu-btn"
+                              type="button"
+                              onclick="toggleGenericMenu(event, this)"
+                            >
+                              <i class="ti ti-dots"></i>
+                            </button>
+                          </div>
+
+                          <div class="category-dropdown d-none">
+                            <div class="dropdown-item" onclick="toggleGenericSort(this)" >
+                              
+                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
+                            </div>
+                            <div
+                              class="dropdown-item d-flex justify-content-between"
+                            >
+                              <span><i class="ti ti-filter"></i> Filter</span>
+                              <i class="ti ti-chevron-right"></i>
+                            </div>
+                            <div class="dropdown-item text-danger">
+                              <i class="ti ti-eye-off"></i> Hide
+                            </div>
+                          </div>
+                        </th>
+
+                        <!-- Action -->
+                        <th style="position: relative" class="header-th"  data-col="7">
+                          <div class="d-flex align-items-center gap-1 th-label">
+                            <i class="ti ti-tool me-1"></i>
+                            <span>Action</span>
+                            <i class="ti ti-chevron-down header-arrow"></i>
+                            <button
+                              class="category-menu-btn"
+                              type="button"
+                              onclick="toggleGenericMenu(event, this)"
+                            >
+                              <i class="ti ti-dots"></i>
+                            </button>
+                          </div>
+
+                          <div class="category-dropdown d-none">
+                            <div class="dropdown-item" onclick="toggleGenericSort(this)">
+                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
+                            </div>
+                            <div
+                              class="dropdown-item d-flex justify-content-between"
+                            >
+                              <span><i class="ti ti-filter"></i> Filter</span>
+                              <i class="ti ti-chevron-right"></i>
+                            </div>
+                            <div class="dropdown-item text-danger">
+                              <i class="ti ti-eye-off"></i> Hide
+                            </div>
+                          </div>
+                        </th>
+
+                        <!-- Due Date -->
+                        <th style="position: relative" class="header-th" data-col="8">
+                          <div class="d-flex align-items-center gap-1 th-label">
+                            <i class="ti ti-calendar-time me-1"></i>
+                            <span>Due Date</span>
+                            <i class="ti ti-chevron-down header-arrow"></i>
+                            <button
+                              class="category-menu-btn"
+                              type="button"
+                              onclick="toggleGenericMenu(event, this)"
+                            >
+                              <i class="ti ti-dots"></i>
+                            </button>
+                          </div>
+
+                          <div class="category-dropdown d-none">
+                            <div class="dropdown-item" onclick="toggleGenericSort(this)">
+                              <i class="ti ti-arrows-sort"></i><span class="sort-label">Sort A → Z</span> 
+                            </div>
+                            <div
+                              class="dropdown-item d-flex justify-content-between"
+                            >
+                              <span><i class="ti ti-filter"></i> Filter</span>
+                              <i class="ti ti-chevron-right"></i>
+                            </div>
+                            <div class="dropdown-item text-danger">
+                              <i class="ti ti-eye-off"></i> Hide
+                            </div>
+                          </div>
+                        </th>
+
+                        <!-- Closed -->
+                        <th style="position: relative" class="header-th" data-col="9">
+                          <div class="d-flex align-items-center gap-1 th-label">
+                            <i class="ti ti-clock me-1"></i>
+                            <span>Closed</span>
+                            <i class="ti ti-chevron-down header-arrow"></i>
+                            <button
+                              class="category-menu-btn"
+                              type="button"
+                              onclick="toggleGenericMenu(event, this)"
+                            >
+                              <i class="ti ti-dots"></i>
+                            </button>
+                          </div>
+
+                          <div class="category-dropdown d-none">
+                            <div class="dropdown-item" onclick="toggleGenericSort(this)">
+                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
+                            </div>
+                            <div
+                              class="dropdown-item d-flex justify-content-between"
+                            >
+                              <span><i class="ti ti-filter"></i> Filter</span>
+                              <i class="ti ti-chevron-right"></i>
+                            </div>
+                            <div class="dropdown-item text-danger">
+                              <i class="ti ti-eye-off"></i> Hide
+                            </div>
+                          </div>
+                        </th>
 
                         <th><i class="ti ti-dots me-1"></i> Actions</th>
                       </tr>
@@ -772,10 +1259,10 @@
                       <!-- Row 6 -->
                       <tr style="border-left: 4px solid #f4b400">
                         <td>Fire Safety Equipment</td>
-                        <td>10/03/24</td>
+                        <td>12/03/24</td>
                         <td class="text-danger fw-bold">CAT1</td>
                         <td>Building A</td>
-                        <td>Flat 203</td>
+                        <td>Flat 303</td>
                         <td>Safety Officer</td>
                         <td>Open</td>
                         <td>Pending</td>
@@ -934,110 +1421,182 @@
             </div>
 
             <!-- METRICS ROW -->
-            <!-- <div class="row g-3">
-              <div class="col-md-3">
-                <div class="card p-3 text-center">
-                  <h5 class="mb-0">0</h5>
-                  <small>Total Tasks</small>
-                </div>
-              </div>
 
-              <div class="col-md-3">
-                <div class="card p-3 text-center">
-                  <h5 class="mb-0">0</h5>
-                  <small>Completed</small>
-                </div>
-              </div>
-
-              <div class="col-md-3">
-                <div class="card p-3 text-center">
-                  <h5 class="mb-0">0</h5>
-                  <small>In Progress</small>
-                </div>
-              </div>
-
-              <div class="col-md-3">
-                <div class="card p-3 text-center">
-                  <h5 class="mb-0">0</h5>
-                  <small>Overdue</small>
-                </div>
-              </div>
-            </div> -->
             <!-- DASHBOARD METRICS -->
             <div class="row g-4 mb-4">
+              <!-- Total Tasks -->
+              <div class="col-md-3">
+                <div class="metric-card">
+                  <div class="metric-top">
+                    <span class="metric-number">6</span>
+                    <i class="ti ti-chart-bar metric-icon text-info"></i>
+                  </div>
+                  <div class="metric-title">Total Tasks</div>
+                  <div class="metric-previous">4 Previous</div>
+                </div>
+              </div>
 
-  <!-- Total Tasks -->
-  <div class="col-md-3">
-    <div class="metric-card">
-      <div class="metric-top">
-        <span class="metric-number">0</span>
-        <i class="ti ti-chart-bar metric-icon text-info"></i>
-      </div>
-      <div class="metric-title">Total Tasks</div>
-      <div class="metric-previous">0 Previous</div>
-    </div>
-  </div>
+              <!-- Completed -->
+              <div class="col-md-3">
+                <div class="metric-card">
+                  <div class="metric-top">
+                    <span class="metric-number">1</span>
+                    <i class="ti ti-circle-check metric-icon text-success"></i>
+                  </div>
+                  <div class="metric-title">Completed</div>
+                  <div class="metric-previous">0 Previous</div>
+                </div>
+              </div>
 
-  <!-- Completed -->
-  <div class="col-md-3">
-    <div class="metric-card">
-      <div class="metric-top">
-        <span class="metric-number">0</span>
-        <i class="ti ti-circle-check metric-icon text-success"></i>
-      </div>
-      <div class="metric-title">Completed</div>
-      <div class="metric-previous">0 Previous</div>
-    </div>
-  </div>
+              <!-- In Progress -->
+              <div class="col-md-3">
+                <div class="metric-card">
+                  <div class="metric-top">
+                    <span class="metric-number">1</span>
+                    <i
+                      class="ti ti-trending-up metric-icon"
+                      style="color: #ff8b47"
+                    ></i>
+                  </div>
+                  <div class="metric-title">In Progress</div>
+                  <div class="metric-previous">0 Previous</div>
+                </div>
+              </div>
 
-  <!-- In Progress -->
-  <div class="col-md-3">
-    <div class="metric-card">
-      <div class="metric-top">
-        <span class="metric-number">0</span>
-        <i class="ti ti-trending-up metric-icon" style="color:#ff8b47;"></i>
-      </div>
-      <div class="metric-title">In Progress</div>
-      <div class="metric-previous">0 Previous</div>
-    </div>
-  </div>
-
-  <!-- Overdue -->
-  <div class="col-md-3">
-    <div class="metric-card">
-      <div class="metric-top">
-        <span class="metric-number">0</span>
-        <i class="ti ti-alert-circle metric-icon text-danger"></i>
-      </div>
-      <div class="metric-title">Overdue</div>
-      <div class="metric-previous">0 Previous</div>
-    </div>
-  </div>
-
-</div>
-
+              <!-- Overdue -->
+              <div class="col-md-3">
+                <div class="metric-card">
+                  <div class="metric-top">
+                    <span class="metric-number">3</span>
+                    <i class="ti ti-alert-circle metric-icon text-danger"></i>
+                  </div>
+                  <div class="metric-title">Overdue</div>
+                  <div class="metric-previous">0 Previous</div>
+                </div>
+              </div>
+            </div>
 
             <!-- CHART ROW -->
             <div class="row g-3 mt-3">
               <div class="col-md-6">
-                <div class="card p-3">
-                  <h6>Priority Distribution</h6>
-                  <div class="mt-4">
-                    <p>CAT1 <span class="float-end">0 (0%)</span></p>
-                    <p>CAT2 <span class="float-end">0 (0%)</span></p>
-                    <p>CAT3 <span class="float-end">0 (0%)</span></p>
+                <div class="card p-4 equal-height-card">
+                  <h6 class="mb-4">Priority Distribution</h6>
+
+                  <!-- CAT1 -->
+                  <div class="d-flex align-items-center mb-3">
+                    <span class="dot dot-red me-2"></span>
+                    <span class="me-auto">CAT1</span>
+
+                    <div class="progress progress-custom me-3">
+                      <div id="bar-cat1" class="progress-bar bar-grey"></div>
+                    </div>
+
+                    <span id="count-cat1" class="fw-bold">0</span>
+                    <small id="percent-cat1" class="text-muted ms-2"
+                      >(0.0%)</small
+                    >
+                  </div>
+
+                  <!-- CAT2 -->
+                  <div class="d-flex align-items-center mb-3">
+                    <span class="dot dot-yellow me-2"></span>
+                    <span class="me-auto">CAT2</span>
+
+                    <div class="progress progress-custom me-3">
+                      <div id="bar-cat2" class="progress-bar bar-grey"></div>
+                    </div>
+
+                    <span id="count-cat2" class="fw-bold">0</span>
+                    <small id="percent-cat2" class="text-muted ms-2"
+                      >(0.0%)</small
+                    >
+                  </div>
+
+                  <!-- CAT3 -->
+                  <div class="d-flex align-items-center">
+                    <span class="dot dot-green me-2"></span>
+                    <span class="me-auto">CAT3</span>
+
+                    <div class="progress progress-custom me-3">
+                      <div id="bar-cat3" class="progress-bar bar-grey"></div>
+                    </div>
+
+                    <span id="count-cat3" class="fw-bold">0</span>
+                    <small id="percent-cat3" class="text-muted ms-2"
+                      >(0.0%)</small
+                    >
                   </div>
                 </div>
               </div>
 
               <div class="col-md-6">
-                <div class="card p-3">
-                  <h6>Status Distribution</h6>
-                  <div class="mt-4">
-                    <p>Open <span class="float-end">0 (0%)</span></p>
-                    <p>In Progress <span class="float-end">0 (0%)</span></p>
-                    <p>Under Review <span class="float-end">0 (0%)</span></p>
-                    <p>Completed <span class="float-end">0 (0%)</span></p>
+                <div class="card p-4 equal-height-card">
+                  <h6 class="mb-4">Status Distribution</h6>
+
+                  <!-- Open -->
+                  <div class="d-flex align-items-center mb-3">
+                    <span class="dot dot-gray me-2"></span>
+                    <span class="me-auto">Open</span>
+
+                    <div class="progress progress-custom me-3">
+                      <div id="bar-open" class="progress-bar bar-grey"></div>
+                    </div>
+
+                    <span id="count-open" class="fw-bold">0</span>
+                    <small id="percent-open" class="text-muted ms-2"
+                      >(0.0%)</small
+                    >
+                  </div>
+
+                  <!-- In Progress -->
+                  <div class="d-flex align-items-center mb-3">
+                    <span class="dot dot-blue me-2"></span>
+                    <span class="me-auto">In Progress</span>
+
+                    <div class="progress progress-custom me-3">
+                      <div
+                        id="bar-progress"
+                        class="progress-bar bar-grey"
+                      ></div>
+                    </div>
+
+                    <span id="count-progress" class="fw-bold">0</span>
+                    <small id="percent-progress" class="text-muted ms-2"
+                      >(0.0%)</small
+                    >
+                  </div>
+
+                  <!-- Under Review -->
+                  <div class="d-flex align-items-center mb-3">
+                    <span class="dot dot-purple me-2"></span>
+                    <span class="me-auto">Under Review</span>
+
+                    <div class="progress progress-custom me-3">
+                      <div id="bar-review" class="progress-bar bar-grey"></div>
+                    </div>
+
+                    <span id="count-review" class="fw-bold">0</span>
+                    <small id="percent-review" class="text-muted ms-2"
+                      >(0.0%)</small
+                    >
+                  </div>
+
+                  <!-- Completed -->
+                  <div class="d-flex align-items-center">
+                    <span class="dot dot-green me-2"></span>
+                    <span class="me-auto">Completed</span>
+
+                    <div class="progress progress-custom me-3">
+                      <div
+                        id="bar-complete"
+                        class="progress-bar bar-grey"
+                      ></div>
+                    </div>
+
+                    <span id="count-complete" class="fw-bold">0</span>
+                    <small id="percent-complete" class="text-muted ms-2"
+                      >(0.0%)</small
+                    >
                   </div>
                 </div>
               </div>
@@ -1047,15 +1606,35 @@
             <div class="row g-3 mt-3">
               <div class="col-md-6">
                 <div class="card p-3" style="height: 320px">
-                  <h6>Defects Summary</h6>
-                  <div class="text-center mt-5 text-muted">Chart Area</div>
+                  <h6 class="mb-3">Defects Summary</h6>
+
+                  <div class="chart-wrapper" style="height: 240px">
+                    <canvas id="defectsChart"></canvas>
+                  </div>
                 </div>
               </div>
 
               <div class="col-md-6">
-                <div class="card p-3" style="height: 320px">
-                  <h6>Priority Breakdown</h6>
-                  <div class="text-center mt-5 text-muted">Chart Area</div>
+                <div class="card p-4 priority-breakdown-card">
+                  <h6 class="mb-0">Priority Breakdown</h6>
+
+                  <!-- Empty Chart Area -->
+                  <div class="chart-placeholder">
+                    <!-- (Intentionally empty like your reference image) -->
+                  </div>
+
+                  <!-- Legend at Bottom -->
+                  <div class="priority-legend">
+                    <span class="legend-item">
+                      <span class="legend-box red"></span> CAT1
+                    </span>
+                    <span class="legend-item">
+                      <span class="legend-box yellow"></span> CAT2
+                    </span>
+                    <span class="legend-item">
+                      <span class="legend-box green"></span> CAT3
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1065,6 +1644,38 @@
               <p class="text-center text-muted mt-4">
                 No defects data available
               </p>
+            </div>
+          </div>
+
+          <!-- WIDGETS VIEW -->
+          <div id="widgetsview" style="display: none">
+            <div class="widget-placeholder">
+              <div class="widget-box">
+                <div class="widget-icon">
+                  <i class="ti ti-grid-dots"></i>
+                </div>
+                <h5 class="mt-3">Widget Dashboard</h5>
+                <p>
+                  Customizable widgets and dashboard components will be
+                  displayed here.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SETTINGS VIEW -->
+          <div id="settingsview" style="display: none">
+            <div class="widget-placeholder">
+              <div class="widget-box">
+                <div class="widget-icon">
+                  <i class="ti ti-settings"></i>
+                </div>
+                <h5 class="mt-3">Module Settings</h5>
+                <p>
+                  Configuration options and module settings will be displayed
+                  here.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -1138,6 +1749,7 @@
           document.getElementById("tableView").style.display = "none";
           document.getElementById("boardView").style.display = "none";
           document.getElementById("dashboardView").style.display = "none";
+          document.getElementById("widgetsview").style.display = "none";
 
           if (view === "table") {
             document.getElementById("tableView").style.display = "block";
@@ -1149,6 +1761,272 @@
             document.getElementById("dashboardView").style.display = "block";
           }
         });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const rows = document.querySelectorAll("tbody tr");
+
+        let cat1 = 0,
+          cat2 = 0,
+          cat3 = 0;
+
+        rows.forEach((row) => {
+          const category = row.children[2].innerText.trim(); // Category column index = 2
+
+          if (category === "CAT1") cat1++;
+          if (category === "CAT2") cat2++;
+          if (category === "CAT3") cat3++;
+        });
+
+        const total = cat1 + cat2 + cat3;
+
+        const percent1 = total ? ((cat1 / total) * 100).toFixed(1) : 0;
+        const percent2 = total ? ((cat2 / total) * 100).toFixed(1) : 0;
+        const percent3 = total ? ((cat3 / total) * 100).toFixed(1) : 0;
+
+        // Update numbers
+        document.getElementById("count-cat1").innerText = cat1;
+        document.getElementById("count-cat2").innerText = cat2;
+        document.getElementById("count-cat3").innerText = cat3;
+
+        document.getElementById("percent-cat1").innerText = `(${percent1}%)`;
+        document.getElementById("percent-cat2").innerText = `(${percent2}%)`;
+        document.getElementById("percent-cat3").innerText = `(${percent3}%)`;
+
+        // Update bars
+        document.getElementById("bar-cat1").style.width = percent1 + "%";
+        document.getElementById("bar-cat2").style.width = percent2 + "%";
+        document.getElementById("bar-cat3").style.width = percent3 + "%";
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const rows = document.querySelectorAll("tbody tr");
+
+        let open = 0,
+          progress = 0,
+          review = 0,
+          complete = 0;
+
+        rows.forEach((row) => {
+          const status = row.children[6].innerText.trim(); // Status column
+
+          if (status === "Open") open++;
+          if (status === "In Progress") progress++;
+          if (status === "Under Review") review++;
+          if (status === "Completed") complete++;
+        });
+
+        const total = open + progress + review + complete;
+
+        const pOpen = total ? ((open / total) * 100).toFixed(1) : 0;
+        const pProgress = total ? ((progress / total) * 100).toFixed(1) : 0;
+        const pReview = total ? ((review / total) * 100).toFixed(1) : 0;
+        const pComplete = total ? ((complete / total) * 100).toFixed(1) : 0;
+
+        // Numbers
+        document.getElementById("count-open").innerText = open;
+        document.getElementById("count-progress").innerText = progress;
+        document.getElementById("count-review").innerText = review;
+        document.getElementById("count-complete").innerText = complete;
+
+        // Percentages
+        document.getElementById("percent-open").innerText = `(${pOpen}%)`;
+        document.getElementById(
+          "percent-progress"
+        ).innerText = `(${pProgress}%)`;
+        document.getElementById("percent-review").innerText = `(${pReview}%)`;
+        document.getElementById(
+          "percent-complete"
+        ).innerText = `(${pComplete}%)`;
+
+        // Bars
+        document.getElementById("bar-open").style.width = pOpen + "%";
+        document.getElementById("bar-progress").style.width = pProgress + "%";
+        document.getElementById("bar-review").style.width = pReview + "%";
+        document.getElementById("bar-complete").style.width = pComplete + "%";
+      });
+    </script>
+
+    <script>
+      document
+        .querySelector('[data-view="widgets"]')
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Hide existing working views (same as your pattern)
+          document.getElementById("tableView").style.display = "none";
+          document.getElementById("boardView").style.display = "none";
+          document.getElementById("dashboardView").style.display = "none";
+          document.getElementById("settingsview").style.display = "none";
+
+          // Show ONLY widgets
+          document.getElementById("widgetsview").style.display = "block";
+
+          // Active tab highlight
+          document
+            .querySelectorAll("#taskTabs .nav-link")
+            .forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+        });
+    </script>
+
+    <script>
+      document
+        .querySelector('[data-view="settings"]')
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Hide other working views
+          document.getElementById("tableView").style.display = "none";
+          document.getElementById("boardView").style.display = "none";
+          document.getElementById("dashboardView").style.display = "none";
+          document.getElementById("widgetsview").style.display = "none";
+
+          // Show SETTINGS
+          document.getElementById("settingsview").style.display = "block";
+
+          // Active tab highlight
+          document
+            .querySelectorAll("#taskTabs .nav-link")
+            .forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+        });
+    </script>
+
+    <script>
+      function toggleGenericMenu(event, btn) {
+        event.stopPropagation();
+
+        // Close ALL dropdowns first
+        document.querySelectorAll(".category-dropdown").forEach((menu) => {
+          menu.classList.add("d-none");
+        });
+
+        // Toggle only this one
+        const dropdown = btn.closest("th").querySelector(".category-dropdown");
+        dropdown.classList.toggle("d-none");
+      }
+
+      // Close everything on outside click
+      document.addEventListener("click", function () {
+        document.querySelectorAll(".category-dropdown").forEach((menu) => {
+          menu.classList.add("d-none");
+        });
+      });
+    </script>
+
+    <script>
+  let genericSortState = {}; // keeps state per column
+
+  function toggleGenericSort(el) {
+    const th = el.closest("th");
+    const colIndex = Number(th.dataset.col);
+    if (Number.isNaN(colIndex)) return;
+
+    const table = document.querySelector("table");
+    const tbody = table.querySelector("tbody");
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    // ✅ init only once
+    if (!(colIndex in genericSortState)) {
+      genericSortState[colIndex] = true; // first time: A → Z
+    }
+    const isAZ = genericSortState[colIndex];
+
+    rows.sort((a, b) => {
+      let A = a.children[colIndex].innerText.trim();
+      let B = b.children[colIndex].innerText.trim();
+
+      // Try date sort first
+      if (!isNaN(Date.parse(A)) && !isNaN(Date.parse(B))) {
+        return isAZ ? new Date(A) - new Date(B) : new Date(B) - new Date(A);
+      }
+
+      A = A.toUpperCase();
+      B = B.toUpperCase();
+      return isAZ ? A.localeCompare(B) : B.localeCompare(A);
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+
+    // Update label text
+    const label = el.querySelector(".sort-label");
+    if (label) {
+      label.innerText = isAZ ? "Sort Z → A" : "Sort A → Z";
+    }
+
+    // ✅ flip state for next click
+    genericSortState[colIndex] = !isAZ;
+
+    const dropdown = th.querySelector(".category-dropdown");
+    if (dropdown) dropdown.classList.add("d-none");
+  }
+</script>
+
+
+    <script>
+      function hideGenericColumn(el) {
+        const th = el.closest("th");
+        const colIndex = parseInt(th.dataset.col);
+        const table = document.querySelector("table");
+
+        // Hide header
+        th.style.display = "none";
+
+        // Hide column cells
+        table.querySelectorAll("tbody tr").forEach((row) => {
+          row.children[colIndex].style.display = "none";
+        });
+      }
+    </script>
+
+    <script>
+      let isCategorySortedAZ = true; // default state
+
+      function toggleCategorySort() {
+        const table = document.querySelector("table");
+        const tbody = table.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+
+        rows.sort((a, b) => {
+          const catA = a.children[2].innerText.trim().toUpperCase(); // Category column
+          const catB = b.children[2].innerText.trim().toUpperCase();
+
+          return isCategorySortedAZ
+            ? catA.localeCompare(catB) // A → Z
+            : catB.localeCompare(catA); // Z → A
+        });
+
+        // Re-append rows
+        rows.forEach((row) => tbody.appendChild(row));
+
+        // Toggle label text
+        const label = document.getElementById("sortLabel");
+        label.innerText = isCategorySortedAZ ? "Sort Z → A" : "Sort A → Z";
+
+        // Flip state
+        isCategorySortedAZ = !isCategorySortedAZ;
+
+        // Close dropdown
+        document.getElementById("categoryDropdown").classList.add("d-none");
+      }
+    </script>
+    <script>
+      function toggleCategoryMenu(event) {
+        event.stopPropagation();
+        const dropdown = document.getElementById("categoryDropdown");
+        dropdown.classList.toggle("d-none");
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function () {
+        const dd = document.getElementById("categoryDropdown");
+        if (dd && !dd.classList.contains("d-none")) {
+          dd.classList.add("d-none");
+        }
       });
     </script>
   </body>

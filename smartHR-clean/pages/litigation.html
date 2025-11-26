@@ -1,120 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
-  <title>Litigation - Operations Hub</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>Litigation - Operations Hub</title>
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png" />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/favicon.png"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 
-  <!-- Feather CSS -->
-  <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+    <!-- Feather CSS -->
+    <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
 
-  <!-- Tabler Icons -->
-  <link rel="stylesheet" href="../assets/plugins/tabler-icons/tabler-icons.min.css" />
+    <!-- Tabler Icons -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/tabler-icons/tabler-icons.min.css"
+    />
 
-  <!-- Fontawesome -->
-  <link rel="stylesheet" href="../assets/plugins/fontawesome/css/all.min.css" />
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/fontawesome/css/all.min.css"
+    />
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
 
-  <style>
-    /* Sidebar scroll fix */
-    .sidebar-inner {
-      overflow-y: auto !important;
-      height: calc(100vh - 60px) !important;
-    }
+    <style>
+      /* Sidebar scroll fix */
+      .sidebar-inner {
+        overflow-y: auto !important;
+        height: calc(100vh - 60px) !important;
+      }
 
-    /* Active sidebar item */
-    .sidebar-menu ul li a.active {
-      background: #f5f5f5 !important;
-      color: #333 !important;
-    }
-    .sidebar-menu ul li a:hover {
-      background: #f0f0f0 !important;
-      color: #333 !important;
-    }
-  </style>
-</head>
+      /* Active sidebar item */
+      .sidebar-menu ul li a.active {
+        background: #f5f5f5 !important;
+        color: #333 !important;
+      }
+      .sidebar-menu ul li a:hover {
+        background: #f0f0f0 !important;
+        color: #333 !important;
+      }
 
-<body>
-<div class="main-wrapper">
+      /* Card-style background for the whole tab bar */
+      #taskTabs {
+        background: #f5f7fa; /* light card background */
+        padding: 8px 10px;
+        border-radius: 10px;
+        display: inline-flex;
+        gap: 8px;
+        border: 1px solid #e3e6eb;
+      }
 
-  <!-- Header -->
-  <div class="header">
-    <div class="main-header">
-      <div class="header-left">
-        <a href="index.html" class="logo">
-          <img src="../assets/img/logo.svg" alt="Logo" />
-        </a>
-        <a href="index.html" class="dark-logo">
-          <img src="../assets/img/logo-white.svg" alt="Logo" />
-        </a>
-      </div>
+      /* Individual tabs */
+      #taskTabs .nav-link {
+        border-radius: 8px;
+        color: #444;
+        font-weight: 500;
+        padding: 8px 14px;
+        border: none;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
 
-      <a id="mobile_btn" class="mobile_btn" href="#sidebar">
-        <span class="bar-icon"><span></span><span></span><span></span></span>
-      </a>
+      /* Active tab (white card look) */
+      #taskTabs .nav-link.active {
+        background: #ffffff;
+        color: #000;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
 
-      <div class="header-user">
-        <div class="nav user-menu nav-list">
-          <div class="me-auto d-flex align-items-center" id="header-search">
+      /* Hover effect */
+      #taskTabs .nav-link:hover {
+        background: #ffffff;
+      }
+    </style>
+  </head>
 
-            <a id="toggle_btn" href="#" class="btn btn-menubar me-1">
-              <i class="ti ti-arrow-bar-to-left"></i>
+  <body>
+    <div class="main-wrapper">
+      <!-- Header -->
+      <div class="header">
+        <div class="main-header">
+          <div class="header-left">
+            <a href="index.html" class="logo">
+              <img src="../assets/img/logo.svg" alt="Logo" />
             </a>
-
-            <div class="input-group input-group-flat d-inline-flex me-1">
-              <span class="input-icon-addon"><i class="ti ti-search"></i></span>
-              <input type="text" class="form-control" placeholder="Search in HRMS" />
-              <span class="input-group-text"><kbd>CTRL + /</kbd></span>
-            </div>
-
-            <a href="profile-settings.html" class="btn btn-menubar">
-              <i class="ti ti-settings-cog"></i>
+            <a href="index.html" class="dark-logo">
+              <img src="../assets/img/logo-white.svg" alt="Logo" />
             </a>
-
           </div>
 
-          <div class="d-flex align-items-center">
-            <a href="#" class="btn btn-menubar btnFullscreen">
-              <i class="ti ti-maximize"></i>
-            </a>
-            <a href="chat.html" class="btn btn-menubar position-relative">
-              <i class="ti ti-brand-hipchat"></i>
-            </a>
-            <a href="email.html" class="btn btn-menubar">
-              <i class="ti ti-mail"></i>
-            </a>
+          <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+            <span class="bar-icon"
+              ><span></span><span></span><span></span
+            ></span>
+          </a>
 
-            <div class="dropdown profile-dropdown">
-              <a href="#" class="dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
-                <span class="avatar avatar-sm online">
-                  <img src="../assets/img/profiles/avatar-12.jpg" class="rounded-circle" alt="" />
-                </span>
-              </a>
-              <div class="dropdown-menu shadow-none">
-                <a class="dropdown-item" href="profile.html">My Profile</a>
-                <a class="dropdown-item" href="profile-settings.html">Settings</a>
-                <a class="dropdown-item" href="login.html">Logout</a>
+          <div class="header-user">
+            <div class="nav user-menu nav-list">
+              <div class="me-auto d-flex align-items-center" id="header-search">
+                <a id="toggle_btn" href="#" class="btn btn-menubar me-1">
+                  <i class="ti ti-arrow-bar-to-left"></i>
+                </a>
+
+                <div class="input-group input-group-flat d-inline-flex me-1">
+                  <span class="input-icon-addon"
+                    ><i class="ti ti-search"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search in HRMS"
+                  />
+                  <span class="input-group-text"><kbd>CTRL + /</kbd></span>
+                </div>
+
+                <a href="profile-settings.html" class="btn btn-menubar">
+                  <i class="ti ti-settings-cog"></i>
+                </a>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-menubar btnFullscreen">
+                  <i class="ti ti-maximize"></i>
+                </a>
+                <a href="chat.html" class="btn btn-menubar position-relative">
+                  <i class="ti ti-brand-hipchat"></i>
+                </a>
+                <a href="email.html" class="btn btn-menubar">
+                  <i class="ti ti-mail"></i>
+                </a>
+
+                <div class="dropdown profile-dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle d-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    <span class="avatar avatar-sm online">
+                      <img
+                        src="../assets/img/profiles/avatar-12.jpg"
+                        class="rounded-circle"
+                        alt=""
+                      />
+                    </span>
+                  </a>
+                  <div class="dropdown-menu shadow-none">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="profile-settings.html"
+                      >Settings</a
+                    >
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                  </div>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
+      <!-- /Header -->
 
-    </div>
-  </div>
-  <!-- /Header -->
-
-  <!-- Sidebar -->
- <div class="sidebar" id="sidebar">
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
         <div class="sidebar-logo">
           <a href="index.html" class="logo logo-normal">
             <img src="../assets/img/logo.svg" alt="Logo" />
@@ -368,211 +429,286 @@
           </div>
         </div>
       </div>
-  <!-- /Sidebar -->
+      <!-- /Sidebar -->
 
-  <!-- Page Wrapper -->
-  <div class="page-wrapper">
-    <div class="content container-fluid">
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          <div class="page-header">
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="page-title">Operations Hub / Litigation</h3>
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item">Operations Hub</li>
+                  <li class="breadcrumb-item active">Litigation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-      <div class="page-header">
-        <div class="row align-items-center">
-          <div class="col">
-            <h3 class="page-title">Operations Hub / Litigation</h3>
-            <ul class="breadcrumb">
-              <li class="breadcrumb-item">Operations Hub</li>
-              <li class="breadcrumb-item active">Litigation</li>
-            </ul>
+          <!-- Cards -->
+          <div class="row g-3 mb-4">
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>Total Cases</span>
+                <h3 class="mt-2">6</h3>
+                <p class="text-success">
+                  <i class="ti ti-trending-up"></i> Active Cases
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>High Priority</span>
+                <h3 class="text-danger mt-2">2</h3>
+                <p class="text-danger">
+                  <i class="ti ti-alert-triangle"></i> Urgent Items
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>In Court</span>
+                <h3 class="text-warning mt-2">3</h3>
+                <p class="text-warning"><i class="ti ti-gavel"></i> Ongoing</p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>Closed</span>
+                <h3 class="text-success mt-2">1</h3>
+                <p class="text-success">
+                  <i class="ti ti-check"></i> Completed
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter row -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="mb-0">
+              Tasks Database <span class="text-muted">6 items</span>
+            </h4>
+            <div class="d-flex gap-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search cases..."
+                style="width: 240px"
+              />
+              <button class="btn btn-light">
+                <i class="ti ti-filter"></i> Filter
+              </button>
+              <button class="btn btn-light">
+                <i class="ti ti-layout-grid"></i> View
+              </button>
+              <button class="btn btn-success">
+                <i class="ti ti-plus"></i> New
+              </button>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <ul class="nav nav-tabs mb-3" id="taskTabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-view="table" href="#">
+                <i class="ti ti-table me-1"></i> Table
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-view="board" href="#">
+                <i class="ti ti-layout-board me-1"></i> Board
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-view="dashboard" href="#">
+                <i class="ti ti-chart-bar me-1"></i> Dashboard
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-view="widgets" href="#">
+                <i class="ti ti-grid-dots me-1"></i> Widgets
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-view="livebi" href="#">
+                <i class="ti ti-trending-up me-1"></i> Live BI
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-view="settings" href="#">
+                <i class="ti ti-settings me-1"></i> Settings
+              </a>
+            </li>
+          </ul>
+
+          <!-- Table -->
+          <div class="card">
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                  <thead>
+                    <tr>
+                      <th>
+                        <i class="ti ti-file-description me-1"></i> Case Title
+                      </th>
+
+                      <th>
+                        <i class="ti ti-calendar-event me-1"></i> Start Date
+                      </th>
+
+                      <th>
+                        <i class="ti ti-tag me-1"></i>
+                        Category
+                      </th>
+
+                      <th><i class="ti ti-building me-1"></i> Court / Site</th>
+
+                      <th><i class="ti ti-user me-1"></i>Filed By</th>
+
+                      <th><i class="ti ti-activity me-1"></i> Status</th>
+
+                      <th><i class="ti ti-tool me-1"></i> Action</th>
+
+                      <th>
+                        <i class="ti ti-calendar-time me-1"></i> Hearing Date
+                      </th>
+
+                      <th><i class="ti ti-clock me-1"></i> Closed</th>
+
+                      <th><i class="ti ti-dots me-1"></i> Options</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <!-- 1 - High Priority -->
+                    <tr style="border-left: 4px solid #d32f2f">
+                      <td>Tenant Eviction Appeal</td>
+                      <td>02/03/24</td>
+                      <td class="text-danger fw-bold">CAT1</td>
+                      <td>City Civil Court</td>
+                      <td>Property Manager</td>
+                      <td>In Court</td>
+                      <td>Prepare Docs</td>
+                      <td>10/03/24</td>
+                      <td>-</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- 2 - High Priority -->
+                    <tr style="border-left: 4px solid #d32f2f">
+                      <td>Employee Contract Dispute</td>
+                      <td>25/02/24</td>
+                      <td class="text-danger fw-bold">CAT1</td>
+                      <td>Labour Tribunal</td>
+                      <td>HR Legal Team</td>
+                      <td>Pending</td>
+                      <td>Review</td>
+                      <td>05/03/24</td>
+                      <td>-</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- 3 - Medium -->
+                    <tr style="border-left: 4px solid #f4b400">
+                      <td>Rental Deposit Refund Case</td>
+                      <td>12/02/24</td>
+                      <td style="color: #d49a00; font-weight: 600">CAT2</td>
+                      <td>Mediation Cell</td>
+                      <td>Tenant</td>
+                      <td>In Progress</td>
+                      <td>Negotiation</td>
+                      <td>18/03/24</td>
+                      <td>-</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- 4 - Medium -->
+                    <tr style="border-left: 4px solid #f4b400">
+                      <td>Workplace Harassment Case</td>
+                      <td>03/03/24</td>
+                      <td style="color: #d49a00; font-weight: 600">CAT2</td>
+                      <td>Internal Inquiry</td>
+                      <td>Employee</td>
+                      <td>Investigation</td>
+                      <td>Interview</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- 5 - Low -->
+                    <tr style="border-left: 4px solid #4caf50">
+                      <td>Immigration Documentation Support</td>
+                      <td>01/03/24</td>
+                      <td style="color: #2e7d32; font-weight: 600">CAT3</td>
+                      <td>Support Desk</td>
+                      <td>Resident</td>
+                      <td>Completed</td>
+                      <td>Closed</td>
+                      <td>-</td>
+                      <td>05/03/24</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- 6 - Low -->
+                    <tr style="border-left: 4px solid #4caf50">
+                      <td>Small Property Damage Claim</td>
+                      <td>10/02/24</td>
+                      <td style="color: #2e7d32; font-weight: 600">CAT3</td>
+                      <td>Housing Board Office</td>
+                      <td>Resident</td>
+                      <td>Resolved</td>
+                      <td>Closed</td>
+                      <td>-</td>
+                      <td>15/02/24</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- Cards -->
-      <div class="row g-3 mb-4">
-
-        <div class="col-xl-3 col-md-6">
-          <div class="card card-body">
-            <span>Total Cases</span>
-            <h3 class="mt-2">6</h3>
-            <p class="text-success"><i class="ti ti-trending-up"></i> Active Cases</p>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-          <div class="card card-body">
-            <span>High Priority</span>
-            <h3 class="text-danger mt-2">2</h3>
-            <p class="text-danger"><i class="ti ti-alert-triangle"></i> Urgent Items</p>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-          <div class="card card-body">
-            <span>In Court</span>
-            <h3 class="text-warning mt-2">3</h3>
-            <p class="text-warning"><i class="ti ti-gavel"></i> Ongoing</p>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-          <div class="card card-body">
-            <span>Closed</span>
-            <h3 class="text-success mt-2">1</h3>
-            <p class="text-success"><i class="ti ti-check"></i> Completed</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Tabs -->
-      <ul class="nav nav-tabs mb-3">
-        <li class="nav-item"><a class="nav-link active" href="#">Table</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Widgets</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Live BI</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-      </ul>
-
-      <!-- Filter row -->
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <div></div>
-        <div class="d-flex gap-2">
-          <input type="text" class="form-control" placeholder="Search cases..." style="width: 240px" />
-          <button class="btn btn-light"><i class="ti ti-filter"></i> Filter</button>
-          <button class="btn btn-light"><i class="ti ti-layout-grid"></i> View</button>
-          <button class="btn btn-success"><i class="ti ti-plus"></i> New</button>
-        </div>
-      </div>
-
-      <!-- Table -->
-      <div class="card">
-        <div class="card-body p-0">
-          <div class="table-responsive">
-            <table class="table table-hover mb-0">
-              <thead>
-              <tr>
-                <th>Case Title</th>
-                <th>Start Date</th>
-                <th>Category</th>
-                <th>Court / Site</th>
-                <th>Filed By</th>
-                <th>Status</th>
-                <th>Action</th>
-                <th>Hearing Date</th>
-                <th>Closed</th>
-                <th>Options</th>
-              </tr>
-              </thead>
-
-              <tbody>
-
-              <!-- 1 - High Priority -->
-              <tr style="border-left: 4px solid #d32f2f">
-                <td>Tenant Eviction Appeal</td>
-                <td>02/03/24</td>
-                <td class="text-danger fw-bold">CAT1</td>
-                <td>City Civil Court</td>
-                <td>Property Manager</td>
-                <td>In Court</td>
-                <td>Prepare Docs</td>
-                <td>10/03/24</td>
-                <td>-</td>
-                <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-              </tr>
-
-              <!-- 2 - High Priority -->
-              <tr style="border-left: 4px solid #d32f2f">
-                <td>Employee Contract Dispute</td>
-                <td>25/02/24</td>
-                <td class="text-danger fw-bold">CAT1</td>
-                <td>Labour Tribunal</td>
-                <td>HR Legal Team</td>
-                <td>Pending</td>
-                <td>Review</td>
-                <td>05/03/24</td>
-                <td>-</td>
-                <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-              </tr>
-
-              <!-- 3 - Medium -->
-              <tr style="border-left: 4px solid #f4b400">
-                <td>Rental Deposit Refund Case</td>
-                <td>12/02/24</td>
-                <td style="color:#d49a00;font-weight:600;">CAT2</td>
-                <td>Mediation Cell</td>
-                <td>Tenant</td>
-                <td>In Progress</td>
-                <td>Negotiation</td>
-                <td>18/03/24</td>
-                <td>-</td>
-                <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-              </tr>
-
-              <!-- 4 - Medium -->
-              <tr style="border-left: 4px solid #f4b400">
-                <td>Workplace Harassment Case</td>
-                <td>03/03/24</td>
-                <td style="color:#d49a00;font-weight:600;">CAT2</td>
-                <td>Internal Inquiry</td>
-                <td>Employee</td>
-                <td>Investigation</td>
-                <td>Interview</td>
-                <td>-</td>
-                <td>-</td>
-                <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-              </tr>
-
-              <!-- 5 - Low -->
-              <tr style="border-left: 4px solid #4caf50">
-                <td>Immigration Documentation Support</td>
-                <td>01/03/24</td>
-                <td style="color:#2e7d32;font-weight:600;">CAT3</td>
-                <td>Support Desk</td>
-                <td>Resident</td>
-                <td>Completed</td>
-                <td>Closed</td>
-                <td>-</td>
-                <td>05/03/24</td>
-                <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-              </tr>
-
-              <!-- 6 - Low -->
-              <tr style="border-left: 4px solid #4caf50">
-                <td>Small Property Damage Claim</td>
-                <td>10/02/24</td>
-                <td style="color:#2e7d32;font-weight:600;">CAT3</td>
-                <td>Housing Board Office</td>
-                <td>Resident</td>
-                <td>Resolved</td>
-                <td>Closed</td>
-                <td>-</td>
-                <td>15/02/24</td>
-                <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-              </tr>
-
-              </tbody>
-
-            </table>
-          </div>
-        </div>
-      </div>
-
+      <!-- /Page Wrapper -->
     </div>
-  </div>
-  <!-- /Page Wrapper -->
 
-</div>
+    <!-- JS Files -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
 
-<!-- JS Files -->
-<script src="../assets/js/jquery-3.7.1.min.js"></script>
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/script.js"></script>
-
-<script>
-  $("#toggle_btn").on("click", function () {
-    $("body").toggleClass("mini-sidebar");
-  });
-</script>
-
-</body>
+    <script>
+      $("#toggle_btn").on("click", function () {
+        $("body").toggleClass("mini-sidebar");
+      });
+    </script>
+  </body>
 </html>

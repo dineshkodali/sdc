@@ -61,6 +61,42 @@
       margin-right: 0 !important;
       font-size: 20px;
     }
+
+    /* Card-style background for the whole tab bar */
+#taskTabs {
+  background: #f5f7fa;          /* light card background */
+  padding: 8px 10px;
+  border-radius: 10px;
+  display: inline-flex;
+  gap: 8px;
+  border: 1px solid #e3e6eb;
+}
+
+/* Individual tabs */
+#taskTabs .nav-link {
+  border-radius: 8px;
+  color: #444;
+  font-weight: 500;
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Active tab (white card look) */
+#taskTabs .nav-link.active {
+  background: #ffffff;
+  color: #000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Hover effect */
+#taskTabs .nav-link:hover {
+  background: #ffffff;
+}
+
   </style>
 
   <body>
@@ -417,7 +453,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="card card-body">
                 <span>Total Support Cases</span>
-                <h3 class="mt-2">18</h3>
+                <h3 class="mt-2">6</h3>
                 <p class="text-success">
                   <i class="ti ti-check"></i> Active Support
                 </p>
@@ -427,7 +463,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="card card-body">
                 <span>Urgent Needs</span>
-                <h3 class="text-danger mt-2">5</h3>
+                <h3 class="text-danger mt-2">2</h3>
                 <p class="text-danger">
                   <i class="ti ti-alert-triangle"></i> Immediate attention
                 </p>
@@ -437,7 +473,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="card card-body">
                 <span>Housing Support</span>
-                <h3 class="text-warning mt-2">6</h3>
+                <h3 class="text-warning mt-2">2</h3>
                 <p class="text-warning">
                   <i class="ti ti-home"></i> Assistance required
                 </p>
@@ -447,20 +483,73 @@
             <div class="col-xl-3 col-md-6">
               <div class="card card-body">
                 <span>Wellbeing Checks</span>
-                <h3 class="text-success mt-2">7</h3>
+                <h3 class="text-success mt-2">2</h3>
                 <p class="text-success"><i class="ti ti-heart"></i> Stable</p>
               </div>
             </div>
           </div>
 
+          <!-- Filter row -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="mb-0">
+              Cases Database <span class="text-muted">6 items</span>
+            </h4>
+            <div class="d-flex gap-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search cases..."
+                style="width: 240px"
+              />
+              <button class="btn btn-light">
+                <i class="ti ti-filter"></i> Filter
+              </button>
+              <button class="btn btn-light">
+                <i class="ti ti-layout-grid"></i> View
+              </button>
+              <button class="btn btn-success">
+                <i class="ti ti-plus"></i> New
+              </button>
+            </div>
+          </div>
+
           <!-- Tabs -->
-          <ul class="nav nav-tabs mb-3">
-            <li class="nav-item"><a class="nav-link active">Table</a></li>
-            <li class="nav-item"><a class="nav-link">Board</a></li>
-            <li class="nav-item"><a class="nav-link">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link">Widgets</a></li>
-            <li class="nav-item"><a class="nav-link">Live BI</a></li>
-            <li class="nav-item"><a class="nav-link">Settings</a></li>
+          <ul class="nav nav-tabs mb-3" id="taskTabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-view="table" href="#">
+                <i class="ti ti-table me-1"></i> Table
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-view="board" href="#">
+                <i class="ti ti-layout-board me-1"></i> Board
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-view="dashboard" href="#">
+                <i class="ti ti-chart-bar me-1"></i> Dashboard
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-view="widgets" href="#">
+                <i class="ti ti-grid-dots me-1"></i> Widgets
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-view="livebi" href="#">
+                <i class="ti ti-trending-up me-1"></i> Live BI
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-view="settings" href="#">
+                <i class="ti ti-settings me-1"></i> Settings
+              </a>
+            </li>
           </ul>
 
           <!-- Table -->
@@ -470,16 +559,20 @@
                 <table class="table table-hover mb-0">
                   <thead>
                     <tr>
-                      <th>Case Title</th>
-                      <th>Date Opened</th>
-                      <th>Category</th>
-                      <th>Location</th>
-                      <th>Reported By</th>
-                      <th>Status</th>
-                      <th>Action</th>
-                      <th>Due Date</th>
-                      <th>Closed</th>
-                      <th>Actions</th>
+                      <th>
+                        <i class="ti ti-file-description me-1"></i>Case Title
+                      </th>
+                      <th>
+                        <i class="ti ti-calendar-event me-1"></i> Start Date
+                      </th>
+                      <th><i class="ti ti-tag me-1"></i>Category</th>
+                      <th><i class="ti ti-building me-1"></i> Location</th>
+                      <th><i class="ti ti-user me-1"></i>Reported By</th>
+                      <th><i class="ti ti-activity me-1"></i>Status</th>
+                      <th><i class="ti ti-tool me-1"></i>Action</th>
+                      <th><i class="ti ti-calendar-time me-1"></i> Due Date</th>
+                      <th><i class="ti ti-clock me-1"></i>Closed</th>
+                      <th><i class="ti ti-dots me-1"></i>Options</th>
                     </tr>
                   </thead>
 

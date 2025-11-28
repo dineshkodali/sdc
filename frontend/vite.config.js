@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
 
   // REQUIRED for GitHub Pages
-  base: "/<repo-name>/",
+  base: "/",
   
   server: {
     port: 5173,

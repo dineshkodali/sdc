@@ -64,14 +64,66 @@
       margin-right: 0 !important;
     }
 
+    .filter-dropdown {
+      position: fixed; /* ✅ changed from absolute */
+      width: 280px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      z-index: 99999;
+      overflow: hidden;
+    }
+
+    .filter-header {
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      border-bottom: 1px solid #eee;
+    }
+
+    .filter-close {
+      cursor: pointer;
+    }
+
+    .filter-search {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .filter-list {
+      max-height: 260px;
+      overflow-y: auto;
+    }
+
+    .filter-item {
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .filter-item:hover {
+      background: #f5f7fa;
+    }
+
+    #filterWrapper {
+      position: relative; /* ✅ mandatory for correct alignment */
+    }
+
     /* Card-style background for the whole tab bar */
     #taskTabs {
-      background: #f5f7fa; /* light card background */
+      background: #f5f7fa;
       padding: 8px 10px;
       border-radius: 10px;
-      display: inline-flex;
+      display: flex; /* ✅ changed from inline-flex */
       gap: 8px;
       border: 1px solid #e3e6eb;
+      width: 100%; /* ✅ FULL width like table */
+      justify-content: flex-start;
     }
 
     /* Individual tabs */
@@ -87,20 +139,20 @@
       gap: 6px;
     }
 
-    /* Active tab (white card look) */
+    /* Active tab */
     #taskTabs .nav-link.active {
       background: #ffffff;
       color: #000;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
 
-    /* Hover effect */
+    /* Hover */
     #taskTabs .nav-link:hover {
       background: #ffffff;
     }
 
-    /* Hide dots initially */
-    .header-menu-btn {
+    /* Hide dots by default */
+    th .category-menu-btn {
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.2s;
@@ -112,12 +164,14 @@
       align-items: center;
     }
 
-    .table-th:hover .header-menu-btn {
+    /* Show dots only when that column is hovered */
+    th:hover .category-menu-btn {
       opacity: 1;
       visibility: visible;
     }
 
-    .header-dropdown {
+    /* Dropdown positioning */
+    .category-dropdown {
       position: absolute;
       top: 110%;
       right: 0;
@@ -129,7 +183,8 @@
       z-index: 9999;
     }
 
-    .header-dropdown .dropdown-item {
+    /* Dropdown items */
+    .category-dropdown .dropdown-item {
       padding: 8px 14px;
       font-size: 14px;
       cursor: pointer;
@@ -138,7 +193,7 @@
       align-items: center;
     }
 
-    .header-dropdown .dropdown-item:hover {
+    .category-dropdown .dropdown-item:hover {
       background: #f3f4f6;
     }
 
@@ -266,7 +321,7 @@
       background-color: #9b51e0;
     }
 
-    /* ✅ EXACT PLAIN GREY BAR LIKE YOUR 2ND IMAGE */
+    /* EXACT PLAIN GREY BAR LIKE YOUR 2ND IMAGE */
     .progress-custom {
       width: 180px;
       height: 8px;
@@ -275,7 +330,7 @@
       overflow: hidden;
     }
 
-    /* ✅ KILLS BOOTSTRAP ORANGE COMPLETELY */
+    /* KILLS BOOTSTRAP ORANGE COMPLETELY */
     .bar-grey {
       background-color: #e5e7eb !important; /* SAME as container */
       width: 100% !important; /* FULL BAR ALWAYS */
@@ -283,13 +338,13 @@
       border-radius: 10px;
     }
 
-    /* ✅ EXTRA SAFETY: remove Bootstrap fill effect */
+    /* EXTRA SAFETY: remove Bootstrap fill effect */
     .progress-bar {
       background-image: none !important;
       box-shadow: none !important;
     }
 
-    /* ✅ Force both cards to same height */
+    /* Force both cards to same height */
     .equal-height-card {
       min-height: 240px; /* adjust if needed */
       display: flex;
@@ -297,7 +352,7 @@
       justify-content: center;
     }
 
-    /* ✅ Vertical spacing inside cards like reference */
+    /* Vertical spacing inside cards like reference */
     .equal-height-card .d-flex {
       margin-bottom: 16px;
     }
@@ -794,7 +849,7 @@
                 placeholder="Search tasks..."
                 style="width: 240px"
               />
-              <button class="btn btn-light">
+              <button class="btn btn-light" type="button" id="filterBtn">
                 <i class="ti ti-filter"></i> Filter
               </button>
               <button class="btn btn-light">
@@ -803,478 +858,601 @@
               <button class="btn btn-success">
                 <i class="ti ti-plus"></i> New
               </button>
+
+              <!-- FILTER DROPDOWN -->
+              <div class="filter-dropdown d-none" id="filterDropdown">
+                <div class="filter-header">
+                  <span>Add filter</span>
+                  <i class="ti ti-x filter-close" id="closeFilter"></i>
+                </div>
+
+                <div class="filter-search">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Filter by..."
+                  />
+                </div>
+
+                <div class="filter-list">
+                  <div class="filter-item">
+                    <i class="ti ti-file-text"></i> Name
+                  </div>
+                  <div class="filter-item">
+                    <i class="ti ti-user"></i> Assignee
+                  </div>
+                  <div class="filter-item">
+                    <i class="ti ti-user-plus"></i> Created by
+                  </div>
+                  <div class="filter-item">
+                    <i class="ti ti-clock"></i> Created time
+                  </div>
+                  <div class="filter-item">
+                    <i class="ti ti-edit"></i> Last edited by
+                  </div>
+                  <div class="filter-item">
+                    <i class="ti ti-tag"></i> Priority
+                  </div>
+                  <div class="filter-item">
+                    <i class="ti ti-user"></i> Reported by
+                  </div>
+                  <div class="filter-item">
+                    <i class="ti ti-calendar"></i> Resolved time
+                  </div>
+                  <div class="filter-item">
+                    <i class="ti ti-activity"></i> Status
+                  </div>
+                  <div class="filter-item"><i class="ti ti-hash"></i> Tags</div>
+                  <div class="filter-item">
+                    <i class="ti ti-user-check"></i> Updated by
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Tabs -->
-          <ul class="nav nav-tabs mb-3" id="taskTabs">
-            <li class="nav-item">
-              <a class="nav-link active" data-view="table" href="#">
-                <i class="ti ti-table me-1"></i> Table
-              </a>
-            </li>
+          <div class="table-container">
+            <!-- Tabs -->
+            <ul class="nav nav-tabs mb-3" id="taskTabs">
+              <li class="nav-item">
+                <a class="nav-link active" data-view="table" href="#">
+                  <i class="ti ti-table me-1"></i> Table
+                </a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" data-view="board" href="#">
-                <i class="ti ti-layout-board me-1"></i> Board
-              </a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" data-view="board" href="#">
+                  <i class="ti ti-layout-board me-1"></i> Board
+                </a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" data-view="dashboard" href="#">
-                <i class="ti ti-chart-bar me-1"></i> Dashboard
-              </a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" data-view="dashboard" href="#">
+                  <i class="ti ti-chart-bar me-1"></i> Dashboard
+                </a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" data-view="widgets" href="#">
-                <i class="ti ti-grid-dots me-1"></i> Widgets
-              </a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" data-view="widgets" href="#">
+                  <i class="ti ti-grid-dots me-1"></i> Widgets
+                </a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" data-view="livebi" href="#">
-                <i class="ti ti-trending-up me-1"></i> Live BI
-              </a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" data-view="livebi" href="#">
+                  <i class="ti ti-trending-up me-1"></i> Live BI
+                </a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" data-view="settings" href="#">
-                <i class="ti ti-settings me-1"></i> Settings
-              </a>
-            </li>
-          </ul>
+              <li class="nav-item">
+                <a class="nav-link" data-view="settings" href="#">
+                  <i class="ti ti-settings me-1"></i> Settings
+                </a>
+              </li>
+            </ul>
 
-          <!-- Table -->
-          <div id="tableView">
-            <div class="card">
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table table-hover mb-0">
-                    <thead>
-                      <tr>
-                        <th>
-                          <i class="ti ti-file-description me-1"></i> Task Title
-                        </th>
+            <!-- Table -->
+            <div id="tableView">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                      <thead>
+                        <tr>
+                          <th>
+                            <i class="ti ti-file-description me-1"></i> Task
+                            Title
+                          </th>
 
-                        <!-- Start Date -->
-                        <th style="position: relative" class="header-th" data-col="1">
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-calendar-event me-1"></i>
-                            <span>Start Date</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div
-                              class="dropdown-item"
-                              onclick="toggleGenericSort(this)"
-                            >
-                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
-                            </div>
-                            <div
-                              class="dropdown-item d-flex justify-content-between"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-                            <div
-                              class="dropdown-item text-danger"
-                              onclick="hideGenericColumn(this)"
-                            >
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-
-                        <!-- CATEGORY  -->
-                        <th style="position: relative" class="category-th">
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-tag me-1"></i>
-                            <span>Category</span>
-                            <i class="ti ti-chevron-down category-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              onclick="toggleCategoryMenu(event)"
-                              type="button"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div
-                            class="category-dropdown d-none"
-                            id="categoryDropdown"
+                          <!-- Start Date -->
+                          <th
+                            style="position: relative"
+                            class="header-th"
+                            data-col="1"
                           >
                             <div
-                              class="dropdown-item"
-                              onclick="toggleCategorySort()"
-                              id="categorySortBtn"
+                              class="d-flex align-items-center gap-1 th-label"
                             >
-                              <i class="ti ti-arrows-sort"></i>
-                              <span id="sortLabel">Sort A → Z</span>
+                              <i class="ti ti-calendar-event me-1"></i>
+                              <span>Start Date</span>
+                              <i class="ti ti-chevron-down header-arrow"></i>
+                              <button
+                                class="category-menu-btn"
+                                type="button"
+                                onclick="toggleGenericMenu(event, this)"
+                              >
+                                <i class="ti ti-dots"></i>
+                              </button>
+                            </div>
+
+                            <div class="category-dropdown d-none">
+                              <div
+                                class="dropdown-item"
+                                onclick="toggleGenericSort(this)"
+                              >
+                                <i class="ti ti-arrows-sort"></i>
+                                <span class="sort-label">Sort A → Z</span>
+                              </div>
+                              <div
+                                class="dropdown-item d-flex justify-content-between"
+                              >
+                                <span><i class="ti ti-filter"></i> Filter</span>
+                                <i class="ti ti-chevron-right"></i>
+                              </div>
+                              <div
+                                class="dropdown-item text-danger"
+                                onclick="hideGenericColumn(this)"
+                              >
+                                <i class="ti ti-eye-off"></i> Hide
+                              </div>
+                            </div>
+                          </th>
+
+                          <!-- CATEGORY  -->
+                          <th style="position: relative" class="category-th">
+                            <div
+                              class="d-flex align-items-center gap-1 th-label"
+                            >
+                              <i class="ti ti-tag me-1"></i>
+                              <span>Category</span>
+                              <i class="ti ti-chevron-down category-arrow"></i>
+                              <button
+                                class="category-menu-btn"
+                                onclick="toggleCategoryMenu(event)"
+                                type="button"
+                              >
+                                <i class="ti ti-dots"></i>
+                              </button>
                             </div>
 
                             <div
-                              class="dropdown-item d-flex justify-content-between align-items-center"
+                              class="category-dropdown d-none"
+                              id="categoryDropdown"
                             >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
+                              <div
+                                class="dropdown-item"
+                                onclick="toggleCategorySort()"
+                                id="categorySortBtn"
+                              >
+                                <i class="ti ti-arrows-sort"></i>
+                                <span id="sortLabel">Sort A → Z</span>
+                              </div>
+
+                              <div
+                                class="dropdown-item d-flex justify-content-between align-items-center"
+                              >
+                                <span><i class="ti ti-filter"></i> Filter</span>
+                                <i class="ti ti-chevron-right"></i>
+                              </div>
+
+                              <div class="dropdown-item text-danger">
+                                <i class="ti ti-eye-off"></i> Hide
+                              </div>
                             </div>
+                          </th>
 
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-
-                        <!-- Site Name -->
-                        <th
-                          style="position: relative"
-                          class="header-th"
-                          data-col="3"
-                        >
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-building me-1"></i>
-                            <span>Site Name</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
+                          <!-- Site Name -->
+                          <th
+                            style="position: relative"
+                            class="header-th"
+                            data-col="3"
+                          >
                             <div
-                              class="dropdown-item"
-                              onclick="toggleGenericSort(this)"
+                              class="d-flex align-items-center gap-1 th-label"
                             >
-                              <i class="ti ti-arrows-sort"></i>
-                              <span class="sort-label">Sort A → Z</span>
+                              <i class="ti ti-building me-1"></i>
+                              <span>Site Name</span>
+                              <i class="ti ti-chevron-down header-arrow"></i>
+                              <button
+                                class="category-menu-btn"
+                                type="button"
+                                onclick="toggleGenericMenu(event, this)"
+                              >
+                                <i class="ti ti-dots"></i>
+                              </button>
                             </div>
+
+                            <div class="category-dropdown d-none">
+                              <div
+                                class="dropdown-item"
+                                onclick="toggleGenericSort(this)"
+                              >
+                                <i class="ti ti-arrows-sort"></i>
+                                <span class="sort-label">Sort A → Z</span>
+                              </div>
+                              <div
+                                class="dropdown-item d-flex justify-content-between"
+                              >
+                                <span><i class="ti ti-filter"></i> Filter</span>
+                                <i class="ti ti-chevron-right"></i>
+                              </div>
+                              <div class="dropdown-item text-danger">
+                                <i class="ti ti-eye-off"></i> Hide
+                              </div>
+                            </div>
+                          </th>
+
+                          <!-- Room No -->
+                          <th
+                            style="position: relative"
+                            class="header-th"
+                            data-col="4"
+                          >
                             <div
-                              class="dropdown-item d-flex justify-content-between"
+                              class="d-flex align-items-center gap-1 th-label"
                             >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
+                              <i class="ti ti-home me-1"></i>
+                              <span>Room No</span>
+                              <i class="ti ti-chevron-down header-arrow"></i>
+                              <button
+                                class="category-menu-btn"
+                                type="button"
+                                onclick="toggleGenericMenu(event, this)"
+                              >
+                                <i class="ti ti-dots"></i>
+                              </button>
                             </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
 
-                        <!-- Room No -->
-                        <th style="position: relative" class="header-th" data-col="4">
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-home me-1"></i>
-                            <span>Room No</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div class="dropdown-item" onclick="toggleGenericSort(this)">
-                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
+                            <div class="category-dropdown d-none">
+                              <div
+                                class="dropdown-item"
+                                onclick="toggleGenericSort(this)"
+                              >
+                                <i class="ti ti-arrows-sort"></i>
+                                <span class="sort-label">Sort A → Z</span>
+                              </div>
+                              <div
+                                class="dropdown-item d-flex justify-content-between"
+                              >
+                                <span><i class="ti ti-filter"></i> Filter</span>
+                                <i class="ti ti-chevron-right"></i>
+                              </div>
+                              <div class="dropdown-item text-danger">
+                                <i class="ti ti-eye-off"></i> Hide
+                              </div>
                             </div>
+                          </th>
+
+                          <!-- Raised By -->
+                          <th
+                            style="position: relative"
+                            class="header-th"
+                            data-col="5"
+                          >
                             <div
-                              class="dropdown-item d-flex justify-content-between"
+                              class="d-flex align-items-center gap-1 th-label"
                             >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
+                              <i class="ti ti-user me-1"></i>
+                              <span>Raised By</span>
+                              <i class="ti ti-chevron-down header-arrow"></i>
+                              <button
+                                class="category-menu-btn"
+                                type="button"
+                                onclick="toggleGenericMenu(event, this)"
+                              >
+                                <i class="ti ti-dots"></i>
+                              </button>
                             </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
 
-                        <!-- Raised By -->
-                        <th style="position: relative" class="header-th" data-col="5">
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-user me-1"></i>
-                            <span>Raised By</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div class="dropdown-item" onclick="toggleGenericSort(this)">
-                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
+                            <div class="category-dropdown d-none">
+                              <div
+                                class="dropdown-item"
+                                onclick="toggleGenericSort(this)"
+                              >
+                                <i class="ti ti-arrows-sort"></i>
+                                <span class="sort-label">Sort A → Z</span>
+                              </div>
+                              <div
+                                class="dropdown-item d-flex justify-content-between"
+                              >
+                                <span><i class="ti ti-filter"></i> Filter</span>
+                                <i class="ti ti-chevron-right"></i>
+                              </div>
+                              <div class="dropdown-item text-danger">
+                                <i class="ti ti-eye-off"></i> Hide
+                              </div>
                             </div>
+                          </th>
+
+                          <!-- Status -->
+                          <th
+                            style="position: relative"
+                            class="header-th"
+                            data-col="6"
+                          >
                             <div
-                              class="dropdown-item d-flex justify-content-between"
+                              class="d-flex align-items-center gap-1 th-label"
                             >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
+                              <i class="ti ti-activity me-1"></i>
+                              <span>Status</span>
+                              <i class="ti ti-chevron-down header-arrow"></i>
+                              <button
+                                class="category-menu-btn"
+                                type="button"
+                                onclick="toggleGenericMenu(event, this)"
+                              >
+                                <i class="ti ti-dots"></i>
+                              </button>
                             </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
 
-                        <!-- Status -->
-                        <th style="position: relative" class="header-th" data-col="6">
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-activity me-1"></i>
-                            <span>Status</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div class="dropdown-item" onclick="toggleGenericSort(this)" >
-                              
-                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
+                            <div class="category-dropdown d-none">
+                              <div
+                                class="dropdown-item"
+                                onclick="toggleGenericSort(this)"
+                              >
+                                <i class="ti ti-arrows-sort"></i>
+                                <span class="sort-label">Sort A → Z</span>
+                              </div>
+                              <div
+                                class="dropdown-item d-flex justify-content-between"
+                              >
+                                <span><i class="ti ti-filter"></i> Filter</span>
+                                <i class="ti ti-chevron-right"></i>
+                              </div>
+                              <div class="dropdown-item text-danger">
+                                <i class="ti ti-eye-off"></i> Hide
+                              </div>
                             </div>
+                          </th>
+
+                          <!-- Action -->
+                          <th
+                            style="position: relative"
+                            class="header-th"
+                            data-col="7"
+                          >
                             <div
-                              class="dropdown-item d-flex justify-content-between"
+                              class="d-flex align-items-center gap-1 th-label"
                             >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
+                              <i class="ti ti-tool me-1"></i>
+                              <span>Action</span>
+                              <i class="ti ti-chevron-down header-arrow"></i>
+                              <button
+                                class="category-menu-btn"
+                                type="button"
+                                onclick="toggleGenericMenu(event, this)"
+                              >
+                                <i class="ti ti-dots"></i>
+                              </button>
                             </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
 
-                        <!-- Action -->
-                        <th style="position: relative" class="header-th"  data-col="7">
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-tool me-1"></i>
-                            <span>Action</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div class="dropdown-item" onclick="toggleGenericSort(this)">
-                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
+                            <div class="category-dropdown d-none">
+                              <div
+                                class="dropdown-item"
+                                onclick="toggleGenericSort(this)"
+                              >
+                                <i class="ti ti-arrows-sort"></i>
+                                <span class="sort-label">Sort A → Z</span>
+                              </div>
+                              <div
+                                class="dropdown-item d-flex justify-content-between"
+                              >
+                                <span><i class="ti ti-filter"></i> Filter</span>
+                                <i class="ti ti-chevron-right"></i>
+                              </div>
+                              <div class="dropdown-item text-danger">
+                                <i class="ti ti-eye-off"></i> Hide
+                              </div>
                             </div>
+                          </th>
+
+                          <!-- Due Date -->
+                          <th
+                            style="position: relative"
+                            class="header-th"
+                            data-col="8"
+                          >
                             <div
-                              class="dropdown-item d-flex justify-content-between"
+                              class="d-flex align-items-center gap-1 th-label"
                             >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
+                              <i class="ti ti-calendar-time me-1"></i>
+                              <span>Due Date</span>
+                              <i class="ti ti-chevron-down header-arrow"></i>
+                              <button
+                                class="category-menu-btn"
+                                type="button"
+                                onclick="toggleGenericMenu(event, this)"
+                              >
+                                <i class="ti ti-dots"></i>
+                              </button>
                             </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
 
-                        <!-- Due Date -->
-                        <th style="position: relative" class="header-th" data-col="8">
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-calendar-time me-1"></i>
-                            <span>Due Date</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div class="dropdown-item" onclick="toggleGenericSort(this)">
-                              <i class="ti ti-arrows-sort"></i><span class="sort-label">Sort A → Z</span> 
+                            <div class="category-dropdown d-none">
+                              <div
+                                class="dropdown-item"
+                                onclick="toggleGenericSort(this)"
+                              >
+                                <i class="ti ti-arrows-sort"></i
+                                ><span class="sort-label">Sort A → Z</span>
+                              </div>
+                              <div
+                                class="dropdown-item d-flex justify-content-between"
+                              >
+                                <span><i class="ti ti-filter"></i> Filter</span>
+                                <i class="ti ti-chevron-right"></i>
+                              </div>
+                              <div class="dropdown-item text-danger">
+                                <i class="ti ti-eye-off"></i> Hide
+                              </div>
                             </div>
+                          </th>
+
+                          <!-- Closed -->
+                          <th
+                            style="position: relative"
+                            class="header-th"
+                            data-col="9"
+                          >
                             <div
-                              class="dropdown-item d-flex justify-content-between"
+                              class="d-flex align-items-center gap-1 th-label"
                             >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
+                              <i class="ti ti-clock me-1"></i>
+                              <span>Closed</span>
+                              <i class="ti ti-chevron-down header-arrow"></i>
+                              <button
+                                class="category-menu-btn"
+                                type="button"
+                                onclick="toggleGenericMenu(event, this)"
+                              >
+                                <i class="ti ti-dots"></i>
+                              </button>
                             </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
+
+                            <div class="category-dropdown d-none">
+                              <div
+                                class="dropdown-item"
+                                onclick="toggleGenericSort(this)"
+                              >
+                                <i class="ti ti-arrows-sort"></i>
+                                <span class="sort-label">Sort A → Z</span>
+                              </div>
+                              <div
+                                class="dropdown-item d-flex justify-content-between"
+                              >
+                                <span><i class="ti ti-filter"></i> Filter</span>
+                                <i class="ti ti-chevron-right"></i>
+                              </div>
+                              <div class="dropdown-item text-danger">
+                                <i class="ti ti-eye-off"></i> Hide
+                              </div>
                             </div>
-                          </div>
-                        </th>
+                          </th>
 
-                        <!-- Closed -->
-                        <th style="position: relative" class="header-th" data-col="9">
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-clock me-1"></i>
-                            <span>Closed</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
+                          <th><i class="ti ti-dots me-1"></i> Actions</th>
+                        </tr>
+                      </thead>
 
-                          <div class="category-dropdown d-none">
-                            <div class="dropdown-item" onclick="toggleGenericSort(this)">
-                              <i class="ti ti-arrows-sort"></i> <span class="sort-label">Sort A → Z</span>
-                            </div>
-                            <div
-                              class="dropdown-item d-flex justify-content-between"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
+                      <tbody>
+                        <!-- Row 1 -->
+                        <tr style="border-left: 4px solid #d32f2f">
+                          <td>Electrical Safety Audit</td>
+                          <td>20/02/24</td>
+                          <td class="text-danger fw-bold">CAT1</td>
+                          <td>Building C</td>
+                          <td>Main Panel</td>
+                          <td>Maintenance Team</td>
+                          <td>Under Review</td>
+                          <td>Review</td>
+                          <td>12/03/24</td>
+                          <td>-</td>
+                          <td>
+                            <i class="ti ti-edit me-2"></i>
+                            <i class="ti ti-trash"></i>
+                          </td>
+                        </tr>
 
-                        <th><i class="ti ti-dots me-1"></i> Actions</th>
-                      </tr>
-                    </thead>
+                        <!-- Row 2 -->
+                        <tr style="border-left: 4px solid #d32f2f">
+                          <td>Plumbing System Review</td>
+                          <td>01/03/24</td>
+                          <td class="text-danger fw-bold">CAT1</td>
+                          <td>Building B</td>
+                          <td>Flat 301</td>
+                          <td>Tenant Report</td>
+                          <td>In Progress</td>
+                          <td>Under Repair</td>
+                          <td>18/03/24</td>
+                          <td>-</td>
+                          <td>
+                            <i class="ti ti-edit me-2"></i>
+                            <i class="ti ti-trash"></i>
+                          </td>
+                        </tr>
 
-                    <tbody>
-                      <!-- Row 1 -->
-                      <tr style="border-left: 4px solid #d32f2f">
-                        <td>Electrical Safety Audit</td>
-                        <td>20/02/24</td>
-                        <td class="text-danger fw-bold">CAT1</td>
-                        <td>Building C</td>
-                        <td>Main Panel</td>
-                        <td>Maintenance Team</td>
-                        <td>Under Review</td>
-                        <td>Review</td>
-                        <td>12/03/24</td>
-                        <td>-</td>
-                        <td>
-                          <i class="ti ti-edit me-2"></i>
-                          <i class="ti ti-trash"></i>
-                        </td>
-                      </tr>
+                        <!-- Row 3 -->
+                        <tr style="border-left: 4px solid #f4b400">
+                          <td>Fire Safety Equipment</td>
+                          <td>04/09/25</td>
+                          <td style="color: #d49a00; font-weight: 600">CAT2</td>
+                          <td>Parmiter</td>
+                          <td>Room 100</td>
+                          <td>Safety Officer</td>
+                          <td>Open</td>
+                          <td>Pending</td>
+                          <td>30/09/25</td>
+                          <td>-</td>
+                          <td>
+                            <i class="ti ti-edit me-2"></i>
+                            <i class="ti ti-trash"></i>
+                          </td>
+                        </tr>
 
-                      <!-- Row 2 -->
-                      <tr style="border-left: 4px solid #d32f2f">
-                        <td>Plumbing System Review</td>
-                        <td>01/03/24</td>
-                        <td class="text-danger fw-bold">CAT1</td>
-                        <td>Building B</td>
-                        <td>Flat 301</td>
-                        <td>Tenant Report</td>
-                        <td>In Progress</td>
-                        <td>Under Repair</td>
-                        <td>18/03/24</td>
-                        <td>-</td>
-                        <td>
-                          <i class="ti ti-edit me-2"></i>
-                          <i class="ti ti-trash"></i>
-                        </td>
-                      </tr>
+                        <!-- Row 4 -->
+                        <tr style="border-left: 4px solid #4caf50">
+                          <td>Generator Testing</td>
+                          <td>08/03/24</td>
+                          <td style="color: #2e7d32; font-weight: 600">CAT3</td>
+                          <td>Building D</td>
+                          <td>Generator Room</td>
+                          <td>Scheduled Maintenance</td>
+                          <td>Completed</td>
+                          <td>Closed</td>
+                          <td>10/03/24</td>
+                          <td>10/03/24</td>
+                          <td>
+                            <i class="ti ti-edit me-2"></i>
+                            <i class="ti ti-trash"></i>
+                          </td>
+                        </tr>
 
-                      <!-- Row 3 -->
-                      <tr style="border-left: 4px solid #f4b400">
-                        <td>Fire Safety Equipment</td>
-                        <td>04/09/25</td>
-                        <td style="color: #d49a00; font-weight: 600">CAT2</td>
-                        <td>Parmiter</td>
-                        <td>Room 100</td>
-                        <td>Safety Officer</td>
-                        <td>Open</td>
-                        <td>Pending</td>
-                        <td>30/09/25</td>
-                        <td>-</td>
-                        <td>
-                          <i class="ti ti-edit me-2"></i>
-                          <i class="ti ti-trash"></i>
-                        </td>
-                      </tr>
+                        <!-- Row 5 -->
+                        <tr style="border-left: 4px solid #f4b400">
+                          <td>Fire Safety Equipment</td>
+                          <td>10/03/24</td>
+                          <td class="text-danger fw-bold">CAT1</td>
+                          <td>Building A</td>
+                          <td>Flat 203</td>
+                          <td>Safety Officer</td>
+                          <td>Open</td>
+                          <td>Pending</td>
+                          <td>25/03/24</td>
+                          <td>-</td>
+                          <td>
+                            <i class="ti ti-edit me-2"></i>
+                            <i class="ti ti-trash"></i>
+                          </td>
+                        </tr>
 
-                      <!-- Row 4 -->
-                      <tr style="border-left: 4px solid #4caf50">
-                        <td>Generator Testing</td>
-                        <td>08/03/24</td>
-                        <td style="color: #2e7d32; font-weight: 600">CAT3</td>
-                        <td>Building D</td>
-                        <td>Generator Room</td>
-                        <td>Scheduled Maintenance</td>
-                        <td>Completed</td>
-                        <td>Closed</td>
-                        <td>10/03/24</td>
-                        <td>10/03/24</td>
-                        <td>
-                          <i class="ti ti-edit me-2"></i>
-                          <i class="ti ti-trash"></i>
-                        </td>
-                      </tr>
-
-                      <!-- Row 5 -->
-                      <tr style="border-left: 4px solid #f4b400">
-                        <td>Fire Safety Equipment</td>
-                        <td>10/03/24</td>
-                        <td class="text-danger fw-bold">CAT1</td>
-                        <td>Building A</td>
-                        <td>Flat 203</td>
-                        <td>Safety Officer</td>
-                        <td>Open</td>
-                        <td>Pending</td>
-                        <td>25/03/24</td>
-                        <td>-</td>
-                        <td>
-                          <i class="ti ti-edit me-2"></i>
-                          <i class="ti ti-trash"></i>
-                        </td>
-                      </tr>
-
-                      <!-- Row 6 -->
-                      <tr style="border-left: 4px solid #f4b400">
-                        <td>Fire Safety Equipment</td>
-                        <td>12/03/24</td>
-                        <td class="text-danger fw-bold">CAT1</td>
-                        <td>Building A</td>
-                        <td>Flat 303</td>
-                        <td>Safety Officer</td>
-                        <td>Open</td>
-                        <td>Pending</td>
-                        <td>25/03/24</td>
-                        <td>-</td>
-                        <td>
-                          <i class="ti ti-edit me-2"></i>
-                          <i class="ti ti-trash"></i>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                        <!-- Row 6 -->
+                        <tr style="border-left: 4px solid #f4b400">
+                          <td>Fire Safety Equipment</td>
+                          <td>12/03/24</td>
+                          <td class="text-danger fw-bold">CAT1</td>
+                          <td>Building A</td>
+                          <td>Flat 303</td>
+                          <td>Safety Officer</td>
+                          <td>Open</td>
+                          <td>Pending</td>
+                          <td>25/03/24</td>
+                          <td>-</td>
+                          <td>
+                            <i class="ti ti-edit me-2"></i>
+                            <i class="ti ti-trash"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1690,6 +1868,31 @@
     <script src="../assets/js/script.js"></script>
 
     <script>
+      const filterBtn = document.getElementById("filterBtn");
+      const filterDropdown = document.getElementById("filterDropdown");
+      const closeFilter = document.getElementById("closeFilter");
+
+      filterBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        filterDropdown.classList.toggle("d-none");
+      });
+
+      closeFilter.addEventListener("click", function () {
+        filterDropdown.classList.add("d-none");
+      });
+
+      // Close when clicking outside
+      document.addEventListener("click", function () {
+        filterDropdown.classList.add("d-none");
+      });
+
+      // Prevent inside clicks from closing
+      filterDropdown.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+    </script>
+
+    <script>
       // Show current time live
       setInterval(() => {
         document.getElementById("current-time").innerHTML =
@@ -1900,72 +2103,82 @@
       function toggleGenericMenu(event, btn) {
         event.stopPropagation();
 
-        // Close ALL dropdowns first
+        const dropdown = btn.closest("th").querySelector(".category-dropdown");
+        const isOpen = !dropdown.classList.contains("d-none");
+
+        // Close all first
         document.querySelectorAll(".category-dropdown").forEach((menu) => {
           menu.classList.add("d-none");
         });
 
         // Toggle only this one
-        const dropdown = btn.closest("th").querySelector(".category-dropdown");
-        dropdown.classList.toggle("d-none");
+        if (!isOpen) {
+          dropdown.classList.remove("d-none");
+        }
       }
 
-      // Close everything on outside click
+      /* Close all dropdowns on outside click */
       document.addEventListener("click", function () {
         document.querySelectorAll(".category-dropdown").forEach((menu) => {
           menu.classList.add("d-none");
         });
       });
+
+      /* Prevent dropdown click from closing itself */
+      document.querySelectorAll(".category-dropdown").forEach((dd) => {
+        dd.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+      });
     </script>
 
     <script>
-  let genericSortState = {}; // keeps state per column
+      let genericSortState = {}; // keeps state per column
 
-  function toggleGenericSort(el) {
-    const th = el.closest("th");
-    const colIndex = Number(th.dataset.col);
-    if (Number.isNaN(colIndex)) return;
+      function toggleGenericSort(el) {
+        const th = el.closest("th");
+        const colIndex = Number(th.dataset.col);
+        if (Number.isNaN(colIndex)) return;
 
-    const table = document.querySelector("table");
-    const tbody = table.querySelector("tbody");
-    const rows = Array.from(tbody.querySelectorAll("tr"));
+        const table = document.querySelector("table");
+        const tbody = table.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
 
-    // ✅ init only once
-    if (!(colIndex in genericSortState)) {
-      genericSortState[colIndex] = true; // first time: A → Z
-    }
-    const isAZ = genericSortState[colIndex];
+        // ✅ init only once
+        if (!(colIndex in genericSortState)) {
+          genericSortState[colIndex] = true; // first time: A → Z
+        }
+        const isAZ = genericSortState[colIndex];
 
-    rows.sort((a, b) => {
-      let A = a.children[colIndex].innerText.trim();
-      let B = b.children[colIndex].innerText.trim();
+        rows.sort((a, b) => {
+          let A = a.children[colIndex].innerText.trim();
+          let B = b.children[colIndex].innerText.trim();
 
-      // Try date sort first
-      if (!isNaN(Date.parse(A)) && !isNaN(Date.parse(B))) {
-        return isAZ ? new Date(A) - new Date(B) : new Date(B) - new Date(A);
+          // Try date sort first
+          if (!isNaN(Date.parse(A)) && !isNaN(Date.parse(B))) {
+            return isAZ ? new Date(A) - new Date(B) : new Date(B) - new Date(A);
+          }
+
+          A = A.toUpperCase();
+          B = B.toUpperCase();
+          return isAZ ? A.localeCompare(B) : B.localeCompare(A);
+        });
+
+        rows.forEach((row) => tbody.appendChild(row));
+
+        // Update label text
+        const label = el.querySelector(".sort-label");
+        if (label) {
+          label.innerText = isAZ ? "Sort Z → A" : "Sort A → Z";
+        }
+
+        // ✅ flip state for next click
+        genericSortState[colIndex] = !isAZ;
+
+        const dropdown = th.querySelector(".category-dropdown");
+        if (dropdown) dropdown.classList.add("d-none");
       }
-
-      A = A.toUpperCase();
-      B = B.toUpperCase();
-      return isAZ ? A.localeCompare(B) : B.localeCompare(A);
-    });
-
-    rows.forEach(row => tbody.appendChild(row));
-
-    // Update label text
-    const label = el.querySelector(".sort-label");
-    if (label) {
-      label.innerText = isAZ ? "Sort Z → A" : "Sort A → Z";
-    }
-
-    // ✅ flip state for next click
-    genericSortState[colIndex] = !isAZ;
-
-    const dropdown = th.querySelector(".category-dropdown");
-    if (dropdown) dropdown.classList.add("d-none");
-  }
-</script>
-
+    </script>
 
     <script>
       function hideGenericColumn(el) {

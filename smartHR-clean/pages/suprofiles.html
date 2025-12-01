@@ -1,589 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
-  <title>Service Users - SU Profiles</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>Service Users - SU Profiles</title>
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="../assets/img/favicon.png" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/img/favicon.png" />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 
-  <!-- Feather Icons -->
-  <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+    <!-- Feather Icons -->
+    <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
 
-  <!-- Tabler Icons -->
-  <link rel="stylesheet" href="../assets/plugins/tabler-icons/tabler-icons.min.css" />
+    <!-- Tabler Icons -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/tabler-icons/tabler-icons.min.css"
+    />
 
-  <!-- Fontawesome -->
-  <link rel="stylesheet" href="../assets/plugins/fontawesome/css/all.min.css" />
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/fontawesome/css/all.min.css"
+    />
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
 
-  <style>
-    /* Sidebar scroll fix */
-    .sidebar-inner {
-      overflow-y: auto !important;
-      height: calc(100vh - 60px) !important;
-    }
+    <style>
+      /* Sidebar scroll fix */
+      .sidebar-inner {
+        overflow-y: auto !important;
+        height: calc(100vh - 60px) !important;
+      }
 
-    /* Make active sidebar item grey (not orange) */
-    .sidebar-menu ul li a.active {
-      background: #f5f5f5 !important;
-      color: #333 !important;
-    }
-    .sidebar-menu ul li a:hover {
-      background: #f0f0f0 !important;
-      color: #333 !important;
-    }
+      /* Make active sidebar item grey (not orange) */
+      .sidebar-menu ul li a.active {
+        background: #f5f5f5 !important;
+        color: #333 !important;
+      }
+      .sidebar-menu ul li a:hover {
+        background: #f0f0f0 !important;
+        color: #333 !important;
+      }
 
-    /* Support level badges */
-    .badge-high {
-      background-color: #ffe7e7;
-      color: #d32f2f;
-      border-radius: 14px;
-      padding: 4px 8px;
-      font-weight:600;
-    }
-    .badge-medium {
-      background-color: #fff6e6;
-      color: #d49a00;
-      border-radius: 14px;
-      padding: 4px 8px;
-      font-weight:600;
-    }
-    .badge-low {
-      background-color: #eaf7ea;
-      color: #2e7d32;
-      border-radius: 14px;
-      padding: 4px 8px;
-      font-weight:600;
-    }
+      /* Support level badges */
+      .badge-high {
+        background-color: #ffe7e7;
+        color: #d32f2f;
+        border-radius: 14px;
+        padding: 4px 8px;
+        font-weight: 600;
+      }
+      .badge-medium {
+        background-color: #fff6e6;
+        color: #d49a00;
+        border-radius: 14px;
+        padding: 4px 8px;
+        font-weight: 600;
+      }
+      .badge-low {
+        background-color: #eaf7ea;
+        color: #2e7d32;
+        border-radius: 14px;
+        padding: 4px 8px;
+        font-weight: 600;
+      }
 
-    /* Table small tweaks for readability */
-    .table thead th {
-      font-weight: 600;
-    }
-  </style>
+      /* Table small tweaks for readability */
+      .table thead th {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
 
-</head>
-<body>
-  <div class="main-wrapper">
-    <!-- Header -->
-    <div class="header">
-      <div class="main-header">
-        <div class="header-left">
-          <a href="index.html" class="logo">
-            <img src="../assets/img/logo.svg" alt="Logo" />
+    <div id="sidebar-container"></div>
+
+    <!-- /Sidebar -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <div class="header">
+        <div class="main-header">
+          <div class="header-left">
+            <a href="index.html" class="logo">
+              <img src="../assets/img/logo.svg" alt="Logo" />
+            </a>
+            <a href="index.html" class="dark-logo">
+              <img src="../assets/img/logo-white.svg" alt="Logo" />
+            </a>
+          </div>
+
+          <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+            <span class="bar-icon"
+              ><span></span><span></span><span></span
+            ></span>
           </a>
-          <a href="index.html" class="dark-logo">
-            <img src="../assets/img/logo-white.svg" alt="Logo" />
-          </a>
-        </div>
 
-        <a id="mobile_btn" class="mobile_btn" href="#sidebar">
-          <span class="bar-icon"><span></span><span></span><span></span></span>
-        </a>
+          <div class="header-user">
+            <div class="nav user-menu nav-list">
+              <div class="me-auto d-flex align-items-center" id="header-search">
+                <a
+                  id="toggle_btn"
+                  href="javascript:void(0);"
+                  class="btn btn-menubar me-1"
+                >
+                  <i class="ti ti-arrow-bar-to-left"></i>
+                </a>
 
-        <div class="header-user">
-          <div class="nav user-menu nav-list">
-            <div class="me-auto d-flex align-items-center" id="header-search">
-              <a id="toggle_btn" href="javascript:void(0);" class="btn btn-menubar me-1">
-                <i class="ti ti-arrow-bar-to-left"></i>
-              </a>
+                <div class="input-group input-group-flat d-inline-flex me-1">
+                  <span class="input-icon-addon"
+                    ><i class="ti ti-search"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search in HRMS"
+                  />
+                  <span class="input-group-text"><kbd>CTRL + /</kbd></span>
+                </div>
 
-              <div class="input-group input-group-flat d-inline-flex me-1">
-                <span class="input-icon-addon"><i class="ti ti-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search in HRMS" />
-                <span class="input-group-text"><kbd>CTRL + /</kbd></span>
+                <a href="profile-settings.html" class="btn btn-menubar"
+                  ><i class="ti ti-settings-cog"></i
+                ></a>
               </div>
 
-              <a href="profile-settings.html" class="btn btn-menubar"><i class="ti ti-settings-cog"></i></a>
-            </div>
+              <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-menubar btnFullscreen"
+                  ><i class="ti ti-maximize"></i
+                ></a>
+                <a href="chat.html" class="btn btn-menubar position-relative"
+                  ><i class="ti ti-brand-hipchat"></i
+                ></a>
+                <a href="email.html" class="btn btn-menubar"
+                  ><i class="ti ti-mail"></i
+                ></a>
 
-            <div class="d-flex align-items-center">
-              <a href="#" class="btn btn-menubar btnFullscreen"><i class="ti ti-maximize"></i></a>
-              <a href="chat.html" class="btn btn-menubar position-relative"><i class="ti ti-brand-hipchat"></i></a>
-              <a href="email.html" class="btn btn-menubar"><i class="ti ti-mail"></i></a>
-
-              <div class="dropdown profile-dropdown">
-                <a href="#" class="dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
-                  <span class="avatar avatar-sm online">
-                    <img src="../assets/img/profiles/avatar-12.jpg" class="rounded-circle" alt="" />
-                  </span>
-                </a>
-                <div class="dropdown-menu shadow-none">
-                  <a class="dropdown-item" href="profile.html">My Profile</a>
-                  <a class="dropdown-item" href="profile-settings.html">Settings</a>
-                  <a class="dropdown-item" href="login.html">Logout</a>
+                <div class="dropdown profile-dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle d-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    <span class="avatar avatar-sm online">
+                      <img
+                        src="../assets/img/profiles/avatar-12.jpg"
+                        class="rounded-circle"
+                        alt=""
+                      />
+                    </span>
+                  </a>
+                  <div class="dropdown-menu shadow-none">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="profile-settings.html"
+                      >Settings</a
+                    >
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                  </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
+      <!-- /Header -->
+
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          <!-- Page Header -->
+          <div class="page-header">
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="page-title">Service Users / SU Profiles</h3>
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item">Service Users</li>
+                  <li class="breadcrumb-item active">SU Profiles</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards -->
+          <div class="row g-3 mb-4">
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>Total Service Users</span>
+                <h3 class="mt-2">124</h3>
+                <p class="text-muted">
+                  Active: <strong class="text-success">98</strong>
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>Vulnerable Cases</span>
+                <h3 class="text-danger mt-2">14</h3>
+                <p class="text-danger">
+                  <i class="ti ti-alert-triangle"></i> Requires review
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>New This Month</span>
+                <h3 class="mt-2">9</h3>
+                <p class="text-warning">
+                  <i class="ti ti-user-plus"></i> Registrations
+                </p>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-body">
+                <span>Open Cases</span>
+                <h3 class="text-success mt-2">28</h3>
+                <p class="text-muted">Ongoing support</p>
+              </div>
+            </div>
+          </div>
+          <!-- Search / actions -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="mb-0">
+              Service User Profiles
+              <span class="text-muted">6 sample rows</span>
+            </h4>
+            <div class="d-flex gap-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search service users..."
+                style="width: 280px"
+              />
+              <button class="btn btn-light">
+                <i class="ti ti-filter"></i> Filter
+              </button>
+              <button class="btn btn-light">
+                <i class="ti ti-layout-grid"></i> View
+              </button>
+              <button class="btn btn-success">
+                <i class="ti ti-plus"></i> New
+              </button>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <ul class="nav nav-tabs mb-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Table</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Widgets</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+          </ul>
+
+          <!-- Table -->
+          <div class="card">
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                  <thead>
+                    <tr>
+                      <th>Full Name</th>
+                      <th>Age</th>
+                      <th>Gender</th>
+                      <th>Nationality</th>
+                      <th>Accommodation</th>
+                      <th>Case Worker</th>
+                      <th>Support Level</th>
+                      <th>Status</th>
+                      <th>Last Contact</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <!-- Row 1 - High -->
+                    <tr style="border-left: 4px solid #d32f2f">
+                      <td>Amira Khan</td>
+                      <td>28</td>
+                      <td>Female</td>
+                      <td>Pakistan</td>
+                      <td>Temporary Shelter - Unit 3</td>
+                      <td>J. Harrison</td>
+                      <td><span class="badge-high">HIGH</span></td>
+                      <td>Open</td>
+                      <td>22/11/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- Row 2 - Medium -->
+                    <tr style="border-left: 4px solid #f4b400">
+                      <td>Michael O'Connor</td>
+                      <td>42</td>
+                      <td>Male</td>
+                      <td>Ireland</td>
+                      <td>Council Accommodation</td>
+                      <td>S. Patel</td>
+                      <td><span class="badge-medium">MEDIUM</span></td>
+                      <td>Ongoing</td>
+                      <td>18/11/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- Row 3 - Low -->
+                    <tr style="border-left: 4px solid #4caf50">
+                      <td>Fatima Ali</td>
+                      <td>34</td>
+                      <td>Female</td>
+                      <td>Bangladesh</td>
+                      <td>Private Rented - Flat 7B</td>
+                      <td>L. Morgan</td>
+                      <td><span class="badge-low">LOW</span></td>
+                      <td>Stable</td>
+                      <td>12/11/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- Row 4 - High -->
+                    <tr style="border-left: 4px solid #d32f2f">
+                      <td>John Smith</td>
+                      <td>56</td>
+                      <td>Male</td>
+                      <td>UK</td>
+                      <td>Hostel</td>
+                      <td>M. Turner</td>
+                      <td><span class="badge-high">HIGH</span></td>
+                      <td>Vulnerable</td>
+                      <td>20/11/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- Row 5 - Medium -->
+                    <tr style="border-left: 4px solid #f4b400">
+                      <td>Larissa Gomez</td>
+                      <td>30</td>
+                      <td>Female</td>
+                      <td>Brazil</td>
+                      <td>Shared House</td>
+                      <td>S. Patel</td>
+                      <td><span class="badge-medium">MEDIUM</span></td>
+                      <td>Ongoing</td>
+                      <td>14/11/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    <!-- Row 6 - Low -->
+                    <tr style="border-left: 4px solid #4caf50">
+                      <td>Ahmed Z. Rahman</td>
+                      <td>22</td>
+                      <td>Male</td>
+                      <td>Bangladesh</td>
+                      <td>Temporary Shelter</td>
+                      <td>J. Harrison</td>
+                      <td><span class="badge-low">LOW</span></td>
+                      <td>Stable</td>
+                      <td>05/11/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i
+                        ><i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Wrapper -->
     </div>
-    <!-- /Header -->
+    <!-- /Main Wrapper -->
 
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-logo">
-          <a href="index.html" class="logo logo-normal">
-            <img src="../assets/img/logo.svg" alt="Logo" />
-          </a>
-          <a href="index.html" class="logo-small">
-            <img src="../assets/img/logo-small.svg" alt="Logo" />
-          </a>
-        </div>
+    <!-- JS Files -->
+    <script>
+      fetch("../assets/includes/sidebar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("sidebar-container").innerHTML = data;
+        });
+    </script>
 
-        <div class="sidebar-inner slimscroll">
-          <div id="sidebar-menu" class="sidebar-menu">
-            <ul>
-              <li class="menu-title">
-                <span>MAIN</span>
-              </li>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
 
-              <li>
-                <a href="index.html">
-                  <i class="ti ti-smart-home"></i>
-                  <span>Dashboard</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>HOTELS</span>
-              </li>
-              <li>
-                <a href="hotels.html">
-                  <i class="ti ti-building"></i>
-                  <span>Hotels</span>
-                </a>
-              </li>
-              <li>
-                <a href="hoteldetails.html">
-                  <i class="ti ti-building-community"></i>
-                  <span>Hotel Details</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>CONTACTS</span>
-              </li>
-              <li>
-                <a href="contacts.html">
-                  <i class="ti ti-user"></i>
-                  <span>Contacts</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>OPERATION HUB</span>
-              </li>
-              <li>
-                <a href="maintenance.html">
-                  <i class="ti ti-settings"></i>
-                  <span>Maintenance</span>
-                </a>
-              </li>
-              <li>
-                <a href="compliance.html">
-                  <i class="ti ti-user-check"></i>
-                  <span>Compliance</span>
-                </a>
-              </li>
-              <li>
-                <a href="complaints.html">
-                  <i class="ti ti-filter"></i>
-                  <span>Complaints</span>
-                </a>
-              </li>
-              <li>
-                <a href="airetasks.html">
-                  <i class="ti ti-device-analytics"></i>
-                  <span>AIRE Tasks</span>
-                </a>
-              </li>
-              <li>
-                <a href="litigation.html">
-                  <i class="ti ti-briefcase"></i>
-                  <span>Litigation</span>
-                </a>
-              </li>
-              <li>
-                <a href="safeguarding.html">
-                  <i class="ti ti-activity"></i>
-                  <span>Safeguarding</span>
-                </a>
-              </li>
-              <li>
-                <a href="migranthelp.html">
-                  <i class="ti ti-target"></i>
-                  <span>Migrant Help</span>
-                </a>
-              </li>
-              <li>
-                <a href="employees.html">
-                  <i class="ti ti-users"></i>
-                  <span>Employees</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>Service Users</span>
-              </li>
-              <li>
-                <a href="suprofiles.html">
-                  <i class="ti ti-user-circle"></i>
-                  <span>SU Profiles</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="demographics.html">
-                  <i class="ti ti-heart"></i>
-                  <span>Demographics & Health</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="accommodation.html">
-                  <i class="ti ti-home"></i>
-                  <span>Accommodation History</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="casedocumentation.html">
-                  <i class="ti ti-file-description"></i>
-                  <span>Case Documents</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>INCIDENET MANAGEMENT</span>
-              </li>
-              <li>
-                <a href="incidents.html">
-                  <i class="ti ti-alert-circle"></i>
-                  <span>Incidents</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="complaintsfromincidents.html">
-                  <i class="ti ti-message"></i>
-                  <span>Complaints</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="vcsorganisations.html">
-                  <i class="ti ti-building"></i>
-                  <span>VCS Organisations</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>PROJECTS</span>
-              </li>
-              <li>
-                <a href="projects.html">
-                  <i class="ti ti-box"></i>
-                  <span>Projects</span>
-                </a>
-              </li>
-              <li>
-                <a href="tasks.html">
-                  <i class="ti ti-list-check"></i>
-                  <span>Tasks</span>
-                </a>
-              </li>
-              <li>
-                <a href="activities.html">
-                  <i class="ti ti-activity"></i>
-                  <span>Activities</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>REPORTS</span>
-              </li>
-              <li>
-                <a href="employee-report.html">
-                  <i class="ti ti-file-analytics"></i>
-                  <span>Employee Report</span>
-                </a>
-              </li>
-              <li>
-                <a href="user-report.html">
-                  <i class="ti ti-report"></i>
-                  <span>User Report</span>
-                </a>
-              </li>
-              <li>
-                <a href="company-report.html">
-                  <i class="ti ti-report-money"></i>
-                  <span>Company Report</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>PROFILE</span>
-              </li>
-              <li>
-                <a href="profile.html">
-                  <i class="ti ti-user-circle"></i>
-                  <span>My Profile</span>
-                </a>
-              </li>
-              <li>
-                <a href="profile-settings.html">
-                  <i class="ti ti-settings"></i>
-                  <span>Profile Settings</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>AUTH</span>
-              </li>
-              <li>
-                <a href="login.html">
-                  <i class="ti ti-login"></i>
-                  <span>Login</span>
-                </a>
-              </li>
-              <li>
-                <a href="register.html">
-                  <i class="ti ti-forms"></i>
-                  <span>Register</span>
-                </a>
-              </li>
-              <li>
-                <a href="forgot-password.html">
-                  <i class="ti ti-lock"></i>
-                  <span>Forgot Password</span>
-                </a>
-              </li>
-              <li>
-                <a href="reset-password.html">
-                  <i class="ti ti-key"></i>
-                  <span>Reset Password</span>
-                </a>
-              </li>
-              <li>
-                <a href="two-step-verification.html">
-                  <i class="ti ti-shield-check"></i>
-                  <span>Two-Step Verification</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    <!-- /Sidebar -->
-
-    <!-- Page Wrapper -->
-    <div class="page-wrapper">
-      <div class="content container-fluid">
-        <!-- Page Header -->
-        <div class="page-header">
-          <div class="row align-items-center">
-            <div class="col">
-              <h3 class="page-title">Service Users / SU Profiles</h3>
-              <ul class="breadcrumb">
-                <li class="breadcrumb-item">Service Users</li>
-                <li class="breadcrumb-item active">SU Profiles</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cards -->
-        <div class="row g-3 mb-4">
-          <div class="col-xl-3 col-md-6">
-            <div class="card card-body">
-              <span>Total Service Users</span>
-              <h3 class="mt-2">124</h3>
-              <p class="text-muted">Active: <strong class="text-success">98</strong></p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6">
-            <div class="card card-body">
-              <span>Vulnerable Cases</span>
-              <h3 class="text-danger mt-2">14</h3>
-              <p class="text-danger"><i class="ti ti-alert-triangle"></i> Requires review</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6">
-            <div class="card card-body">
-              <span>New This Month</span>
-              <h3 class="mt-2">9</h3>
-              <p class="text-warning"><i class="ti ti-user-plus"></i> Registrations</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6">
-            <div class="card card-body">
-              <span>Open Cases</span>
-              <h3 class="text-success mt-2">28</h3>
-              <p class="text-muted">Ongoing support</p>
-            </div>
-          </div>
-        </div>
-        <!-- Search / actions -->
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h4 class="mb-0">Service User Profiles <span class="text-muted">6 sample rows</span></h4>
-          <div class="d-flex gap-2">
-            <input type="text" class="form-control" placeholder="Search service users..." style="width: 280px" />
-            <button class="btn btn-light"><i class="ti ti-filter"></i> Filter</button>
-            <button class="btn btn-light"><i class="ti ti-layout-grid"></i> View</button>
-            <button class="btn btn-success"><i class="ti ti-plus"></i> New</button>
-          </div>
-        </div>
-
-        <!-- Tabs -->
-        <ul class="nav nav-tabs mb-3">
-          <li class="nav-item"><a class="nav-link active" href="#">Table</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Widgets</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-        </ul>
-
-        <!-- Table -->
-        <div class="card">
-          <div class="card-body p-0">
-            <div class="table-responsive">
-              <table class="table table-hover mb-0">
-                <thead>
-                  <tr>
-                    <th>Full Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>Nationality</th>
-                    <th>Accommodation</th>
-                    <th>Case Worker</th>
-                    <th>Support Level</th>
-                    <th>Status</th>
-                    <th>Last Contact</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <!-- Row 1 - High -->
-                  <tr style="border-left:4px solid #d32f2f;">
-                    <td>Amira Khan</td>
-                    <td>28</td>
-                    <td>Female</td>
-                    <td>Pakistan</td>
-                    <td>Temporary Shelter - Unit 3</td>
-                    <td>J. Harrison</td>
-                    <td><span class="badge-high">HIGH</span></td>
-                    <td>Open</td>
-                    <td>22/11/2025</td>
-                    <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-                  </tr>
-
-                  <!-- Row 2 - Medium -->
-                  <tr style="border-left:4px solid #f4b400;">
-                    <td>Michael O'Connor</td>
-                    <td>42</td>
-                    <td>Male</td>
-                    <td>Ireland</td>
-                    <td>Council Accommodation</td>
-                    <td>S. Patel</td>
-                    <td><span class="badge-medium">MEDIUM</span></td>
-                    <td>Ongoing</td>
-                    <td>18/11/2025</td>
-                    <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-                  </tr>
-
-                  <!-- Row 3 - Low -->
-                  <tr style="border-left:4px solid #4caf50;">
-                    <td>Fatima Ali</td>
-                    <td>34</td>
-                    <td>Female</td>
-                    <td>Bangladesh</td>
-                    <td>Private Rented - Flat 7B</td>
-                    <td>L. Morgan</td>
-                    <td><span class="badge-low">LOW</span></td>
-                    <td>Stable</td>
-                    <td>12/11/2025</td>
-                    <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-                  </tr>
-
-                  <!-- Row 4 - High -->
-                  <tr style="border-left:4px solid #d32f2f;">
-                    <td>John Smith</td>
-                    <td>56</td>
-                    <td>Male</td>
-                    <td>UK</td>
-                    <td>Hostel</td>
-                    <td>M. Turner</td>
-                    <td><span class="badge-high">HIGH</span></td>
-                    <td>Vulnerable</td>
-                    <td>20/11/2025</td>
-                    <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-                  </tr>
-
-                  <!-- Row 5 - Medium -->
-                  <tr style="border-left:4px solid #f4b400;">
-                    <td>Larissa Gomez</td>
-                    <td>30</td>
-                    <td>Female</td>
-                    <td>Brazil</td>
-                    <td>Shared House</td>
-                    <td>S. Patel</td>
-                    <td><span class="badge-medium">MEDIUM</span></td>
-                    <td>Ongoing</td>
-                    <td>14/11/2025</td>
-                    <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-                  </tr>
-
-                  <!-- Row 6 - Low -->
-                  <tr style="border-left:4px solid #4caf50;">
-                    <td>Ahmed Z. Rahman</td>
-                    <td>22</td>
-                    <td>Male</td>
-                    <td>Bangladesh</td>
-                    <td>Temporary Shelter</td>
-                    <td>J. Harrison</td>
-                    <td><span class="badge-low">LOW</span></td>
-                    <td>Stable</td>
-                    <td>05/11/2025</td>
-                    <td><i class="ti ti-edit me-2"></i><i class="ti ti-trash"></i></td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <!-- /Page Wrapper -->
-  </div>
-  <!-- /Main Wrapper -->
-
-  <!-- JS Files -->
-  <script src="../assets/js/jquery-3.7.1.min.js"></script>
-  <script src="../assets/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/script.js"></script>
-
-  <script>
-    // toggle mini sidebar (same behavior as other pages)
-    $("#toggle_btn").on("click", function () {
-      $("body").toggleClass("mini-sidebar");
-    });
-  </script>
-
-</body>
+    <script>
+      // toggle mini sidebar (same behavior as other pages)
+      $("#toggle_btn").on("click", function () {
+        $("body").toggleClass("mini-sidebar");
+      });
+    </script>
+  </body>
 </html>

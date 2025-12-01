@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>Service Users - Demographics & Health</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/img/favicon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+
+    <!-- Feather Icons -->
+    <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+
+    <!-- Tabler Icons -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/tabler-icons/tabler-icons.min.css"
+    />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/fontawesome/css/all.min.css"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <style>
+      .sidebar-inner {
+        overflow-y: auto !important;
+        height: calc(100vh - 60px) !important;
+      }
+
+      .sidebar-menu ul li a.active {
+        background: #f5f5f5 !important;
+        color: #333 !important;
+      }
+      .sidebar-menu ul li a:hover {
+        background: #f0f0f0 !important;
+        color: #333 !important;
+      }
+
+      /* Health level badge colors */
+      .badge-critical {
+        background: #ffe7e7;
+        color: #d32f2f;
+        font-weight: 600;
+        border-radius: 14px;
+        padding: 4px 8px;
+      }
+      .badge-moderate {
+        background: #fff6e6;
+        color: #d49a00;
+        font-weight: 600;
+        border-radius: 14px;
+        padding: 4px 8px;
+      }
+      .badge-stable {
+        background: #eaf7ea;
+        color: #2e7d32;
+        font-weight: 600;
+        border-radius: 14px;
+        padding: 4px 8px;
+      }
+
+      /* Mini sidebar collapse */
+      .mini-sidebar .sidebar {
+        width: 60px !important;
+      }
+
+      .mini-sidebar .sidebar .sidebar-menu ul li a span {
+        display: none !important; /* hide menu text */
+      }
+
+      .mini-sidebar .sidebar .sidebar-menu ul li a i {
+        margin-right: 0 !important;
+        font-size: 20px;
+      }
+
+      /* Page background like reference */
+      .move-dashboard-bg {
+        background: radial-gradient(
+          circle at top,
+          #f5f6f8 0%,
+          #eef0f4 40%,
+          #e9ebf0 100%
+        );
+        padding-bottom: 40px;
+      }
+
+      /* Card styling like second image */
+      .move-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px 26px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
+
+      /* Icon styling */
+      .move-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+      }
+
+      .bg-purple {
+        background: #9b5de5;
+      }
+
+      /* Tabs style */
+      .move-tabs {
+        background: #f1f3f7;
+        padding: 6px;
+        border-radius: 10px;
+        display: inline-flex;
+        gap: 6px;
+      }
+
+      .move-tabs .btn {
+        border-radius: 8px;
+      }
+
+      .property-tabs-wrapper {
+        margin-top: 10px;
+        margin-left: 8px;
+        width: 25%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+
+    <div id="sidebar-container"></div>
+
+    <!-- /Sidebar -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <div class="header">
+        <div class="main-header">
+          <div class="header-left">
+            <a href="index.html" class="logo">
+              <img src="../assets/img/logo.svg" alt="Logo" />
+            </a>
+            <a href="index.html" class="dark-logo">
+              <img src="../assets/img/logo-white.svg" alt="Logo" />
+            </a>
+          </div>
+
+          <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+            <span class="bar-icon"
+              ><span></span><span></span><span></span
+            ></span>
+          </a>
+
+          <div class="header-user">
+            <div class="nav user-menu nav-list">
+              <div class="me-auto d-flex align-items-center" id="header-search">
+                <a
+                  id="toggle_btn"
+                  href="javascript:void(0);"
+                  class="btn btn-menubar me-1"
+                >
+                  <i class="ti ti-arrow-bar-to-left"></i>
+                </a>
+
+                <div class="input-group input-group-flat d-inline-flex me-1">
+                  <span class="input-icon-addon"
+                    ><i class="ti ti-search"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search in HRMS"
+                  />
+                  <span class="input-group-text"><kbd>CTRL + /</kbd></span>
+                </div>
+
+                <a href="profile-settings.html" class="btn btn-menubar">
+                  <i class="ti ti-settings-cog"></i>
+                </a>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-menubar btnFullscreen">
+                  <i class="ti ti-maximize"></i>
+                </a>
+                <a href="chat.html" class="btn btn-menubar position-relative">
+                  <i class="ti ti-brand-hipchat"></i>
+                </a>
+                <a href="email.html" class="btn btn-menubar">
+                  <i class="ti ti-mail"></i>
+                </a>
+                <div class="dropdown profile-dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle d-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    <span class="avatar avatar-sm online">
+                      <img
+                        src="../assets/img/profiles/avatar-12.jpg"
+                        class="rounded-circle"
+                        alt=""
+                      />
+                    </span>
+                  </a>
+                  <div class="dropdown-menu shadow-none">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="profile-settings.html"
+                      >Settings</a
+                    >
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Header -->
+
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          <!-- Page Header -->
+
+          <!-- Breadcrumb -->
+          <div
+            class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
+          >
+            <div class="my-auto mb-2">
+              <h2 class="mb-1">Move-In/Out Management</h2>
+              <nav>
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="index.html"><i class="ti ti-smart-home"></i></a>
+                  </li>
+                  <li class="breadcrumb-item">Move-In/Out</li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Process Residents
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              class="d-flex my-xl-auto right-content align-items-center flex-wrap"
+            >
+              <div class="me-2 mb-2">
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#add_process-in"
+                  class="btn btn-primary d-flex align-items-center"
+                  ><i class="ti ti-login me-2"></i>Process Move-In</a
+                >
+              </div>
+              <!-- <div class="me-2 mb-2">
+                <div class="dropdown">
+                  <a
+                    href="javascript:void(0);"
+                    class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    <i class="ti ti-file-export me-1"></i>Export
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end p-3">
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        ><i class="ti ti-file-type-pdf me-1"></i>Export as
+                        PDF</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        ><i class="ti ti-file-type-xls me-1"></i>Export as Excel
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div> -->
+              <div class="mb-2">
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#add_process-out"
+                  class="btn btn-primary d-flex align-items-center"
+                  ><i class="ti ti-logout me-2"></i>Process Move-Out</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- /Breadcrumb -->
+
+          <!-- Cards -->
+
+          <div class="row g-4 move-stats">
+            <!-- Active Residents -->
+            <div class="col-lg-4 col-md-6">
+              <div class="move-card d-flex align-items-center">
+                <span class="move-icon bg-info">
+                  <i class="ti ti-users"></i>
+                </span>
+                <div class="ms-3">
+                  <p class="mb-1">Active Residents</p>
+                  <h3 class="mb-0">21</h3>
+                  <small class="text-muted">Currently housed</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Move-Ins -->
+            <div class="col-lg-4 col-md-6">
+              <div class="move-card d-flex align-items-center">
+                <span class="move-icon bg-success">
+                  <i class="ti ti-login"></i>
+                </span>
+                <div class="ms-3">
+                  <p class="mb-1">Recent Move-Ins</p>
+                  <h3 class="mb-0">0</h3>
+                  <small class="text-muted">Last 30 days</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Move-Outs -->
+            <div class="col-lg-4 col-md-6">
+              <div class="move-card d-flex align-items-center">
+                <span class="move-icon bg-purple">
+                  <i class="ti ti-logout"></i>
+                </span>
+                <div class="ms-3">
+                  <p class="mb-1">Recent Move-Outs</p>
+                  <h3 class="mb-0">0</h3>
+                  <small class="text-muted">Last 30 days</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards -->
+
+          <!-- Tabs -->
+          <!-- <ul class="nav nav-tabs mb-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Table</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Charts</a>
+            </li>
+          </ul> -->
+
+          <div class="property-tabs-wrapper">
+            <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="overview-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#overview"
+                  type="button"
+                >
+                  Recent Move-Ins
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="maintenance-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#maintenance"
+                  type="button"
+                >
+                  Recent Move-Outs
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-content" id="propertyTabsContent">
+            <!-- ✅ OVERVIEW TAB (Recent Move-Ins) -->
+            <div
+              class="tab-pane fade show active"
+              id="overview"
+              role="tabpanel"
+            >
+              <div class="card p-4 ">
+                <!-- Header -->
+                <h4 class="mb-1">Recent Move-Ins (Last 30 Days)</h4>
+                <p class="text-muted mb-4">
+                  Service users who recently moved into accommodation
+                </p>
+
+                <!-- ✅ EMPTY STATE -->
+                <div
+                  class="d-flex flex-column align-items-center justify-content-center py-5 text-center"
+                >
+                  <span class="avatar avatar-xl bg-light rounded-circle mb-3">
+                    <i class="ti ti-login me-2 fs-24 text-muted"></i>
+                  </span>
+                  <p class="mb-0 text-muted fw-medium">No recent move-ins</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ MAINTENANCE TAB (Recent Move-Outs) -->
+            <div class="tab-pane fade" id="maintenance" role="tabpanel">
+              <div class="card p-4 ">
+                <!-- Header -->
+                <h4 class="mb-1">Recent Move-Outs (Last 30 Days)</h4>
+                <p class="text-muted mb-4">
+                  Service users who recently left accommodation
+                </p>
+
+                <!-- ✅ EMPTY STATE -->
+                <div
+                  class="d-flex flex-column align-items-center justify-content-center py-5 text-center"
+                >
+                  <span class="avatar avatar-xl bg-light rounded-circle mb-3">
+                    <i class="ti ti-logout fs-24 text-muted"></i>
+                  </span>
+                  <p class="mb-0 text-muted fw-medium">No recent move-outs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table -->
+          <!-- <div class="card">
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Age</th>
+                      <th>Gender</th>
+                      <th>Nationality</th>
+                      <th>Ethnicity</th>
+                      <th>Health Status</th>
+                      <th>Medical Notes</th>
+                      <th>Last Check</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                
+                    <tr style="border-left: 4px solid #d32f2f">
+                      <td>John Carter</td>
+                      <td>42</td>
+                      <td>Male</td>
+                      <td>British</td>
+                      <td>White</td>
+                      <td><span class="badge-critical">CRITICAL</span></td>
+                      <td>Severe asthma, requires weekly monitoring</td>
+                      <td>12/02/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i>
+                        <i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                  
+                    <tr style="border-left: 4px solid #f4b400">
+                      <td>Aisha Rahman</td>
+                      <td>29</td>
+                      <td>Female</td>
+                      <td>Bangladeshi</td>
+                      <td>Asian</td>
+                      <td><span class="badge-moderate">MODERATE</span></td>
+                      <td>Post-surgery follow-up needed</td>
+                      <td>18/02/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i>
+                        <i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                  
+                    <tr style="border-left: 4px solid #2e7d32">
+                      <td>Maria Hernandez</td>
+                      <td>34</td>
+                      <td>Female</td>
+                      <td>Spanish</td>
+                      <td>Hispanic</td>
+                      <td><span class="badge-stable">STABLE</span></td>
+                      <td>No current medical concerns</td>
+                      <td>10/01/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i>
+                        <i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+               
+                    <tr style="border-left: 4px solid #f4b400">
+                      <td>Samuel Osei</td>
+                      <td>51</td>
+                      <td>Male</td>
+                      <td>Ghanaian</td>
+                      <td>Black</td>
+                      <td><span class="badge-moderate">MODERATE</span></td>
+                      <td>Blood pressure under observation</td>
+                      <td>05/02/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i>
+                        <i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                  
+                    <tr style="border-left: 4px solid #d32f2f">
+                      <td>Emma Wilson</td>
+                      <td>67</td>
+                      <td>Female</td>
+                      <td>British</td>
+                      <td>White</td>
+                      <td><span class="badge-critical">CRITICAL</span></td>
+                      <td>Mobility issues, requires daily support</td>
+                      <td>20/02/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i>
+                        <i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+
+                    
+                    <tr style="border-left: 4px solid #2e7d32">
+                      <td>Mohammed Ali</td>
+                      <td>25</td>
+                      <td>Male</td>
+                      <td>Syrian</td>
+                      <td>Middle Eastern</td>
+                      <td><span class="badge-stable">STABLE</span></td>
+                      <td>Regular wellbeing checks only</td>
+                      <td>15/02/2025</td>
+                      <td>
+                        <i class="ti ti-edit me-2"></i>
+                        <i class="ti ti-trash"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- /Process Move-In -->
+        <div class="modal fade" id="add_process-in" tabindex="-1">
+          <div
+            class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
+          >
+            <div class="modal-content">
+              <!-- ✅ HEADER -->
+              <div class="modal-header">
+                <div>
+                  <h4 class="modal-title">Process Move-In</h4>
+                  <p class="text-muted mb-0">
+                    Complete the move-in checklist for a new resident
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+
+              <!-- ✅ BODY (SCROLLABLE) -->
+              <div class="modal-body">
+                <!-- Service User -->
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <label class="form-label">Service User</label>
+                    <select class="form-select">
+                      <option selected disabled>Select service user</option>
+                      <option>Nasser Hamid</option>
+                      <option>Yusuf Ali</option>
+                      <option>Samira Mohammed</option>
+                      <option>Mahmoud Khalil</option>
+                      <option>Yusuf Hussein</option>
+                      <option>Maryam Mahmoud</option>
+                      <option>Rashid Ibrahim</option>
+                      <option>Khalid Khan</option>
+                      <option>Rania Ahmed</option>
+                      <option>Lina Yusuf</option>
+                      <option>Nadia Rahman</option>
+                      <option>Amina Farah</option>
+                      <option>Yusuf Yusuf</option>
+                      <option>Mohammed Khalil</option>
+                      <option>Jamal Rahman</option>
+                      <option>Mahmoud Abdullahi</option>
+                      <option>Noura Hussein</option>
+                      <option>Aisha Hamid</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Property -->
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <label class="form-label">Property</label>
+                    <select class="form-select">
+                      <option selected disabled>Select property</option>
+                      <option>The Grand Hyatt</option>
+                      <option>Royal Orchid Suites</option>
+                      <option>Taj Gateway</option>
+                      <option>Marriott Waterfront</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Room -->
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <label class="form-label">Room</label>
+                    <select class="form-select">
+                      <option selected disabled>Select room</option>
+                      <option>Room 001</option>
+                      <option>Room 002</option>
+                      <option>Room 003</option>
+                      <option>Room 004</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Bedspace -->
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <label class="form-label">Bedspace (Optional)</label>
+                    <select class="form-select">
+                      <option selected disabled>
+                        Select bedspace (if applicable)
+                      </option>
+                      <option>Bedspace A</option>
+                      <option>Bedspace B</option>
+                      <option>Bedspace C</option>
+                      <option>Bedspace D</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Move-In Date -->
+                <div class="mb-3">
+                  <label class="form-label">Move-In Date</label>
+                  <input type="date" class="form-control" value="2025-12-01" />
+                </div>
+
+                <hr />
+
+                <!-- ✅ MOVE-IN CHECKLIST -->
+                <h6 class="mb-3">Move-In Checklist</h6>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" />
+                  <label class="form-check-label"
+                    >Verify identity documents</label
+                  >
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" />
+                  <label class="form-check-label"
+                    >Complete property induction</label
+                  >
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" />
+                  <label class="form-check-label">Issue room keys</label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" />
+                  <label class="form-check-label"
+                    >Explain fire evacuation procedures</label
+                  >
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" />
+                  <label class="form-check-label">Review house rules</label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" />
+                  <label class="form-check-label">Check room condition</label>
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" />
+                  <label class="form-check-label"
+                    >Set up meal plan (if applicable)</label
+                  >
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" />
+                  <label class="form-check-label"
+                    >Provide emergency contacts</label
+                  >
+                </div>
+
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" />
+                  <label class="form-check-label">Complete ARC/BRP check</label>
+                </div>
+
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" />
+                  <label class="form-check-label">Assign bedspace</label>
+                </div>
+
+                <!-- ✅ Notes -->
+                <div class="mb-3">
+                  <label class="form-label">Additional Notes</label>
+                  <textarea
+                    class="form-control"
+                    rows="3"
+                    placeholder="Any additional observations or notes..."
+                  ></textarea>
+                </div>
+
+                <!-- ✅ Signature -->
+                <div class="mb-2">
+                  <label class="form-label">Signature</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Type full name as signature"
+                  />
+                  <small class="text-muted">
+                    Digital signature confirming move-in completion
+                  </small>
+                </div>
+              </div>
+
+              <!-- ✅ FOOTER -->
+              <div class="modal-footer d-flex justify-content-end gap-2">
+                <button
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+                <button class="btn btn-dark">Complete Move-In</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /Process Move-In -->
+
+        <!-- /Process Move-Out -->
+        <div class="modal fade" id="add_process-out" tabindex="-1">
+          <div
+            class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
+          >
+            <div class="modal-content">
+              <!-- ✅ HEADER -->
+              <div class="modal-header">
+                <div>
+                  <h4 class="modal-title">Process Move-Out</h4>
+                  <p class="mb-0 text-muted">
+                    Complete the move-out checklist for a departing resident
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+
+              <!-- ✅ BODY (SCROLLABLE) -->
+              <div class="modal-body">
+                <!-- Service User -->
+                <div class="mb-3">
+                  <label class="form-label">Service User</label>
+                  <select class="form-control">
+                    <option selected disabled>Select service user</option>
+                    <option>Nasser Hamid</option>
+                    <option>Yusuf Ali</option>
+                    <option>Samira Mohammed</option>
+                    <option>Mahmoud Khalil</option>
+                    <option>Yusuf Hussein</option>
+                    <option>Maryam Mahmoud</option>
+                    <option>Rashid Ibrahim</option>
+                    <option>Khalid Khan</option>
+                    <option>Rania Ahmed</option>
+                  </select>
+                </div>
+
+                <!-- Move-Out Date -->
+                <div class="mb-3">
+                  <label class="form-label">Move-Out Date</label>
+                  <div class="input-group">
+                    <input
+                      type="date"
+                      class="form-control"
+                      value="2025-12-01"
+                    />
+                    <span class="input-group-text">
+                      <i class="ti ti-calendar"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- ✅ Move-Out Checklist -->
+                <div class="mb-3">
+                  <label class="form-label fw-semibold"
+                    >Move-Out Checklist</label
+                  >
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Return all keys</label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label"
+                      >Room inspection completed</label
+                    >
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label"
+                      >All personal belongings removed</label
+                    >
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Cancel meal plan</label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label"
+                      >Update Home Office system</label
+                    >
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label"
+                      >Forward contact details obtained</label
+                    >
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Final welfare check</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label"
+                      >Document condition report</label
+                    >
+                  </div>
+                </div>
+
+                <!-- ✅ Damage Assessment -->
+                <div class="mb-3">
+                  <label class="form-label">Damage Assessment</label>
+                  <textarea
+                    class="form-control"
+                    rows="3"
+                    placeholder="Note any damage or issues found during inspection..."
+                  ></textarea>
+                </div>
+
+                <!-- ✅ Additional Notes -->
+                <div class="mb-3">
+                  <label class="form-label">Additional Notes</label>
+                  <textarea
+                    class="form-control"
+                    rows="3"
+                    placeholder="Any additional observations or notes..."
+                  ></textarea>
+                </div>
+
+                <!-- ✅ Signature -->
+                <div class="mb-3">
+                  <label class="form-label">Signature</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Type full name as signature"
+                  />
+                  <small class="text-muted">
+                    Digital signature confirming move-out completion
+                  </small>
+                </div>
+              </div>
+
+              <!-- ✅ FIXED FOOTER -->
+              <div class="modal-footer d-flex justify-content-end gap-2">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+
+                <button type="button" class="btn btn-dark">
+                  Complete Move-Out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /Process Move-Out -->
+      </div>
+      <!-- /Page Wrapper -->
+    </div>
+    <!-- /Main Wrapper -->
+
+    <!-- JS -->
+    <script>
+      fetch("../assets/includes/sidebar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("sidebar-container").innerHTML = data;
+        });
+    </script>
+
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+      // Sidebar toggle (collapse / expand)
+      $(document).on("click", "#toggle_btn", function () {
+        $("body").toggleClass("mini-sidebar");
+
+        if (!$("body").hasClass("mini-sidebar")) {
+          $(".subdrop + ul").slideDown();
+        } else {
+          $(".subdrop + ul").slideUp();
+        }
+
+        return false;
+      });
+    </script>
+  </body>
+</html>

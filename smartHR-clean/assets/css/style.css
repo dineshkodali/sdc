@@ -21,6 +21,7 @@ body {
   text-shadow: none;
 }
 
+
 img {
   max-width: 100%;
   height: auto;
@@ -34088,5 +34089,6 @@ th:hover .category-menu-btn {
 #propertyTabs .nav-link:hover {
   color: #111827;
 }
+
 
 /*# sourceMappingURL=style.css.map */

@@ -72,9 +72,14 @@
         bottom: -28px;
         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
       }
-      .hotel-card-left {
+      /* .hotel-card-left {
         margin-top: 36px;
+      } */
+      .hotel-card-left,
+      .col-xl-8 > .card:first-child {
+        margin-top: 0 !important;
       }
+
       .amenities .badge {
         margin-right: 6px;
         margin-bottom: 6px;
@@ -126,6 +131,24 @@
         margin-right: 0 !important;
         font-size: 20px;
       }
+
+      #propertyTabs {
+        margin-left: 16px; /* adjust to 12px / 20px if needed */
+      }
+
+      .card {
+        border-radius: 14px;
+      }
+
+      .badge {
+        border-radius: 8px;
+      }
+
+      .bg-light {
+        background: #f4f5f7 !important;
+      }
+
+     
     </style>
   </head>
 
@@ -135,10 +158,7 @@
     </div>
 
     <div class="main-wrapper">
-      <!-- Header (kept intact) -->
-      <!-- (--- header content copied from original ---) -->
-      <!-- For brevity in this view, header + sidebar remain identical to your original file.
-           In your actual file they will be included exactly as before (we preserved them). -->
+      
 
       <!-- --- START: Header (kept) --- -->
       <div class="header">
@@ -482,21 +502,179 @@
       <div class="page-wrapper">
         <div class="content container-fluid">
           <!-- Page Header -->
+
+          <div class="my-auto mb-2">
+              <!-- <h2 class="mb-1">Employee</h2> -->
+              <nav>
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="index.html"><i class="ti ti-smart-home"></i></a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="hotels.html">Property</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                   The Grand Hyatt
+                  </li>
+                </ol>
+              </nav>
+            </div>
           <div class="page-header mb-4">
-            <h3 class="page-title">Hotels / The Grand Hyatt</h3>
-            <ul class="breadcrumb">
-              <li class="breadcrumb-item"><a href="hotels.html">Hotels</a></li>
+            <h3 class="page-title">The Grand Hyatt</h3>
+            <!-- <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="hotels.html">Property</a></li>
               <li class="breadcrumb-item active">The Grand Hyatt</li>
-            </ul>
+            </ul> -->
           </div>
 
-          <div class="row gx-4">
+          <div class="row">
+            <!-- Total Floors -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div
+                class="card flex-fill border-0 shadow-sm"
+                style="border-radius: 16px"
+              >
+                <div
+                  class="card-body d-flex align-items-center justify-content-between p-4"
+                >
+                  <!-- Left Content -->
+                  <div>
+                    <p class="fs-12 fw-medium mb-1 text-muted">Total Floors</p>
+
+                    <h3 class="mb-1 fw-bold">6</h3>
+                  </div>
+
+                  <!-- Right Icon Box -->
+                  <div
+                    class="d-flex align-items-center justify-content-center"
+                    style="
+                      width: 42px;
+                      height: 42px;
+                      border-radius: 10px;
+                      background: #eef2ff;
+                    "
+                  >
+                    <i class="ti ti-building-skyscraper fs-18 text-muted"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Total Floors -->
+
+            <!-- Total Rooms -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div
+                class="card flex-fill border-0 shadow-sm"
+                style="border-radius: 16px"
+              >
+                <div
+                  class="card-body d-flex align-items-center justify-content-between p-4"
+                >
+                  <!-- Left Content -->
+                  <div>
+                    <p class="fs-12 fw-medium mb-1 text-muted">Total Rooms</p>
+
+                    <h3 class="mb-1 fw-bold">5</h3>
+                  </div>
+
+                  <!-- Right Icon Box -->
+                  <div
+                    class="d-flex align-items-center justify-content-center"
+                    style="
+                      width: 42px;
+                      height: 42px;
+                      border-radius: 10px;
+                      background: #eef2ff;
+                    "
+                  >
+                    <i class="ti ti-home fs-18 text-muted"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Total Rooms -->
+
+            <!-- Total Bedspaces  -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div
+                class="card flex-fill border-0 shadow-sm"
+                style="border-radius: 16px"
+              >
+                <div
+                  class="card-body d-flex align-items-center justify-content-between p-4"
+                >
+                  <!-- Left Content -->
+                  <div>
+                    <p class="fs-12 fw-medium mb-1 text-muted">
+                      Total Bedspaces
+                    </p>
+
+                    <h3 class="mb-1 fw-bold">11</h3>
+
+                    <p class="mb-0 text-muted">4 occupied</p>
+                  </div>
+
+                  <!-- Right Icon Box -->
+                  <div
+                    class="d-flex align-items-center justify-content-center"
+                    style="
+                      width: 42px;
+                      height: 42px;
+                      border-radius: 10px;
+                      background: #eef2ff;
+                    "
+                  >
+                    <i class="ti ti-bed fs-18 text-muted"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Toatl Bedspaces -->
+
+            <!-- Occupancy Rate  -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div
+                class="card flex-fill border-0 shadow-sm"
+                style="border-radius: 16px"
+              >
+                <div
+                  class="card-body d-flex align-items-center justify-content-between p-4"
+                >
+                  <!-- Left Content -->
+                  <div>
+                    <p class="fs-12 fw-medium mb-1 text-muted">
+                      Occupancy Rate
+                    </p>
+
+                    <h3 class="mb-1 fw-bold">36%</h3>
+
+                    <p class="mb-0 text-muted">4 / 11 beds</p>
+                  </div>
+
+                  <!-- Right Icon Box -->
+                  <div
+                    class="d-flex align-items-center justify-content-center"
+                    style="
+                      width: 42px;
+                      height: 42px;
+                      border-radius: 10px;
+                      background: #eef2ff;
+                    "
+                  >
+                    <i class="ti ti-users fs-18 text-muted"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- /No of Plans -->
+          </div>
+
+          <div class="row gx-4 align-items-stretch">
             <!-- Left column: Hotel card -->
-            <div class="col-xl-4 col-lg-5">
-              <div class="card hotel-card-left">
+            <div class="col-xl-4 col-lg-5 d-flex">
+              <div class="card hotel-card-left h-10 mt-0">
                 <div
                   class="hotel-banner d-flex align-items-center justify-content-center"
-                  style="height: 180px"
+                  style="height: 150px; margin-top: 0"
                 >
                   <div
                     class="hotel-logo"
@@ -608,8 +786,8 @@
             </div>
 
             <!-- Right column: Activities / Rooms / Events -->
-            <div class="col-xl-8 col-lg-7">
-              <div class="card mb-4">
+            <div class="col-xl-8 col-lg-7 d-flex flex-column">
+              <div class="card mb-4 flex-shrink-0">
                 <div
                   class="card-body d-flex justify-content-between align-items-start"
                 >
@@ -634,8 +812,8 @@
               </div>
 
               <!-- Rooms listing -->
-              <div class="card mb-4">
-                <div class="card-body">
+              <div class="card mb-4 flex-grow-1 d-flex flex-column">
+                <div class="card-body flex-grow-1">
                   <div
                     class="d-flex justify-content-between align-items-center mb-3"
                   >
@@ -811,51 +989,185 @@
                   </div>
                 </div>
               </div>
+            </div>
 
-              <!-- Activities list -->
-              <div class="card events mb-4">
-                <div class="card-body">
-                  <h6 class="mb-3">Upcoming & Recent Events</h6>
+            <div class="property-tabs-wrapper">
+              <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="overview-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#overview"
+                    type="button"
+                  >
+                    Overview
+                  </button>
+                </li>
 
-                  <div class="mb-3">
-                    <div class="card p-3 mb-2">
-                      <div class="d-flex justify-content-between">
-                        <div>
-                          <strong>Product Launch Conference</strong>
-                          <div class="small text-muted">
-                            Scheduled on 12 Nov 2025 • Grand Ballroom
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="maintenance-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#maintenance"
+                    type="button"
+                  >
+                    Maintenance
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="compliance-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#compliance"
+                    type="button"
+                  >
+                    Compliance
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="propertyTabsContent">
+              <!-- ✅ OVERVIEW TAB -->
+              <div
+                class="tab-pane fade show active"
+                id="overview"
+                role="tabpanel"
+              >
+                <div class="card p-4">
+                  <!-- Header -->
+                  <h4 class="mb-1">Property Overview</h4>
+                  <p class="text-muted mb-4">
+                    Hotel room structure and occupancy
+                  </p>
+
+                  <!-- Floor Title -->
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <h6 class="mb-0">
+                      <i class="ti ti-building-community me-2"></i>
+                      Floor 0 - Ground Floor
+                    </h6>
+                    <span class="badge bg-light text-dark">8 rooms</span>
+                  </div>
+
+                  <!-- Rooms Grid -->
+                  <div class="row g-4">
+                    <!-- ✅ ROOM 001 -->
+                    <div class="col-lg-4">
+                      <div class="card h-100">
+                        <div class="card-body">
+                          <div
+                            class="d-flex justify-content-between align-items-start mb-2"
+                          >
+                            <h6 class="mb-0">Room 001</h6>
+                            <span class="badge bg-secondary">bunk</span>
                           </div>
-                        </div>
-                        <div class="text-end">
-                          <span class="badge bg-warning">Upcoming</span>
+
+                          <p class="mb-1">
+                            <i class="ti ti-bed me-1"></i> 4 bedspaces
+                          </p>
+                          <p class="mb-1">
+                            <i class="ti ti-ruler me-1"></i> 3.62 × 4.38 m
+                          </p>
+                          <p class="mb-2">
+                            <i class="ti ti-bath me-1"></i> Shared
+                          </p>
+
+                          <p class="text-danger fw-semibold mb-3">
+                            <i class="ti ti-users me-1"></i>
+                            6 / 4 occupied (Overcrowded)
+                          </p>
+
+                          <hr />
+
+                          <p class="fw-semibold mb-2">Residents</p>
+
+                          <div class="bg-light rounded p-2 mb-2">
+                            <div class="fw-medium">Samira Ahmed</div>
+                            <small class="text-muted">VW4466010</small>
+                          </div>
+                          <div class="bg-light rounded p-2 mb-2">
+                            <div class="fw-medium">Noura Ali</div>
+                            <small class="text-muted">YB0370973</small>
+                          </div>
+                          <div class="bg-light rounded p-2 mb-2">
+                            <div class="fw-medium">Shami Ali</div>
+                            <small class="text-muted">YB0378956</small>
+                          </div>
+                          <div class="bg-light rounded p-2 mb-2">
+                            <div class="fw-medium">Rahim MD</div>
+                            <small class="text-muted">YB0372563</small>
+                          </div>
+                          <div class="bg-light rounded p-2 mb-2">
+                            <div class="fw-medium">Yousaf Pathan</div>
+                            <small class="text-muted">AB0370153</small>
+                          </div>
+                          <div class="bg-light rounded p-2 mb-2">
+                            <div class="fw-medium">Moeen Ali</div>
+                            <small class="text-muted">GB0370253</small>
+                          </div>
                         </div>
                       </div>
                     </div>
 
-                    <div class="card p-3 mb-2">
-                      <div class="d-flex justify-content-between">
-                        <div>
-                          <strong>Health & Safety Inspection</strong>
-                          <div class="small text-muted">
-                            Completed on 02 Oct 2025
+                    <!-- ✅ ROOM 002 -->
+                    <div class="col-lg-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div
+                            class="d-flex justify-content-between align-items-start mb-2"
+                          >
+                            <h6 class="mb-0">Room 002</h6>
+                            <span class="badge bg-secondary">bunk</span>
                           </div>
-                        </div>
-                        <div class="text-end">
-                          <span class="badge bg-success">Passed</span>
+
+                          <p class="mb-1">
+                            <i class="ti ti-bed me-1"></i> 4 bedspaces
+                          </p>
+                          <p class="mb-1">
+                            <i class="ti ti-ruler me-1"></i> 3.77 × 4.2 m
+                          </p>
+                          <p class="mb-2">
+                            <i class="ti ti-bath me-1"></i> Shared
+                          </p>
+
+                          <p class="fw-semibold mb-0">
+                            <i class="ti ti-users me-1"></i>
+                            0 / 4 occupied
+                          </p>
                         </div>
                       </div>
                     </div>
 
-                    <div class="card p-3 mb-2">
-                      <div class="d-flex justify-content-between">
-                        <div>
-                          <strong>Food Tasting Event</strong>
-                          <div class="small text-muted">
-                            Scheduled on 19 Nov 2025 • Riverside Restaurant
+                    <!-- ✅ ROOM 003 -->
+                    <div class="col-lg-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div
+                            class="d-flex justify-content-between align-items-start mb-2"
+                          >
+                            <h6 class="mb-0">Room 003</h6>
+                            <span class="badge bg-secondary">bunk</span>
                           </div>
-                        </div>
-                        <div class="text-end">
-                          <span class="badge bg-info">Scheduled</span>
+
+                          <p class="mb-1">
+                            <i class="ti ti-bed me-1"></i> 3 bedspaces
+                          </p>
+                          <p class="mb-1">
+                            <i class="ti ti-ruler me-1"></i> 4.8 × 3.64 m
+                          </p>
+                          <p class="mb-2">
+                            <i class="ti ti-bath me-1"></i> Ensuite
+                          </p>
+
+                          <p class="fw-semibold mb-0">
+                            <i class="ti ti-users me-1"></i>
+                            0 / 3 occupied
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -863,51 +1175,209 @@
                 </div>
               </div>
 
-              
+              <!-- ✅ MAINTENANCE TAB -->
+              <div class="tab-pane fade" id="maintenance" role="tabpanel">
+                <div class="card p-4">
+                  <!-- Header -->
+                  <h4 class="mb-1">Maintenance Orders</h4>
+                  <p class="text-muted mb-4">
+                    Track and manage maintenance issues for this property
+                  </p>
 
-              <!-- Reviews & Reports -->
-              <div class="card mb-4">
-                <div class="card-body">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-3"
-                  >
-                    <h6 class="mb-0">Recent Reviews</h6>
-                    <div class="small text-muted">
-                      Average rating: <strong>4.8/5</strong>
+                  <!-- ✅ Order 1 -->
+                  <div class="card mb-3 shadow-sm">
+                    <div
+                      class="card-body d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <h6 class="mb-1">Replace faulty light fixture</h6>
+                        <p class="text-muted mb-2">
+                          Maintenance work required as per inspection report.
+                        </p>
+
+                        <p class="mb-0 small">
+                          <strong>Category:</strong> appliances &nbsp;&nbsp;
+                          <strong>Reported by:</strong> Manager Smith
+                          &nbsp;&nbsp; <strong>Assigned to:</strong> Property
+                          Care Ltd
+                        </p>
+                      </div>
+
+                      <div class="text-end">
+                        <span class="badge bg-danger mb-2 d-block">urgent</span>
+                        <span class="badge bg-dark">completed</span>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="mb-2">
-                    <div class="border rounded p-3 mb-2">
-                      <div class="d-flex justify-content-between">
-                        <div>
-                          <strong>Emma L</strong>
-                          <div class="small text-muted">Stayed 2 nights</div>
-                        </div>
-                        <div class="text-end">
-                          5.0 <i class="ti ti-star text-warning"></i>
-                        </div>
-                      </div>
-                      <p class="small text-muted mt-2 mb-0">
-                        Excellent service, beautiful view and excellent
-                        breakfast.
-                      </p>
-                    </div>
+                  <!-- ✅ Order 2 -->
+                  <div class="card mb-3 shadow-sm">
+                    <div
+                      class="card-body d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <h6 class="mb-1">Replace faulty light fixture</h6>
+                        <p class="text-muted mb-2">
+                          Maintenance work required as per inspection report.
+                        </p>
 
-                    <div class="border rounded p-3 mb-2">
-                      <div class="d-flex justify-content-between">
-                        <div>
-                          <strong>Mark R</strong>
-                          <div class="small text-muted">Business trip</div>
-                        </div>
-                        <div class="text-end">
-                          4.5 <i class="ti ti-star text-warning"></i>
-                        </div>
+                        <p class="mb-0 small">
+                          <strong>Category:</strong> cleaning &nbsp;&nbsp;
+                          <strong>Reported by:</strong> Officer Jones
+                          &nbsp;&nbsp; <strong>Assigned to:</strong> ABC
+                          Maintenance
+                        </p>
                       </div>
-                      <p class="small text-muted mt-2 mb-0">
-                        Great conference facilities. Room was clean and staff
-                        helpful.
-                      </p>
+
+                      <div class="text-end">
+                        <span class="badge bg-secondary mb-2 d-block"
+                          >medium</span
+                        >
+                        <span class="badge bg-warning text-dark"
+                          >in-progress</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ✅ Order 3 -->
+                  <div class="card mb-3 shadow-sm">
+                    <div
+                      class="card-body d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <h6 class="mb-1">Repair washing machine</h6>
+                        <p class="text-muted mb-2">
+                          Maintenance work required as per inspection report.
+                        </p>
+
+                        <p class="mb-0 small">
+                          <strong>Category:</strong> furniture &nbsp;&nbsp;
+                          <strong>Reported by:</strong> Officer Jones
+                          &nbsp;&nbsp; <strong>Assigned to:</strong> ABC
+                          Maintenance
+                        </p>
+                      </div>
+
+                      <div class="text-end">
+                        <span class="badge bg-danger mb-2 d-block">urgent</span>
+                        <span class="badge bg-dark">completed</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ✅ COMPLIANCE TAB -->
+              <div class="tab-pane fade" id="compliance" role="tabpanel">
+                <div class="card p-4">
+                  <!-- Header -->
+                  <h4 class="mb-1">Compliance Certificates</h4>
+                  <p class="text-muted mb-4">
+                    Safety certificates and compliance documents
+                  </p>
+
+                  <!-- ✅ Certificate 1 -->
+                  <div class="card mb-3 shadow-sm">
+                    <div
+                      class="card-body d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <h6 class="mb-1">
+                          Fire Safety Certificate
+                          <i class="ti ti-alert-triangle text-danger ms-2"></i>
+                        </h6>
+                        <p class="mb-2 text-muted">Cert #: CERT-XVLJ3T</p>
+
+                        <p class="mb-0 small">
+                          <strong>Issued:</strong> 2023-05-11 &nbsp;&nbsp;
+                          <strong class="text-danger">Expires:</strong>
+                          2024-05-11 (EXPIRED) &nbsp;&nbsp;
+                          <strong>Issued by:</strong> HSE Approved Contractor
+                        </p>
+                      </div>
+
+                      <div>
+                        <span class="badge bg-danger">expired</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ✅ Certificate 2 -->
+                  <div class="card mb-3 shadow-sm">
+                    <div
+                      class="card-body d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <h6 class="mb-1">
+                          Gas Safety Certificate
+                          <i class="ti ti-alert-triangle text-danger ms-2"></i>
+                        </h6>
+                        <p class="mb-2 text-muted">Cert #: CERT-23Y4V4</p>
+
+                        <p class="mb-0 small">
+                          <strong>Issued:</strong> 2024-03-27 &nbsp;&nbsp;
+                          <strong class="text-danger">Expires:</strong>
+                          2025-03-27 (EXPIRED) &nbsp;&nbsp;
+                          <strong>Issued by:</strong> Gas Safe Engineers
+                        </p>
+                      </div>
+
+                      <div>
+                        <span class="badge bg-danger">expired</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ✅ Certificate 3 -->
+                  <div class="card mb-3 shadow-sm">
+                    <div
+                      class="card-body d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <h6 class="mb-1">
+                          Electrical Installation Certificate
+                          <i class="ti ti-alert-triangle text-danger ms-2"></i>
+                        </h6>
+                        <p class="mb-2 text-muted">Cert #: CERT-3THP28</p>
+
+                        <p class="mb-0 small">
+                          <strong>Issued:</strong> 2023-07-05 &nbsp;&nbsp;
+                          <strong class="text-danger">Expires:</strong>
+                          2024-07-05 (EXPIRED) &nbsp;&nbsp;
+                          <strong>Issued by:</strong> Environmental Health
+                        </p>
+                      </div>
+
+                      <div>
+                        <span class="badge bg-danger">expired</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ✅ Certificate 4 -->
+                  <div class="card mb-3 shadow-sm">
+                    <div
+                      class="card-body d-flex justify-content-between align-items-start"
+                    >
+                      <div>
+                        <h6 class="mb-1">
+                          Legionella Risk Assessment
+                          <i class="ti ti-alert-triangle text-danger ms-2"></i>
+                        </h6>
+                        <p class="mb-2 text-muted">Cert #: CERT-DQ5016</p>
+
+                        <p class="mb-0 small">
+                          <strong>Issued:</strong> 2023-08-30 &nbsp;&nbsp;
+                          <strong class="text-danger">Expires:</strong>
+                          2024-08-30 (EXPIRED) &nbsp;&nbsp;
+                          <strong>Issued by:</strong> Environmental Health
+                        </p>
+                      </div>
+
+                      <div>
+                        <span class="badge bg-danger">expired</span>
+                      </div>
                     </div>
                   </div>
                 </div>

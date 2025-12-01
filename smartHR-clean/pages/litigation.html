@@ -706,6 +706,150 @@
     <script src="../assets/js/script.js"></script>
 
     <script>
+      function toggleGenericMenu(event, btn) {
+        event.stopPropagation();
+
+        const dropdown = btn.closest("th").querySelector(".category-dropdown");
+        const isOpen = !dropdown.classList.contains("d-none");
+
+        // Close all first
+        document.querySelectorAll(".category-dropdown").forEach((menu) => {
+          menu.classList.add("d-none");
+        });
+
+        // Toggle only this one
+        if (!isOpen) {
+          dropdown.classList.remove("d-none");
+        }
+      }
+
+      /* Close all dropdowns on outside click */
+      document.addEventListener("click", function () {
+        document.querySelectorAll(".category-dropdown").forEach((menu) => {
+          menu.classList.add("d-none");
+        });
+      });
+
+      /* Prevent dropdown click from closing itself */
+      document.querySelectorAll(".category-dropdown").forEach((dd) => {
+        dd.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+      });
+    </script>
+
+    <script>
+      let genericSortState = {}; // keeps state per column
+
+      function toggleGenericSort(el) {
+        const th = el.closest("th");
+        const colIndex = Number(th.dataset.col);
+        if (Number.isNaN(colIndex)) return;
+
+        const table = document.querySelector("table");
+        const tbody = table.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+
+        // ✅ init only once
+        if (!(colIndex in genericSortState)) {
+          genericSortState[colIndex] = true; // first time: A → Z
+        }
+        const isAZ = genericSortState[colIndex];
+
+        rows.sort((a, b) => {
+          let A = a.children[colIndex].innerText.trim();
+          let B = b.children[colIndex].innerText.trim();
+
+          // Try date sort first
+          if (!isNaN(Date.parse(A)) && !isNaN(Date.parse(B))) {
+            return isAZ ? new Date(A) - new Date(B) : new Date(B) - new Date(A);
+          }
+
+          A = A.toUpperCase();
+          B = B.toUpperCase();
+          return isAZ ? A.localeCompare(B) : B.localeCompare(A);
+        });
+
+        rows.forEach((row) => tbody.appendChild(row));
+
+        // Update label text
+        const label = el.querySelector(".sort-label");
+        if (label) {
+          label.innerText = isAZ ? "Sort Z → A" : "Sort A → Z";
+        }
+
+        // ✅ flip state for next click
+        genericSortState[colIndex] = !isAZ;
+
+        const dropdown = th.querySelector(".category-dropdown");
+        if (dropdown) dropdown.classList.add("d-none");
+      }
+    </script>
+
+    <script>
+      function hideGenericColumn(el) {
+        const th = el.closest("th");
+        const colIndex = parseInt(th.dataset.col);
+        const table = document.querySelector("table");
+
+        // Hide header
+        th.style.display = "none";
+
+        // Hide column cells
+        table.querySelectorAll("tbody tr").forEach((row) => {
+          row.children[colIndex].style.display = "none";
+        });
+      }
+    </script>
+
+    <script>
+      let isCategorySortedAZ = true; // default state
+
+      function toggleCategorySort() {
+        const table = document.querySelector("table");
+        const tbody = table.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+
+        rows.sort((a, b) => {
+          const catA = a.children[2].innerText.trim().toUpperCase(); // Category column
+          const catB = b.children[2].innerText.trim().toUpperCase();
+
+          return isCategorySortedAZ
+            ? catA.localeCompare(catB) // A → Z
+            : catB.localeCompare(catA); // Z → A
+        });
+
+        // Re-append rows
+        rows.forEach((row) => tbody.appendChild(row));
+
+        // Toggle label text
+        const label = document.getElementById("sortLabel");
+        label.innerText = isCategorySortedAZ ? "Sort Z → A" : "Sort A → Z";
+
+        // Flip state
+        isCategorySortedAZ = !isCategorySortedAZ;
+
+        // Close dropdown
+        document.getElementById("categoryDropdown").classList.add("d-none");
+      }
+    </script>
+    <script>
+      function toggleCategoryMenu(event) {
+        event.stopPropagation();
+        const dropdown = document.getElementById("categoryDropdown");
+        dropdown.classList.toggle("d-none");
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function () {
+        const dd = document.getElementById("categoryDropdown");
+        if (dd && !dd.classList.contains("d-none")) {
+          dd.classList.add("d-none");
+        }
+      });
+    </script>
+
+    <script>
       $("#toggle_btn").on("click", function () {
         $("body").toggleClass("mini-sidebar");
       });

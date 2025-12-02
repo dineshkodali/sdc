@@ -1,13 +1,12 @@
+
 {
-  "dependencies": {
-    "pg-query-stream": "^4.10.3"
-  },
-  "devDependencies": {
-    "gh-pages": "^6.3.0"
+  "name": "sdc-praneeth-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "preview": "npm run preview --prefix frontend",
+    "backend": "npm run dev --prefix Backend"
   }
-}
-"scripts": {
-  "build": "vite build",
-  "preview": "vite preview",
-  ...
 }

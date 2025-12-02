@@ -6,24 +6,79 @@
     <title>Incidents - Incident Management</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../assets/img/favicon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/favicon.png"
+    />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/img/apple-touch-icon.png"
+    />
+
+    <!-- Theme Script js -->
+    <script src="../assets/js/theme-script.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 
-    <!-- Feather Icons -->
+    <!-- Feather CSS -->
     <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
 
-    <!-- Tabler Icons -->
+    <!-- Tabler Icon CSS -->
     <link
       rel="stylesheet"
       href="../assets/plugins/tabler-icons/tabler-icons.min.css"
     />
 
-    <!-- Fontawesome -->
+    <!-- Select2 CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/select2/css/select2.min.css"
+    />
+
+    <!-- Fontawesome CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/fontawesome/css/fontawesome.min.css"
+    />
     <link
       rel="stylesheet"
       href="../assets/plugins/fontawesome/css/all.min.css"
+    />
+
+    <!-- Datetimepicker CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/css/bootstrap-datetimepicker.min.css"
+    />
+
+    <!-- Color Picker Css -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/flatpickr/flatpickr.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/@simonwep/pickr/themes/nano.min.css"
+    />
+
+    <!-- Daterangepikcer CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/daterangepicker/daterangepicker.css"
+    />
+
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="../assets/css/dataTables.bootstrap5.min.css" />
+
+    <!-- Select2 CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/select2/css/select2.min.css"
     />
 
     <!-- Main CSS -->
@@ -190,53 +245,11 @@
             <div
               class="d-flex my-xl-auto right-content align-items-center flex-wrap"
             >
-              <!-- <div class="me-2 mb-2">
-                <div
-                  class="d-flex align-items-center border bg-white rounded p-1 me-2 icon-list"
-                >
-                  <a
-                    href="employees.html"
-                    class="btn btn-icon btn-sm active bg-primary text-white me-1"
-                    ><i class="ti ti-list-tree"></i
-                  ></a>
-                  <a href="employees-grid.html" class="btn btn-icon btn-sm"
-                    ><i class="ti ti-layout-grid"></i
-                  ></a>
-                </div>
-              </div> -->
-              <!-- <div class="me-2 mb-2">
-                <div class="dropdown">
-                  <a
-                    href="javascript:void(0);"
-                    class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
-                    data-bs-toggle="dropdown"
-                  >
-                    <i class="ti ti-file-export me-1"></i>Export
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end p-3">
-                    <li>
-                      <a
-                        href="javascript:void(0);"
-                        class="dropdown-item rounded-1"
-                        ><i class="ti ti-file-type-pdf me-1"></i>Export as
-                        PDF</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="javascript:void(0);"
-                        class="dropdown-item rounded-1"
-                        ><i class="ti ti-file-type-xls me-1"></i>Export as Excel
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div> -->
               <div class="mb-2">
                 <a
                   href="#"
                   data-bs-toggle="modal"
-                  data-bs-target="#add_employee"
+                  data-bs-target="#reportIncident"
                   class="btn btn-primary d-flex align-items-center"
                   ><i class="ti ti-circle-plus me-2"></i>Report Incident</a
                 >
@@ -352,7 +365,7 @@
           </div>
 
           <!-- SEARCH + NEW -->
-          <div class="d-flex justify-content-between align-items-center mb-3">
+          <!-- <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="mb-0">
               Incidents Database <span class="text-muted">8 items</span>
             </h4>
@@ -373,105 +386,560 @@
                 <i class="ti ti-plus"></i> New
               </button>
             </div>
-          </div>
+          </div> -->
 
-          <!-- TABS -->
-          <ul class="nav nav-tabs mb-3" id="taskTabs">
-            <li class="nav-item">
-              <a class="nav-link active" data-view="table" href="#">
-                <i class="ti ti-table me-1"></i> Table
-              </a>
-            </li>
+          <!-- FORM START -->
+          <!-- SLIDE-DOWN ADD INCIDENT FORM -->
 
-            <li class="nav-item">
-              <a class="nav-link" data-view="board" href="#">
-                <i class="ti ti-layout-board me-1"></i> Board
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" data-view="dashboard" href="#">
-                <i class="ti ti-chart-bar me-1"></i> Dashboard
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" data-view="widgets" href="#">
-                <i class="ti ti-grid-dots me-1"></i> Widgets
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" data-view="livebi" href="#">
-                <i class="ti ti-trending-up me-1"></i> Live BI
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" data-view="settings" href="#">
-                <i class="ti ti-settings me-1"></i> Settings
-              </a>
-            </li>
-          </ul>
-
-          <!-- TABLE -->
           <div class="card">
+            <div
+              class="card-header d-flex align-items-center justify-content-between flex-wrap row-gap-3 mb-2"
+            >
+              <div>
+                <h5>All Records</h5>
+                <small class="text-muted">105 total records</small>
+              </div>
+
+              <div
+                class="d-flex my-xl-auto right-content align-items-center flex-wrap row-gap-3"
+              >
+                <div class="me-3">
+                  <div class="position-relative">
+                    <input
+                      type="text"
+                      class="form-control ps-5"
+                      placeholder="Filter records..."
+                    />
+                    <span
+                      class="position-absolute top-50 start-0 translate-middle-y ps-3 text-muted"
+                    >
+                      <i class="ti ti-search"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="dropdown me-3">
+                  <button
+                    class="btn btn-outline d-flex align-items-center border gap-2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="ti ti-list"></i>
+                    View
+                    <i class="ti ti-chevron-down ms-1"></i>
+                  </button>
+
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a
+                        class="dropdown-item active"
+                        href="javascript:void(0);"
+                      >
+                        <i class="ti ti-check me-2"></i> Table View
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);">
+                        Card View
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Filter Dropdown -->
+                <div class="dropdown position-relative me-3">
+                  <button
+                    class="dropdown-toggle btn d-inline-flex align-items-center justify-content-between w-100 gap-2"
+                    type="button"
+                    id="dateFilterBtn"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="ti ti-filter"></i>
+                      <span id="selectedDateText">Filter</span>
+                    </div>
+                  </button>
+                </div>
+                <div class="dropdown me-3">
+                  <button
+                    class="btn btn-white d-inline-flex align-items-center border gap-2"
+                    data-bs-toggle="dropdown"
+                  >
+                    <i class="ti ti-columns"></i>
+                    Columns
+                  </button>
+
+                  <ul class="dropdown-menu dropdown-menu-end p-3">
+                    <li class="dropdown-item d-flex align-items-center gap-2">
+                      <i class="ti ti-check text-primary"></i> Type
+                    </li>
+                    <li class="dropdown-item d-flex align-items-center gap-2">
+                      <i class="ti ti-check text-primary"></i> Reference
+                    </li>
+                    <li class="dropdown-item d-flex align-items-center gap-2">
+                      <i class="ti ti-check text-primary"></i> Description
+                    </li>
+                    <li class="dropdown-item d-flex align-items-center gap-2">
+                      <i class="ti ti-check text-primary"></i> Priority
+                    </li>
+                    <li class="dropdown-item d-flex align-items-center gap-2">
+                      <i class="ti ti-check text-primary"></i> Status
+                    </li>
+                    <li class="dropdown-item d-flex align-items-center gap-2">
+                      <i class="ti ti-check text-primary"></i> Assigned To
+                    </li>
+                    <li class="dropdown-item d-flex align-items-center gap-2">
+                      <i class="ti ti-check text-primary"></i> Date
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reportIncident"
+                    class="btn btn-success d-flex align-items-center"
+                    ><i class="ti ti-upload me-2"></i>Report Incident</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- ✅ SECOND ROW (THREE DROPDOWNS UNDER HEADER) -->
+            <div class="d-flex gap-2 flex-wrap mb-2">
+              <!-- Severity -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  All Severity
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All Severity</a></li>
+                  <li><a class="dropdown-item" href="#">Low</a></li>
+                  <li><a class="dropdown-item" href="#">Medium</a></li>
+                  <li><a class="dropdown-item" href="#">High</a></li>
+                  <li><a class="dropdown-item" href="#">Critical</a></li>
+                </ul>
+              </div>
+
+              <!-- Status -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  All Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All Status</a></li>
+                  <li><a class="dropdown-item" href="#">Open</a></li>
+                  <li><a class="dropdown-item" href="#">In Progress</a></li>
+                  <li><a class="dropdown-item" href="#">Resolved</a></li>
+                </ul>
+              </div>
+
+              <!-- Properties -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  All Properties
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">Garden House Hotel</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Crown Lodge Hotel</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Trident Elite</a></li>
+                </ul>
+              </div>
+            </div>
             <div class="card-body p-0">
-              <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                  <thead>
+              <div class="custom-datatable-filter table-responsive">
+                <table class="table datatable">
+                  <thead class="thead-light">
                     <tr>
-                      <th>Incident Title</th>
-                      <th>Date</th>
-                      <th>Severity</th>
-                      <th>Location</th>
-                      <th>Reported By</th>
-                      <th>Status</th>
-                      <th>Due Date</th>
-                      <th>Actions</th>
+                      <th class="no-sort">
+                        <div class="form-check form-check-md">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="select-all"
+                          />
+                        </div>
+                      </th>
+                      <th>TYPE</th>
+                      <th>REFERENCE</th>
+                      <th>DESCRIPTION</th>
+                      <th>PRIORITY</th>
+                      <th>STATUS</th>
+                      <th>ASSIGNED TO</th>
+                      <th>DATE</th>
+                      <th></th>
+                      <!-- ✅ KEEP ACTION COLUMN -->
                     </tr>
                   </thead>
 
                   <tbody>
-                    <tr style="border-left: 4px solid #d32f2f">
-                      <td>Fire Alarm Triggered</td>
-                      <td>05/03/25</td>
-                      <td class="text-danger fw-bold">HIGH</td>
-                      <td>Building A</td>
-                      <td>Security Team</td>
-                      <td>Open</td>
-                      <td>07/03/25</td>
+                    <!-- ROW 1 -->
+                    <tr>
                       <td>
-                        <i class="ti ti-edit me-2"></i
-                        ><i class="ti ti-trash"></i>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+
+                      <td>
+                        <span
+                          class="badge bg-light-primary text-primary rounded-pill"
+                          >Incident</span
+                        >
+                      </td>
+
+                      <td>
+                        <strong>INC-2025-</strong><br />
+                        <small class="text-muted">a0efac16</small>
+                      </td>
+
+                      <td>
+                        <strong>self-harm</strong>
+                        <p class="text-muted mb-0 fs-13">
+                          Property damage discovered during routine
+                          inspection...
+                        </p>
+                      </td>
+
+                      <td>
+                        <span
+                          class="d-inline-flex align-items-center text-danger"
+                        >
+                          <i class="ti ti-point-filled me-1"></i> Critical
+                        </span>
+                      </td>
+
+                      <td>
+                        <span
+                          class="d-inline-flex align-items-center text-success"
+                        >
+                          <i class="ti ti-point-filled me-1"></i> Resolved
+                        </span>
+                      </td>
+
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <span
+                            class="avatar avatar-sm rounded-circle bg-info text-white me-2"
+                            >MS</span
+                          >
+                          Manager Smith
+                        </div>
+                      </td>
+
+                      <td>Jun 20, 2024</td>
+
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
                       </td>
                     </tr>
 
-                    <tr style="border-left: 4px solid #f4b400">
-                      <td>Slip & Fall Case</td>
-                      <td>22/02/25</td>
-                      <td style="color: #d49a00; font-weight: 600">MEDIUM</td>
-                      <td>Lobby</td>
-                      <td>Staff Member</td>
-                      <td>In Review</td>
-                      <td>01/03/25</td>
+                    <!-- ROW 2 -->
+                    <tr>
                       <td>
-                        <i class="ti ti-edit me-2"></i
-                        ><i class="ti ti-trash"></i>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+
+                      <td>
+                        <span
+                          class="badge bg-light-primary text-primary rounded-pill"
+                          >Incident</span
+                        >
+                      </td>
+
+                      <td>
+                        <strong>INC-2025-</strong><br />
+                        <small class="text-muted">b6a3253e</small>
+                      </td>
+
+                      <td>
+                        <strong>self-harm</strong>
+                        <p class="text-muted mb-0 fs-13">
+                          Noise complaint reported by neighboring room.
+                        </p>
+                      </td>
+
+                      <td>
+                        <span
+                          class="d-inline-flex align-items-center text-warning"
+                        >
+                          <i class="ti ti-point-filled me-1"></i> Medium
+                        </span>
+                      </td>
+
+                      <td>
+                        <span
+                          class="d-inline-flex align-items-center text-secondary"
+                        >
+                          <i class="ti ti-point-filled me-1"></i> Closed
+                        </span>
+                      </td>
+
+                      <td class="text-muted">Unassigned</td>
+
+                      <td>Aug 1, 2024</td>
+
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
                       </td>
                     </tr>
 
-                    <tr style="border-left: 4px solid #4caf50">
-                      <td>Minor Electric Shock</td>
-                      <td>10/02/25</td>
-                      <td style="color: #2e7d32; font-weight: 600">LOW</td>
-                      <td>Kitchen</td>
-                      <td>Chef</td>
-                      <td>Completed</td>
-                      <td>12/02/25</td>
+                    <!-- ROW 3 -->
+                    <tr>
                       <td>
-                        <i class="ti ti-edit me-2"></i
-                        ><i class="ti ti-trash"></i>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+
+                      <td>
+                        <span
+                          class="badge bg-light-primary text-primary rounded-pill"
+                          >Incident</span
+                        >
+                      </td>
+
+                      <td>
+                        <strong>INC-2025-</strong><br />
+                        <small class="text-muted">652f7ea6</small>
+                      </td>
+
+                      <td>
+                        <strong>substance-abuse</strong>
+                        <p class="text-muted mb-0 fs-13">
+                          Resident reported feeling unwell, medical
+                          assistance...
+                        </p>
+                      </td>
+
+                      <td>
+                        <span
+                          class="d-inline-flex align-items-center text-warning"
+                        >
+                          <i class="ti ti-point-filled me-1"></i> Medium
+                        </span>
+                      </td>
+
+                      <td>
+                        <span
+                          class="d-inline-flex align-items-center text-secondary"
+                        >
+                          <i class="ti ti-point-filled me-1"></i> Closed
+                        </span>
+                      </td>
+
+                      <td class="text-muted">Unassigned</td>
+
+                      <td>Aug 23, 2024</td>
+
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <!-- ROW 4 -->
+                    <tr>
+                      <td>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+
+                      <td>
+                        <span
+                          class="badge bg-light-primary text-primary rounded-pill"
+                          >Incident</span
+                        >
+                      </td>
+
+                      <td>
+                        <strong>INC-2025-</strong><br />
+                        <small class="text-muted">2abcdc48</small>
+                      </td>
+
+                      <td>
+                        <strong>maintenance-urgent</strong>
+                        <p class="text-muted mb-0 fs-13">
+                          Resident reported missing personal items.
+                        </p>
+                      </td>
+
+                      <td>
+                        <span
+                          class="d-inline-flex align-items-center text-success"
+                        >
+                          <i class="ti ti-point-filled me-1"></i> Low
+                        </span>
+                      </td>
+
+                      <td>
+                        <span
+                          class="d-inline-flex align-items-center text-purple"
+                        >
+                          <i class="ti ti-point-filled me-1"></i> Investigating
+                        </span>
+                      </td>
+
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <span
+                            class="avatar avatar-sm rounded-circle bg-warning text-white me-2"
+                            >OM</span
+                          >
+                          Officer Miller
+                        </div>
+                      </td>
+
+                      <td>Jun 1, 2024</td>
+
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <!-- ROW 5 -->
+                    <tr>
+                      <td>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+
+                      <td>
+                        <span
+                          class="badge bg-light-primary text-primary rounded-pill"
+                          >Incident</span
+                        >
+                      </td>
+
+                      <td>
+                        <strong>INC-2025-</strong><br />
+                        <small class="text-muted">321f0d9d</small>
+                      </td>
+
+                      <td>
+                        <strong>substance-abuse</strong>
+                        <p class="text-muted mb-0 fs-13">
+                          Resident reported missing personal items.
+                        </p>
+                      </td>
+
+                      <td>
+                        <span
+                          class="d-inline-flex align-items-center text-danger"
+                        >
+                          <i class="ti ti-point-filled me-1"></i> High
+                        </span>
+                      </td>
+
+                      <td>
+                        <span
+                          class="d-inline-flex align-items-center text-purple"
+                        >
+                          <i class="ti ti-point-filled me-1"></i> Investigating
+                        </span>
+                      </td>
+
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <span
+                            class="avatar avatar-sm rounded-circle bg-info text-white me-2"
+                            >TL</span
+                          >
+                          Team Lead Brown
+                        </div>
+                      </td>
+
+                      <td>Dec 16, 2024</td>
+
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
                       </td>
                     </tr>
                   </tbody>
@@ -479,213 +947,289 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- FORM START -->
-          <!-- SLIDE-DOWN ADD INCIDENT FORM -->
-          <div
-            id="incidentFormContainer"
-            style="display: none; margin-top: 18px"
-          >
-            <div class="card">
-              <div class="card-body">
-                <div
-                  class="d-flex justify-content-between align-items-center mb-3"
-                >
-                  <h5 class="mb-0">Add New Incident</h5>
-                  <button
-                    id="btnCancelIncident"
-                    class="btn btn-sm btn-outline-secondary"
+      <!-- /Process Move-In -->
+      <div class="modal fade" id="reportIncident" tabindex="-1">
+        <div
+          class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
+        >
+          <div class="modal-content">
+            <!-- ✅ HEADER -->
+            <div class="modal-header">
+              <div>
+                <h4 class="modal-title">Incident Report</h4>
+                <p class="text-muted mb-0">
+                  Standard form for reporting incidents at properties
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- ✅ BODY -->
+            <div class="modal-body">
+              <div class="row">
+                <!-- Incident Type -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"
+                    >Incident Type <span class="text-danger">*</span></label
                   >
-                    Cancel
-                  </button>
+                  <select class="form-select" required>
+                    <option selected disabled>Select type</option>
+                    <option>Self-harm</option>
+                    <option>Substance Abuse</option>
+                    <option>Complaint</option>
+                    <option>Maintenance</option>
+                  </select>
                 </div>
 
-                <form id="incidentForm" class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label">Incident Title</label>
-                    <input
-                      type="text"
-                      id="incidentTitle"
-                      class="form-control"
-                      required
-                    />
-                  </div>
+                <!-- Severity -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"
+                    >Severity <span class="text-danger">*</span></label
+                  >
+                  <select class="form-select" required>
+                    <option>Low</option>
+                    <option selected>Medium</option>
+                    <option>High</option>
+                    <option>Critical</option>
+                  </select>
+                </div>
 
-                  <div class="col-md-3">
-                    <label class="form-label">Date</label>
-                    <input
-                      type="date"
-                      id="incidentDate"
-                      class="form-control"
-                      required
-                    />
-                  </div>
+                <!-- Property -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"
+                    >Property <span class="text-danger">*</span></label
+                  >
+                  <select class="form-select" required>
+                    <option selected disabled>Select property</option>
+                    <option>Garden House Hotel</option>
+                    <option>Crown Lodge Hotel</option>
+                    <option>Trident Elite</option>
+                    <option>Marriott Waterfront</option>
+                  </select>
+                </div>
 
-                  <div class="col-md-3">
-                    <label class="form-label">Severity</label>
-                    <select id="incidentSeverity" class="form-select" required>
-                      <option value="HIGH">HIGH</option>
-                      <option value="MEDIUM" selected>MEDIUM</option>
-                      <option value="LOW">LOW</option>
-                    </select>
-                  </div>
+                <!-- Service User -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Service User</label>
+                  <select class="form-select">
+                    <option selected disabled>
+                      Select service user (optional)
+                    </option>
+                    <option>Dalia Mohammed</option>
+                    <option>Rana Yusuf</option>
+                    <option>Nasser Hamid</option>
+                    <option>Amina Farah</option>
+                  </select>
+                </div>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Location</label>
-                    <input
-                      type="text"
-                      id="incidentLocation"
-                      class="form-control"
-                      placeholder="Building / Room"
-                    />
-                  </div>
+                <!-- Description -->
+                <div class="col-12 mb-3">
+                  <label class="form-label"
+                    >Description <span class="text-danger">*</span></label
+                  >
+                  <textarea
+                    class="form-control"
+                    rows="4"
+                    placeholder="Detailed description of the incident..."
+                    required
+                  ></textarea>
+                  <small class="text-muted">
+                    Include all relevant details about what happened
+                  </small>
+                </div>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Reported By</label>
-                    <input
-                      type="text"
-                      id="incidentReportedBy"
-                      class="form-control"
-                      placeholder="Name or team"
-                    />
-                  </div>
+                <!-- Reported By -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"
+                    >Reported By <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Name of person reporting"
+                    required
+                  />
+                </div>
 
-                  <div class="col-md-6">
-                    <label class="form-label">Status</label>
-                    <select id="incidentStatus" class="form-select">
-                      <option>Open</option>
-                      <option>In Review</option>
-                      <option>Completed</option>
-                    </select>
+                <!-- Reported Date -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"
+                    >Reported Date <span class="text-danger">*</span></label
+                  >
+                  <div class="input-group">
+                    <input type="date" class="form-control" required />
+                    <span class="input-group-text">
+                      <i class="ti ti-calendar"></i>
+                    </span>
                   </div>
+                </div>
 
-                  <div class="col-md-3">
-                    <label class="form-label">Due Date</label>
-                    <input
-                      type="date"
-                      id="incidentDueDate"
-                      class="form-control"
-                    />
-                  </div>
+                <!-- Assigned To -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Assigned To</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Name of person handling incident"
+                  />
+                </div>
 
-                  <div class="col-md-3">
-                    <label class="form-label">Action Required</label>
-                    <input
-                      type="text"
-                      id="incidentAction"
-                      class="form-control"
-                      placeholder="e.g. Investigate"
-                    />
-                  </div>
-
-                  <div class="col-12">
-                    <label class="form-label">Description</label>
-                    <textarea
-                      id="incidentDescription"
-                      class="form-control"
-                      rows="3"
-                      placeholder="Describe the incident..."
-                    ></textarea>
-                  </div>
-
-                  <div class="col-12 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-success me-2">
-                      Save Incident
-                    </button>
-                    <button
-                      type="button"
-                      id="btnCancelBottom"
-                      class="btn btn-outline-secondary"
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </form>
+                <!-- Status -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"
+                    >Status <span class="text-danger">*</span></label
+                  >
+                  <select class="form-select" required>
+                    <option selected>Open</option>
+                    <option>In-progress</option>
+                    <option>Closed</option>
+                    <option>Resolved</option>
+                  </select>
+                </div>
               </div>
             </div>
+
+            <!-- ✅ FOOTER -->
+            <div class="modal-footer d-flex justify-content-end gap-2">
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="button" class="btn btn-dark">Submit Form</button>
+            </div>
           </div>
-          <script>
-            fetch("../assets/includes/sidebar.html")
-              .then((response) => response.text())
-              .then((data) => {
-                document.getElementById("sidebar-container").innerHTML = data;
-              });
-          </script>
+        </div>
+      </div>
 
-          <script>
-            // Sidebar toggle (collapse / expand)
-            $(document).on("click", "#toggle_btn", function () {
-              $("body").toggleClass("mini-sidebar");
+      <!-- /Process Move-In -->
+    </div>
 
-              if (!$("body").hasClass("mini-sidebar")) {
-                $(".subdrop + ul").slideDown();
-              } else {
-                $(".subdrop + ul").slideUp();
-              }
+    <script>
+      fetch("../assets/includes/sidebar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("sidebar-container").innerHTML = data;
+        });
+    </script>
 
-              return false;
-            });
-          </script>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
-          <!-- JAVASCRIPT FOR SLIDE-FORM -->
-          <script>
-            $(document).ready(function () {
-              const $formContainer = $("#incidentFormContainer");
-              const $btnShow = $("#btnShowIncidentForm");
-              const $btnCancelTop = $("#btnCancelIncident");
-              const $btnCancelBottom = $("#btnCancelBottom");
-              const $form = $("#incidentForm");
+    <!-- Bootstrap Core JS -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
-              // Show slide-down form
-              $btnShow.on("click", function (e) {
-                e.preventDefault();
-                $form[0].reset();
-                $formContainer.slideDown(250, () => {
-                  $formContainer[0].scrollIntoView({ behavior: "smooth" });
-                  $("#incidentTitle").focus();
-                });
-              });
+    <!-- Feather Icon JS -->
+    <script src="../assets/js/feather.min.js"></script>
 
-              // Hide form
-              function hideForm() {
-                $formContainer.slideUp(200);
-              }
+    <!-- Slimscroll JS -->
+    <script src="../assets/js/jquery.slimscroll.min.js"></script>
 
-              $btnCancelTop.on("click", hideForm);
-              $btnCancelBottom.on("click", hideForm);
+    <!-- Color Picker JS -->
+    <script src="../assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
 
-              // Save new incident
-              $form.on("submit", function (e) {
-                e.preventDefault();
+    <!-- Datatable JS -->
+    <script src="../assets/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/js/dataTables.bootstrap5.min.js"></script>
 
-                const title = $("#incidentTitle").val();
-                const date = $("#incidentDate").val()
-                  ? new Date($("#incidentDate").val()).toLocaleDateString()
-                  : "-";
+    <!-- Daterangepikcer JS -->
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
 
-                const location = $("#incidentLocation").val() || "-";
-                const reportedBy = $("#incidentReportedBy").val() || "-";
-                const status = $("#incidentStatus").val() || "Open";
-                const dueDate = $("#incidentDueDate").val()
-                  ? new Date($("#incidentDueDate").val()).toLocaleDateString()
-                  : "-";
+    <!-- Select2 JS -->
+    <script src="../assets/plugins/select2/js/select2.min.js"></script>
 
-                const severity = $("#incidentSeverity").val();
-                let severityHTML = "";
-                let borderColor = "";
+    <!-- Chart JS -->
+    <script src="../assets/plugins/apexchart/apexcharts.min.js"></script>
+    <script src="../assets/plugins/apexchart/chart-data.js"></script>
 
-                if (severity === "HIGH") {
-                  severityHTML = `<span class="text-danger fw-bold">HIGH</span>`;
-                  borderColor = "#d32f2f";
-                } else if (severity === "MEDIUM") {
-                  severityHTML = `<span style="color:#d49a00;font-weight:600;">MEDIUM</span>`;
-                  borderColor = "#f4b400";
-                } else {
-                  severityHTML = `<span style="color:#2e7d32;font-weight:600;">LOW</span>`;
-                  borderColor = "#4caf50";
-                }
+    <!-- Custom JS -->
+    <script src="../assets/js/theme-colorpicker.js"></script>
+    <!-- <script src="../assets/js/script.js"></script> -->
 
-                const newRow = `
+    <script>
+      // Sidebar toggle (collapse / expand)
+      $(document).on("click", "#toggle_btn", function () {
+        $("body").toggleClass("mini-sidebar");
+
+        if (!$("body").hasClass("mini-sidebar")) {
+          $(".subdrop + ul").slideDown();
+        } else {
+          $(".subdrop + ul").slideUp();
+        }
+
+        return false;
+      });
+    </script>
+
+    <!-- JAVASCRIPT FOR SLIDE-FORM -->
+    <script>
+      $(document).ready(function () {
+        const $formContainer = $("#incidentFormContainer");
+        const $btnShow = $("#btnShowIncidentForm");
+        const $btnCancelTop = $("#btnCancelIncident");
+        const $btnCancelBottom = $("#btnCancelBottom");
+        const $form = $("#incidentForm");
+
+        // Show slide-down form
+        $btnShow.on("click", function (e) {
+          e.preventDefault();
+          $form[0].reset();
+          $formContainer.slideDown(250, () => {
+            $formContainer[0].scrollIntoView({ behavior: "smooth" });
+            $("#incidentTitle").focus();
+          });
+        });
+
+        // Hide form
+        function hideForm() {
+          $formContainer.slideUp(200);
+        }
+
+        $btnCancelTop.on("click", hideForm);
+        $btnCancelBottom.on("click", hideForm);
+
+        // Save new incident
+        $form.on("submit", function (e) {
+          e.preventDefault();
+
+          const title = $("#incidentTitle").val();
+          const date = $("#incidentDate").val()
+            ? new Date($("#incidentDate").val()).toLocaleDateString()
+            : "-";
+
+          const location = $("#incidentLocation").val() || "-";
+          const reportedBy = $("#incidentReportedBy").val() || "-";
+          const status = $("#incidentStatus").val() || "Open";
+          const dueDate = $("#incidentDueDate").val()
+            ? new Date($("#incidentDueDate").val()).toLocaleDateString()
+            : "-";
+
+          const severity = $("#incidentSeverity").val();
+          let severityHTML = "";
+          let borderColor = "";
+
+          if (severity === "HIGH") {
+            severityHTML = `<span class="text-danger fw-bold">HIGH</span>`;
+            borderColor = "#d32f2f";
+          } else if (severity === "MEDIUM") {
+            severityHTML = `<span style="color:#d49a00;font-weight:600;">MEDIUM</span>`;
+            borderColor = "#f4b400";
+          } else {
+            severityHTML = `<span style="color:#2e7d32;font-weight:600;">LOW</span>`;
+            borderColor = "#4caf50";
+          }
+
+          const newRow = `
         <tr style="border-left:4px solid ${borderColor}">
           <td>${title}</td>
           <td>${date}</td>
@@ -698,15 +1242,11 @@
         </tr>
       `;
 
-                $(".table tbody").prepend(newRow);
+          $(".table tbody").prepend(newRow);
 
-                hideForm();
-              });
-            });
-          </script>
-
-        </div>
-      </div>
-    </div>
+          hideForm();
+        });
+      });
+    </script>
   </body>
 </html>

@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
-    <title>Service Users - Accommodation History</title>
+    <title>Meal Management</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="../assets/img/favicon.png" />
@@ -1116,114 +1116,119 @@
 
       <!-- /Process Move-In -->
       <div class="modal fade" id="scheduleMealModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
-    <div class="modal-content">
-      
-      <!-- ✅ HEADER -->
-      <div class="modal-header">
-        <div>
-          <h4 class="modal-title">Schedule Meal</h4>
-          <p class="text-muted mb-0">
-            Create a new meal plan for a service user
-          </p>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+        <div
+          class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable"
+        >
+          <div class="modal-content">
+            <!-- ✅ HEADER -->
+            <div class="modal-header">
+              <div>
+                <h4 class="modal-title">Schedule Meal</h4>
+                <p class="text-muted mb-0">
+                  Create a new meal plan for a service user
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
 
-      <!-- ✅ BODY -->
-      <div class="modal-body">
+            <!-- ✅ BODY -->
+            <div class="modal-body">
+              <!-- Service User -->
+              <div class="mb-3">
+                <label class="form-label">Service User</label>
+                <select class="form-select">
+                  <option selected disabled>Select a service user</option>
+                  <option>Dalia Mohammed</option>
+                  <option>Rana Yusuf</option>
+                  <option>Nasser Hamid</option>
+                  <option>Amina Farah</option>
+                </select>
+              </div>
 
-        <!-- Service User -->
-        <div class="mb-3">
-          <label class="form-label">Service User</label>
-          <select class="form-select">
-            <option selected disabled>Select a service user</option>
-            <option>Dalia Mohammed</option>
-            <option>Rana Yusuf</option>
-            <option>Nasser Hamid</option>
-            <option>Amina Farah</option>
-          </select>
-        </div>
+              <!-- Property -->
+              <div class="mb-3">
+                <label class="form-label">Property</label>
+                <select class="form-select">
+                  <option selected disabled>Select a property</option>
+                  <option>Garden House Hotel</option>
+                  <option>Crown Lodge Hotel</option>
+                  <option>Trident Elite</option>
+                  <option>Marriott Waterfront</option>
+                </select>
+              </div>
 
-        <!-- Property -->
-        <div class="mb-3">
-          <label class="form-label">Property</label>
-          <select class="form-select">
-            <option selected disabled>Select a property</option>
-            <option>Garden House Hotel</option>
-            <option>Crown Lodge Hotel</option>
-            <option>Trident Elite</option>
-            <option>Marriott Waterfront</option>
-          </select>
-        </div>
+              <!-- Meal Type -->
+              <div class="mb-3">
+                <label class="form-label">Meal Type</label>
+                <select class="form-select">
+                  <option>Breakfast</option>
+                  <option>Lunch</option>
+                  <option>Dinner</option>
+                </select>
+              </div>
 
-        <!-- Meal Type -->
-        <div class="mb-3">
-          <label class="form-label">Meal Type</label>
-          <select class="form-select">
-            <option>Breakfast</option>
-            <option>Lunch</option>
-            <option>Dinner</option>
-          </select>
-        </div>
+              <!-- Scheduled Date -->
+              <div class="mb-3">
+                <label class="form-label">Scheduled Date</label>
+                <div class="input-group">
+                  <input type="date" class="form-control" value="2025-12-01" />
+                  <span class="input-group-text">
+                    <i class="ti ti-calendar"></i>
+                  </span>
+                </div>
+              </div>
 
-        <!-- Scheduled Date -->
-        <div class="mb-3">
-          <label class="form-label">Scheduled Date</label>
-          <div class="input-group">
-            <input type="date" class="form-control" value="2025-12-01">
-            <span class="input-group-text">
-              <i class="ti ti-calendar"></i>
-            </span>
+              <!-- Portion Size -->
+              <div class="mb-3">
+                <label class="form-label">Portion Size</label>
+                <select class="form-select">
+                  <option>Small</option>
+                  <option selected>Standard</option>
+                  <option>Large</option>
+                </select>
+              </div>
+
+              <!-- Dietary Requirements -->
+              <div class="mb-3">
+                <label class="form-label">Dietary Requirements</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="e.g., Vegetarian, Halal, Gluten-free"
+                />
+              </div>
+
+              <!-- Notes -->
+              <div class="mb-3">
+                <label class="form-label">Notes</label>
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  placeholder="Additional notes about this meal"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- ✅ FOOTER -->
+            <div class="modal-footer d-flex justify-content-end gap-2">
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="button" class="btn btn-dark">
+                Create Meal Plan
+              </button>
+            </div>
           </div>
         </div>
-
-        <!-- Portion Size -->
-        <div class="mb-3">
-          <label class="form-label">Portion Size</label>
-          <select class="form-select">
-            <option>Small</option>
-            <option selected>Standard</option>
-            <option>Large</option>
-          </select>
-        </div>
-
-        <!-- Dietary Requirements -->
-        <div class="mb-3">
-          <label class="form-label">Dietary Requirements</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="e.g., Vegetarian, Halal, Gluten-free"
-          >
-        </div>
-
-        <!-- Notes -->
-        <div class="mb-3">
-          <label class="form-label">Notes</label>
-          <textarea
-            class="form-control"
-            rows="3"
-            placeholder="Additional notes about this meal"
-          ></textarea>
-        </div>
-
       </div>
-
-      <!-- ✅ FOOTER -->
-      <div class="modal-footer d-flex justify-content-end gap-2">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-          Cancel
-        </button>
-        <button type="button" class="btn btn-dark">
-          Create Meal Plan
-        </button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
 
       <!-- /Process Move-In -->
     </div>

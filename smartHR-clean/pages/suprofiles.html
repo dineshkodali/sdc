@@ -175,7 +175,7 @@
       <div class="page-wrapper">
         <div class="content container-fluid">
           <!-- Page Header -->
-          <div class="page-header">
+          <!-- <div class="page-header">
             <div class="row align-items-center">
               <div class="col">
                 <h3 class="page-title">Service Users / SU Profiles</h3>
@@ -185,204 +185,1185 @@
                 </ul>
               </div>
             </div>
+          </div> -->
+
+          <!-- Breadcrumb -->
+          <div
+            class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
+          >
+            <div class="my-auto mb-2">
+              <h2 class="page-title">Service Users</h2>
+              <nav>
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="index.html"><i class="ti ti-smart-home"></i></a>
+                  </li>
+                  <li class="breadcrumb-item">Service Users</li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    User List
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              class="d-flex my-xl-auto right-content align-items-center flex-wrap"
+            >
+              <div class="me-2 mb-2">
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addServiceUser"
+                  class="btn btn-primary d-flex align-items-center"
+                  ><i class="ti ti-plus"></i>Add Service User</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- /Breadcrumb -->
+
+          <!-- Cards -->
+
+          <div class="row">
+            <!-- Total Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-info rounded-circle"
+                        ><i class="ti ti-users"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Total Users
+                      </p>
+                      <h4>16</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Total Plans -->
+
+            <!-- Total Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-success rounded-circle"
+                        ><i class="ti ti-user-check"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Active Users
+                      </p>
+                      <h4>9</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Total Plans -->
+
+            <!-- Inactive Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-primary rounded-circle"
+                        ><i class="ti ti-alert-triangle"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Requires Attention
+                      </p>
+                      <h4>6</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Inactive Companies -->
+
+            <!-- No of Plans  -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-purple rounded-circle">
+                        <i class="ti ti-user-x"></i>
+                      </span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Moved Out
+                      </p>
+                      <h4>4</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /No of Plans -->
           </div>
 
           <!-- Cards -->
-          <div class="row g-3 mb-4">
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Total Service Users</span>
-                <h3 class="mt-2">124</h3>
-                <p class="text-muted">
-                  Active: <strong class="text-success">98</strong>
-                </p>
-              </div>
-            </div>
 
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Vulnerable Cases</span>
-                <h3 class="text-danger mt-2">14</h3>
-                <p class="text-danger">
-                  <i class="ti ti-alert-triangle"></i> Requires review
-                </p>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>New This Month</span>
-                <h3 class="mt-2">9</h3>
-                <p class="text-warning">
-                  <i class="ti ti-user-plus"></i> Registrations
-                </p>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Open Cases</span>
-                <h3 class="text-success mt-2">28</h3>
-                <p class="text-muted">Ongoing support</p>
-              </div>
-            </div>
-          </div>
-          <!-- Search / actions -->
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="mb-0">
-              Service User Profiles
-              <span class="text-muted">6 sample rows</span>
-            </h4>
-            <div class="d-flex gap-2">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search service users..."
-                style="width: 280px"
-              />
-              <button class="btn btn-light">
-                <i class="ti ti-filter"></i> Filter
-              </button>
-              <button class="btn btn-light">
-                <i class="ti ti-layout-grid"></i> View
-              </button>
-              <button class="btn btn-success">
-                <i class="ti ti-plus"></i> New
-              </button>
-            </div>
-          </div>
-
-          <!-- Tabs -->
-          <ul class="nav nav-tabs mb-3">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Table</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Board</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Widgets</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-          </ul>
-
-          <!-- Table -->
+          <!-- searchbar -->
           <div class="card">
+            <div class="card-body p-3">
+              <div class="d-flex align-items-center gap-3">
+                <!-- Title -->
+                <h5 class="mb-0">User List</h5>
+
+                <!-- Search Bar -->
+                <div class="flex-grow-1 position-relative">
+                  <input
+                    type="text"
+                    class="form-control ps-5"
+                    placeholder="Search by name, room, or property..."
+                  />
+                  <span
+                    class="position-absolute top-50 start-0 translate-middle-y ps-3 text-muted"
+                  >
+                    <i class="ti ti-search"></i>
+                  </span>
+                </div>
+
+                <!-- Filter Dropdown -->
+                <div class="dropdown position-relative">
+                  <button
+                    class="dropdown-toggle btn d-inline-flex align-items-center justify-content-between w-100 gap-2"
+                    type="button"
+                    id="dateFilterBtn"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="ti ti-filter"></i>
+                      <span id="selectedDateText">Filter</span>
+                    </div>
+
+                    <!-- ✅ WRONG (CLOSE) ICON -->
+                    <!-- <i
+                      class="ti ti-x text-muted fs-16"
+                      onclick="event.stopPropagation(); clearDates();"
+                    ></i> -->
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <!-- List Table -->
+         
+  
+          <div class="card">
+            <div
+              class="card-header d-flex align-items-center justify-content-between flex-wrap row-gap-3"
+            >
+              <h5>Plan List</h5>
+              <div
+                class="d-flex my-xl-auto right-content align-items-center flex-wrap row-gap-3"
+              >
+                <div class="me-3">
+                  <div class="input-icon-end position-relative">
+                    <input
+                      type="text"
+                      class="form-control date-range bookingrange"
+                      placeholder="dd/mm/yyyy - dd/mm/yyyy"
+                    />
+                    <span class="input-icon-addon">
+                      <i class="ti ti-chevron-down"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="dropdown me-3">
+                  <a
+                    href="javascript:void(0);"
+                    class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    Designation
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end p-3">
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Finance</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Developer</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Executive</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="dropdown me-3">
+                  <a
+                    href="javascript:void(0);"
+                    class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    Select Status
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end p-3">
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Active</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Inactive</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <a
+                    href="javascript:void(0);"
+                    class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    Sort By : Last 7 Days
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end p-3">
+                    <li>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item rounded-1"
+                        >Ascending</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             <div class="card-body p-0">
-              <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                  <thead>
+              <div class="custom-datatable-filter table-responsive">
+                <table class="table datatable">
+                  <thead class="thead-light">
                     <tr>
-                      <th>Full Name</th>
-                      <th>Age</th>
-                      <th>Gender</th>
-                      <th>Nationality</th>
-                      <th>Accommodation</th>
-                      <th>Case Worker</th>
-                      <th>Support Level</th>
+                      <th class="no-sort">
+                        <div class="form-check form-check-md">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="select-all"
+                          />
+                        </div>
+                      </th>
+                      <th>Emp ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Designation</th>
+                      <th>Joining Date</th>
                       <th>Status</th>
-                      <th>Last Contact</th>
-                      <th>Actions</th>
+                      <th></th>
                     </tr>
                   </thead>
-
                   <tbody>
-                    <!-- Row 1 - High -->
-                    <tr style="border-left: 4px solid #d32f2f">
-                      <td>Amira Khan</td>
-                      <td>28</td>
-                      <td>Female</td>
-                      <td>Pakistan</td>
-                      <td>Temporary Shelter - Unit 3</td>
-                      <td>J. Harrison</td>
-                      <td><span class="badge-high">HIGH</span></td>
-                      <td>Open</td>
-                      <td>22/11/2025</td>
+                    <tr>
                       <td>
-                        <i class="ti ti-edit me-2"></i
-                        ><i class="ti ti-trash"></i>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td><a href="employee-details.html">Emp-001</a></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a
+                            href="employee-details.html"
+                            class="avatar avatar-md"
+                            data-bs-toggle="modal"
+                            data-bs-target="#view_details"
+                            ><img
+                              src="../assets/img/users/user-32.jpg"
+                              class="img-fluid rounded-circle"
+                              alt="img"
+                          /></a>
+                          <div class="ms-2">
+                            <p class="text-dark mb-0">
+                              <a
+                                href="employee-details.html"
+                                data-bs-toggle="modal"
+                                data-bs-target="#view_details"
+                                >Anthony Lewis</a
+                              >
+                            </p>
+                            <span class="fs-12">Finance</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>anthony@example.com</td>
+                      <td>(123) 4567 890</td>
+                      <td>
+                        <div class="dropdown me-3">
+                          <a
+                            href="javascript:void(0);"
+                            class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                            data-bs-toggle="dropdown"
+                          >
+                            Finance
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Developer</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Executive</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>12 Sep 2024</td>
+                      <td>
+                        <span
+                          class="badge badge-success d-inline-flex align-items-center badge-xs"
+                        >
+                          <i class="ti ti-point-filled me-1"></i>Active
+                        </span>
+                      </td>
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
                       </td>
                     </tr>
-
-                    <!-- Row 2 - Medium -->
-                    <tr style="border-left: 4px solid #f4b400">
-                      <td>Michael O'Connor</td>
-                      <td>42</td>
-                      <td>Male</td>
-                      <td>Ireland</td>
-                      <td>Council Accommodation</td>
-                      <td>S. Patel</td>
-                      <td><span class="badge-medium">MEDIUM</span></td>
-                      <td>Ongoing</td>
-                      <td>18/11/2025</td>
+                    <tr>
                       <td>
-                        <i class="ti ti-edit me-2"></i
-                        ><i class="ti ti-trash"></i>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td><a href="employee-details.html">Emp-002</a></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a
+                            href="employee-details.html"
+                            class="avatar avatar-md"
+                            data-bs-toggle="modal"
+                            data-bs-target="#view_details"
+                            ><img
+                              src="../assets/img/users/user-09.jpg"
+                              class="img-fluid rounded-circle"
+                              alt="img"
+                          /></a>
+                          <div class="ms-2">
+                            <p class="text-dark mb-0">
+                              <a
+                                href="employee-details.html"
+                                data-bs-toggle="modal"
+                                data-bs-target="#view_details"
+                                >Brian Villalobos</a
+                              >
+                            </p>
+                            <span class="fs-12">Developer</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>brian@example.com</td>
+                      <td>(179) 7382 829</td>
+                      <td>
+                        <div class="dropdown me-3">
+                          <a
+                            href="javascript:void(0);"
+                            class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                            data-bs-toggle="dropdown"
+                          >
+                            Developer
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Finance</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Executive</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>24 Oct 2024</td>
+                      <td>
+                        <span
+                          class="badge badge-success d-inline-flex align-items-center badge-xs"
+                        >
+                          <i class="ti ti-point-filled me-1"></i>Active
+                        </span>
+                      </td>
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
                       </td>
                     </tr>
-
-                    <!-- Row 3 - Low -->
-                    <tr style="border-left: 4px solid #4caf50">
-                      <td>Fatima Ali</td>
-                      <td>34</td>
-                      <td>Female</td>
-                      <td>Bangladesh</td>
-                      <td>Private Rented - Flat 7B</td>
-                      <td>L. Morgan</td>
-                      <td><span class="badge-low">LOW</span></td>
-                      <td>Stable</td>
-                      <td>12/11/2025</td>
+                    <tr>
                       <td>
-                        <i class="ti ti-edit me-2"></i
-                        ><i class="ti ti-trash"></i>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td><a href="employee-details.html">Emp-003</a></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a
+                            href="employee-details.html"
+                            class="avatar avatar-md"
+                            data-bs-toggle="modal"
+                            data-bs-target="#view_details"
+                            ><img
+                              src="../assets/img/users/user-01.jpg"
+                              class="img-fluid rounded-circle"
+                              alt="img"
+                          /></a>
+                          <div class="ms-2">
+                            <p class="text-dark mb-0">
+                              <a
+                                href="employee-details.html"
+                                data-bs-toggle="modal"
+                                data-bs-target="#view_details"
+                                >Harvey Smith</a
+                              >
+                            </p>
+                            <span class="fs-12">Developer</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>harvey@example.com</td>
+                      <td>(184) 2719 738</td>
+                      <td>
+                        <div class="dropdown me-3">
+                          <a
+                            href="javascript:void(0);"
+                            class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                            data-bs-toggle="dropdown"
+                          >
+                            Developer
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Finance</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Executive</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>18 Feb 2024</td>
+                      <td>
+                        <span
+                          class="badge badge-success d-inline-flex align-items-center badge-xs"
+                        >
+                          <i class="ti ti-point-filled me-1"></i>Active
+                        </span>
+                      </td>
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
                       </td>
                     </tr>
-
-                    <!-- Row 4 - High -->
-                    <tr style="border-left: 4px solid #d32f2f">
-                      <td>John Smith</td>
-                      <td>56</td>
-                      <td>Male</td>
-                      <td>UK</td>
-                      <td>Hostel</td>
-                      <td>M. Turner</td>
-                      <td><span class="badge-high">HIGH</span></td>
-                      <td>Vulnerable</td>
-                      <td>20/11/2025</td>
+                    <tr>
                       <td>
-                        <i class="ti ti-edit me-2"></i
-                        ><i class="ti ti-trash"></i>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td><a href="employee-details.html">Emp-004</a></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a
+                            href="employee-details.html"
+                            class="avatar avatar-md"
+                            data-bs-toggle="modal"
+                            data-bs-target="#view_details"
+                            ><img
+                              src="../assets/img/users/user-33.jpg"
+                              class="img-fluid rounded-circle"
+                              alt="img"
+                          /></a>
+                          <div class="ms-2">
+                            <p class="text-dark mb-0">
+                              <a
+                                href="employee-details.html"
+                                data-bs-toggle="modal"
+                                data-bs-target="#view_details"
+                                >Stephan Peralt</a
+                              >
+                            </p>
+                            <span class="fs-12">Executive Officer</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>peral@example.com</td>
+                      <td>(193) 7839 748</td>
+                      <td>
+                        <div class="dropdown me-3">
+                          <a
+                            href="javascript:void(0);"
+                            class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                            data-bs-toggle="dropdown"
+                          >
+                            Executive
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Finance</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Developer</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>17 Oct 2024</td>
+                      <td>
+                        <span
+                          class="badge badge-success d-inline-flex align-items-center badge-xs"
+                        >
+                          <i class="ti ti-point-filled me-1"></i>Active
+                        </span>
+                      </td>
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
                       </td>
                     </tr>
-
-                    <!-- Row 5 - Medium -->
-                    <tr style="border-left: 4px solid #f4b400">
-                      <td>Larissa Gomez</td>
-                      <td>30</td>
-                      <td>Female</td>
-                      <td>Brazil</td>
-                      <td>Shared House</td>
-                      <td>S. Patel</td>
-                      <td><span class="badge-medium">MEDIUM</span></td>
-                      <td>Ongoing</td>
-                      <td>14/11/2025</td>
+                    <tr>
                       <td>
-                        <i class="ti ti-edit me-2"></i
-                        ><i class="ti ti-trash"></i>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td><a href="employee-details.html">Emp-005</a></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a
+                            href="employee-details.html"
+                            class="avatar avatar-md"
+                            data-bs-toggle="modal"
+                            data-bs-target="#view_details"
+                            ><img
+                              src="../assets/img/users/user-33.jpg"
+                              class="img-fluid rounded-circle"
+                              alt="img"
+                          /></a>
+                          <div class="ms-2">
+                            <p class="text-dark mb-0">
+                              <a
+                                href="employee-details.html"
+                                data-bs-toggle="modal"
+                                data-bs-target="#view_details"
+                                >Doglas Martini</a
+                              >
+                            </p>
+                            <span class="fs-12">Manager</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>martniwr@example.com</td>
+                      <td>(183) 9302 890</td>
+                      <td>
+                        <div class="dropdown me-3">
+                          <a
+                            href="javascript:void(0);"
+                            class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                            data-bs-toggle="dropdown"
+                          >
+                            Manager
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Finance</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Developer</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>20 Jul 2024</td>
+                      <td>
+                        <span
+                          class="badge badge-success d-inline-flex align-items-center badge-xs"
+                        >
+                          <i class="ti ti-point-filled me-1"></i>Active
+                        </span>
+                      </td>
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
                       </td>
                     </tr>
-
-                    <!-- Row 6 - Low -->
-                    <tr style="border-left: 4px solid #4caf50">
-                      <td>Ahmed Z. Rahman</td>
-                      <td>22</td>
-                      <td>Male</td>
-                      <td>Bangladesh</td>
-                      <td>Temporary Shelter</td>
-                      <td>J. Harrison</td>
-                      <td><span class="badge-low">LOW</span></td>
-                      <td>Stable</td>
-                      <td>05/11/2025</td>
+                    <tr>
                       <td>
-                        <i class="ti ti-edit me-2"></i
-                        ><i class="ti ti-trash"></i>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td><a href="employee-details.html">Emp-006</a></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a
+                            href="employee-details.html"
+                            class="avatar avatar-md"
+                            data-bs-toggle="modal"
+                            data-bs-target="#view_details"
+                            ><img
+                              src="../assets/img/users/user-02.jpg"
+                              class="img-fluid rounded-circle"
+                              alt="img"
+                          /></a>
+                          <div class="ms-2">
+                            <p class="text-dark mb-0">
+                              <a
+                                href="employee-details.html"
+                                data-bs-toggle="modal"
+                                data-bs-target="#view_details"
+                                >Linda Ray</a
+                              >
+                            </p>
+                            <span class="fs-12">Finance</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>ray456@example.com</td>
+                      <td>(120) 3728 039</td>
+                      <td>
+                        <div class="dropdown me-3">
+                          <a
+                            href="javascript:void(0);"
+                            class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                            data-bs-toggle="dropdown"
+                          >
+                            Finance
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Executive</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Developer</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>10 Apr 2024</td>
+                      <td>
+                        <span
+                          class="badge badge-success d-inline-flex align-items-center badge-xs"
+                        >
+                          <i class="ti ti-point-filled me-1"></i>Active
+                        </span>
+                      </td>
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td><a href="employee-details.html">Emp-007</a></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a
+                            href="employee-details.html"
+                            class="avatar avatar-md"
+                            data-bs-toggle="modal"
+                            data-bs-target="#view_details"
+                            ><img
+                              src="../assets/img/users/user-35.jpg"
+                              class="img-fluid rounded-circle"
+                              alt="img"
+                          /></a>
+                          <div class="ms-2">
+                            <p class="text-dark mb-0">
+                              <a
+                                href="employee-details.html"
+                                data-bs-toggle="modal"
+                                data-bs-target="#view_details"
+                                >Elliot Murray</a
+                              >
+                            </p>
+                            <span class="fs-12">Finance</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>murray@example.com</td>
+                      <td>(102) 8480 832</td>
+                      <td>
+                        <div class="dropdown me-3">
+                          <a
+                            href="javascript:void(0);"
+                            class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                            data-bs-toggle="dropdown"
+                          >
+                            Developer
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Executive</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Finance</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>29 Aug 2024</td>
+                      <td>
+                        <span
+                          class="badge badge-success d-inline-flex align-items-center badge-xs"
+                        >
+                          <i class="ti ti-point-filled me-1"></i>Active
+                        </span>
+                      </td>
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td><a href="employee-details.html">Emp-008</a></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a
+                            href="employee-details.html"
+                            class="avatar avatar-md"
+                            data-bs-toggle="modal"
+                            data-bs-target="#view_details"
+                            ><img
+                              src="../assets/img/users/user-36.jpg"
+                              class="img-fluid rounded-circle"
+                              alt="img"
+                          /></a>
+                          <div class="ms-2">
+                            <p class="text-dark mb-0">
+                              <a
+                                href="employee-details.html"
+                                data-bs-toggle="modal"
+                                data-bs-target="#view_details"
+                                >Rebecca Smtih</a
+                              >
+                            </p>
+                            <span class="fs-12">Executive</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>smtih@example.com</td>
+                      <td>(162) 8920 713</td>
+                      <td>
+                        <div class="dropdown me-3">
+                          <a
+                            href="javascript:void(0);"
+                            class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                            data-bs-toggle="dropdown"
+                          >
+                            Executive
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Finance</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Developer</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>22 Feb 2024</td>
+                      <td>
+                        <span
+                          class="badge badge-danger d-inline-flex align-items-center badge-sm"
+                        >
+                          <i class="ti ti-point-filled me-1"></i>Inactive
+                        </span>
+                      </td>
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td><a href="employee-details.html">Emp-009</a></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a
+                            href="employee-details.html"
+                            class="avatar avatar-md"
+                            data-bs-toggle="modal"
+                            data-bs-target="#view_details"
+                            ><img
+                              src="../assets/img/users/user-37.jpg"
+                              class="img-fluid rounded-circle"
+                              alt="img"
+                          /></a>
+                          <div class="ms-2">
+                            <p class="text-dark mb-0">
+                              <a
+                                href="employee-details.html"
+                                data-bs-toggle="modal"
+                                data-bs-target="#view_details"
+                                >Connie Waters</a
+                              >
+                            </p>
+                            <span class="fs-12">Developer</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>connie@example.com</td>
+                      <td>(189) 0920 723</td>
+                      <td>
+                        <div class="dropdown me-3">
+                          <a
+                            href="javascript:void(0);"
+                            class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                            data-bs-toggle="dropdown"
+                          >
+                            Developer
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Executive</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Finance</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>03 Nov 2024</td>
+                      <td>
+                        <span
+                          class="badge badge-success d-inline-flex align-items-center badge-xs"
+                        >
+                          <i class="ti ti-point-filled me-1"></i>Active
+                        </span>
+                      </td>
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check form-check-md">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td><a href="employee-details.html">Emp-010</a></td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <a
+                            href="employee-details.html"
+                            class="avatar avatar-md"
+                            data-bs-toggle="modal"
+                            data-bs-target="#view_details"
+                            ><img
+                              src="../assets/img/users/user-38.jpg"
+                              class="img-fluid rounded-circle"
+                              alt="img"
+                          /></a>
+                          <div class="ms-2">
+                            <p class="text-dark mb-0">
+                              <a
+                                href="employee-details.html"
+                                data-bs-toggle="modal"
+                                data-bs-target="#view_details"
+                                >Lori Broaddus</a
+                              >
+                            </p>
+                            <span class="fs-12">Finance</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>broaddus@example.com</td>
+                      <td>(168) 8392 823</td>
+                      <td>
+                        <div class="dropdown me-3">
+                          <a
+                            href="javascript:void(0);"
+                            class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+                            data-bs-toggle="dropdown"
+                          >
+                            Finance
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Executive</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                                >Developer</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td>17 Dec 2024</td>
+                      <td>
+                        <span
+                          class="badge badge-success d-inline-flex align-items-center badge-xs"
+                        >
+                          <i class="ti ti-point-filled me-1"></i>Active
+                        </span>
+                      </td>
+                      <td>
+                        <div class="action-icon d-inline-flex">
+                          <a
+                            href="#"
+                            class="me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_employee"
+                            ><i class="ti ti-edit"></i
+                          ></a>
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_modal"
+                            ><i class="ti ti-trash"></i
+                          ></a>
+                        </div>
                       </td>
                     </tr>
                   </tbody>
@@ -393,6 +1374,150 @@
         </div>
       </div>
       <!-- /Page Wrapper -->
+
+      <!-- /Add Service User -->
+      <div class="modal fade" id="addServiceUser" tabindex="-1">
+        <div
+          class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
+        >
+          <div class="modal-content">
+            <!-- ✅ HEADER -->
+            <div class="modal-header">
+              <div>
+                <h4 class="modal-title">Add Service User</h4>
+                <p class="text-muted mb-0">
+                  Create a new service user record. All fields marked with * are
+                  required.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- ✅ BODY -->
+            <div class="modal-body">
+              <div class="row">
+                <!-- First Name -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"
+                    >First Name <span class="text-danger">*</span></label
+                  >
+                  <input type="text" class="form-control" />
+                </div>
+
+                <!-- Last Name -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"
+                    >Last Name <span class="text-danger">*</span></label
+                  >
+                  <input type="text" class="form-control" />
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"
+                    >Date of Birth <span class="text-danger">*</span></label
+                  >
+                  <input type="date" class="form-control" />
+                </div>
+
+                <!-- Nationality -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"
+                    >Nationality <span class="text-danger">*</span></label
+                  >
+                  <input type="text" class="form-control" />
+                </div>
+
+                <!-- Home Office Reference -->
+                <div class="col-md-12 mb-3">
+                  <label class="form-label"
+                    >Home Office Reference
+                    <span class="text-danger">*</span></label
+                  >
+                  <input type="text" class="form-control" />
+                </div>
+
+                <!-- Property -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Property</label>
+                  <select class="form-select">
+                    <option selected disabled>Select property</option>
+                    <option>Garden House Hotel</option>
+                    <option>Crown Lodge Hotel</option>
+                    <option>Trident Elite</option>
+                    <option>Marriott Waterfront</option>
+                  </select>
+                </div>
+
+                <!-- Room -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Room</label>
+                  <select class="form-select">
+                    <option>Select property first</option>
+                  </select>
+                </div>
+
+                <!-- Move-in Date -->
+                <div class="col-md-12 mb-3">
+                  <label class="form-label">Move-in Date</label>
+                  <input type="date" class="form-control" />
+                </div>
+
+                <!-- Vulnerabilities -->
+                <div class="col-md-12 mb-3">
+                  <label class="form-label">Vulnerabilities</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Separate multiple items with commas"
+                  />
+                </div>
+
+                <!-- Medical Conditions -->
+                <div class="col-md-12 mb-3">
+                  <label class="form-label">Medical Conditions</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <!-- Dietary Requirements -->
+                <div class="col-md-12 mb-3">
+                  <label class="form-label">Dietary Requirements</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <!-- Status -->
+                <div class="col-md-12 mb-3">
+                  <label class="form-label"
+                    >Status <span class="text-danger">*</span></label
+                  >
+                  <select class="form-select">
+                    <option selected>Active</option>
+                    <option>Inactive</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ FOOTER -->
+            <div class="modal-footer d-flex justify-content-end gap-3">
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="button" class="btn btn-dark">
+                Create Service User
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- /Main Wrapper -->
 

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://dineshkodali.github.io/sdc/"
+  "homepage": "https://dineshkodali.github.io/sdc/",
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },

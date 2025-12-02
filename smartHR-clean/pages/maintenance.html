@@ -457,6 +457,24 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 13px;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    td.assigned-to {
+      border-top: none !important;
+      border-bottom: none !important;
+    }
   </style>
 
   <body>
@@ -611,46 +629,104 @@
           <!-- /Breadcrumb -->
 
           <!-- Stats Cards Row -->
-          <div class="row g-3 mb-4">
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Total Tasks</span>
-                <h3 class="mt-2">6</h3>
-                <p class="text-success">
-                  <i class="ti ti-trending-up"></i> 66.7% active
-                </p>
-              </div>
-            </div>
 
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Overdue</span>
-                <h3 class="text-danger mt-2">4</h3>
-                <p class="text-danger">
-                  <i class="ti ti-alert-triangle"></i> 66.7% of total
-                </p>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Due This Week</span>
-                <h3 class="mt-2">0</h3>
-                <p class="text-warning"><i class="ti ti-clock"></i> 0%</p>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-body">
-                <span>Completed</span>
-                <h3 class="text-success mt-2">2</h3>
-                <p class="text-success">
-                  <i class="ti ti-check"></i> 33.3% of total
-                </p>
-              </div>
-            </div>
-          </div>
           <!-- /Stats Cards Row -->
+
+          <div class="row">
+            <!-- Total Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-info rounded-circle"
+                        ><i class="ti ti-tool"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Total Orders
+                      </p>
+                      <h4>12</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Total Plans -->
+
+            <!-- Total Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-primary rounded-circle"
+                        ><i class="ti ti-tool"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">Pending</p>
+                      <h4>4</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Total Plans -->
+
+            <!-- Inactive Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-purple rounded-circle"
+                        ><i class="ti ti-tool"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Inprogress
+                      </p>
+                      <h4>3</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Inactive Companies -->
+
+            <!-- No of Plans  -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-success rounded-circle"
+                        ><i class="ti ti-tool"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Completed
+                      </p>
+                      <h4>5</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /No of Plans -->
+          </div>
 
           <!-- Database + Search -->
           <!-- <div class="d-flex justify-content-between align-items-center mb-3">
@@ -802,7 +878,7 @@
                   href="#"
                   data-bs-toggle="modal"
                   data-bs-target="#scheduleMealModal"
-                  class="btn btn-success d-flex align-items-center gap-2"
+                  class="btn btn-primary d-flex align-items-center gap-2"
                 >
                   <i class="ti ti-upload"></i> Create Work Order
                 </a>
@@ -811,15 +887,58 @@
 
             <!-- ✅ SECOND FILTER ROW -->
             <div class="d-flex gap-2 flex-wrap py-3 border-bottom">
-              <button class="btn btn-light border dropdown-toggle">
-                All Priority
-              </button>
-              <button class="btn btn-light border dropdown-toggle">
-                All Status
-              </button>
-              <button class="btn btn-light border dropdown-toggle">
-                All Properties
-              </button>
+              <!--  ALL Priority -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light border dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  All Priority
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All Priority</a></li>
+                  <li><a class="dropdown-item" href="#">Low</a></li>
+                  <li><a class="dropdown-item" href="#">Medium</a></li>
+                  <li><a class="dropdown-item" href="#">High</a></li>
+                  <li><a class="dropdown-item" href="#">Urgent</a></li>
+                </ul>
+              </div>
+              <!--  ALL Status -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light border dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  All Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All Status</a></li>
+                  <li><a class="dropdown-item" href="#">Open</a></li>
+                  <li><a class="dropdown-item" href="#">Pending</a></li>
+                  <li><a class="dropdown-item" href="#">Completed</a></li>
+                </ul>
+              </div>
+              <!--  ALL PROPERTIES -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light border dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  All Properties
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All Properties</a></li>
+                  <li><a class="dropdown-item" href="#">Garden House</a></li>
+                  <li><a class="dropdown-item" href="#">Crown Lodge</a></li>
+                  <li><a class="dropdown-item" href="#">Trident Elite</a></li>
+                </ul>
+              </div>
             </div>
 
             <!-- ✅ TABLE (NOW INSIDE SAME CARD) -->
@@ -827,24 +946,25 @@
               <table class="table mb-0">
                 <thead>
                   <tr>
+                    <!-- ✅ CHECKBOX (NO SORT) -->
                     <th>
-                      <i class="ti ti-file-description me-1"></i> Task Title
+                      <input class="form-check-input" type="checkbox" />
                     </th>
 
-                    <!-- Start Date -->
+                    <!-- ✅ TYPE -->
                     <th
-                      style="position: relative"
                       class="header-th"
                       data-col="1"
+                      style="position: relative"
                     >
                       <div class="d-flex align-items-center gap-1 th-label">
-                        <i class="ti ti-calendar-event me-1"></i>
-                        <span>Start Date</span>
+                        <i class="ti ti-tag me-1"></i>
+                        <span>Type</span>
                         <i class="ti ti-chevron-down header-arrow"></i>
                         <button
                           class="category-menu-btn"
                           type="button"
-                          onclick="toggleGenericMenu(event, this)"
+                          onclick="toggleGenericMenu(event,this)"
                         >
                           <i class="ti ti-dots"></i>
                         </button>
@@ -873,61 +993,62 @@
                       </div>
                     </th>
 
-                    <!-- CATEGORY  -->
-                    <th style="position: relative" class="category-th">
+                    <!-- ✅ REFERENCE -->
+                    <th
+                      class="header-th"
+                      data-col="2"
+                      style="position: relative"
+                    >
                       <div class="d-flex align-items-center gap-1 th-label">
-                        <i class="ti ti-tag me-1"></i>
-                        <span>Category</span>
-                        <i class="ti ti-chevron-down category-arrow"></i>
+                        <i class="ti ti-file-text me-1"></i>
+                        <span>Reference</span>
+                        <i class="ti ti-chevron-down header-arrow"></i>
                         <button
                           class="category-menu-btn"
-                          onclick="toggleCategoryMenu(event)"
                           type="button"
+                          onclick="toggleGenericMenu(event,this)"
                         >
                           <i class="ti ti-dots"></i>
                         </button>
                       </div>
 
-                      <div
-                        class="category-dropdown d-none"
-                        id="categoryDropdown"
-                      >
+                      <div class="category-dropdown d-none">
                         <div
                           class="dropdown-item"
-                          onclick="toggleCategorySort()"
-                          id="categorySortBtn"
+                          onclick="toggleGenericSort(this)"
                         >
                           <i class="ti ti-arrows-sort"></i>
-                          <span id="sortLabel">Sort A → Z</span>
+                          <span class="sort-label">Sort A → Z</span>
                         </div>
-
                         <div
-                          class="dropdown-item d-flex justify-content-between align-items-center"
+                          class="dropdown-item d-flex justify-content-between"
                         >
                           <span><i class="ti ti-filter"></i> Filter</span>
                           <i class="ti ti-chevron-right"></i>
                         </div>
-
-                        <div class="dropdown-item text-danger">
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
                           <i class="ti ti-eye-off"></i> Hide
                         </div>
                       </div>
                     </th>
 
-                    <!-- Site Name -->
+                    <!-- ✅ DESCRIPTION -->
                     <th
-                      style="position: relative"
                       class="header-th"
                       data-col="3"
+                      style="position: relative"
                     >
                       <div class="d-flex align-items-center gap-1 th-label">
-                        <i class="ti ti-building me-1"></i>
-                        <span>Site Name</span>
+                        <i class="ti ti-file-description me-1"></i>
+                        <span>Description</span>
                         <i class="ti ti-chevron-down header-arrow"></i>
                         <button
                           class="category-menu-btn"
                           type="button"
-                          onclick="toggleGenericMenu(event, this)"
+                          onclick="toggleGenericMenu(event,this)"
                         >
                           <i class="ti ti-dots"></i>
                         </button>
@@ -947,26 +1068,29 @@
                           <span><i class="ti ti-filter"></i> Filter</span>
                           <i class="ti ti-chevron-right"></i>
                         </div>
-                        <div class="dropdown-item text-danger">
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
                           <i class="ti ti-eye-off"></i> Hide
                         </div>
                       </div>
                     </th>
 
-                    <!-- Room No -->
+                    <!-- ✅ PRIORITY -->
                     <th
-                      style="position: relative"
                       class="header-th"
                       data-col="4"
+                      style="position: relative"
                     >
                       <div class="d-flex align-items-center gap-1 th-label">
-                        <i class="ti ti-home me-1"></i>
-                        <span>Room No</span>
+                        <i class="ti ti-alert-circle me-1"></i>
+                        <span>Priority</span>
                         <i class="ti ti-chevron-down header-arrow"></i>
                         <button
                           class="category-menu-btn"
                           type="button"
-                          onclick="toggleGenericMenu(event, this)"
+                          onclick="toggleGenericMenu(event,this)"
                         >
                           <i class="ti ti-dots"></i>
                         </button>
@@ -986,56 +1110,20 @@
                           <span><i class="ti ti-filter"></i> Filter</span>
                           <i class="ti ti-chevron-right"></i>
                         </div>
-                        <div class="dropdown-item text-danger">
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
                           <i class="ti ti-eye-off"></i> Hide
                         </div>
                       </div>
                     </th>
 
-                    <!-- Raised By -->
+                    <!-- ✅ STATUS -->
                     <th
-                      style="position: relative"
                       class="header-th"
                       data-col="5"
-                    >
-                      <div class="d-flex align-items-center gap-1 th-label">
-                        <i class="ti ti-user me-1"></i>
-                        <span>Raised By</span>
-                        <i class="ti ti-chevron-down header-arrow"></i>
-                        <button
-                          class="category-menu-btn"
-                          type="button"
-                          onclick="toggleGenericMenu(event, this)"
-                        >
-                          <i class="ti ti-dots"></i>
-                        </button>
-                      </div>
-
-                      <div class="category-dropdown d-none">
-                        <div
-                          class="dropdown-item"
-                          onclick="toggleGenericSort(this)"
-                        >
-                          <i class="ti ti-arrows-sort"></i>
-                          <span class="sort-label">Sort A → Z</span>
-                        </div>
-                        <div
-                          class="dropdown-item d-flex justify-content-between"
-                        >
-                          <span><i class="ti ti-filter"></i> Filter</span>
-                          <i class="ti ti-chevron-right"></i>
-                        </div>
-                        <div class="dropdown-item text-danger">
-                          <i class="ti ti-eye-off"></i> Hide
-                        </div>
-                      </div>
-                    </th>
-
-                    <!-- Status -->
-                    <th
                       style="position: relative"
-                      class="header-th"
-                      data-col="6"
                     >
                       <div class="d-flex align-items-center gap-1 th-label">
                         <i class="ti ti-activity me-1"></i>
@@ -1044,7 +1132,7 @@
                         <button
                           class="category-menu-btn"
                           type="button"
-                          onclick="toggleGenericMenu(event, this)"
+                          onclick="toggleGenericMenu(event,this)"
                         >
                           <i class="ti ti-dots"></i>
                         </button>
@@ -1064,26 +1152,71 @@
                           <span><i class="ti ti-filter"></i> Filter</span>
                           <i class="ti ti-chevron-right"></i>
                         </div>
-                        <div class="dropdown-item text-danger">
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
                           <i class="ti ti-eye-off"></i> Hide
                         </div>
                       </div>
                     </th>
 
-                    <!-- Action -->
+                    <!-- ✅ ASSIGNED TO -->
                     <th
+                      class="header-th"
+                      data-col="6"
                       style="position: relative"
+                    >
+                      <div class="d-flex align-items-center gap-1 th-label">
+                        <i class="ti ti-user me-1"></i>
+                        <span>Assigned To</span>
+                        <i class="ti ti-chevron-down header-arrow"></i>
+                        <button
+                          class="category-menu-btn"
+                          type="button"
+                          onclick="toggleGenericMenu(event,this)"
+                        >
+                          <i class="ti ti-dots"></i>
+                        </button>
+                      </div>
+
+                      <div class="category-dropdown d-none">
+                        <div
+                          class="dropdown-item"
+                          onclick="toggleGenericSort(this)"
+                        >
+                          <i class="ti ti-arrows-sort"></i>
+                          <span class="sort-label">Sort A → Z</span>
+                        </div>
+                        <div
+                          class="dropdown-item d-flex justify-content-between"
+                        >
+                          <span><i class="ti ti-filter"></i> Filter</span>
+                          <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
+                          <i class="ti ti-eye-off"></i> Hide
+                        </div>
+                      </div>
+                    </th>
+
+                    <!-- ✅ DATE -->
+                    <th
                       class="header-th"
                       data-col="7"
+                      style="position: relative"
                     >
                       <div class="d-flex align-items-center gap-1 th-label">
-                        <i class="ti ti-tool me-1"></i>
-                        <span>Action</span>
+                        <i class="ti ti-calendar me-1"></i>
+                        <span>Date</span>
                         <i class="ti ti-chevron-down header-arrow"></i>
                         <button
                           class="category-menu-btn"
                           type="button"
-                          onclick="toggleGenericMenu(event, this)"
+                          onclick="toggleGenericMenu(event,this)"
                         >
                           <i class="ti ti-dots"></i>
                         </button>
@@ -1103,197 +1236,272 @@
                           <span><i class="ti ti-filter"></i> Filter</span>
                           <i class="ti ti-chevron-right"></i>
                         </div>
-                        <div class="dropdown-item text-danger">
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
                           <i class="ti ti-eye-off"></i> Hide
                         </div>
                       </div>
                     </th>
 
-                    <!-- Due Date -->
-                    <th
-                      style="position: relative"
-                      class="header-th"
-                      data-col="8"
-                    >
-                      <div class="d-flex align-items-center gap-1 th-label">
-                        <i class="ti ti-calendar-time me-1"></i>
-                        <span>Due Date</span>
-                        <i class="ti ti-chevron-down header-arrow"></i>
-                        <button
-                          class="category-menu-btn"
-                          type="button"
-                          onclick="toggleGenericMenu(event, this)"
-                        >
-                          <i class="ti ti-dots"></i>
-                        </button>
-                      </div>
-
-                      <div class="category-dropdown d-none">
-                        <div
-                          class="dropdown-item"
-                          onclick="toggleGenericSort(this)"
-                        >
-                          <i class="ti ti-arrows-sort"></i
-                          ><span class="sort-label">Sort A → Z</span>
-                        </div>
-                        <div
-                          class="dropdown-item d-flex justify-content-between"
-                        >
-                          <span><i class="ti ti-filter"></i> Filter</span>
-                          <i class="ti ti-chevron-right"></i>
-                        </div>
-                        <div class="dropdown-item text-danger">
-                          <i class="ti ti-eye-off"></i> Hide
-                        </div>
-                      </div>
-                    </th>
-
-                    <!-- Closed -->
-                    <th
-                      style="position: relative"
-                      class="header-th"
-                      data-col="9"
-                    >
-                      <div class="d-flex align-items-center gap-1 th-label">
-                        <i class="ti ti-clock me-1"></i>
-                        <span>Closed</span>
-                        <i class="ti ti-chevron-down header-arrow"></i>
-                        <button
-                          class="category-menu-btn"
-                          type="button"
-                          onclick="toggleGenericMenu(event, this)"
-                        >
-                          <i class="ti ti-dots"></i>
-                        </button>
-                      </div>
-
-                      <div class="category-dropdown d-none">
-                        <div
-                          class="dropdown-item"
-                          onclick="toggleGenericSort(this)"
-                        >
-                          <i class="ti ti-arrows-sort"></i>
-                          <span class="sort-label">Sort A → Z</span>
-                        </div>
-                        <div
-                          class="dropdown-item d-flex justify-content-between"
-                        >
-                          <span><i class="ti ti-filter"></i> Filter</span>
-                          <i class="ti ti-chevron-right"></i>
-                        </div>
-                        <div class="dropdown-item text-danger">
-                          <i class="ti ti-eye-off"></i> Hide
-                        </div>
-                      </div>
-                    </th>
-
+                    <!-- ✅ ACTIONS (UNCHANGED AS PER YOUR REQUIREMENT) -->
                     <th><i class="ti ti-dots me-1"></i> Actions</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  <!-- Row 1 -->
-                  <tr style="border-left: 4px solid #d32f2f">
-                    <td>Electrical Safety Audit</td>
-                    <td>20/02/24</td>
-                    <td class="text-danger fw-bold">CAT1</td>
-                    <td>Building C</td>
-                    <td>Main Panel</td>
-                    <td>Maintenance Team</td>
-                    <td>Under Review</td>
-                    <td>Review</td>
-                    <td>12/03/24</td>
-                    <td>-</td>
+                  <!-- ✅ EXISTING ROWS (UNCHANGED STRUCTURE) -->
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Maintenance
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>MNT-2025-</strong><br />
+                      <small class="text-muted">e5198a6e</small>
+                    </td>
+
+                    <td>
+                      <strong>Fix heating system malfunction</strong><br />
+                      <small class="text-muted">
+                        Maintenance work required as per inspection report.
+                      </small>
+                    </td>
+
+                    <td><span class="text-warning">● Medium</span></td>
+                    <td><span class="text-success">● Completed</span></td>
+
+                    <td class="d-flex align-items-center gap-2">
+                      <span class="avatar bg-warning text-white">AM</span>
+                      <span>ABC Maintenance</span>
+                    </td>
+
+                    <td>Feb 8, 2025</td>
+
                     <td>
                       <i class="ti ti-edit me-2"></i>
                       <i class="ti ti-trash"></i>
                     </td>
                   </tr>
 
-                  <!-- Row 2 -->
-                  <tr style="border-left: 4px solid #d32f2f">
-                    <td>Plumbing System Review</td>
-                    <td>01/03/24</td>
-                    <td class="text-danger fw-bold">CAT1</td>
-                    <td>Building B</td>
-                    <td>Flat 301</td>
-                    <td>Tenant Report</td>
-                    <td>In Progress</td>
-                    <td>Under Repair</td>
-                    <td>18/03/24</td>
-                    <td>-</td>
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Maintenance
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>MNT-2025-</strong><br />
+                      <small>c51690eb</small>
+                    </td>
+
+                    <td>
+                      <strong>Unblock kitchen sink</strong><br />
+                      <small class="text-muted">
+                        Maintenance work required as per inspection report.
+                      </small>
+                    </td>
+
+                    <td><span class="text-warning">● Medium</span></td>
+                    <td><span class="text-warning">● Pending</span></td>
+
+                    <td class="text-muted">Unassigned</td>
+                    <td>Sep 26, 2025</td>
+
                     <td>
                       <i class="ti ti-edit me-2"></i>
                       <i class="ti ti-trash"></i>
                     </td>
                   </tr>
 
-                  <!-- Row 3 -->
-                  <tr style="border-left: 4px solid #f4b400">
-                    <td>Fire Safety Equipment</td>
-                    <td>04/09/25</td>
-                    <td style="color: #d49a00; font-weight: 600">CAT2</td>
-                    <td>Parmiter</td>
-                    <td>Room 100</td>
-                    <td>Safety Officer</td>
-                    <td>Open</td>
-                    <td>Pending</td>
-                    <td>30/09/25</td>
-                    <td>-</td>
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Maintenance
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>MNT-2025-</strong><br />
+                      <small>cda9bd4e</small>
+                    </td>
+
+                    <td>
+                      <strong>Repair leaking tap in bathroom</strong><br />
+                      <small class="text-muted">
+                        Maintenance work required as per inspection report.
+                      </small>
+                    </td>
+
+                    <td><span class="text-success">● Low</span></td>
+                    <td><span class="text-success">● Completed</span></td>
+
+                    <td class="d-flex align-items-center gap-2">
+                      <span class="avatar bg-info text-white">IT</span>
+                      <span>In-house Team</span>
+                    </td>
+
+                    <td>Jun 2, 2025</td>
+
                     <td>
                       <i class="ti ti-edit me-2"></i>
                       <i class="ti ti-trash"></i>
                     </td>
                   </tr>
 
-                  <!-- Row 4 -->
-                  <tr style="border-left: 4px solid #4caf50">
-                    <td>Generator Testing</td>
-                    <td>08/03/24</td>
-                    <td style="color: #2e7d32; font-weight: 600">CAT3</td>
-                    <td>Building D</td>
-                    <td>Generator Room</td>
-                    <td>Scheduled Maintenance</td>
-                    <td>Completed</td>
-                    <td>Closed</td>
-                    <td>10/03/24</td>
-                    <td>10/03/24</td>
+                  <!-- ✅ NEW ROWS ADDED -->
+
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Maintenance
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>MNT-2025-</strong><br />
+                      <small>2b9c6ef8</small>
+                    </td>
+
+                    <td>
+                      <strong>Repair shower head</strong><br />
+                      <small class="text-muted">
+                        Maintenance work required as per inspection report.
+                      </small>
+                    </td>
+
+                    <td><span class="text-danger">● Urgent</span></td>
+                    <td><span class="text-success">● Completed</span></td>
+
+                    <td class="d-flex align-items-center gap-2">
+                      <span class="avatar bg-primary text-white">QF</span>
+                      <span>Quick Fix Services</span>
+                    </td>
+
+                    <td>Mar 17, 2025</td>
+
                     <td>
                       <i class="ti ti-edit me-2"></i>
                       <i class="ti ti-trash"></i>
                     </td>
                   </tr>
 
-                  <!-- Row 5 -->
-                  <tr style="border-left: 4px solid #f4b400">
-                    <td>Fire Safety Equipment</td>
-                    <td>10/03/24</td>
-                    <td class="text-danger fw-bold">CAT1</td>
-                    <td>Building A</td>
-                    <td>Flat 203</td>
-                    <td>Safety Officer</td>
-                    <td>Open</td>
-                    <td>Pending</td>
-                    <td>25/03/24</td>
-                    <td>-</td>
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Maintenance
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>MNT-2025-</strong><br />
+                      <small>f3c0c417</small>
+                    </td>
+
+                    <td>
+                      <strong>Repair ceiling leak</strong><br />
+                      <small class="text-muted">
+                        Maintenance work required as per inspection report.
+                      </small>
+                    </td>
+
+                    <td><span class="text-success">● Low</span></td>
+                    <td><span class="text-warning">● Pending</span></td>
+
+                    <td class="text-muted">Unassigned</td>
+                    <td>Dec 19, 2024</td>
+
                     <td>
                       <i class="ti ti-edit me-2"></i>
                       <i class="ti ti-trash"></i>
                     </td>
                   </tr>
 
-                  <!-- Row 6 -->
-                  <tr style="border-left: 4px solid #f4b400">
-                    <td>Fire Safety Equipment</td>
-                    <td>12/03/24</td>
-                    <td class="text-danger fw-bold">CAT1</td>
-                    <td>Building A</td>
-                    <td>Flat 303</td>
-                    <td>Safety Officer</td>
-                    <td>Open</td>
-                    <td>Pending</td>
-                    <td>25/03/24</td>
-                    <td>-</td>
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Maintenance
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>MNT-2025-</strong><br />
+                      <small>ca81318f</small>
+                    </td>
+
+                    <td>
+                      <strong>Fix wardrobe door hinge</strong><br />
+                      <small class="text-muted">
+                        Maintenance work required as per inspection report.
+                      </small>
+                    </td>
+
+                    <td><span class="text-warning">● Medium</span></td>
+                    <td><span class="text-success">● Completed</span></td>
+
+                    <td class="d-flex align-items-center gap-2">
+                      <span class="avatar bg-primary text-white">QF</span>
+                      <span>Quick Fix Services</span>
+                    </td>
+
+                    <td>Oct 24, 2024</td>
+
+                    <td>
+                      <i class="ti ti-edit me-2"></i>
+                      <i class="ti ti-trash"></i>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Maintenance
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>MNT-2025-</strong><br />
+                      <small>576b7ce4</small>
+                    </td>
+
+                    <td>
+                      <strong>Fix extractor fan</strong><br />
+                      <small class="text-muted">
+                        Maintenance work required as per inspection report.
+                      </small>
+                    </td>
+
+                    <td><span class="text-success">● Low</span></td>
+                    <td><span class="text-warning">● Pending</span></td>
+
+                    <td class="text-muted">Unassigned</td>
+                    <td>Apr 24, 2025</td>
+
                     <td>
                       <i class="ti ti-edit me-2"></i>
                       <i class="ti ti-trash"></i>
@@ -1854,7 +2062,7 @@
                   >
                     Cancel
                   </button>
-                  <button type="button" class="btn btn-success">
+                  <button type="button" class="btn btn-primary">
                     Submit Form
                   </button>
                 </div>

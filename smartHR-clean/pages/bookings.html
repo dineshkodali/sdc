@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>Bookings</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/img/favicon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+
+    <!-- Feather Icons -->
+    <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+
+    <!-- Tabler Icons -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/tabler-icons/tabler-icons.min.css"
+    />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/fontawesome/css/all.min.css"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <style>
+      .sidebar-inner {
+        overflow-y: auto !important;
+        height: calc(100vh - 60px) !important;
+      }
+
+      .sidebar-menu ul li a.active {
+        background: #f5f5f5 !important;
+        color: #333 !important;
+      }
+      .sidebar-menu ul li a:hover {
+        background: #f0f0f0 !important;
+        color: #333 !important;
+      }
+
+      /* Housing risk badges */
+      .badge-high {
+        background: #ffe7e7;
+        color: #d32f2f;
+        border-radius: 14px;
+        padding: 4px 8px;
+        font-weight: 600;
+      }
+      .badge-medium {
+        background: #fff6e6;
+        color: #d49a00;
+        border-radius: 14px;
+        padding: 4px 8px;
+        font-weight: 600;
+      }
+      .badge-low {
+        background: #eaf7ea;
+        color: #2e7d32;
+        border-radius: 14px;
+        padding: 4px 8px;
+        font-weight: 600;
+      }
+
+      /* Mini sidebar collapse */
+      .mini-sidebar .sidebar {
+        width: 60px !important;
+      }
+
+      .mini-sidebar .sidebar .sidebar-menu ul li a span {
+        display: none !important; /* hide menu text */
+      }
+
+      .mini-sidebar .sidebar .sidebar-menu ul li a i {
+        margin-right: 0 !important;
+        font-size: 20px;
+      }
+
+      /* Page background like reference */
+      .move-dashboard-bg {
+        background: radial-gradient(
+          circle at top,
+          #f5f6f8 0%,
+          #eef0f4 40%,
+          #e9ebf0 100%
+        );
+        padding-bottom: 40px;
+      }
+
+      /* Card styling like second image */
+      .move-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px 26px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
+
+      /* Icon styling */
+      .move-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+      }
+
+      .bg-purple {
+        background: #9b5de5;
+      }
+
+      /* Tabs style */
+      .move-tabs {
+        background: #f1f3f7;
+        padding: 6px;
+        border-radius: 10px;
+        display: inline-flex;
+        gap: 6px;
+      }
+
+      .move-tabs .btn {
+        border-radius: 8px;
+      }
+
+      .property-tabs-wrapper {
+        margin-top: 10px;
+        margin-left: 8px;
+        width: 55%;
+      }
+
+      .card {
+        border-radius: 14px;
+        border: 1px solid #eef0f3;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+
+    <div id="sidebar-container"></div>
+
+    <!-- /Sidebar -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <div class="header">
+        <div class="main-header">
+          <div class="header-left">
+            <a href="index.html" class="logo">
+              <img src="../assets/img/logo.svg" alt="Logo" />
+            </a>
+            <a href="index.html" class="dark-logo">
+              <img src="../assets/img/logo-white.svg" alt="Logo" />
+            </a>
+          </div>
+
+          <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+            <span class="bar-icon"
+              ><span></span><span></span><span></span
+            ></span>
+          </a>
+
+          <div class="header-user">
+            <div class="nav user-menu nav-list">
+              <div class="me-auto d-flex align-items-center" id="header-search">
+                <a
+                  id="toggle_btn"
+                  href="javascript:void(0);"
+                  class="btn btn-menubar me-1"
+                >
+                  <i class="ti ti-arrow-bar-to-left"></i>
+                </a>
+
+                <div class="input-group input-group-flat d-inline-flex me-1">
+                  <span class="input-icon-addon"
+                    ><i class="ti ti-search"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search in HRMS"
+                  />
+                  <span class="input-group-text"><kbd>CTRL + /</kbd></span>
+                </div>
+
+                <a href="profile-settings.html" class="btn btn-menubar">
+                  <i class="ti ti-settings-cog"></i>
+                </a>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-menubar btnFullscreen">
+                  <i class="ti ti-maximize"></i>
+                </a>
+                <a href="chat.html" class="btn btn-menubar position-relative">
+                  <i class="ti ti-brand-hipchat"></i>
+                </a>
+                <a href="email.html" class="btn btn-menubar">
+                  <i class="ti ti-mail"></i>
+                </a>
+
+                <div class="dropdown profile-dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle d-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    <span class="avatar avatar-sm online">
+                      <img
+                        src="../assets/img/profiles/avatar-12.jpg"
+                        class="rounded-circle"
+                        alt=""
+                      />
+                    </span>
+                  </a>
+                  <div class="dropdown-menu shadow-none">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="profile-settings.html"
+                      >Settings</a
+                    >
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Header -->
+
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          <!-- Page Header -->
+
+          <!-- Breadcrumb -->
+          <div
+            class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
+          >
+            <div class="my-auto mb-2">
+              <h2 class="page-title">Bookings</h2>
+              <nav>
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="index.html"><i class="ti ti-smart-home"></i></a>
+                  </li>
+                  <li class="breadcrumb-item">Property</li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Bookings
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              class="d-flex my-xl-auto right-content align-items-center flex-wrap"
+            >
+              <div class="me-2 mb-2">
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#newBookingModal"
+                  class="btn btn-primary d-flex align-items-center"
+                  ><i class="ti ti-plus me-2"></i>New Booking</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- /Breadcrumb -->
+
+          <!-- Cards -->
+          <div class="row">
+            <!-- Total Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-success rounded-circle"
+                        ><i class="ti ti-users"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Checked In
+                      </p>
+                      <h4>11</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Total Plans -->
+
+            <!-- Total Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-info rounded-circle"
+                        ><i class="ti ti-download"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Checked Out
+                      </p>
+                      <h4>9</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Total Plans -->
+
+            <!-- Inactive Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-purple rounded-circle"
+                        ><i class="ti ti-users"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Total Guests
+                      </p>
+                      <h4>1</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Inactive Companies -->
+
+            <!-- No of Plans  -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-primary rounded-circle"
+                        ><i class="ti ti-calendar-event"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Arriving Today
+                      </p>
+                      <h4>4</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /No of Plans -->
+          </div>
+
+          <!-- Tabs -->
+
+          <div class="card shadow-sm rounded-4 p-3">
+            <!-- ✅ HEADER ROW -->
+            <div class="property-tabs-wrapper">
+              <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="overview-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#allbookings"
+                    type="button"
+                  >
+                    All Bookings
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="maintenance-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#checkedIn"
+                    type="button"
+                  >
+                    Checked In
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="maintenance-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#arriving"
+                    type="button"
+                  >
+                    Arriving Today
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="maintenance-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#lastCheckOut"
+                    type="button"
+                  >
+                    Late Checkout
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="overview-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pending"
+                    type="button"
+                  >
+                    Pending
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <!-- ✅ SECOND FILTER ROW -->
+            <div class="d-flex gap-2 flex-wrap py-3 border-bottom">
+              <!--  ALL Priority -->
+              <div class="me-3">
+                <div class="position-relative">
+                  <input
+                    type="text"
+                    class="form-control ps-5"
+                    placeholder="Filter records..."
+                  />
+                  <span
+                    class="position-absolute top-50 start-0 translate-middle-y ps-3 text-muted"
+                  >
+                    <i class="ti ti-search"></i>
+                  </span>
+                </div>
+              </div>
+
+              <!--  ALL PROPERTIES -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light border dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="ti ti-building-skyscraper"></i>
+                  All Properties
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All Properties</a></li>
+                  <li><a class="dropdown-item" href="#">Garden House</a></li>
+                  <li><a class="dropdown-item" href="#">Crown Lodge</a></li>
+                  <li><a class="dropdown-item" href="#">Trident Elite</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- ✅ TABLE (NOW INSIDE SAME CARD) -->
+            <div class="tab-content" id="propertyTabsContent">
+              <!-- ✅ All Meals TAB (Recent Move-Ins) -->
+              <div
+                class="tab-pane fade show active mt-2"
+                id="allbookings"
+                role="tabpanel"
+              >
+                <div class="card p-4">
+                  <!-- Header -->
+
+                  <!-- ✅ TABLE -->
+                  <div class="table-responsive">
+                    <table class="table align-middle">
+                      <thead class="table-light">
+                        <tr>
+                          <th>FULL NAME</th>
+                          <th>ORDER NO.</th>
+                          <th>ROOM</th>
+                          <th>CHECK-IN</th>
+                          <th>DAY</th>
+                          <th>GUESTS</th>
+                          <th>ORIGIN</th>
+                          <th>STATUS</th>
+                          <th class="text-end"></th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <!-- ✅ ROW 1 -->
+                        <tr>
+                          <td><strong>Ahmad Martin</strong></td>
+
+                          <td>HO-202512-7467</td>
+
+                          <td>
+                            <strong>005</strong><br />
+                            <small class="text-muted">Standard</small>
+                          </td>
+
+                          <td>16 Dec 2025</td>
+
+                          <td>Tue</td>
+
+                          <td>
+                            <span class="badge rounded-pill bg-light text-dark"
+                              >1</span
+                            >
+                          </td>
+
+                          <td>
+                            <span class="badge rounded-pill bg-light text-dark"
+                              >Syria</span
+                            >
+                          </td>
+
+                          <td>
+                            <span
+                              class="badge rounded-pill bg-success-subtle text-success border"
+                            >
+                              Checked In
+                            </span>
+                          </td>
+
+                          <!-- ✅ ACTIONS -->
+                          <td class="text-end">
+                            <i class="ti ti-dots"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="text-muted mt-4">Showing 1 of 1 bookings</p>
+                </div>
+              </div>
+
+              <!-- ✅ Breakfast TAB (Recent Move-Outs) -->
+              <div class="tab-pane fade mt-2" id="checkedIn" role="tabpanel">
+                <div class="card p-4">
+                  <!-- Header -->
+
+                  <div class="table-responsive">
+                    <table class="table align-middle">
+                      <thead class="table-light">
+                        <tr>
+                          <th>FULL NAME</th>
+                          <th>ORDER NO.</th>
+                          <th>ROOM</th>
+                          <th>CHECK-IN</th>
+                          <th>DAY</th>
+                          <th>GUESTS</th>
+                          <th>ORIGIN</th>
+                          <th>STATUS</th>
+                          <th class="text-end"></th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <!-- ✅ ROW 1 -->
+                        <tr>
+                          <td><strong>Ahmad Martin</strong></td>
+
+                          <td>HO-202512-7467</td>
+
+                          <td>
+                            <strong>005</strong><br />
+                            <small class="text-muted">Standard</small>
+                          </td>
+
+                          <td>16 Dec 2025</td>
+
+                          <td>Tue</td>
+
+                          <td>
+                            <span class="badge rounded-pill bg-light text-dark"
+                              >1</span
+                            >
+                          </td>
+
+                          <td>
+                            <span class="badge rounded-pill bg-light text-dark"
+                              >Syria</span
+                            >
+                          </td>
+
+                          <td>
+                            <span
+                              class="badge rounded-pill bg-success-subtle text-success border"
+                            >
+                              Checked In
+                            </span>
+                          </td>
+
+                          <!-- ✅ ACTIONS -->
+                          <td class="text-end">
+                            <i class="ti ti-dots"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="text-muted mt-4">Showing 1 of 1 bookings</p>
+                </div>
+              </div>
+
+              <!-- ✅ Lunch TAB (Recent Move-Outs) -->
+              <div class="tab-pane fade mt-2" id="arriving" role="tabpanel">
+                <div class="card p-4">
+                  <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                      <!-- HEADER -->
+                      <thead>
+                        <tr>
+                          <th>FULL NAME</th>
+                          <th>ORDER NO.</th>
+                          <th>ROOM</th>
+                          <th>CHECK-IN</th>
+                          <th>DAY</th>
+                          <th>GUESTS</th>
+                          <th>ORIGIN</th>
+                          <th>STATUS</th>
+                          <th class="text-end"></th>
+                        </tr>
+                      </thead>
+
+                      <!-- ✅ EMPTY STATE ROW -->
+                      <tbody>
+                        <tr>
+                          <td colspan="9">
+                            <div
+                              class="d-flex flex-column align-items-center justify-content-center text-center py-5"
+                            >
+                              <i
+                                class="ti ti-calendar-check text-muted mb-3"
+                                style="font-size: 42px"
+                              ></i>
+
+                              <h6 class="fw-semibold mb-1">
+                                No bookings found
+                              </h6>
+
+                              <p class="text-muted mb-0">
+                                There are no pending bookings at the moment
+                              </p>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ✅ Dinner TAB (Recent Move-Outs) -->
+              <div class="tab-pane fade mt-2" id="lastCheckOut" role="tabpanel">
+                <div class="card p-4">
+                  <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                      <!-- HEADER -->
+                      <thead>
+                        <tr>
+                          <th>FULL NAME</th>
+                          <th>ORDER NO.</th>
+                          <th>ROOM</th>
+                          <th>CHECK-IN</th>
+                          <th>DAY</th>
+                          <th>GUESTS</th>
+                          <th>ORIGIN</th>
+                          <th>STATUS</th>
+                          <th class="text-end"></th>
+                        </tr>
+                      </thead>
+
+                      <!-- ✅ EMPTY STATE ROW -->
+                      <tbody>
+                        <tr>
+                          <td colspan="9">
+                            <div
+                              class="d-flex flex-column align-items-center justify-content-center text-center py-5"
+                            >
+                              <i
+                                class="ti ti-calendar-check text-muted mb-3"
+                                style="font-size: 42px"
+                              ></i>
+
+                              <h6 class="fw-semibold mb-1">
+                                No bookings found
+                              </h6>
+
+                              <p class="text-muted mb-0">
+                                There are no pending bookings at the moment
+                              </p>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ✅ Pending TAB (Recent Move-Outs) -->
+              <div class="tab-pane fade mt-2" id="pending" role="tabpanel">
+                <div class="card p-4">
+                  <!-- ✅ TABLE -->
+                  <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                      <!-- HEADER -->
+                      <thead>
+                        <tr>
+                          <th>FULL NAME</th>
+                          <th>ORDER NO.</th>
+                          <th>ROOM</th>
+                          <th>CHECK-IN</th>
+                          <th>DAY</th>
+                          <th>GUESTS</th>
+                          <th>ORIGIN</th>
+                          <th>STATUS</th>
+                          <th class="text-end"></th>
+                        </tr>
+                      </thead>
+
+                      <!-- ✅ EMPTY STATE ROW -->
+                      <tbody>
+                        <tr>
+                          <td colspan="9">
+                            <div
+                              class="d-flex flex-column align-items-center justify-content-center text-center py-5"
+                            >
+                              <i
+                                class="ti ti-calendar-check text-muted mb-3"
+                                style="font-size: 42px"
+                              ></i>
+
+                              <h6 class="fw-semibold mb-1">
+                                No bookings found
+                              </h6>
+
+                              <p class="text-muted mb-0">
+                                There are no pending bookings at the moment
+                              </p>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table -->
+        </div>
+      </div>
+      <!-- /Page Wrapper -->
+
+      <!-- /Process Move-In -->
+      <div class="modal fade" id="newBookingModal" tabindex="-1">
+        <div
+          class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
+        >
+          <div class="modal-content">
+            <!-- ✅ HEADER -->
+            <div class="modal-header">
+              <div>
+                <h4 class="modal-title fw-semibold">New Booking</h4>
+                <p class="text-muted mb-0">
+                  Register a new arrival. This will create a booking and service
+                  user record.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- ✅ BODY -->
+            <div class="modal-body">
+              <div class="row g-3">
+                <!-- First Name -->
+                <div class="col-md-6">
+                  <label class="form-label">First Name *</label>
+                  <input type="text" class="form-control" />
+                </div>
+
+                <!-- Last Name -->
+                <div class="col-md-6">
+                  <label class="form-label">Last Name *</label>
+                  <input type="text" class="form-control" />
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="col-md-6">
+                  <label class="form-label">Date of Birth *</label>
+                  <div class="input-group">
+                    <input type="date" class="form-control" />
+                    <span class="input-group-text"
+                      ><i class="ti ti-calendar"></i
+                    ></span>
+                  </div>
+                </div>
+
+                <!-- Nationality -->
+                <div class="col-md-6">
+                  <label class="form-label">Nationality *</label>
+                  <input type="text" class="form-control" />
+                </div>
+
+                <!-- Home Office Reference -->
+                <div class="col-12">
+                  <label class="form-label">Home Office Reference *</label>
+                  <input type="text" class="form-control" />
+                </div>
+
+                <!-- Property -->
+                <div class="col-md-6">
+                  <label class="form-label">Property *</label>
+                  <select class="form-select">
+                    <option selected disabled>Select property</option>
+                    <option>Garden House Hotel</option>
+                    <option>Crown Lodge Hotel</option>
+                  </select>
+                </div>
+
+                <!-- Room -->
+                <div class="col-md-6">
+                  <label class="form-label">Room *</label>
+                  <select class="form-select">
+                    <option selected disabled>Select property first</option>
+                  </select>
+                </div>
+
+                <!-- Check-in Date -->
+                <div class="col-12">
+                  <label class="form-label">Check-in Date</label>
+                  <div class="input-group">
+                    <input type="date" class="form-control" />
+                    <span class="input-group-text"
+                      ><i class="ti ti-calendar"></i
+                    ></span>
+                  </div>
+                </div>
+
+                <!-- Vulnerabilities -->
+                <div class="col-12">
+                  <label class="form-label">Vulnerabilities</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Separate multiple items with commas"
+                  />
+                </div>
+
+                <!-- Medical Conditions -->
+                <div class="col-12">
+                  <label class="form-label">Medical Conditions</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <!-- Dietary Requirements -->
+                <div class="col-12">
+                  <label class="form-label">Dietary Requirements</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <!-- Status -->
+                <div class="col-12">
+                  <label class="form-label">Status *</label>
+                  <select class="form-select">
+                    <option selected>Active</option>
+                    <option>Inactive</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ FOOTER -->
+            <div class="modal-footer d-flex justify-content-end gap-2">
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="button" class="btn btn-primary px-4">
+                Create Booking
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /Process Move-In -->
+    </div>
+    <!-- /Main Wrapper -->
+
+    <!-- JS -->
+    <script>
+      fetch("../assets/includes/sidebar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("sidebar-container").innerHTML = data;
+        });
+    </script>
+    <script>
+      function setQuickDate(value) {
+        document.getElementById("selectedDateText").innerText = value;
+      }
+
+      function clearDates() {
+        document.getElementById("fromDate").value = "";
+        document.getElementById("untilDate").value = "";
+        document.getElementById("selectedDateText").innerText = "Custom Range";
+      }
+
+      function applyDates() {
+        let from = document.getElementById("fromDate").value;
+        let until = document.getElementById("untilDate").value;
+
+        if (from && until) {
+          document.getElementById("selectedDateText").innerText =
+            from + " → " + until;
+        }
+      }
+    </script>
+    <script>
+      function setProperty(el) {
+        // Remove active + check from all
+        document.querySelectorAll(".dropdown-item").forEach((item) => {
+          item.classList.remove("active");
+          const icon = item.querySelector(".ti-check");
+          if (icon) icon.remove();
+        });
+
+        // Add active + check to selected
+        el.classList.add("active");
+        el.insertAdjacentHTML("afterbegin", '<i class="ti ti-check me-2"></i>');
+
+        // Update button text
+        document.getElementById("selectedPropertyText").innerText =
+          el.innerText.replace("All Properties", "All Properties");
+
+        // Close dropdown
+        bootstrap.Dropdown.getInstance(
+          document.getElementById("propertyFilterBtn")
+        ).hide();
+      }
+    </script>
+
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+      // Sidebar toggle (collapse / expand)
+      $(document).on("click", "#toggle_btn", function () {
+        $("body").toggleClass("mini-sidebar");
+
+        if (!$("body").hasClass("mini-sidebar")) {
+          $(".subdrop + ul").slideDown();
+        } else {
+          $(".subdrop + ul").slideUp();
+        }
+
+        return false;
+      });
+    </script>
+  </body>
+</html>

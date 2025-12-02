@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>SU Profile Detail</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/img/favicon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+
+    <!-- Feather Icons -->
+    <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+
+    <!-- Tabler Icons -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/tabler-icons/tabler-icons.min.css"
+    />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/fontawesome/css/all.min.css"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <style>
+      .sidebar-inner {
+        overflow-y: auto !important;
+        height: calc(100vh - 60px) !important;
+      }
+
+      .sidebar-menu ul li a.active {
+        background: #f5f5f5 !important;
+        color: #333 !important;
+      }
+      .sidebar-menu ul li a:hover {
+        background: #f0f0f0 !important;
+        color: #333 !important;
+      }
+
+      /* Housing risk badges */
+      .badge-high {
+        background: #ffe7e7;
+        color: #d32f2f;
+        border-radius: 14px;
+        padding: 4px 8px;
+        font-weight: 600;
+      }
+      .badge-medium {
+        background: #fff6e6;
+        color: #d49a00;
+        border-radius: 14px;
+        padding: 4px 8px;
+        font-weight: 600;
+      }
+      .badge-low {
+        background: #eaf7ea;
+        color: #2e7d32;
+        border-radius: 14px;
+        padding: 4px 8px;
+        font-weight: 600;
+      }
+
+      /* Mini sidebar collapse */
+      .mini-sidebar .sidebar {
+        width: 60px !important;
+      }
+
+      .mini-sidebar .sidebar .sidebar-menu ul li a span {
+        display: none !important; /* hide menu text */
+      }
+
+      .mini-sidebar .sidebar .sidebar-menu ul li a i {
+        margin-right: 0 !important;
+        font-size: 20px;
+      }
+
+      /* Page background like reference */
+      .move-dashboard-bg {
+        background: radial-gradient(
+          circle at top,
+          #f5f6f8 0%,
+          #eef0f4 40%,
+          #e9ebf0 100%
+        );
+        padding-bottom: 40px;
+      }
+
+      /* Card styling like second image */
+      .move-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px 26px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
+
+      /* Icon styling */
+      .move-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+      }
+
+      .bg-purple {
+        background: #9b5de5;
+      }
+
+      /* Tabs style */
+      .move-tabs {
+        background: #f1f3f7;
+        padding: 6px;
+        border-radius: 10px;
+        display: inline-flex;
+        gap: 6px;
+      }
+
+      .move-tabs .btn {
+        border-radius: 8px;
+      }
+
+      .property-tabs-wrapper {
+        margin-top: 10px;
+        margin-left: 8px;
+        width: 25%;
+      }
+
+      .property-tabs-wrapper {
+        margin-top: 10px;
+        margin-left: 8px;
+        width: 35%;
+      }
+
+      .card {
+        border-radius: 14px;
+        border: 1px solid #eef0f3;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+
+      .user-status-tags {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.status-tag {
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* ✅ ACTIVE = GREEN */
+.status-tag.active {
+  color: #00a884;
+  background-color: #e9fbf5;
+  border: 1px solid #00a884;
+}
+
+/* ✅ FEMALE & REJECTED = GREY */
+.status-tag.neutral {
+  color: #667085;
+  background-color: #f2f4f7;
+  border: 1px solid #e4e7ec;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+
+    <div id="sidebar-container"></div>
+
+    <!-- /Sidebar -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <div class="header">
+        <div class="main-header">
+          <div class="header-left">
+            <a href="index.html" class="logo">
+              <img src="../assets/img/logo.svg" alt="Logo" />
+            </a>
+            <a href="index.html" class="dark-logo">
+              <img src="../assets/img/logo-white.svg" alt="Logo" />
+            </a>
+          </div>
+
+          <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+            <span class="bar-icon"
+              ><span></span><span></span><span></span
+            ></span>
+          </a>
+
+          <div class="header-user">
+            <div class="nav user-menu nav-list">
+              <div class="me-auto d-flex align-items-center" id="header-search">
+                <a
+                  id="toggle_btn"
+                  href="javascript:void(0);"
+                  class="btn btn-menubar me-1"
+                >
+                  <i class="ti ti-arrow-bar-to-left"></i>
+                </a>
+
+                <div class="input-group input-group-flat d-inline-flex me-1">
+                  <span class="input-icon-addon"
+                    ><i class="ti ti-search"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search in HRMS"
+                  />
+                  <span class="input-group-text"><kbd>CTRL + /</kbd></span>
+                </div>
+
+                <a href="profile-settings.html" class="btn btn-menubar">
+                  <i class="ti ti-settings-cog"></i>
+                </a>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-menubar btnFullscreen">
+                  <i class="ti ti-maximize"></i>
+                </a>
+                <a href="chat.html" class="btn btn-menubar position-relative">
+                  <i class="ti ti-brand-hipchat"></i>
+                </a>
+                <a href="email.html" class="btn btn-menubar">
+                  <i class="ti ti-mail"></i>
+                </a>
+
+                <div class="dropdown profile-dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle d-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    <span class="avatar avatar-sm online">
+                      <img
+                        src="../assets/img/profiles/avatar-12.jpg"
+                        class="rounded-circle"
+                        alt=""
+                      />
+                    </span>
+                  </a>
+                  <div class="dropdown-menu shadow-none">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="profile-settings.html"
+                      >Settings</a
+                    >
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Header -->
+
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          <!-- Page Header -->
+
+          <!-- Breadcrumb -->
+          <div
+            class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
+          >
+            <div class="my-auto mb-2">
+              <nav>
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="index.html"><i class="ti ti-smart-home"></i></a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="suprofiles.html">SU Profiles</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Rana Yusuf
+                  </li>
+                </ol>
+              </nav>
+              <!-- <h2 class="page-title">Meal Management</h2> -->
+            </div>
+          </div>
+          <!-- /Breadcrumb -->
+
+          <!-- USER HEADER BELOW BREADCRUMB -->
+          <div class="mb-4">
+            <h3 class="fw-bold mb-1">Rana Yusuf</h3>
+
+            <p class="text-muted mb-2">
+              HO Ref: <span class="fw-semibold">QA2035401</span>
+            </p>
+
+            <!-- Status Badges -->
+          <div class="user-status-tags">
+  <span class="status-tag active">active</span>
+  <span class="status-tag neutral">female</span>
+  <span class="status-tag neutral">rejected</span>
+</div>
+
+          </div>
+
+          <!-- Cards -->
+          <div class="row g-3">
+            <!-- ✅ AGE -->
+            <div class="col-lg-3 col-md-6">
+              <div class="card stat-card h-80">
+                <div
+                  class="card-body d-flex justify-content-between align-items-start"
+                >
+                  <div>
+                    <p class="stat-title">Age</p>
+                    <h2 class="stat-value">35</h2>
+                    <p class="stat-sub">DOB: 02/12/1990</p>
+                  </div>
+                  <i class="ti ti-user stat-icon"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ PROPERTY -->
+            <div class="col-lg-3 col-md-6">
+              <div class="card stat-card h-80">
+                <div
+                  class="card-body d-flex justify-content-between align-items-start"
+                >
+                  <div>
+                    <p class="stat-title">Property</p>
+                    <h2 class="stat-value">Crown Lodge Hotel</h2>
+                    <p class="stat-sub">Room assigned</p>
+                  </div>
+                  <i class="ti ti-building stat-icon"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ FAMILY -->
+            <div class="col-lg-3 col-md-6">
+              <div class="card stat-card h-80">
+                <div
+                  class="card-body d-flex justify-content-between align-items-start"
+                >
+                  <div>
+                    <p class="stat-title">Family</p>
+                    <h2 class="stat-value">1</h2>
+                    <p class="stat-sub">single</p>
+                  </div>
+                  <i class="ti ti-users stat-icon"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ DOCUMENTS -->
+            <div class="col-lg-3 col-md-6">
+              <div class="card stat-card h-80">
+                <div
+                  class="card-body d-flex justify-content-between align-items-start"
+                >
+                  <div>
+                    <p class="stat-title">Documents</p>
+                    <h2 class="stat-value">0</h2>
+                    <p class="stat-sub">uploaded</p>
+                  </div>
+                  <i class="ti ti-file stat-icon"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- searchbar -->
+
+          <!-- Tabs -->
+
+          <div class="property-tabs-wrapper">
+            <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="overview-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#allmeals"
+                  type="button"
+                >
+                  Profile
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="maintenance-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#breakfast"
+                  type="button"
+                >
+                  Documents
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="maintenance-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#lunch"
+                  type="button"
+                >
+                  Health & Diet
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="maintenance-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#dinner"
+                  type="button"
+                >
+                  Checklists
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-content" id="propertyTabsContent">
+            <!-- ✅ All Meals TAB (Recent Move-Ins) -->
+            <div
+              class="tab-pane fade show active"
+              id="allmeals"
+              role="tabpanel"
+            >
+              <!-- PERSONAL INFORMATION -->
+              <div class="card p-4 mb-4 shadow-sm rounded-4">
+                <h4 class="mb-1">Personal Information</h4>
+                <p class="text-muted mb-4">
+                  Basic demographic and contact information
+                </p>
+
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label class="text-muted">Full Name</label>
+                    <div class="fw-semibold">Rana Yusuf</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="text-muted">Date of Birth</label>
+                    <div class="fw-semibold">02 December 1990</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="text-muted">Gender</label>
+                    <div class="fw-semibold text-capitalize">female</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="text-muted">Nationality</label>
+                    <div class="fw-semibold">Eritrea</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="text-muted">Immigration Status</label>
+                    <div class="fw-semibold text-lowercase">rejected</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="text-muted">Home Office Reference</label>
+                    <div class="fw-semibold">QA2035401</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAMILY COMPOSITION -->
+              <div class="card p-4 mb-4 shadow-sm rounded-4">
+                <h4 class="mb-1">Family Composition</h4>
+                <p class="text-muted mb-4">Family structure and dependents</p>
+
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label class="text-muted">Family Type</label>
+                    <div class="fw-semibold text-capitalize">single</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="text-muted">Number of Dependents</label>
+                    <div class="fw-semibold">1</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- EMERGENCY CONTACT -->
+              <div class="card p-4 mb-4 shadow-sm rounded-4">
+                <h4 class="mb-1">Emergency Contact</h4>
+                <p class="text-muted mb-4">Emergency contact information</p>
+
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label class="text-muted">Contact Name</label>
+                    <div class="fw-semibold">Bilal Hassan</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="text-muted">Contact Phone</label>
+                    <div class="fw-semibold">07288102440</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ACCOMMODATION -->
+              <div class="card p-4 mb-4 shadow-sm rounded-4">
+                <h4 class="mb-1">Accommodation</h4>
+                <p class="text-muted mb-4">Current placement details</p>
+
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label class="text-muted">Property</label>
+                    <div class="fw-semibold">Crown Lodge Hotel</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="text-muted">Move-in Date</label>
+                    <div class="fw-semibold">28 May 2025</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ Breakfast TAB (Recent Move-Outs) -->
+            <div class="tab-pane fade" id="breakfast" role="tabpanel">
+              <div class="card p-5 shadow-sm rounded-4 text-center">
+                <!-- HEADER -->
+                <h4 class="mb-1 text-start">Document Management</h4>
+                <p class="text-muted mb-5 text-start">
+                  Uploaded documents and identification
+                </p>
+
+                <!-- EMPTY STATE -->
+                <div
+                  class="d-flex flex-column align-items-center justify-content-center py-5"
+                >
+                  <span class="mb-3" style="font-size: 48px; color: #b0b3b8">
+                    <i class="ti ti-file-description"></i>
+                  </span>
+
+                  <h6 class="fw-semibold mb-1">No documents uploaded yet</h6>
+
+                  <p class="text-muted mb-0">
+                    Documents will appear here once uploaded
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ Lunch TAB (Recent Move-Outs) -->
+            <div class="tab-pane fade" id="lunch" role="tabpanel">
+              <div class="d-flex flex-column gap-2">
+                <!-- ✅ Health Needs -->
+                <div class="card p-4 shadow-sm rounded-4">
+                  <h4 class="mb-1 fw-semibold">Health Needs</h4>
+                  <p class="text-muted mb-2">
+                    Medical conditions and health requirements
+                  </p>
+
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <p class="text-muted mb-1">Health Needs</p>
+                      <p class="fw-medium mb-0">None specified</p>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                      <p class="text-muted mb-1">Medical Conditions</p>
+                      <p class="fw-medium mb-0">None specified</p>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                      <p class="text-muted mb-1">Dietary Requirements</p>
+                      <p class="fw-medium mb-0">None specified</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ✅ Vulnerabilities -->
+                <div class="card p-4 shadow-sm rounded-4">
+                  <h4 class="mb-1 fw-semibold">Vulnerabilities</h4>
+                  <p class="text-muted mb-2">
+                    Known vulnerabilities and safeguarding needs
+                  </p>
+
+                  <p class="text-muted mb-0">No vulnerabilities recorded</p>
+                </div>
+
+                <!-- ✅ Meal Plans -->
+                <div class="card p-4 shadow-sm rounded-4">
+                  <h4 class="mb-1 fw-semibold">Meal Plans</h4>
+                  <p class="text-muted mb-2">
+                    Scheduled meals and dietary tracking
+                  </p>
+
+                  <div class="d-flex flex-column gap-3">
+                    <!-- Row 1 -->
+                    <div
+                      class="border rounded-3 p-3 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="ti ti-fork"></i>
+                        <strong>breakfast</strong>
+                        <span class="text-muted">22 Nov 2025</span>
+                      </div>
+                      <span
+                        class="badge bg-success-subtle text-success rounded-pill px-3"
+                      >
+                        Consumed
+                      </span>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div
+                      class="border rounded-3 p-3 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="ti ti-fork"></i>
+                        <strong>lunch</strong>
+                        <span class="text-muted">22 Nov 2025</span>
+                      </div>
+                      <span
+                        class="badge bg-success-subtle text-success rounded-pill px-3"
+                      >
+                        Consumed
+                      </span>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div
+                      class="border rounded-3 p-3 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="ti ti-fork"></i>
+                        <strong>dinner</strong>
+                        <span class="text-muted">22 Nov 2025</span>
+                      </div>
+                      <span
+                        class="badge bg-success-subtle text-success rounded-pill px-3"
+                      >
+                        Consumed
+                      </span>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div
+                      class="border rounded-3 p-3 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="ti ti-fork"></i>
+                        <strong>breakfast</strong>
+                        <span class="text-muted">23 Nov 2025</span>
+                      </div>
+                    </div>
+
+                    <!-- Row 5 -->
+                    <div
+                      class="border rounded-3 p-3 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="ti ti-fork"></i>
+                        <strong>lunch</strong>
+                        <span class="text-muted">23 Nov 2025</span>
+                      </div>
+                      <span
+                        class="badge bg-success-subtle text-success rounded-pill px-3"
+                      >
+                        Consumed
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ Dinner TAB (Recent Move-Outs) -->
+            <div class="tab-pane fade" id="dinner" role="tabpanel">
+              <div class="card p-3">
+                <!-- Header -->
+                <h4 class="mb-1">Move-In/Out Checklists</h4>
+                <p class="text-muted mb-4">Completed and pending checklists</p>
+
+                <!-- Empty State -->
+                <div
+                  class="d-flex flex-column align-items-center justify-content-center py-4 text-center"
+                >
+                  <i class="ti ti-clipboard-check text-muted fs-1 mb-3"></i>
+
+                  <h6 class="text-muted mb-1">No checklists completed yet</h6>
+
+                  <p class="text-muted mb-0">
+                    Checklists will appear here once processed
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Wrapper -->
+
+      <!-- /Process Move-In -->
+      <div class="modal fade" id="scheduleMealModal" tabindex="-1">
+        <div
+          class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable"
+        >
+          <div class="modal-content">
+            <!-- ✅ HEADER -->
+            <div class="modal-header">
+              <div>
+                <h4 class="modal-title">Schedule Meal</h4>
+                <p class="text-muted mb-0">
+                  Create a new meal plan for a service user
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- ✅ BODY -->
+            <div class="modal-body">
+              <!-- Service User -->
+              <div class="mb-3">
+                <label class="form-label">Service User</label>
+                <select class="form-select">
+                  <option selected disabled>Select a service user</option>
+                  <option>Dalia Mohammed</option>
+                  <option>Rana Yusuf</option>
+                  <option>Nasser Hamid</option>
+                  <option>Amina Farah</option>
+                </select>
+              </div>
+
+              <!-- Property -->
+              <div class="mb-3">
+                <label class="form-label">Property</label>
+                <select class="form-select">
+                  <option selected disabled>Select a property</option>
+                  <option>Garden House Hotel</option>
+                  <option>Crown Lodge Hotel</option>
+                  <option>Trident Elite</option>
+                  <option>Marriott Waterfront</option>
+                </select>
+              </div>
+
+              <!-- Meal Type -->
+              <div class="mb-3">
+                <label class="form-label">Meal Type</label>
+                <select class="form-select">
+                  <option>Breakfast</option>
+                  <option>Lunch</option>
+                  <option>Dinner</option>
+                </select>
+              </div>
+
+              <!-- Scheduled Date -->
+              <div class="mb-3">
+                <label class="form-label">Scheduled Date</label>
+                <div class="input-group">
+                  <input type="date" class="form-control" value="2025-12-01" />
+                  <span class="input-group-text">
+                    <i class="ti ti-calendar"></i>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Portion Size -->
+              <div class="mb-3">
+                <label class="form-label">Portion Size</label>
+                <select class="form-select">
+                  <option>Small</option>
+                  <option selected>Standard</option>
+                  <option>Large</option>
+                </select>
+              </div>
+
+              <!-- Dietary Requirements -->
+              <div class="mb-3">
+                <label class="form-label">Dietary Requirements</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="e.g., Vegetarian, Halal, Gluten-free"
+                />
+              </div>
+
+              <!-- Notes -->
+              <div class="mb-3">
+                <label class="form-label">Notes</label>
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  placeholder="Additional notes about this meal"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- ✅ FOOTER -->
+            <div class="modal-footer d-flex justify-content-end gap-2">
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="button" class="btn btn-dark">
+                Create Meal Plan
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /Process Move-In -->
+    </div>
+    <!-- /Main Wrapper -->
+
+    <!-- JS -->
+    <script>
+      fetch("../assets/includes/sidebar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("sidebar-container").innerHTML = data;
+        });
+    </script>
+    <script>
+      function setQuickDate(value) {
+        document.getElementById("selectedDateText").innerText = value;
+      }
+
+      function clearDates() {
+        document.getElementById("fromDate").value = "";
+        document.getElementById("untilDate").value = "";
+        document.getElementById("selectedDateText").innerText = "Custom Range";
+      }
+
+      function applyDates() {
+        let from = document.getElementById("fromDate").value;
+        let until = document.getElementById("untilDate").value;
+
+        if (from && until) {
+          document.getElementById("selectedDateText").innerText =
+            from + " → " + until;
+        }
+      }
+    </script>
+    <script>
+      function setProperty(el) {
+        // Remove active + check from all
+        document.querySelectorAll(".dropdown-item").forEach((item) => {
+          item.classList.remove("active");
+          const icon = item.querySelector(".ti-check");
+          if (icon) icon.remove();
+        });
+
+        // Add active + check to selected
+        el.classList.add("active");
+        el.insertAdjacentHTML("afterbegin", '<i class="ti ti-check me-2"></i>');
+
+        // Update button text
+        document.getElementById("selectedPropertyText").innerText =
+          el.innerText.replace("All Properties", "All Properties");
+
+        // Close dropdown
+        bootstrap.Dropdown.getInstance(
+          document.getElementById("propertyFilterBtn")
+        ).hide();
+      }
+    </script>
+
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+      // Sidebar toggle (collapse / expand)
+      $(document).on("click", "#toggle_btn", function () {
+        $("body").toggleClass("mini-sidebar");
+
+        if (!$("body").hasClass("mini-sidebar")) {
+          $(".subdrop + ul").slideDown();
+        } else {
+          $(".subdrop + ul").slideUp();
+        }
+
+        return false;
+      });
+    </script>
+  </body>
+</html>

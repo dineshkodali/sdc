@@ -70,12 +70,38 @@
       font-size: 20px;
     }
 
+    /* Card styling like second image */
+    .move-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 26px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      height: 100%;
+    }
+
+    /* Icon styling */
+    .move-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .card {
+      border-radius: 14px;
+      border: 1px solid #eef0f3;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
     /* Card-style background for the whole tab bar */
   </style>
 
   <body>
-
-     <!-- Sidebar -->
+    <!-- Sidebar -->
 
     <div id="sidebar-container"></div>
 
@@ -177,7 +203,7 @@
       <div class="page-wrapper">
         <div class="content container-fluid">
           <!-- Page Header -->
-          <div class="page-header">
+          <!-- <div class="page-header">
             <div class="row align-items-center">
               <div class="col">
                 <h3 class="page-title">Operations Hub / Compliance</h3>
@@ -187,11 +213,361 @@
                 </ul>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- /Page Header -->
 
+          <!-- Breadcrumb -->
+          <div
+            class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
+          >
+            <div class="my-auto mb-2">
+              <h2 class="page-title">Compliance</h2>
+              <nav>
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="index.html"><i class="ti ti-smart-home"></i></a>
+                  </li>
+                  <li class="breadcrumb-item">Operations Hub</li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Compliance
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              class="d-flex my-xl-auto right-content align-items-center flex-wrap"
+            >
+              <div class="me-2 mb-2">
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#complianceCertificateModal"
+                  class="btn btn-primary d-flex align-items-center"
+                  ><i class="ti ti-plus me-2"></i>Add Certificate</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- /Breadcrumb -->
+
+          <!-- Cards -->
+          <div class="row g-4 move-stats mb-3">
+            <!-- Active Residents -->
+            <div class="col-lg-4 col-md-6">
+              <div class="move-card d-flex align-items-center">
+                <span class="move-icon bg-success">
+                  <i class="ti ti-file-check"></i>
+                </span>
+                <div class="ms-3">
+                  <p class="mb-1">Valid Certificates</p>
+                  <h3 class="mb-0">0</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Move-Ins -->
+            <div class="col-lg-4 col-md-6">
+              <div class="move-card d-flex align-items-center">
+                <span class="move-icon bg-primary">
+                  <i class="ti ti-file-check"></i>
+                </span>
+                <div class="ms-3">
+                  <p class="mb-1">Expiring Soon</p>
+                  <h3 class="mb-0">0</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Move-Outs -->
+            <div class="col-lg-4 col-md-6">
+              <div class="move-card d-flex align-items-center">
+                <span class="move-icon bg-pink">
+                  <i class="ti ti-file-check"></i>
+                </span>
+                <div class="ms-3">
+                  <p class="mb-1">Expired</p>
+                  <h3 class="mb-0">15</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= WRAPPER (OUTER CONTAINER) ================= -->
+          <div class="card mb-4 p-3">
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+              <h5 class="mb-0 fw-bold">Certificates</h5>
+
+              <div class="flex-grow-1 position-relative">
+                <input
+                  type="text"
+                  class="form-control ps-5"
+                  placeholder="Search certificates..."
+                />
+                <span
+                  class="position-absolute top-50 start-0 translate-middle-y ps-3 text-muted"
+                >
+                  <i class="ti ti-search"></i>
+                </span>
+              </div>
+
+              <select class="form-select w-auto">
+                <option>All Status</option>
+                <option>Valid</option>
+                <option>Expiring Soon</option>
+                <option>Expired</option>
+              </select>
+
+              <select class="form-select w-auto">
+                <option>All Properties</option>
+                <option>Riverside Hotel</option>
+                <option>Crown Lodge Hotel</option>
+              </select>
+            </div>
+          </div>
+
+          <div
+            class="card p-4 mb-4 shadow-sm rounded-4 border-0 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3"
+          >
+            <!-- ✅ LEFT CONTENT -->
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <h5 class="mb-0 fw-semibold">Fire Safety Certificate</h5>
+
+                <!-- ✅ Compact Expired badge -->
+                <span
+                  class="badge bg-danger-subtle text-danger px-2 py-1 rounded-pill text-muted small"
+                >
+                  Expired
+                </span>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 text-muted small mb-1">
+                <span>
+                  <i class="ti ti-map-pin me-1"></i> Riverside Hotel
+                </span>
+                <span>
+                  <i class="ti ti-calendar-event me-1"></i> Issued: 11 May 2023
+                </span>
+                <span>
+                  <i class="ti ti-calendar-time me-1"></i> Expires: 11 May 2024
+                </span>
+              </div>
+
+              <div class="text-muted small mb-2">
+                Issued by:
+                <span class="fw-medium">HSE Approved Contractor</span>
+              </div>
+
+              <!-- ✅ Compact dropdown + delete like the image -->
+              <div class="d-flex align-items-center gap-2 mt-2">
+                <select
+                  class="form-select rounded-3 py-1 px-2"
+                  style="width: 110px; font-size: 0.875rem"
+                >
+                  <option selected>Expired</option>
+                  <option>Valid</option>
+                  <option>Expiring</option>
+                </select>
+
+                <button
+                  class="btn btn-outline-danger rounded-3 px-3 py-1"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_service_user"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- EMERGENCY CONTACT -->
+          <div class="card p-4 mb-4 shadow-sm rounded-4">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="mb-0 fw-semibold">Gas Safety Certificate</h5>
+              <span
+                class="badge bg-danger-subtle text-danger px-2 py-1 rounded-pill small"
+              >
+                Expired
+              </span>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 text-muted small mb-1">
+              <span> <i class="ti ti-map-pin me-1"></i> Riverside Hotel </span>
+              <span>
+                <i class="ti ti-calendar-event me-1"></i> Issued: 27 March 2024
+              </span>
+              <span>
+                <i class="ti ti-calendar-time me-1"></i> Expires: 27 March 2025
+              </span>
+            </div>
+
+            <div class="text-muted small mb-2">
+              Issued by:
+              <span class="fw-medium">Gas Safe Engineers</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-2 mt-2">
+              <select
+                class="form-select rounded-3 py-1 px-2"
+                style="width: 120px; font-size: 0.875rem"
+              >
+                <option selected>Expired</option>
+                <option>Valid</option>
+                <option>Expiring</option>
+              </select>
+
+              <button
+                class="btn btn-outline-danger rounded-3 px-3 py-1"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_service_user"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+
+          <!-- ACCOMMODATION -->
+          <div class="card p-4 mb-4 shadow-sm rounded-4">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="mb-0 fw-semibold">
+                Electrical Installation Certificate
+              </h5>
+              <span
+                class="badge bg-danger-subtle text-danger px-2 py-1 rounded-pill small"
+              >
+                Expired
+              </span>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 text-muted small mb-1">
+              <span> <i class="ti ti-map-pin me-1"></i> Riverside Hotel </span>
+              <span>
+                <i class="ti ti-calendar-event me-1"></i> Issued: 05 Jul 2023
+              </span>
+              <span>
+                <i class="ti ti-calendar-time me-1"></i> Expires: 05 Jul 2024
+              </span>
+            </div>
+
+            <div class="text-muted small mb-2">
+              Issued by:
+              <span class="fw-medium">Environmental Health</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-2 mt-2">
+              <select
+                class="form-select rounded-3 py-1 px-2"
+                style="width: 120px; font-size: 0.875rem"
+              >
+                <option selected>Expired</option>
+                <option>Valid</option>
+                <option>Expiring</option>
+              </select>
+
+              <button
+                class="btn btn-outline-danger rounded-3 px-3 py-1"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_service_user"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+
+          <!-- EMERGENCY CONTACT -->
+          <div class="card p-4 mb-4 shadow-sm rounded-4">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="mb-0 fw-semibold">Legionella Risk Assessment</h5>
+              <span
+                class="badge bg-danger-subtle text-danger px-2 py-1 rounded-pill small"
+              >
+                Expired
+              </span>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 text-muted small mb-1">
+              <span> <i class="ti ti-map-pin me-1"></i> Riverside Hotel </span>
+              <span>
+                <i class="ti ti-calendar-event me-1"></i> Issued: 30 Aug 2023
+              </span>
+              <span>
+                <i class="ti ti-calendar-time me-1"></i> Expires: 30 Aug 2024
+              </span>
+            </div>
+
+            <div class="text-muted small mb-2">
+              Issued by:
+              <span class="fw-medium">Environmental Health</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-2 mt-2">
+              <select
+                class="form-select rounded-3 py-1 px-2"
+                style="width: 120px; font-size: 0.875rem"
+              >
+                <option selected>Expired</option>
+                <option>Valid</option>
+                <option>Expiring</option>
+              </select>
+
+              <button
+                class="btn btn-outline-danger rounded-3 px-3 py-1"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_service_user"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+
+          <!-- ACCOMMODATION -->
+          <div class="card p-4 mb-4 shadow-sm rounded-4">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="mb-0 fw-semibold">Asbestos Survey</h5>
+              <span
+                class="badge bg-danger-subtle text-danger px-2 py-1 rounded-pill small"
+              >
+                Expired
+              </span>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 text-muted small mb-1">
+              <span> <i class="ti ti-map-pin me-1"></i> Riverside Hotel </span>
+              <span>
+                <i class="ti ti-calendar-event me-1"></i> Issued: 20 Jun 2024
+              </span>
+              <span>
+                <i class="ti ti-calendar-time me-1"></i> Expires: 20 Jun 2025
+              </span>
+            </div>
+
+            <div class="text-muted small mb-2">
+              Issued by:
+              <span class="fw-medium">Electrical Safety Council</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-2 mt-2">
+              <select
+                class="form-select rounded-3 py-1 px-2"
+                style="width: 120px; font-size: 0.875rem"
+              >
+                <option selected>Expired</option>
+                <option>Valid</option>
+                <option>Expiring</option>
+              </select>
+
+              <button
+                class="btn btn-outline-danger rounded-3 px-3 py-1"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_service_user"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+
           <!-- Stats Cards -->
-          <div class="row g-3 mb-4">
+          <!-- <div class="row g-3 mb-4">
             <div class="col-xl-3 col-md-6">
               <div class="card card-body">
                 <span>Total Tasks</span>
@@ -229,569 +605,221 @@
                 </p>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- /Stats Cards -->
 
           <!-- Database + Search -->
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="mb-0">
-              Compliance Database <span class="text-muted">2 items</span>
-            </h4>
+        </div>
+      </div>
+      <!-- /Process Move-In -->
+      <div class="modal fade" id="complianceCertificateModal" tabindex="-1">
+        <div
+          class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
+        >
+          <div class="modal-content rounded-4">
+            <!-- ✅ HEADER -->
+            <div class="modal-header border-0 pb-0">
+              <div>
+                <h4 class="modal-title fw-semibold">Compliance Certificate</h4>
+                <p class="text-muted mb-0">
+                  Form for recording compliance certificates and documentation
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
 
-            <div class="d-flex gap-2">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search tasks..."
-                style="width: 240px"
-              />
-              <button class="btn btn-light" type="button" id="filterBtn">
-                <i class="ti ti-filter"></i> Filter
-              </button>
-              <button class="btn btn-light">
-                <i class="ti ti-layout-grid"></i> View
-              </button>
-              <button class="btn btn-success">
-                <i class="ti ti-plus"></i> New
-              </button>
+            <!-- ✅ BODY -->
+            <div class="modal-body pt-3">
+              <!-- Certificate Type -->
+              <div class="mb-3">
+                <label class="form-label">
+                  Certificate Type <span class="text-danger">*</span>
+                </label>
+                <select class="form-select rounded-3">
+                  <option selected disabled>Select certificate type</option>
+                  <option>Fire Safety Certificate</option>
+                  <option>Gas Safety Certificate</option>
+                  <option>Electrical Installation Certificate</option>
+                  <option>Legionella Risk Assessment</option>
+                </select>
+              </div>
 
-              <!-- FILTER DROPDOWN -->
-              <div class="filter-dropdown d-none" id="filterDropdown">
-                <div class="filter-header">
-                  <span>Add filter</span>
-                  <i class="ti ti-x filter-close" id="closeFilter"></i>
+              <!-- Property & Certificate Number -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">
+                    Property <span class="text-danger">*</span>
+                  </label>
+                  <select class="form-select rounded-3">
+                    <option selected disabled>Select property</option>
+                    <option>Riverside Hotel</option>
+                    <option>Crown Lodge Hotel</option>
+                    <option>Garden House Hotel</option>
+                  </select>
                 </div>
 
-                <div class="filter-search">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Certificate Number</label>
                   <input
                     type="text"
-                    class="form-control"
-                    placeholder="Filter by..."
+                    class="form-control rounded-3"
+                    placeholder="Certificate reference number"
+                  />
+                </div>
+              </div>
+
+              <!-- Issued By & Issue Date -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Issued By</label>
+                  <input
+                    type="text"
+                    class="form-control rounded-3"
+                    placeholder="Name of issuing organization"
                   />
                 </div>
 
-                <div class="filter-list">
-                  <div class="filter-item">
-                    <i class="ti ti-file-text"></i> Name
-                  </div>
-                  <div class="filter-item">
-                    <i class="ti ti-user"></i> Assignee
-                  </div>
-                  <div class="filter-item">
-                    <i class="ti ti-user-plus"></i> Created by
-                  </div>
-                  <div class="filter-item">
-                    <i class="ti ti-clock"></i> Created time
-                  </div>
-                  <div class="filter-item">
-                    <i class="ti ti-edit"></i> Last edited by
-                  </div>
-                  <div class="filter-item">
-                    <i class="ti ti-tag"></i> Priority
-                  </div>
-                  <div class="filter-item">
-                    <i class="ti ti-user"></i> Reported by
-                  </div>
-                  <div class="filter-item">
-                    <i class="ti ti-calendar"></i> Resolved time
-                  </div>
-                  <div class="filter-item">
-                    <i class="ti ti-activity"></i> Status
-                  </div>
-                  <div class="filter-item"><i class="ti ti-hash"></i> Tags</div>
-                  <div class="filter-item">
-                    <i class="ti ti-user-check"></i> Updated by
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">
+                    Issue Date <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input type="date" class="form-control rounded-start-3" />
+                    <span class="input-group-text rounded-end-3">
+                      <i class="ti ti-calendar"></i>
+                    </span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Tabs -->
-          <ul class="nav nav-tabs mb-3" id="taskTabs">
-            <li class="nav-item">
-              <a class="nav-link active" data-view="table" href="#">
-                <i class="ti ti-table me-1"></i> Table
-              </a>
-            </li>
+              <!-- Expiry Date & Status -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">
+                    Expiry Date <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input type="date" class="form-control rounded-start-3" />
+                    <span class="input-group-text rounded-end-3">
+                      <i class="ti ti-calendar"></i>
+                    </span>
+                  </div>
+                </div>
 
-            <li class="nav-item">
-              <a class="nav-link" data-view="board" href="#">
-                <i class="ti ti-layout-board me-1"></i> Board
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" data-view="dashboard" href="#">
-                <i class="ti ti-chart-bar me-1"></i> Dashboard
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" data-view="widgets" href="#">
-                <i class="ti ti-grid-dots me-1"></i> Widgets
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" data-view="livebi" href="#">
-                <i class="ti ti-trending-up me-1"></i> Live BI
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" data-view="settings" href="#">
-                <i class="ti ti-settings me-1"></i> Settings
-              </a>
-            </li>
-          </ul>
-
-          <!-- Compliance Table -->
-          <div id="tableView">
-            <div class="card">
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table table-hover mb-0">
-                    <thead>
-                      <tr>
-                        <th>
-                          <i class="ti ti-file-description me-1"></i> Task Title
-                        </th>
-
-                        <!-- Start Date -->
-
-                        <th
-                          style="position: relative"
-                          class="header-th"
-                          data-col="1"
-                        >
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-calendar-event me-1"></i>
-                            <span>Start Date</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div
-                              class="dropdown-item"
-                              onclick="toggleGenericSort(this)"
-                            >
-                              <i class="ti ti-arrows-sort"></i>
-                              <span class="sort-label">Sort A → Z</span>
-                            </div>
-                            <div
-                              class="dropdown-item d-flex justify-content-between"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-                            <div
-                              class="dropdown-item text-danger"
-                              onclick="hideGenericColumn(this)"
-                            >
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-                        <!-- CATEGORY  -->
-
-                        <th style="position: relative" class="category-th">
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-tag me-1"></i>
-                            <span>Category</span>
-                            <i class="ti ti-chevron-down category-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              onclick="toggleCategoryMenu(event)"
-                              type="button"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div
-                            class="category-dropdown d-none"
-                            id="categoryDropdown"
-                          >
-                            <div
-                              class="dropdown-item"
-                              onclick="toggleCategorySort()"
-                              id="categorySortBtn"
-                            >
-                              <i class="ti ti-arrows-sort"></i>
-                              <span id="sortLabel">Sort A → Z</span>
-                            </div>
-
-                            <div
-                              class="dropdown-item d-flex justify-content-between align-items-center"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-
-                        <!-- Site Name -->
-
-                        <th
-                          style="position: relative"
-                          class="header-th"
-                          data-col="3"
-                        >
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-building me-1"></i>
-                            <span>Site Name</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div
-                              class="dropdown-item"
-                              onclick="toggleGenericSort(this)"
-                            >
-                              <i class="ti ti-arrows-sort"></i>
-                              <span class="sort-label">Sort A → Z</span>
-                            </div>
-                            <div
-                              class="dropdown-item d-flex justify-content-between"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-
-                        <!-- Room No -->
-                        <th
-                          style="position: relative"
-                          class="header-th"
-                          data-col="4"
-                        >
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-home me-1"></i>
-                            <span>Room No</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div
-                              class="dropdown-item"
-                              onclick="toggleGenericSort(this)"
-                            >
-                              <i class="ti ti-arrows-sort"></i>
-                              <span class="sort-label">Sort A → Z</span>
-                            </div>
-                            <div
-                              class="dropdown-item d-flex justify-content-between"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-
-                        <!-- Raised By -->
-                        <th
-                          style="position: relative"
-                          class="header-th"
-                          data-col="5"
-                        >
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-user me-1"></i>
-                            <span>Raised By</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div
-                              class="dropdown-item"
-                              onclick="toggleGenericSort(this)"
-                            >
-                              <i class="ti ti-arrows-sort"></i>
-                              <span class="sort-label">Sort A → Z</span>
-                            </div>
-                            <div
-                              class="dropdown-item d-flex justify-content-between"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-
-                        <!-- Status -->
-                        <th
-                          style="position: relative"
-                          class="header-th"
-                          data-col="6"
-                        >
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-activity me-1"></i>
-                            <span>Status</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div
-                              class="dropdown-item"
-                              onclick="toggleGenericSort(this)"
-                            >
-                              <i class="ti ti-arrows-sort"></i>
-                              <span class="sort-label">Sort A → Z</span>
-                            </div>
-                            <div
-                              class="dropdown-item d-flex justify-content-between"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-
-                        <!-- Action -->
-                        <th
-                          style="position: relative"
-                          class="header-th"
-                          data-col="7"
-                        >
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-tool me-1"></i>
-                            <span>Action</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div
-                              class="dropdown-item"
-                              onclick="toggleGenericSort(this)"
-                            >
-                              <i class="ti ti-arrows-sort"></i>
-                              <span class="sort-label">Sort A → Z</span>
-                            </div>
-                            <div
-                              class="dropdown-item d-flex justify-content-between"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-
-                        <th
-                          style="position: relative"
-                          class="header-th"
-                          data-col="8"
-                        >
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-calendar-time me-1"></i>
-                            <span>Due Date</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div
-                              class="dropdown-item"
-                              onclick="toggleGenericSort(this)"
-                            >
-                              <i class="ti ti-arrows-sort"></i
-                              ><span class="sort-label">Sort A → Z</span>
-                            </div>
-                            <div
-                              class="dropdown-item d-flex justify-content-between"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-
-                        <th
-                          style="position: relative"
-                          class="header-th"
-                          data-col="9"
-                        >
-                          <div class="d-flex align-items-center gap-1 th-label">
-                            <i class="ti ti-clock me-1"></i>
-                            <span>Closed</span>
-                            <i class="ti ti-chevron-down header-arrow"></i>
-                            <button
-                              class="category-menu-btn"
-                              type="button"
-                              onclick="toggleGenericMenu(event, this)"
-                            >
-                              <i class="ti ti-dots"></i>
-                            </button>
-                          </div>
-
-                          <div class="category-dropdown d-none">
-                            <div
-                              class="dropdown-item"
-                              onclick="toggleGenericSort(this)"
-                            >
-                              <i class="ti ti-arrows-sort"></i>
-                              <span class="sort-label">Sort A → Z</span>
-                            </div>
-                            <div
-                              class="dropdown-item d-flex justify-content-between"
-                            >
-                              <span><i class="ti ti-filter"></i> Filter</span>
-                              <i class="ti ti-chevron-right"></i>
-                            </div>
-                            <div class="dropdown-item text-danger">
-                              <i class="ti ti-eye-off"></i> Hide
-                            </div>
-                          </div>
-                        </th>
-
-                        <th><i class="ti ti-dots me-1"></i> Options</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <!-- Row 1 -->
-                      <tr style="border-left: 4px solid #f4b400">
-                        <td>Data Protection Compliance Review</td>
-                        <td>-</td>
-                        <td class="fw-bold text-danger">HIGH</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>Open</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>
-                          <i class="ti ti-edit me-2"></i>
-                          <i class="ti ti-trash"></i>
-                        </td>
-                      </tr>
-
-                      <!-- Row 2 -->
-                      <tr style="border-left: 4px solid #4caf50">
-                        <td>Test</td>
-                        <td>-</td>
-                        <td class="fw-bold" style="color: #2e7d32">CAT3</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>Open</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>
-                          <i class="ti ti-edit me-2"></i>
-                          <i class="ti ti-trash"></i>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">
+                    Status <span class="text-danger">*</span>
+                  </label>
+                  <select class="form-select rounded-3">
+                    <option selected>valid</option>
+                    <option>expired</option>
+                    <option>expiring</option>
+                  </select>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <!-- WIDGETS VIEW -->
-          <div id="widgetsview" style="display: none">
-            <div class="widget-placeholder">
-              <div class="widget-box">
-                <div class="widget-icon">
-                  <i class="ti ti-grid-dots"></i>
-                </div>
-                <h5 class="mt-3">Widget Dashboard</h5>
-                <p>
-                  Customizable widgets and dashboard components will be
-                  displayed here.
-                </p>
+              <!-- ✅ Certificate Upload -->
+              <div class="mb-2">
+                <label class="form-label">Certificate Document</label>
+
+                <label
+                  class="w-100 border border-dashed rounded-4 text-center p-4 cursor-pointer"
+                  style="border-style: dashed"
+                >
+                  <input type="file" hidden />
+                  <div class="mb-2">
+                    <i class="ti ti-upload fs-2 text-muted"></i>
+                  </div>
+                  <div class="fw-medium">Click to upload files</div>
+                </label>
+
+                <small class="text-muted">
+                  Upload a copy of the certificate (PDF preferred)
+                </small>
               </div>
             </div>
+
+            <!-- ✅ FOOTER -->
+            <div class="modal-footer border-0 d-flex justify-content-end gap-2">
+              <button
+                type="button"
+                class="btn btn-outline-secondary rounded-3 px-4"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="button" class="btn btn-primary rounded-3 px-4">
+                Submit Form
+              </button>
+            </div>
           </div>
-          
         </div>
       </div>
 
+      <!-- /Process Move-In -->
+
       <!-- /Page Wrapper -->
+      <div
+        class="modal fade"
+        id="delete_service_user"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <!-- HEADER -->
+            <div class="modal-header border-0">
+              <h5 class="modal-title">Delete Certificate</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body pt-0">
+              <p class="text-muted mb-0">
+                Are you sure you want to delete this compliance certificate?
+                This action cannot be undone.
+              </p>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-outline-secondary me-2"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                id="confirmDeleteBtn"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- /Main Wrapper -->
 
     <!-- JS Files -->
-        <script>
-  fetch("../assets/includes/sidebar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("sidebar-container").innerHTML = data;
-    });
-</script>
-
+    <script>
+      fetch("../assets/includes/sidebar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("sidebar-container").innerHTML = data;
+        });
+    </script>
 
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>

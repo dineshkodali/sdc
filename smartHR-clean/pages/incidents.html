@@ -123,6 +123,17 @@
         border: 1px solid #eef0f3;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
+
+      .card .table thead th {
+        background: #fff;
+        font-size: 12px;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .avatar {
+        border-radius: 50%;
+      }
     </style>
   </head>
 
@@ -260,7 +271,7 @@
                   ><i class="ti ti-circle-plus me-2"></i>Report Incident</a
                 >
               </div>
-              <div class="head-icons ms-2">
+              <!-- <div class="head-icons ms-2">
                 <a
                   href="javascript:void(0);"
                   class=""
@@ -271,7 +282,7 @@
                 >
                   <i class="ti ti-chevrons-up"></i>
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -506,15 +517,17 @@
                     href="#"
                     data-bs-toggle="modal"
                     data-bs-target="#reportIncident"
-                    class="btn btn-success d-flex align-items-center"
+                    class="btn btn-primary d-flex align-items-center"
                     ><i class="ti ti-upload me-2"></i>Report Incident</a
                   >
                 </div>
               </div>
             </div>
+
+
             <!-- ✅ SECOND ROW (THREE DROPDOWNS UNDER HEADER) -->
-            <div class="d-flex gap-2 flex-wrap mb-2">
-              <!-- Severity -->
+            <!-- <div class="d-flex gap-2 flex-wrap mb-10 border-bottom">
+          
               <div class="dropdown">
                 <button
                   class="btn btn-light dropdown-toggle"
@@ -531,7 +544,6 @@
                 </ul>
               </div>
 
-              <!-- Status -->
               <div class="dropdown">
                 <button
                   class="btn btn-light dropdown-toggle"
@@ -547,7 +559,7 @@
                 </ul>
               </div>
 
-              <!-- Properties -->
+             
               <div class="dropdown">
                 <button
                   class="btn btn-light dropdown-toggle"
@@ -565,398 +577,573 @@
                   <li><a class="dropdown-item" href="#">Trident Elite</a></li>
                 </ul>
               </div>
-            </div>
-            <div class="card-body p-0">
-              <div class="custom-datatable-filter table-responsive">
-                <table class="table datatable">
-                  <thead class="thead-light">
-                    <tr>
-                      <th class="no-sort">
-                        <div class="form-check form-check-md">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="select-all"
-                          />
-                        </div>
-                      </th>
-                      <th>TYPE</th>
-                      <th>REFERENCE</th>
-                      <th>DESCRIPTION</th>
-                      <th>PRIORITY</th>
-                      <th>STATUS</th>
-                      <th>ASSIGNED TO</th>
-                      <th>DATE</th>
-                      <th></th>
-                      <!-- ✅ KEEP ACTION COLUMN -->
-                    </tr>
-                  </thead>
+            </div> -->
 
-                  <tbody>
-                    <!-- ROW 1 -->
-                    <tr>
-                      <td>
-                        <div class="form-check form-check-md">
-                          <input class="form-check-input" type="checkbox" />
-                        </div>
-                      </td>
-
-                      <td>
-                        <span
-                          class="badge bg-light-primary text-primary rounded-pill"
-                          >Incident</span
-                        >
-                      </td>
-
-                      <td>
-                        <strong>INC-2025-</strong><br />
-                        <small class="text-muted">a0efac16</small>
-                      </td>
-
-                      <td>
-                        <strong>self-harm</strong>
-                        <p class="text-muted mb-0 fs-13">
-                          Property damage discovered during routine
-                          inspection...
-                        </p>
-                      </td>
-
-                      <td>
-                        <span
-                          class="d-inline-flex align-items-center text-danger"
-                        >
-                          <i class="ti ti-point-filled me-1"></i> Critical
-                        </span>
-                      </td>
-
-                      <td>
-                        <span
-                          class="d-inline-flex align-items-center text-success"
-                        >
-                          <i class="ti ti-point-filled me-1"></i> Resolved
-                        </span>
-                      </td>
-
-                      <td>
-                        <div class="d-flex align-items-center">
-                          <span
-                            class="avatar avatar-sm rounded-circle bg-info text-white me-2"
-                            >MS</span
-                          >
-                          Manager Smith
-                        </div>
-                      </td>
-
-                      <td>Jun 20, 2024</td>
-
-                      <td>
-                        <div class="action-icon d-inline-flex">
-                          <a
-                            href="#"
-                            class="me-2"
-                            data-bs-toggle="modal"
-                            data-bs-target="#edit_employee"
-                            ><i class="ti ti-edit"></i
-                          ></a>
-                          <a
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#delete_modal"
-                            ><i class="ti ti-trash"></i
-                          ></a>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <!-- ROW 2 -->
-                    <tr>
-                      <td>
-                        <div class="form-check form-check-md">
-                          <input class="form-check-input" type="checkbox" />
-                        </div>
-                      </td>
-
-                      <td>
-                        <span
-                          class="badge bg-light-primary text-primary rounded-pill"
-                          >Incident</span
-                        >
-                      </td>
-
-                      <td>
-                        <strong>INC-2025-</strong><br />
-                        <small class="text-muted">b6a3253e</small>
-                      </td>
-
-                      <td>
-                        <strong>self-harm</strong>
-                        <p class="text-muted mb-0 fs-13">
-                          Noise complaint reported by neighboring room.
-                        </p>
-                      </td>
-
-                      <td>
-                        <span
-                          class="d-inline-flex align-items-center text-warning"
-                        >
-                          <i class="ti ti-point-filled me-1"></i> Medium
-                        </span>
-                      </td>
-
-                      <td>
-                        <span
-                          class="d-inline-flex align-items-center text-secondary"
-                        >
-                          <i class="ti ti-point-filled me-1"></i> Closed
-                        </span>
-                      </td>
-
-                      <td class="text-muted">Unassigned</td>
-
-                      <td>Aug 1, 2024</td>
-
-                      <td>
-                        <div class="action-icon d-inline-flex">
-                          <a
-                            href="#"
-                            class="me-2"
-                            data-bs-toggle="modal"
-                            data-bs-target="#edit_employee"
-                            ><i class="ti ti-edit"></i
-                          ></a>
-                          <a
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#delete_modal"
-                            ><i class="ti ti-trash"></i
-                          ></a>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <!-- ROW 3 -->
-                    <tr>
-                      <td>
-                        <div class="form-check form-check-md">
-                          <input class="form-check-input" type="checkbox" />
-                        </div>
-                      </td>
-
-                      <td>
-                        <span
-                          class="badge bg-light-primary text-primary rounded-pill"
-                          >Incident</span
-                        >
-                      </td>
-
-                      <td>
-                        <strong>INC-2025-</strong><br />
-                        <small class="text-muted">652f7ea6</small>
-                      </td>
-
-                      <td>
-                        <strong>substance-abuse</strong>
-                        <p class="text-muted mb-0 fs-13">
-                          Resident reported feeling unwell, medical
-                          assistance...
-                        </p>
-                      </td>
-
-                      <td>
-                        <span
-                          class="d-inline-flex align-items-center text-warning"
-                        >
-                          <i class="ti ti-point-filled me-1"></i> Medium
-                        </span>
-                      </td>
-
-                      <td>
-                        <span
-                          class="d-inline-flex align-items-center text-secondary"
-                        >
-                          <i class="ti ti-point-filled me-1"></i> Closed
-                        </span>
-                      </td>
-
-                      <td class="text-muted">Unassigned</td>
-
-                      <td>Aug 23, 2024</td>
-
-                      <td>
-                        <div class="action-icon d-inline-flex">
-                          <a
-                            href="#"
-                            class="me-2"
-                            data-bs-toggle="modal"
-                            data-bs-target="#edit_employee"
-                            ><i class="ti ti-edit"></i
-                          ></a>
-                          <a
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#delete_modal"
-                            ><i class="ti ti-trash"></i
-                          ></a>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <!-- ROW 4 -->
-                    <tr>
-                      <td>
-                        <div class="form-check form-check-md">
-                          <input class="form-check-input" type="checkbox" />
-                        </div>
-                      </td>
-
-                      <td>
-                        <span
-                          class="badge bg-light-primary text-primary rounded-pill"
-                          >Incident</span
-                        >
-                      </td>
-
-                      <td>
-                        <strong>INC-2025-</strong><br />
-                        <small class="text-muted">2abcdc48</small>
-                      </td>
-
-                      <td>
-                        <strong>maintenance-urgent</strong>
-                        <p class="text-muted mb-0 fs-13">
-                          Resident reported missing personal items.
-                        </p>
-                      </td>
-
-                      <td>
-                        <span
-                          class="d-inline-flex align-items-center text-success"
-                        >
-                          <i class="ti ti-point-filled me-1"></i> Low
-                        </span>
-                      </td>
-
-                      <td>
-                        <span
-                          class="d-inline-flex align-items-center text-purple"
-                        >
-                          <i class="ti ti-point-filled me-1"></i> Investigating
-                        </span>
-                      </td>
-
-                      <td>
-                        <div class="d-flex align-items-center">
-                          <span
-                            class="avatar avatar-sm rounded-circle bg-warning text-white me-2"
-                            >OM</span
-                          >
-                          Officer Miller
-                        </div>
-                      </td>
-
-                      <td>Jun 1, 2024</td>
-
-                      <td>
-                        <div class="action-icon d-inline-flex">
-                          <a
-                            href="#"
-                            class="me-2"
-                            data-bs-toggle="modal"
-                            data-bs-target="#edit_employee"
-                            ><i class="ti ti-edit"></i
-                          ></a>
-                          <a
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#delete_modal"
-                            ><i class="ti ti-trash"></i
-                          ></a>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <!-- ROW 5 -->
-                    <tr>
-                      <td>
-                        <div class="form-check form-check-md">
-                          <input class="form-check-input" type="checkbox" />
-                        </div>
-                      </td>
-
-                      <td>
-                        <span
-                          class="badge bg-light-primary text-primary rounded-pill"
-                          >Incident</span
-                        >
-                      </td>
-
-                      <td>
-                        <strong>INC-2025-</strong><br />
-                        <small class="text-muted">321f0d9d</small>
-                      </td>
-
-                      <td>
-                        <strong>substance-abuse</strong>
-                        <p class="text-muted mb-0 fs-13">
-                          Resident reported missing personal items.
-                        </p>
-                      </td>
-
-                      <td>
-                        <span
-                          class="d-inline-flex align-items-center text-danger"
-                        >
-                          <i class="ti ti-point-filled me-1"></i> High
-                        </span>
-                      </td>
-
-                      <td>
-                        <span
-                          class="d-inline-flex align-items-center text-purple"
-                        >
-                          <i class="ti ti-point-filled me-1"></i> Investigating
-                        </span>
-                      </td>
-
-                      <td>
-                        <div class="d-flex align-items-center">
-                          <span
-                            class="avatar avatar-sm rounded-circle bg-info text-white me-2"
-                            >TL</span
-                          >
-                          Team Lead Brown
-                        </div>
-                      </td>
-
-                      <td>Dec 16, 2024</td>
-
-                      <td>
-                        <div class="action-icon d-inline-flex">
-                          <a
-                            href="#"
-                            class="me-2"
-                            data-bs-toggle="modal"
-                            data-bs-target="#edit_employee"
-                            ><i class="ti ti-edit"></i
-                          ></a>
-                          <a
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#delete_modal"
-                            ><i class="ti ti-trash"></i
-                          ></a>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+            <!-- ✅ SECOND FILTER ROW -->
+            <div class="d-flex gap-2 flex-wrap py-1 border-bottom">
+              <!--  ALL Priority -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light border dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  All Severity
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All Severity</a></li>
+                  <li><a class="dropdown-item" href="#">Low</a></li>
+                  <li><a class="dropdown-item" href="#">Medium</a></li>
+                  <li><a class="dropdown-item" href="#">High</a></li>
+                  <li><a class="dropdown-item" href="#">Critical</a></li>
+                </ul>
               </div>
+              <!--  ALL Status -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light border dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  All Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All Status</a></li>
+                  <li><a class="dropdown-item" href="#">Open</a></li>
+                  <li><a class="dropdown-item" href="#">Pending</a></li>
+                  <li><a class="dropdown-item" href="#">Completed</a></li>
+                </ul>
+              </div>
+              <!--  ALL PROPERTIES -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-light border dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  All Properties
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All Properties</a></li>
+                  <li><a class="dropdown-item" href="#">Garden House</a></li>
+                  <li><a class="dropdown-item" href="#">Crown Lodge</a></li>
+                  <li><a class="dropdown-item" href="#">Trident Elite</a></li>
+                </ul>
+              </div>
+            </div>
+
+            
+           
+
+            <!-- ✅ TABLE (NOW INSIDE SAME CARD) -->
+            <div class="table-responsive mt-3">
+              <table class="table mb-0">
+                <thead>
+                  <tr>
+                    <!-- ✅ CHECKBOX (NO SORT) -->
+                    <th>
+                      <input class="form-check-input" type="checkbox" />
+                    </th>
+
+                    <!-- ✅ TYPE -->
+                    <th
+                      class="header-th"
+                      data-col="1"
+                      style="position: relative"
+                    >
+                      <div class="d-flex align-items-center gap-1 th-label">
+                        <i class="ti ti-tag me-1"></i>
+                        <span>Type</span>
+                        <i class="ti ti-chevron-down header-arrow"></i>
+                        <button
+                          class="category-menu-btn"
+                          type="button"
+                          onclick="toggleGenericMenu(event,this)"
+                        >
+                          <i class="ti ti-dots"></i>
+                        </button>
+                      </div>
+
+                      <div class="category-dropdown d-none">
+                        <div
+                          class="dropdown-item"
+                          onclick="toggleGenericSort(this)"
+                        >
+                          <i class="ti ti-arrows-sort"></i>
+                          <span class="sort-label">Sort A → Z</span>
+                        </div>
+                        <div
+                          class="dropdown-item d-flex justify-content-between"
+                        >
+                          <span><i class="ti ti-filter"></i> Filter</span>
+                          <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
+                          <i class="ti ti-eye-off"></i> Hide
+                        </div>
+                      </div>
+                    </th>
+
+                    <!-- ✅ REFERENCE -->
+                    <th
+                      class="header-th"
+                      data-col="2"
+                      style="position: relative"
+                    >
+                      <div class="d-flex align-items-center gap-1 th-label">
+                        <i class="ti ti-file-text me-1"></i>
+                        <span>Reference</span>
+                        <i class="ti ti-chevron-down header-arrow"></i>
+                        <button
+                          class="category-menu-btn"
+                          type="button"
+                          onclick="toggleGenericMenu(event,this)"
+                        >
+                          <i class="ti ti-dots"></i>
+                        </button>
+                      </div>
+
+                      <div class="category-dropdown d-none">
+                        <div
+                          class="dropdown-item"
+                          onclick="toggleGenericSort(this)"
+                        >
+                          <i class="ti ti-arrows-sort"></i>
+                          <span class="sort-label">Sort A → Z</span>
+                        </div>
+                        <div
+                          class="dropdown-item d-flex justify-content-between"
+                        >
+                          <span><i class="ti ti-filter"></i> Filter</span>
+                          <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
+                          <i class="ti ti-eye-off"></i> Hide
+                        </div>
+                      </div>
+                    </th>
+
+                    <!-- ✅ DESCRIPTION -->
+                    <th
+                      class="header-th"
+                      data-col="3"
+                      style="position: relative"
+                    >
+                      <div class="d-flex align-items-center gap-1 th-label">
+                        <i class="ti ti-file-description me-1"></i>
+                        <span>Description</span>
+                        <i class="ti ti-chevron-down header-arrow"></i>
+                        <button
+                          class="category-menu-btn"
+                          type="button"
+                          onclick="toggleGenericMenu(event,this)"
+                        >
+                          <i class="ti ti-dots"></i>
+                        </button>
+                      </div>
+
+                      <div class="category-dropdown d-none">
+                        <div
+                          class="dropdown-item"
+                          onclick="toggleGenericSort(this)"
+                        >
+                          <i class="ti ti-arrows-sort"></i>
+                          <span class="sort-label">Sort A → Z</span>
+                        </div>
+                        <div
+                          class="dropdown-item d-flex justify-content-between"
+                        >
+                          <span><i class="ti ti-filter"></i> Filter</span>
+                          <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
+                          <i class="ti ti-eye-off"></i> Hide
+                        </div>
+                      </div>
+                    </th>
+
+                    <!-- ✅ PRIORITY -->
+                    <th
+                      class="header-th"
+                      data-col="4"
+                      style="position: relative"
+                    >
+                      <div class="d-flex align-items-center gap-1 th-label">
+                        <i class="ti ti-alert-circle me-1"></i>
+                        <span>Priority</span>
+                        <i class="ti ti-chevron-down header-arrow"></i>
+                        <button
+                          class="category-menu-btn"
+                          type="button"
+                          onclick="toggleGenericMenu(event,this)"
+                        >
+                          <i class="ti ti-dots"></i>
+                        </button>
+                      </div>
+
+                      <div class="category-dropdown d-none">
+                        <div
+                          class="dropdown-item"
+                          onclick="toggleGenericSort(this)"
+                        >
+                          <i class="ti ti-arrows-sort"></i>
+                          <span class="sort-label">Sort A → Z</span>
+                        </div>
+                        <div
+                          class="dropdown-item d-flex justify-content-between"
+                        >
+                          <span><i class="ti ti-filter"></i> Filter</span>
+                          <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
+                          <i class="ti ti-eye-off"></i> Hide
+                        </div>
+                      </div>
+                    </th>
+
+                    <!-- ✅ STATUS -->
+                    <th
+                      class="header-th"
+                      data-col="5"
+                      style="position: relative"
+                    >
+                      <div class="d-flex align-items-center gap-1 th-label">
+                        <i class="ti ti-activity me-1"></i>
+                        <span>Status</span>
+                        <i class="ti ti-chevron-down header-arrow"></i>
+                        <button
+                          class="category-menu-btn"
+                          type="button"
+                          onclick="toggleGenericMenu(event,this)"
+                        >
+                          <i class="ti ti-dots"></i>
+                        </button>
+                      </div>
+
+                      <div class="category-dropdown d-none">
+                        <div
+                          class="dropdown-item"
+                          onclick="toggleGenericSort(this)"
+                        >
+                          <i class="ti ti-arrows-sort"></i>
+                          <span class="sort-label">Sort A → Z</span>
+                        </div>
+                        <div
+                          class="dropdown-item d-flex justify-content-between"
+                        >
+                          <span><i class="ti ti-filter"></i> Filter</span>
+                          <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
+                          <i class="ti ti-eye-off"></i> Hide
+                        </div>
+                      </div>
+                    </th>
+
+                    <!-- ✅ ASSIGNED TO -->
+                    <th
+                      class="header-th"
+                      data-col="6"
+                      style="position: relative"
+                    >
+                      <div class="d-flex align-items-center gap-1 th-label">
+                        <i class="ti ti-user me-1"></i>
+                        <span>Assigned To</span>
+                        <i class="ti ti-chevron-down header-arrow"></i>
+                        <button
+                          class="category-menu-btn"
+                          type="button"
+                          onclick="toggleGenericMenu(event,this)"
+                        >
+                          <i class="ti ti-dots"></i>
+                        </button>
+                      </div>
+
+                      <div class="category-dropdown d-none">
+                        <div
+                          class="dropdown-item"
+                          onclick="toggleGenericSort(this)"
+                        >
+                          <i class="ti ti-arrows-sort"></i>
+                          <span class="sort-label">Sort A → Z</span>
+                        </div>
+                        <div
+                          class="dropdown-item d-flex justify-content-between"
+                        >
+                          <span><i class="ti ti-filter"></i> Filter</span>
+                          <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
+                          <i class="ti ti-eye-off"></i> Hide
+                        </div>
+                      </div>
+                    </th>
+
+                    <!-- ✅ DATE -->
+                    <th
+                      class="header-th"
+                      data-col="7"
+                      style="position: relative"
+                    >
+                      <div class="d-flex align-items-center gap-1 th-label">
+                        <i class="ti ti-calendar me-1"></i>
+                        <span>Date</span>
+                        <i class="ti ti-chevron-down header-arrow"></i>
+                        <button
+                          class="category-menu-btn"
+                          type="button"
+                          onclick="toggleGenericMenu(event,this)"
+                        >
+                          <i class="ti ti-dots"></i>
+                        </button>
+                      </div>
+
+                      <div class="category-dropdown d-none">
+                        <div
+                          class="dropdown-item"
+                          onclick="toggleGenericSort(this)"
+                        >
+                          <i class="ti ti-arrows-sort"></i>
+                          <span class="sort-label">Sort A → Z</span>
+                        </div>
+                        <div
+                          class="dropdown-item d-flex justify-content-between"
+                        >
+                          <span><i class="ti ti-filter"></i> Filter</span>
+                          <i class="ti ti-chevron-right"></i>
+                        </div>
+                        <div
+                          class="dropdown-item text-danger"
+                          onclick="hideGenericColumn(this)"
+                        >
+                          <i class="ti ti-eye-off"></i> Hide
+                        </div>
+                      </div>
+                    </th>
+
+                    <!-- ✅ ACTIONS (UNCHANGED AS PER YOUR REQUIREMENT) -->
+                    <th><i class="ti ti-dots me-1"></i> Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <!-- ✅ EXISTING ROWS (UNCHANGED STRUCTURE) -->
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Incident
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>INC-2025-</strong><br />
+                      <small class="text-muted">e5198a6e</small>
+                    </td>
+
+                    <td>
+                      <strong>self-harm</strong><br />
+                      <small class="text-muted">
+                        Property damage discovered during routine inspection..
+                      </small>
+                    </td>
+
+                    <td><span class="text-warning">● Medium</span></td>
+                    <td><span class="text-success">● Completed</span></td>
+
+                    <td class="d-flex align-items-center gap-2">
+                      <span class="avatar bg-warning text-white">AM</span>
+                      <span>Manager Smith</span>
+                    </td>
+
+                    <td>Feb 8, 2025</td>
+
+                    <td>
+                      <i class="ti ti-edit me-2"></i>
+                      <i class="ti ti-trash"></i>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Incident
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>INC-2025-</strong><br />
+                      <small>c51690eb</small>
+                    </td>
+
+                    <td>
+                      <strong>self-harm</strong><br />
+                      <small class="text-muted">
+                        Noise complaint reported by neighboring room.
+                      </small>
+                    </td>
+
+                    <td><span class="text-warning">● Medium</span></td>
+                    <td><span class="text-warning">● Pending</span></td>
+
+                    <td class="text-muted">Unassigned</td>
+                    <td>Sep 26, 2025</td>
+
+                    <td>
+                      <i class="ti ti-edit me-2"></i>
+                      <i class="ti ti-trash"></i>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Incident
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>INC-2025-</strong><br />
+                      <small>cda9bd4e</small>
+                    </td>
+
+                    <td>
+                      <strong>substance-abuse</strong><br />
+                      <small class="text-muted">
+                        Resident reported feeling unwell, medical assistance...
+                      </small>
+                    </td>
+
+                    <td><span class="text-success">● Low</span></td>
+                    <td><span class="text-success">● Completed</span></td>
+
+                    <td class="d-flex align-items-center gap-2">
+                      <span class="avatar bg-info text-white">IT</span>
+                      <span>In-house Team</span>
+                    </td>
+
+                    <td>Jun 2, 2025</td>
+
+                    <td>
+                      <i class="ti ti-edit me-2"></i>
+                      <i class="ti ti-trash"></i>
+                    </td>
+                  </tr>
+
+                  <!-- ✅ NEW ROWS ADDED -->
+
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Incident
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>INC-2025-</strong><br />
+                      <small>2b9c6ef8</small>
+                    </td>
+
+                    <td>
+                      <strong>maintenance-urgent</strong><br />
+                      <small class="text-muted">
+                        Resident reported missing personal items.
+                      </small>
+                    </td>
+
+                    <td><span class="text-danger">● Urgent</span></td>
+                    <td><span class="text-success">● Completed</span></td>
+
+                    <td class="d-flex align-items-center gap-2">
+                      <span class="avatar bg-primary text-white">QF</span>
+                      <span>Quick Fix Services</span>
+                    </td>
+
+                    <td>Mar 17, 2025</td>
+
+                    <td>
+                      <i class="ti ti-edit me-2"></i>
+                      <i class="ti ti-trash"></i>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><input class="form-check-input" type="checkbox" /></td>
+                    <td>
+                      <span
+                        class="badge rounded-pill border text-warning bg-light"
+                      >
+                        Incident
+                      </span>
+                    </td>
+
+                    <td>
+                      <strong>INC-2025-</strong><br />
+                      <small>ca81318f</small>
+                    </td>
+
+                    <td>
+                      <strong>substance-abuse</strong><br />
+                      <small class="text-muted">
+                        Resident reported missing personal items.
+                      </small>
+                    </td>
+
+                    <td><span class="text-warning">● Medium</span></td>
+                    <td><span class="text-success">● Completed</span></td>
+
+                    <td class="d-flex align-items-center gap-2">
+                      <span class="avatar bg-primary text-white">QF</span>
+                      <span>Quick Fix Services</span>
+                    </td>
+
+                    <td>Oct 24, 2024</td>
+
+                    <td>
+                      <i class="ti ti-edit me-2"></i>
+                      <i class="ti ti-trash"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- /Process Move-In -->
+      <!-- /Incident Form -->
       <div class="modal fade" id="reportIncident" tabindex="-1">
         <div
           class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
@@ -1111,7 +1298,7 @@
               >
                 Cancel
               </button>
-              <button type="button" class="btn btn-dark">Submit Form</button>
+              <button type="button" class="btn btn-primary">Submit Form</button>
             </div>
           </div>
         </div>
@@ -1252,6 +1439,150 @@
 
           hideForm();
         });
+      });
+    </script>
+
+    <script>
+      function toggleGenericMenu(event, btn) {
+        event.stopPropagation();
+
+        const dropdown = btn.closest("th").querySelector(".category-dropdown");
+        const isOpen = !dropdown.classList.contains("d-none");
+
+        // Close all first
+        document.querySelectorAll(".category-dropdown").forEach((menu) => {
+          menu.classList.add("d-none");
+        });
+
+        // Toggle only this one
+        if (!isOpen) {
+          dropdown.classList.remove("d-none");
+        }
+      }
+
+      /* Close all dropdowns on outside click */
+      document.addEventListener("click", function () {
+        document.querySelectorAll(".category-dropdown").forEach((menu) => {
+          menu.classList.add("d-none");
+        });
+      });
+
+      /* Prevent dropdown click from closing itself */
+      document.querySelectorAll(".category-dropdown").forEach((dd) => {
+        dd.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+      });
+    </script>
+
+    <script>
+      let genericSortState = {}; // keeps state per column
+
+      function toggleGenericSort(el) {
+        const th = el.closest("th");
+        const colIndex = Number(th.dataset.col);
+        if (Number.isNaN(colIndex)) return;
+
+        const table = document.querySelector("table");
+        const tbody = table.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+
+        // ✅ init only once
+        if (!(colIndex in genericSortState)) {
+          genericSortState[colIndex] = true; // first time: A → Z
+        }
+        const isAZ = genericSortState[colIndex];
+
+        rows.sort((a, b) => {
+          let A = a.children[colIndex].innerText.trim();
+          let B = b.children[colIndex].innerText.trim();
+
+          // Try date sort first
+          if (!isNaN(Date.parse(A)) && !isNaN(Date.parse(B))) {
+            return isAZ ? new Date(A) - new Date(B) : new Date(B) - new Date(A);
+          }
+
+          A = A.toUpperCase();
+          B = B.toUpperCase();
+          return isAZ ? A.localeCompare(B) : B.localeCompare(A);
+        });
+
+        rows.forEach((row) => tbody.appendChild(row));
+
+        // Update label text
+        const label = el.querySelector(".sort-label");
+        if (label) {
+          label.innerText = isAZ ? "Sort Z → A" : "Sort A → Z";
+        }
+
+        // ✅ flip state for next click
+        genericSortState[colIndex] = !isAZ;
+
+        const dropdown = th.querySelector(".category-dropdown");
+        if (dropdown) dropdown.classList.add("d-none");
+      }
+    </script>
+
+    <script>
+      function hideGenericColumn(el) {
+        const th = el.closest("th");
+        const colIndex = parseInt(th.dataset.col);
+        const table = document.querySelector("table");
+
+        // Hide header
+        th.style.display = "none";
+
+        // Hide column cells
+        table.querySelectorAll("tbody tr").forEach((row) => {
+          row.children[colIndex].style.display = "none";
+        });
+      }
+    </script>
+
+    <script>
+      let isCategorySortedAZ = true; // default state
+
+      function toggleCategorySort() {
+        const table = document.querySelector("table");
+        const tbody = table.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+
+        rows.sort((a, b) => {
+          const catA = a.children[2].innerText.trim().toUpperCase(); // Category column
+          const catB = b.children[2].innerText.trim().toUpperCase();
+
+          return isCategorySortedAZ
+            ? catA.localeCompare(catB) // A → Z
+            : catB.localeCompare(catA); // Z → A
+        });
+
+        // Re-append rows
+        rows.forEach((row) => tbody.appendChild(row));
+
+        // Toggle label text
+        const label = document.getElementById("sortLabel");
+        label.innerText = isCategorySortedAZ ? "Sort Z → A" : "Sort A → Z";
+
+        // Flip state
+        isCategorySortedAZ = !isCategorySortedAZ;
+
+        // Close dropdown
+        document.getElementById("categoryDropdown").classList.add("d-none");
+      }
+    </script>
+    <script>
+      function toggleCategoryMenu(event) {
+        event.stopPropagation();
+        const dropdown = document.getElementById("categoryDropdown");
+        dropdown.classList.toggle("d-none");
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function () {
+        const dd = document.getElementById("categoryDropdown");
+        if (dd && !dd.classList.contains("d-none")) {
+          dd.classList.add("d-none");
+        }
       });
     </script>
   </body>

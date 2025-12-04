@@ -34091,4 +34091,10 @@ th:hover .category-menu-btn {
 }
 
 
+.card {
+      border-radius: 14px;
+      border: 1px solid #eef0f3;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
 /*# sourceMappingURL=style.css.map */

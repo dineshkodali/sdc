@@ -100,6 +100,17 @@
       #taskTabs .nav-link:hover {
         background: #ffffff;
       }
+
+      .card .table thead th {
+        background: #fff;
+        font-size: 12px;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .avatar {
+        border-radius: 50%;
+      }
     </style>
   </head>
 
@@ -240,7 +251,7 @@
                 <a
                   href="#"
                   data-bs-toggle="modal"
-                  data-bs-target="#complianceCertificateModal"
+                  data-bs-target="#taskModal"
                   class="btn btn-primary d-flex align-items-center"
                   ><i class="ti ti-plus me-2"></i>Add Task</a
                 >
@@ -269,7 +280,6 @@
                       <h4>16</h4>
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </div>
@@ -288,13 +298,10 @@
                       ></span>
                     </div>
                     <div class="ms-2 overflow-hidden">
-                      <p class="fs-12 fw-medium mb-1 text-truncate">
-                        Overdue
-                      </p>
+                      <p class="fs-12 fw-medium mb-1 text-truncate">Overdue</p>
                       <h4>9</h4>
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </div>
@@ -319,7 +326,6 @@
                       <h4>6</h4>
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </div>
@@ -344,16 +350,14 @@
                       <h4>4</h4>
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </div>
             <!-- /No of Plans -->
           </div>
 
-       
           <!-- Filters Row -->
-          <div class="d-flex justify-content-between align-items-center mb-3">
+          <!-- <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="mb-0">
               Tasks Database <span class="text-muted">6 items</span>
             </h4>
@@ -375,9 +379,7 @@
                 <i class="ti ti-plus"></i> New
               </button>
             </div>
-          </div>
-
-         
+          </div> -->
 
           <div class="card shadow-sm rounded-4 p-3">
             <!-- ✅ HEADER ROW -->
@@ -452,10 +454,10 @@
                 <a
                   href="#"
                   data-bs-toggle="modal"
-                  data-bs-target="#scheduleMealModal"
+                  data-bs-target="#taskModal"
                   class="btn btn-primary d-flex align-items-center gap-2"
                 >
-                  <i class="ti ti-upload"></i> Create Work Order
+                  <i class="ti ti-upload"></i> Create Task
                 </a>
               </div>
             </div>
@@ -833,19 +835,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Maintenance
+                        AIRE Tasks
                       </span>
                     </td>
 
                     <td>
-                      <strong>MNT-2025-</strong><br />
+                      <strong>AIRE-2025-</strong><br />
                       <small class="text-muted">e5198a6e</small>
                     </td>
 
                     <td>
-                      <strong>Fix heating system malfunction</strong><br />
+                      <strong>Passport & VISA Verification</strong><br />
                       <small class="text-muted">
-                        Maintenance work required as per inspection report.
+                        Operation work required as per inspection report.
                       </small>
                     </td>
 
@@ -871,19 +873,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Maintenance
+                        AIRE Tasks
                       </span>
                     </td>
 
                     <td>
-                      <strong>MNT-2025-</strong><br />
+                      <strong>AIRE-2025-</strong><br />
                       <small>c51690eb</small>
                     </td>
 
                     <td>
-                      <strong>Unblock kitchen sink</strong><br />
+                      <strong>Resident Data Update</strong><br />
                       <small class="text-muted">
-                        Maintenance work required as per inspection report.
+                        Operation work required as per inspection report.
                       </small>
                     </td>
 
@@ -905,19 +907,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Maintenance
+                        AIRE Tasks
                       </span>
                     </td>
 
                     <td>
-                      <strong>MNT-2025-</strong><br />
+                      <strong>AIRE-2025-</strong><br />
                       <small>cda9bd4e</small>
                     </td>
 
                     <td>
-                      <strong>Repair leaking tap in bathroom</strong><br />
+                      <strong>AIRE Annual Reporting</strong><br />
                       <small class="text-muted">
-                        Maintenance work required as per inspection report.
+                        Operation work required as per inspection report.
                       </small>
                     </td>
 
@@ -945,19 +947,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Maintenance
+                        AIRE Tasks
                       </span>
                     </td>
 
                     <td>
-                      <strong>MNT-2025-</strong><br />
+                      <strong>AIRE-2025-</strong><br />
                       <small>2b9c6ef8</small>
                     </td>
 
                     <td>
-                      <strong>Repair shower head</strong><br />
+                      <strong>Immigrant Status Validation</strong><br />
                       <small class="text-muted">
-                        Maintenance work required as per inspection report.
+                        Operation work required as per inspection report.
                       </small>
                     </td>
 
@@ -983,19 +985,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Maintenance
+                        AIRE Tasks
                       </span>
                     </td>
 
                     <td>
-                      <strong>MNT-2025-</strong><br />
+                      <strong>AIRE-2025-</strong><br />
                       <small>f3c0c417</small>
                     </td>
 
                     <td>
-                      <strong>Repair ceiling leak</strong><br />
+                      <strong>Address Verification Support</strong><br />
                       <small class="text-muted">
-                        Maintenance work required as per inspection report.
+                        Operation work required as per inspection report.
                       </small>
                     </td>
 
@@ -1017,19 +1019,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Maintenance
+                        AIRE Tasks
                       </span>
                     </td>
 
                     <td>
-                      <strong>MNT-2025-</strong><br />
+                      <strong>AIRE-2025-</strong><br />
                       <small>ca81318f</small>
                     </td>
 
                     <td>
-                      <strong>Fix wardrobe door hinge</strong><br />
+                      <strong>Residency Renewal Assistance</strong><br />
                       <small class="text-muted">
-                        Maintenance work required as per inspection report.
+                        Operation work required as per inspection report.
                       </small>
                     </td>
 
@@ -1055,12 +1057,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Maintenance
+                        AIRE Tasks
                       </span>
                     </td>
 
                     <td>
-                      <strong>MNT-2025-</strong><br />
+                      <strong>AIRE-2025-</strong><br />
                       <small>576b7ce4</small>
                     </td>
 
@@ -1086,6 +1088,164 @@
               </table>
             </div>
           </div>
+
+          <!-- /Task Modal -->
+          <div class="modal fade" id="taskModal" tabindex="-1">
+            <div
+              class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable"
+            >
+              <div class="modal-content">
+                <!-- ✅ HEADER -->
+                <div class="modal-header">
+                  <div>
+                    <h4 class="modal-title">AIRE Task</h4>
+                    <p class="text-muted mb-0">
+                      Standard form for reporting tasks
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
+                </div>
+
+                <!-- ✅ BODY -->
+                <div class="modal-body">
+                  <!-- Title -->
+                  <div class="mb-3">
+                    <label class="form-label"
+                      >Title <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Brief description of task"
+                    />
+                  </div>
+
+                  <!-- Description -->
+                  <div class="mb-3">
+                    <label class="form-label"
+                      >Description <span class="text-danger">*</span></label
+                    >
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      placeholder="Detailed description of the maintenance issue..."
+                    ></textarea>
+                  </div>
+
+                  <!-- Property & Category -->
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label"
+                        >Property <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select">
+                        <option selected disabled>Select property</option>
+                        <option>Garden House Hotel</option>
+                        <option>Crown Lodge Hotel</option>
+                        <option>Trident Elite</option>
+                        <option>Marriott Waterfront</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label"
+                        >Category <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select">
+                        <option selected disabled>Select category</option>
+                        <option>Plumbing</option>
+                        <option>Electrical</option>
+                        <option>HVAC</option>
+                        <option>Structural</option>
+                        <option>Appliances</option>
+                        <option>Doors & Windows</option>
+                        <option>Flooring</option>
+                        <option>Roofing</option>
+                        <option>Pest Control</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Priority & Reported By -->
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label"
+                        >Priority <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select">
+                        <option>low</option>
+                        <option selected>medium</option>
+                        <option>high</option>
+                        <option>emergency</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label"
+                        >Reported By <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name of person reporting"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Assigned To & Scheduled Date -->
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Assigned To</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name of assignee"
+                      />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Scheduled Date</label>
+                      <div class="input-group">
+                        <input type="date" class="form-control" />
+                        <span class="input-group-text">
+                          <i class="ti ti-calendar"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Estimated Cost -->
+                  <!-- <div class="mb-3">
+                    <label class="form-label">Estimated Cost</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Estimated cost in £"
+                    />
+                  </div> -->
+                </div>
+
+                <!-- ✅ FOOTER -->
+                <div class="modal-footer d-flex justify-content-end gap-2">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Submit Form
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- /Page Wrapper -->
@@ -1104,7 +1264,6 @@
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/script.js"></script>
 
-   
     <script>
       // Sidebar toggle (collapse / expand)
       $(document).on("click", "#toggle_btn", function () {
@@ -1120,7 +1279,7 @@
       });
     </script>
 
-        <script>
+    <script>
       function toggleGenericMenu(event, btn) {
         event.stopPropagation();
 

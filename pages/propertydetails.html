@@ -250,7 +250,7 @@
         <div class="content container-fluid">
           <!-- Page Header -->
 
-          <div class="my-auto mb-2">
+          <div class="my-auto mb-4">
             <!-- <h2 class="mb-1">Employee</h2> -->
             <nav>
               <ol class="breadcrumb mb-0">
@@ -266,480 +266,150 @@
               </ol>
             </nav>
           </div>
-          <div class="page-header mb-4">
+          <!-- <div class="page-header mb-4">
             <h3 class="page-title">The Grand Hyatt</h3>
-            <!-- <ul class="breadcrumb">
+            <ul class="breadcrumb">
               <li class="breadcrumb-item"><a href="hotels.html">Property</a></li>
               <li class="breadcrumb-item active">The Grand Hyatt</li>
-            </ul> -->
+            </ul>
+          </div> -->
+
+          <!-- Breadcrumb -->
+          <div
+            class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
+          >
+            <div class="my-auto mb-2">
+              <h2 class="page-title">The Grand Hyatt</h2>
+              <p>123 Regent Street, Manchester, UK</p>
+              <!-- <nav>
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="index.html"><i class="ti ti-smart-home"></i></a>
+                  </li>
+                  <li class="breadcrumb-item">Operations Hub</li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Maintenance
+                  </li>
+                </ol>
+              </nav> -->
+            </div>
+            <div
+              class="d-flex my-xl-auto right-content align-items-center flex-wrap"
+            >
+              <div class="me-2 mb-2">
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#roomModal"
+                  class="btn btn-primary d-flex align-items-center"
+                  ><i class="ti ti-plus me-2"></i>Create Room</a
+                >
+              </div>
+            </div>
           </div>
+          <!-- /Breadcrumb -->
 
           <div class="row">
-            <!-- Total Floors -->
+            <!-- Total Plans -->
             <div class="col-lg-3 col-md-6 d-flex">
-              <div
-                class="card flex-fill border-0 shadow-sm"
-                style="border-radius: 16px"
-              >
+              <div class="card flex-fill">
                 <div
-                  class="card-body d-flex align-items-center justify-content-between p-4"
+                  class="card-body d-flex align-items-center justify-content-between"
                 >
-                  <!-- Left Content -->
-                  <div>
-                    <p class="fs-12 fw-medium mb-1 text-muted">Total Floors</p>
-
-                    <h3 class="mb-1 fw-bold">6</h3>
-                  </div>
-
-                  <!-- Right Icon Box -->
-                  <div
-                    class="d-flex align-items-center justify-content-center"
-                    style="
-                      width: 42px;
-                      height: 42px;
-                      border-radius: 10px;
-                      background: #eef2ff;
-                    "
-                  >
-                    <i class="ti ti-building-skyscraper fs-18 text-muted"></i>
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-success rounded-circle"
+                        ><i class="ti ti-building-skyscraper"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Total Floors
+                      </p>
+                      <h4>6</h4>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- /Total Floors -->
+            <!-- /Total Plans -->
 
-            <!-- Total Rooms -->
+            <!-- Total Plans -->
             <div class="col-lg-3 col-md-6 d-flex">
-              <div
-                class="card flex-fill border-0 shadow-sm"
-                style="border-radius: 16px"
-              >
+              <div class="card flex-fill">
                 <div
-                  class="card-body d-flex align-items-center justify-content-between p-4"
+                  class="card-body d-flex align-items-center justify-content-between"
                 >
-                  <!-- Left Content -->
-                  <div>
-                    <p class="fs-12 fw-medium mb-1 text-muted">Total Rooms</p>
-
-                    <h3 class="mb-1 fw-bold">5</h3>
-                  </div>
-
-                  <!-- Right Icon Box -->
-                  <div
-                    class="d-flex align-items-center justify-content-center"
-                    style="
-                      width: 42px;
-                      height: 42px;
-                      border-radius: 10px;
-                      background: #eef2ff;
-                    "
-                  >
-                    <i class="ti ti-home fs-18 text-muted"></i>
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-primary rounded-circle"
+                        ><i class="ti ti-home"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Total Rooms
+                      </p>
+                      <h4>5</h4>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- /Total Rooms -->
+            <!-- /Total Plans -->
 
-            <!-- Total Bedspaces  -->
+            <!-- Inactive Plans -->
             <div class="col-lg-3 col-md-6 d-flex">
-              <div
-                class="card flex-fill border-0 shadow-sm"
-                style="border-radius: 16px"
-              >
+              <div class="card flex-fill">
                 <div
-                  class="card-body d-flex align-items-center justify-content-between p-4"
+                  class="card-body d-flex align-items-center justify-content-between"
                 >
-                  <!-- Left Content -->
-                  <div>
-                    <p class="fs-12 fw-medium mb-1 text-muted">
-                      Total Bedspaces
-                    </p>
-
-                    <h3 class="mb-1 fw-bold">11</h3>
-
-                    <p class="mb-0 text-muted">4 occupied</p>
-                  </div>
-
-                  <!-- Right Icon Box -->
-                  <div
-                    class="d-flex align-items-center justify-content-center"
-                    style="
-                      width: 42px;
-                      height: 42px;
-                      border-radius: 10px;
-                      background: #eef2ff;
-                    "
-                  >
-                    <i class="ti ti-bed fs-18 text-muted"></i>
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-warning rounded-circle"
+                        ><i class="ti ti-bed"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Total Bedspaces
+                      </p>
+                      <h4>11</h4>
+                      <p>4 occupied</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- /Toatl Bedspaces -->
+            <!-- /Inactive Companies -->
 
-            <!-- Occupancy Rate  -->
+            <!-- No of Plans  -->
             <div class="col-lg-3 col-md-6 d-flex">
-              <div
-                class="card flex-fill border-0 shadow-sm"
-                style="border-radius: 16px"
-              >
+              <div class="card flex-fill">
                 <div
-                  class="card-body d-flex align-items-center justify-content-between p-4"
+                  class="card-body d-flex align-items-center justify-content-between"
                 >
-                  <!-- Left Content -->
-                  <div>
-                    <p class="fs-12 fw-medium mb-1 text-muted">
-                      Occupancy Rate
-                    </p>
-
-                    <h3 class="mb-1 fw-bold">36%</h3>
-
-                    <p class="mb-0 text-muted">4 / 11 beds</p>
-                  </div>
-
-                  <!-- Right Icon Box -->
-                  <div
-                    class="d-flex align-items-center justify-content-center"
-                    style="
-                      width: 42px;
-                      height: 42px;
-                      border-radius: 10px;
-                      background: #eef2ff;
-                    "
-                  >
-                    <i class="ti ti-users fs-18 text-muted"></i>
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-info rounded-circle"
+                        ><i class="ti ti-users"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Occupancy Rate
+                      </p>
+                      <h4>36%</h4>
+                      <p>4/11 beds</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
             <!-- /No of Plans -->
           </div>
 
           <div class="row gx-4 align-items-stretch">
-            <!-- Left column: Hotel card -->
-            <div class="col-xl-4 col-lg-5 d-flex">
-              <div class="card hotel-card-left h-10 mt-0">
-                <div
-                  class="hotel-banner d-flex align-items-center justify-content-center"
-                  style="height: 150px; margin-top: 0"
-                >
-                  <div
-                    class="hotel-logo"
-                    style="
-                      width: 80px;
-                      height: 80px;
-                      border-radius: 12px;
-                      background: #fff;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-                    "
-                  >
-                    <i
-                      class="ti ti-building-skyscraper"
-                      style="font-size: 42px; color: #ff5c7a"
-                    ></i>
-                  </div>
-                </div>
-
-                <div class="card-body">
-                  <h4 class="mb-1">
-                    The Grand Hyatt
-                    <span class="badge bg-success ms-2">Premium</span>
-                  </h4>
-                  <p class="text-muted mb-3">
-                    5-Star Luxury Hotel • Downtown • 180 Rooms
-                  </p>
-
-                  <h6 class="mb-2">Basic information</h6>
-                  <p class="mb-1">
-                    <i class="ti ti-map-pin me-2"></i> 123 Regent Street,
-                    Manchester, UK
-                  </p>
-                  <p class="mb-1">
-                    <i class="ti ti-mail me-2"></i>
-                    <a href="mailto:contact@grandhyatt.com"
-                      >contact@grandhyatt.com</a
-                    >
-                  </p>
-                  <p class="mb-1">
-                    <i class="ti ti-phone me-2"></i> +44 20 7946 0123
-                  </p>
-                  <p class="mb-1">
-                    <i class="ti ti-clock me-2"></i> Opened: 2014
-                  </p>
-
-                  <hr />
-
-                  <h6 class="mb-2">Other information</h6>
-                  <p class="mb-1"><strong>Rating:</strong> 4.8/5</p>
-                  <p class="mb-1">
-                    <strong>Last Inspection:</strong> 10 Oct 2024
-                  </p>
-                  <p class="mb-1">
-                    <strong>Type:</strong> Luxury • Business • Event
-                  </p>
-
-                  <hr />
-
-                  <h6 class="mb-2">Amenities</h6>
-                  <div class="amenities mb-3">
-                    <span class="badge bg-light text-dark"
-                      ><i class="ti ti-wifi me-1"></i> Free Wi-Fi</span
-                    >
-                    <span class="badge bg-light text-dark"
-                      ><i class="ti ti-cup me-1"></i> Restaurant</span
-                    >
-                    <span class="badge bg-light text-dark"
-                      ><i class="ti ti-sparkles me-1"></i> Spa</span
-                    >
-                    <span class="badge bg-light text-dark"
-                      ><i class="ti ti-activity me-1"></i> Gym</span
-                    >
-                    <span class="badge bg-light text-dark"
-                      ><i class="ti ti-bus me-1"></i> Shuttle</span
-                    >
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-3"
-                  >
-                    <div>
-                      <button class="btn btn-outline-dark btn-sm me-2">
-                        <i class="ti ti-share"></i> Share
-                      </button>
-                      <button class="btn btn-danger btn-sm">
-                        <i class="ti ti-trash"></i> Remove
-                      </button>
-                    </div>
-                    <div>
-                      <a href="#" class="social-icon"
-                        ><i class="ti ti-phone"></i
-                      ></a>
-                      <a href="#" class="social-icon"
-                        ><i class="ti ti-mail"></i
-                      ></a>
-                      <a href="#" class="social-icon"
-                        ><i class="ti ti-message"></i
-                      ></a>
-                      <a href="#" class="social-icon"
-                        ><i class="ti ti-world"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right column: Activities / Rooms / Events -->
-            <div class="col-xl-8 col-lg-7 d-flex flex-column">
-              <div class="card mb-4 flex-shrink-0">
-                <div
-                  class="card-body d-flex justify-content-between align-items-start"
-                >
-                  <div>
-                    <h5 class="card-title mb-2">Activities & Timeline</h5>
-                    <p class="text-muted small mb-0">
-                      Recent activity and events for the hotel
-                    </p>
-                  </div>
-                  <div>
-                    <button
-                      class="btn btn-primary btn-sm me-2"
-                      id="btnAddEvent"
-                    >
-                      <i class="ti ti-plus"></i> Add Event
-                    </button>
-                    <button class="btn btn-outline-secondary btn-sm">
-                      <i class="ti ti-mail"></i> Send Email
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Rooms listing -->
-              <div class="card mb-4 flex-grow-1 d-flex flex-column">
-                <div class="card-body flex-grow-1">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-3"
-                  >
-                    <h6 class="mb-0">Rooms & Rates</h6>
-                    <div>
-                      <select
-                        class="form-select form-select-sm"
-                        style="width: 180px"
-                      >
-                        <option>Sort by: Popular</option>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row g-3">
-                    <!-- Room 1 -->
-                    <div class="col-md-6">
-                      <div class="room-card">
-                        <div class="d-flex">
-                          <div class="flex-grow-1">
-                            <h6 class="mb-1">Deluxe King Room</h6>
-                            <p class="small text-muted mb-2">
-                              One King bed • 32 m² • City View
-                            </p>
-                            <p class="mb-2"><strong>£145</strong> / night</p>
-                            <div>
-                              <button
-                                class="btn btn-outline-primary btn-sm me-2 view-room"
-                                data-room='{"title":"Deluxe King Room","bed":"King","size":"32 m²","price":"£145","desc":"Comfortable deluxe room with king bed, free Wi-Fi and minibar."}'
-                              >
-                                View
-                              </button>
-                              <button
-                                class="btn btn-primary btn-sm book-room"
-                                data-room-title="Deluxe King Room"
-                                data-price="£145"
-                              >
-                                Book
-                              </button>
-                            </div>
-                          </div>
-                          <div
-                            class="d-flex align-items-center justify-content-center"
-                            style="width: 70px; margin-left: 12px"
-                          >
-                            <i
-                              class="ti ti-bed"
-                              style="font-size: 42px; color: #777"
-                            ></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Room 2 -->
-                    <div class="col-md-6">
-                      <div class="room-card">
-                        <div class="d-flex">
-                          <div class="flex-grow-1">
-                            <h6 class="mb-1">Executive Twin</h6>
-                            <p class="small text-muted mb-2">
-                              Two single beds • 28 m² • Park View
-                            </p>
-                            <p class="mb-2"><strong>£125</strong> / night</p>
-                            <div>
-                              <button
-                                class="btn btn-outline-primary btn-sm me-2 view-room"
-                                data-room='{"title":"Executive Twin","bed":"2 Singles","size":"28 m²","price":"£125","desc":"Bright room with two single beds, work desk and complimentary breakfast."}'
-                              >
-                                View
-                              </button>
-                              <button
-                                class="btn btn-primary btn-sm book-room"
-                                data-room-title="Executive Twin"
-                                data-price="£125"
-                              >
-                                Book
-                              </button>
-                            </div>
-                          </div>
-                          <div
-                            class="d-flex align-items-center justify-content-center"
-                            style="width: 70px; margin-left: 12px"
-                          >
-                            <i
-                              class="ti ti-bed"
-                              style="font-size: 42px; color: #777"
-                            ></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Room 3 -->
-                    <div class="col-md-6">
-                      <div class="room-card">
-                        <div class="d-flex">
-                          <div class="flex-grow-1">
-                            <h6 class="mb-1">Junior Suite</h6>
-                            <p class="small text-muted mb-2">
-                              One King bed • 48 m² • River View
-                            </p>
-                            <p class="mb-2"><strong>£220</strong> / night</p>
-                            <div>
-                              <button
-                                class="btn btn-outline-primary btn-sm me-2 view-room"
-                                data-room='{"title":"Junior Suite","bed":"King","size":"48 m²","price":"£220","desc":"Spacious suite with lounge area, panoramic river view and complimentary minibar."}'
-                              >
-                                View
-                              </button>
-                              <button
-                                class="btn btn-primary btn-sm book-room"
-                                data-room-title="Junior Suite"
-                                data-price="£220"
-                              >
-                                Book
-                              </button>
-                            </div>
-                          </div>
-                          <div
-                            class="d-flex align-items-center justify-content-center"
-                            style="width: 70px; margin-left: 12px"
-                          >
-                            <i
-                              class="ti ti-bed"
-                              style="font-size: 42px; color: #777"
-                            ></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Room 4 -->
-                    <div class="col-md-6">
-                      <div class="room-card">
-                        <div class="d-flex">
-                          <div class="flex-grow-1">
-                            <h6 class="mb-1">Presidential Suite</h6>
-                            <p class="small text-muted mb-2">
-                              King • 110 m² • Private Terrace
-                            </p>
-                            <p class="mb-2"><strong>£650</strong> / night</p>
-                            <div>
-                              <button
-                                class="btn btn-outline-primary btn-sm me-2 view-room"
-                                data-room='{"title":"Presidential Suite","bed":"King","size":"110 m²","price":"£650","desc":"Top-floor suite with private terrace, dedicated butler and luxury amenities."}'
-                              >
-                                View
-                              </button>
-                              <button
-                                class="btn btn-primary btn-sm book-room"
-                                data-room-title="Presidential Suite"
-                                data-price="£650"
-                              >
-                                Book
-                              </button>
-                            </div>
-                          </div>
-                          <div
-                            class="d-flex align-items-center justify-content-center"
-                            style="width: 70px; margin-left: 12px"
-                          >
-                            <i
-                              class="ti ti-bed"
-                              style="font-size: 42px; color: #777"
-                            ></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div class="property-tabs-wrapper">
               <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -1136,6 +806,55 @@
         </div>
       </div>
       <!-- /Page Wrapper -->
+    </div>
+
+    <!-- /Complaint Modal -->
+    <div class="modal fade" id="roomModal" tabindex="-1">
+      <div
+        class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable"
+      >
+        <div class="modal-content rounded-4 border-0 shadow-lg">
+          <!-- ✅ HEADER -->
+          <div class="modal-header border-0 pb-0">
+            <div>
+              <h4 class="modal-title fw-semibold">Create Room</h4>
+              <p class="text-muted mb-0">
+                Add a new room to this property. Configure the room form in Form
+                Builder for more options.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <!-- ✅ BODY -->
+          <div
+            class="modal-body d-flex flex-column align-items-center justify-content-center text-center py-5"
+          >
+            <!-- ✅ ICON -->
+            <div class="mb-4">
+              <i
+                class="ti ti-home-2"
+                style="font-size: 48px; color: #bfc5d2"
+              ></i>
+            </div>
+
+            <!-- ✅ MAIN MESSAGE -->
+            <h5 class="fw-semibold mb-2" style="color: #6b7280">
+              No custom form configured for rooms.
+            </h5>
+
+            <!-- ✅ SUB TEXT -->
+            <p class="text-muted mb-0" style="max-width: 520px">
+              Visit the Form Builder to create or enable a room form template.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Room View Modal -->

@@ -82,7 +82,7 @@
         font-size: 20px;
       }
 
-      .card .table thead th {
+            .card .table thead th {
         background: #fff;
         font-size: 12px;
         color: #6b7280;
@@ -105,7 +105,7 @@
     </style>
   </head>
   <body>
-    <!-- Sidebar -->
+     <!-- Sidebar -->
 
     <div id="sidebar-container"></div>
 
@@ -196,6 +196,8 @@
       </div>
       <!-- /Header -->
 
+   
+
       <!-- Page Wrapper -->
       <div class="page-wrapper">
         <div class="content container-fluid">
@@ -214,7 +216,7 @@
             </div>
           </div> -->
 
-          <!-- Breadcrumb -->
+            <!-- Breadcrumb -->
           <div
             class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
           >
@@ -247,6 +249,7 @@
             </div>
           </div>
           <!-- /Breadcrumb -->
+
 
           <!-- Metrics -->
           <div class="row">
@@ -287,9 +290,7 @@
                       ></span>
                     </div>
                     <div class="ms-2 overflow-hidden">
-                      <p class="fs-12 fw-medium mb-1 text-truncate">
-                        Active Partnerships
-                      </p>
+                      <p class="fs-12 fw-medium mb-1 text-truncate">Active Partnerships</p>
                       <h4>4</h4>
                     </div>
                   </div>
@@ -346,9 +347,10 @@
             </div>
             <!-- /No of Plans -->
           </div>
-          <!-- Metrics -->
+           <!-- Metrics -->
 
-          <!-- Table Card -->
+
+           <!-- Table Card -->
 
           <div class="card shadow-sm rounded-4 p-3">
             <!-- ✅ HEADER ROW -->
@@ -862,9 +864,7 @@
                     <td><span class="text-warning">● Pending</span></td>
 
                     <td class="d-flex align-items-center gap-2">
-                      <span class="avatar bg-warning text-white">YH</span
-                      ><span>Young adults, Homeless</span>
-                    </td>
+                      <span class="avatar bg-warning text-white">YH</span><span>Young adults, Homeless</span></td>
                     <td>Sep 26, 2025</td>
 
                     <td>
@@ -976,10 +976,7 @@
                     <td><span class="text-success">● Low</span></td>
                     <td><span class="text-warning">● Pending</span></td>
 
-                    <td class="d-flex align-items-center gap-2">
-                      <span class="avatar bg-primary text-white">AG</span
-                      ><span>All groups</span>
-                    </td>
+                    <td class="d-flex align-items-center gap-2"><span class="avatar bg-primary text-white">AG</span><span>All groups</span></td>
                     <td>Dec 19, 2024</td>
 
                     <td>
@@ -1015,7 +1012,7 @@
 
                     <td class="d-flex align-items-center gap-2">
                       <span class="avatar bg-primary text-white">EV</span>
-                      <span>All, especially vulnerable adults </span>
+                      <span>All, especially vulnerable adults	</span>
                     </td>
 
                     <td>Oct 24, 2024</td>
@@ -1025,146 +1022,150 @@
                       <i class="ti ti-trash"></i>
                     </td>
                   </tr>
+
+                 
                 </tbody>
               </table>
             </div>
           </div>
 
           <!-- Table Card -->
+
+
         </div>
 
-        <!-- /Complaint Modal -->
-        <div class="modal fade" id="taskModal" tabindex="-1">
-          <div
-            class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable"
-          >
-            <div class="modal-content">
-              <!-- ✅ HEADER -->
-              <div class="modal-header">
-                <div>
-                  <h4 class="modal-title">Task</h4>
-                  <p class="text-muted mb-0">
-                    Standard form for reporting new referrals
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                ></button>
-              </div>
-
-              <!-- ✅ BODY -->
-              <div class="modal-body">
-                <!-- Title -->
-                <div class="mb-3">
-                  <label class="form-label"
-                    >Title <span class="text-danger">*</span></label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Brief description of issue"
-                  />
-                </div>
-
-                <!-- Description -->
-                <div class="mb-3">
-                  <label class="form-label"
-                    >Description <span class="text-danger">*</span></label
-                  >
-                  <textarea
-                    class="form-control"
-                    rows="3"
-                    placeholder="Detailed description of the complaint issue..."
-                  ></textarea>
-                </div>
-
-                <!-- Property & Category -->
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label class="form-label"
-                      >Property <span class="text-danger">*</span></label
-                    >
-                    <select class="form-select">
-                      <option selected disabled>Select property</option>
-                      <option>Garden House Hotel</option>
-                      <option>Crown Lodge Hotel</option>
-                      <option>Trident Elite</option>
-                      <option>Marriott Waterfront</option>
-                    </select>
+         <!-- /Complaint Modal -->
+          <div class="modal fade" id="taskModal" tabindex="-1">
+            <div
+              class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable"
+            >
+              <div class="modal-content">
+                <!-- ✅ HEADER -->
+                <div class="modal-header">
+                  <div>
+                    <h4 class="modal-title">Task</h4>
+                    <p class="text-muted mb-0">
+                      Standard form for reporting new referrals
+                    </p>
                   </div>
-
-                  <div class="col-md-6 mb-3">
-                    <label class="form-label"
-                      >Category <span class="text-danger">*</span></label
-                    >
-                    <select class="form-select">
-                      <option selected disabled>Select category</option>
-                      <option>Plumbing</option>
-                      <option>Electrical</option>
-                      <option>HVAC</option>
-                      <option>Structural</option>
-                      <option>Appliances</option>
-                      <option>Doors & Windows</option>
-                      <option>Flooring</option>
-                      <option>Roofing</option>
-                      <option>Pest Control</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
                 </div>
 
-                <!-- Priority & Reported By -->
-                <div class="row">
-                  <div class="col-md-6 mb-3">
+                <!-- ✅ BODY -->
+                <div class="modal-body">
+                  <!-- Title -->
+                  <div class="mb-3">
                     <label class="form-label"
-                      >Priority <span class="text-danger">*</span></label
-                    >
-                    <select class="form-select">
-                      <option>low</option>
-                      <option selected>medium</option>
-                      <option>high</option>
-                      <option>emergency</option>
-                    </select>
-                  </div>
-
-                  <div class="col-md-6 mb-3">
-                    <label class="form-label"
-                      >Reported By <span class="text-danger">*</span></label
+                      >Title <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Name of person reporting"
+                      placeholder="Brief description of issue"
                     />
                   </div>
-                </div>
 
-                <!-- Assigned To & Scheduled Date -->
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label class="form-label">Assigned To</label>
-                    <input
-                      type="text"
+                  <!-- Description -->
+                  <div class="mb-3">
+                    <label class="form-label"
+                      >Description <span class="text-danger">*</span></label
+                    >
+                    <textarea
                       class="form-control"
-                      placeholder="Name of assignee"
-                    />
+                      rows="3"
+                      placeholder="Detailed description of the complaint issue..."
+                    ></textarea>
                   </div>
 
-                  <div class="col-md-6 mb-3">
-                    <label class="form-label">Scheduled Date</label>
-                    <div class="input-group">
-                      <input type="date" class="form-control" />
-                      <span class="input-group-text">
-                        <i class="ti ti-calendar"></i>
-                      </span>
+                  <!-- Property & Category -->
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label"
+                        >Property <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select">
+                        <option selected disabled>Select property</option>
+                        <option>Garden House Hotel</option>
+                        <option>Crown Lodge Hotel</option>
+                        <option>Trident Elite</option>
+                        <option>Marriott Waterfront</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label"
+                        >Category <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select">
+                        <option selected disabled>Select category</option>
+                        <option>Plumbing</option>
+                        <option>Electrical</option>
+                        <option>HVAC</option>
+                        <option>Structural</option>
+                        <option>Appliances</option>
+                        <option>Doors & Windows</option>
+                        <option>Flooring</option>
+                        <option>Roofing</option>
+                        <option>Pest Control</option>
+                        <option>Other</option>
+                      </select>
                     </div>
                   </div>
-                </div>
 
-                <!-- Estimated Cost -->
-                <!-- <div class="mb-3">
+                  <!-- Priority & Reported By -->
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label"
+                        >Priority <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select">
+                        <option>low</option>
+                        <option selected>medium</option>
+                        <option>high</option>
+                        <option>emergency</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label"
+                        >Reported By <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name of person reporting"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Assigned To & Scheduled Date -->
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Assigned To</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name of assignee"
+                      />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Scheduled Date</label>
+                      <div class="input-group">
+                        <input type="date" class="form-control" />
+                        <span class="input-group-text">
+                          <i class="ti ti-calendar"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Estimated Cost -->
+                  <!-- <div class="mb-3">
                     <label class="form-label">Estimated Cost</label>
                     <input
                       type="text"
@@ -1172,24 +1173,24 @@
                       placeholder="Estimated cost in £"
                     />
                   </div> -->
-              </div>
+                </div>
 
-              <!-- ✅ FOOTER -->
-              <div class="modal-footer d-flex justify-content-end gap-2">
-                <button
-                  type="button"
-                  class="btn btn-outline-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Cancel
-                </button>
-                <button type="button" class="btn btn-primary">
-                  Submit Form
-                </button>
+                <!-- ✅ FOOTER -->
+                <div class="modal-footer d-flex justify-content-end gap-2">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Submit Form
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </div>
       <!-- /Page Wrapper -->
     </div>
@@ -1249,7 +1250,7 @@
       });
     </script>
 
-    <script>
+      <script>
       function toggleGenericMenu(event, btn) {
         event.stopPropagation();
 

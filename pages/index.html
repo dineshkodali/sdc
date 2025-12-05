@@ -102,6 +102,14 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <style>
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+      }
+    </style>
   </head>
 
   <body>
@@ -1580,6 +1588,12 @@
                   <span>Bookings</span>
                 </a>
               </li>
+              <li>
+                <a href="inspections.html">
+                  <i class="ti ti-clipboard-check"></i>
+                  <span>Inspections</span>
+                </a>
+              </li>
 
               <li class="menu-title">
                 <span>CONTACTS</span>
@@ -1698,7 +1712,7 @@
                 </a>
               </li>
 
-               <!-- modified -->
+              <!-- modified -->
 
               <!-- <li class="menu-title">
                 <span>PROJECTS</span>
@@ -4620,18 +4634,84 @@
                   <div class="card flex-fill">
                     <div class="card-body">
                       <span class="avatar rounded-circle bg-primary mb-2">
-                        <i class="ti ti-calendar-share fs-16"></i>
+                        <i class="ti ti-building-skyscraper fs-16"></i>
                       </span>
                       <h6 class="fs-13 fw-medium text-default mb-1">
-                        Attendance Overview
+                        Total Properties
                       </h6>
                       <h3 class="mb-3">
-                        120/154
-                        <span class="fs-12 fw-medium text-success"
-                          ><i class="fa-solid fa-caret-up me-1"></i>+2.1%</span
-                        >
+                        12
+                        <p class="fs-12 fw-medium text-muted">
+                          10 hotels,2 self-contained
+                        </p>
                       </h3>
-                      <a href="attendance-employee.html" class="link-default"
+                      <a href="property.html" class="link-default"
+                        >View Details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 d-flex">
+                  <div class="card flex-fill">
+                    <div class="card-body">
+                      <span class="avatar rounded-circle bg-success mb-2">
+                        <i class="ti ti-bed fs-16"></i>
+                      </span>
+                      <h6 class="fs-13 fw-medium text-default mb-1">
+                        Occupancy Rate
+                      </h6>
+                      <h3 class="mb-3">
+                        36%
+                        <p class="fs-12 fw-medium text-muted">
+                          36/100 rooms filled
+                        </p>
+                      </h3>
+                      <a href="property.html" class="link-default"
+                        >View Details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 d-flex">
+                  <div class="card flex-fill">
+                    <div class="card-body">
+                      <span class="avatar rounded-circle bg-info mb-2">
+                        <i class="ti ti-users fs-16"></i>
+                      </span>
+                      <h6 class="fs-13 fw-medium text-default mb-1">
+                        Active Residents
+                      </h6>
+                      <h3 class="mb-3">
+                        21
+                        <p class="fs-12 fw-medium text-muted">
+                          Current Service Users
+                        </p>
+                      </h3>
+                      <a href="suprofiles.html" class="link-default"
+                        >View Details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 d-flex">
+                  <div class="card flex-fill">
+                    <div class="card-body">
+                      <span class="avatar rounded-circle bg-warning mb-2">
+                        <i class="ti ti-alert-triangle fs-16"></i>
+                      </span>
+                      <h6 class="fs-13 fw-medium text-default mb-1">
+                        Open Incidents
+                      </h6>
+                      <h3 class="mb-3">
+                        5
+                        <p class="fs-12 fw-medium text-muted">
+                          Requires Attention
+                        </p>
+                      </h3>
+                      <a href="incidents.html" class="link-default"
                         >View Details</a
                       >
                     </div>
@@ -4640,20 +4720,42 @@
                 <div class="col-md-3 d-flex">
                   <div class="card flex-fill">
                     <div class="card-body">
-                      <span class="avatar rounded-circle bg-secondary mb-2">
-                        <i class="ti ti-browser fs-16"></i>
+                      <span class="avatar rounded-circle bg-danger mb-2">
+                        <i class="ti ti-shield fs-16"></i>
                       </span>
                       <h6 class="fs-13 fw-medium text-default mb-1">
-                        Total No of Project's
+                        compliance Health
                       </h6>
                       <h3 class="mb-3">
-                        90/125
-                        <span class="fs-12 fw-medium text-danger"
-                          ><i class="fa-solid fa-caret-down me-1"></i
-                          >-2.1%</span
-                        >
+                        0/162
+                        <p class="fs-12 fw-medium text-muted">
+                          valid certificates
+                        </p>
                       </h3>
-                      <a href="projects.html" class="link-default">View All</a>
+                      <a href="compliance.html" class="link-default"
+                        >View Details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 d-flex">
+                  <div class="card flex-fill">
+                    <div class="card-body">
+                      <span class="avatar rounded-circle bg-primary mb-2">
+                        <i class="ti ti-clock fs-16"></i>
+                      </span>
+                      <h6 class="fs-13 fw-medium text-default mb-1">
+                        Expiring Soon
+                      </h6>
+                      <h3 class="mb-3">
+                        4
+                        <p class="fs-12 fw-medium text-muted">
+                          certificates within 30 days
+                        </p>
+                      </h3>
+                      <a href="compliance.html" class="link-default"
+                        >View Details</a
+                      >
                     </div>
                   </div>
                 </div>
@@ -4661,78 +4763,19 @@
                   <div class="card flex-fill">
                     <div class="card-body">
                       <span class="avatar rounded-circle bg-info mb-2">
-                        <i class="ti ti-users-group fs-16"></i>
+                        <i class="ti ti-tool fs-16"></i>
                       </span>
                       <h6 class="fs-13 fw-medium text-default mb-1">
-                        Total No of Clients
+                        Pending Maintenance
                       </h6>
                       <h3 class="mb-3">
-                        69/86
-                        <span class="fs-12 fw-medium text-danger"
-                          ><i class="fa-solid fa-caret-down me-1"></i
-                          >-11.2%</span
-                        >
+                        0
+                        <p class="fs-12 fw-medium text-muted">
+                          Active work orders
+                        </p>
                       </h3>
-                      <a href="clients.html" class="link-default">View All</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 d-flex">
-                  <div class="card flex-fill">
-                    <div class="card-body">
-                      <span class="avatar rounded-circle bg-pink mb-2">
-                        <i class="ti ti-checklist fs-16"></i>
-                      </span>
-                      <h6 class="fs-13 fw-medium text-default mb-1">
-                        Total No of Tasks
-                      </h6>
-                      <h3 class="mb-3">
-                        225/28
-                        <span class="fs-12 fw-medium text-success"
-                          ><i class="fa-solid fa-caret-down me-1"></i
-                          >+11.2%</span
-                        >
-                      </h3>
-                      <a href="tasks.html" class="link-default">View All</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 d-flex">
-                  <div class="card flex-fill">
-                    <div class="card-body">
-                      <span class="avatar rounded-circle bg-purple mb-2">
-                        <i class="ti ti-moneybag fs-16"></i>
-                      </span>
-                      <h6 class="fs-13 fw-medium text-default mb-1">
-                        Earnings
-                      </h6>
-                      <h3 class="mb-3">
-                        $21445
-                        <span class="fs-12 fw-medium text-success"
-                          ><i class="fa-solid fa-caret-up me-1"></i>+10.2%</span
-                        >
-                      </h3>
-                      <a href="expenses.html" class="link-default">View All</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 d-flex">
-                  <div class="card flex-fill">
-                    <div class="card-body">
-                      <span class="avatar rounded-circle bg-danger mb-2">
-                        <i class="ti ti-browser fs-16"></i>
-                      </span>
-                      <h6 class="fs-13 fw-medium text-default mb-1">
-                        Profit This Week
-                      </h6>
-                      <h3 class="mb-3">
-                        $5,544
-                        <span class="fs-12 fw-medium text-success"
-                          ><i class="fa-solid fa-caret-up me-1"></i>+2.1%</span
-                        >
-                      </h3>
-                      <a href="purchase-transaction.html" class="link-default"
-                        >View All</a
+                      <a href="maintenance.html" class="link-default"
+                        >View Details</a
                       >
                     </div>
                   </div>
@@ -4741,39 +4784,19 @@
                   <div class="card flex-fill">
                     <div class="card-body">
                       <span class="avatar rounded-circle bg-success mb-2">
-                        <i class="ti ti-users-group fs-16"></i>
+                        <i class="ti ti-activity fs-16"></i>
                       </span>
                       <h6 class="fs-13 fw-medium text-default mb-1">
-                        Job Applicants
+                        Completion Rate
                       </h6>
                       <h3 class="mb-3">
-                        98
-                        <span class="fs-12 fw-medium text-success"
-                          ><i class="fa-solid fa-caret-up me-1"></i>+2.1%</span
-                        >
+                        25%
+                        <p class="fs-12 fw-medium text-muted">
+                          This month's maintenance
+                        </p>
                       </h3>
-                      <a href="job-list.html" class="link-default">View All</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 d-flex">
-                  <div class="card flex-fill">
-                    <div class="card-body">
-                      <span class="avatar rounded-circle bg-dark mb-2">
-                        <i class="ti ti-user-star fs-16"></i>
-                      </span>
-                      <h6 class="fs-13 fw-medium text-default mb-1">
-                        New Hire
-                      </h6>
-                      <h3 class="mb-3">
-                        45/48
-                        <span class="fs-12 fw-medium text-danger"
-                          ><i class="fa-solid fa-caret-down me-1"></i
-                          >-11.2%</span
-                        >
-                      </h3>
-                      <a href="candidates.html" class="link-default"
-                        >View All</a
+                      <a href="maintenance.html" class="link-default"
+                        >View Details</a
                       >
                     </div>
                   </div>

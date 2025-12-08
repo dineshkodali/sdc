@@ -132,9 +132,9 @@
         font-size: 20px;
       }
 
-      #propertyTabs {
-        margin-left: 16px; /* adjust to 12px / 20px if needed */
-      }
+      /* #propertyTabs {
+        margin-left: 16px; 
+      } */
 
       .card {
         border-radius: 14px;
@@ -146,6 +146,11 @@
 
       .bg-light {
         background: #f4f5f7 !important;
+      }
+      .property-tabs-wrapper {
+        margin-top: 10px;
+        /* margin-left: 8px; */
+        width: 30%;
       }
     </style>
   </head>
@@ -410,6 +415,46 @@
           </div>
 
           <div class="row gx-4 align-items-stretch">
+            <!-- <div class="property-tabs-wrapper">
+              <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="overview-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#overview"
+                    type="button"
+                  >
+                    Overview
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="maintenance-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#maintenance"
+                    type="button"
+                  >
+                    Maintenance
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="compliance-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#compliance"
+                    type="button"
+                  >
+                    Compliance
+                  </button>
+                </li>
+              </ul>
+            </div> -->
+
             <div class="property-tabs-wrapper">
               <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
                 <li class="nav-item" role="presentation">

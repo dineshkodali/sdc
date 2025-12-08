@@ -1793,13 +1793,14 @@
           <div class="modal fade" id="inspectionModal" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content rounded-4 border-0 shadow">
-                <!-- ✅ HEADER -->
-                <div class="modal-header border-0 pb-0">
+                <!-- HEADER -->
+                <div class="modal-header border-0 pb-1">
                   <div>
-                    <h4 class="modal-title fw-semibold">New Inspection</h4>
-                    <p class="text-muted mb-0">
-                      Create a new inspection record. All fields marked with *
-                      are required.
+                    <h5 class="modal-title fw-semibold mb-0">
+                      Property Inspection
+                    </h5>
+                    <p class="text-muted">
+                      Standard form for property and welfare inspections
                     </p>
                   </div>
                   <button
@@ -1809,25 +1810,28 @@
                   ></button>
                 </div>
 
-                <!-- ✅ BODY -->
-                <div class="modal-body pt-4">
+                <!-- BODY -->
+                <div class="modal-body pt-3">
                   <!-- Inspection Type -->
                   <div class="mb-3">
-                    <label class="form-label">Inspection Type *</label>
+                    <label class="form-label fw-medium">
+                      Inspection Type <span class="text-danger">*</span>
+                    </label>
                     <select class="form-select">
-                      <option selected>Select type</option>
-                      <option>Welfare Check</option>
-                      <option>Property Inspection</option>
-                      <option>Fire Safety Check</option>
-                      <option>Health & Safety</option>
-                      <option>Routine Check</option>
+                      <option selected disabled>Select inspection type</option>
+                      <option>Welfare</option>
+                      <option>Fire Safety</option>
+                      <option>Routine</option>
+                      <option>Emergency</option>
                     </select>
                   </div>
 
                   <!-- Property & Service User -->
                   <div class="row">
                     <div class="col-md-6 mb-3">
-                      <label class="form-label">Property *</label>
+                      <label class="form-label fw-medium">
+                        Property <span class="text-danger">*</span>
+                      </label>
                       <select class="form-select">
                         <option selected disabled>Select property</option>
                         <option>Garden House Hotel</option>
@@ -1837,82 +1841,122 @@
                     </div>
 
                     <div class="col-md-6 mb-3">
-                      <label class="form-label">Service User (Optional)</label>
+                      <label class="form-label fw-medium">Service User</label>
                       <select class="form-select">
-                        <option selected disabled>Select service user</option>
-                        <option>Rana Yusuf</option>
-                        <option>Mohammed Asif</option>
+                        <option selected disabled>
+                          Select service user (for welfare...)
+                        </option>
                         <option>Rahul Sharma</option>
                         <option>Ayesha Khan</option>
                       </select>
                     </div>
                   </div>
 
-                  <!-- Inspector Name & Inspection Date -->
+                  <!-- Inspector Name & Date -->
                   <div class="row">
                     <div class="col-md-6 mb-3">
-                      <label class="form-label">Inspector Name *</label>
+                      <label class="form-label fw-medium">
+                        Inspector Name <span class="text-danger">*</span>
+                      </label>
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="Your name"
+                        placeholder="Name of inspector"
                       />
                     </div>
 
                     <div class="col-md-6 mb-3">
-                      <label class="form-label">Inspection Date *</label>
+                      <label class="form-label fw-medium">
+                        Inspection Date <span class="text-danger">*</span>
+                      </label>
                       <div class="input-group">
-                        <input type="datetime-local" class="form-control" />
-                        <span class="input-group-text">
-                          <i class="ti ti-calendar"></i>
+                        <input type="date" class="form-control" />
+                        <span class="input-group-text bg-white">
+                          <i class="ti ti-calendar text-muted"></i>
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Issues Found & Action Required -->
-                  <div class="row align-items-center">
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label">Issues Found</label>
-                      <input type="number" class="form-control" value="0" />
-                    </div>
-
-                    <div class="col-md-6 mb-3 d-flex align-items-center gap-2">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="actionRequired"
-                      />
-                      <label class="form-check-label" for="actionRequired">
-                        Action Required
-                      </label>
-                    </div>
-                  </div>
-
                   <!-- Findings -->
                   <div class="mb-3">
-                    <label class="form-label">Findings (Optional)</label>
+                    <label class="form-label fw-medium">Findings</label>
                     <textarea
                       class="form-control"
                       rows="4"
-                      placeholder="Detailed findings from the inspection..."
+                      placeholder="Describe inspection findings..."
                     ></textarea>
+                    <small class="text-muted">
+                      Include all observations and conditions found
+                    </small>
+                  </div>
+
+                  <!-- Issues Found & Action Required -->
+                  <div class="row align-items-center">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label fw-medium">
+                        Issues Found <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        value="0"
+                        min="0"
+                      />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label fw-medium d-block">
+                        Action Required
+                      </label>
+
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="actionRequired"
+                        />
+                        <label
+                          class="form-check-label ms-2"
+                          for="actionRequired"
+                        >
+                          Yes / No
+                        </label>
+                      </div>
+
+                      <small class="text-muted">
+                        Check if follow-up action is needed
+                      </small>
+                    </div>
+                  </div>
+
+                  <!-- Status -->
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium">
+                      Status <span class="text-danger">*</span>
+                    </label>
+                    <select class="form-select">
+                      <option selected>pending</option>
+                      <option>in-progress</option>
+                      <option>completed</option>
+                      <option>requires-follow-up</option>
+                    </select>
                   </div>
                 </div>
 
-                <!-- ✅ FOOTER -->
+                <!-- FOOTER -->
                 <div
-                  class="modal-footer border-0 pt-0 d-flex justify-content-end gap-3"
+                  class="modal-footer border-0 pt-2 d-flex justify-content-end gap-3"
                 >
                   <button
                     type="button"
-                    class="btn btn-outline-secondary px-4"
+                    class="btn btn-light px-4"
                     data-bs-dismiss="modal"
                   >
                     Cancel
                   </button>
                   <button type="button" class="btn btn-primary px-4">
-                    Create Inspection
+                    Submit Form
                   </button>
                 </div>
               </div>

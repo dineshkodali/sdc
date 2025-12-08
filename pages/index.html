@@ -109,6 +109,106 @@
         transition: 0.2s ease-in-out;
         cursor: pointer;
       }
+
+      .attention-wrapper {
+        background: #fdf1f1;
+        border-radius: 20px;
+        padding: 22px 24px 26px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        margin-bottom: 20px;
+      }
+
+      .attention-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #ff3b30;
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+
+      .attention-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .attention-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #eee;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .attention-card:hover {
+        background: #fafafa;
+      }
+
+      .attention-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .icon-danger {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: #ffe4e4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ff3b30;
+        font-size: 16px;
+      }
+
+      .icon-warning {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: #fff4cc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f5a623;
+        font-size: 16px;
+      }
+
+      .attention-text {
+        font-size: 14px;
+        font-weight: 600;
+        color: #111827;
+        line-height: 1.2;
+      }
+
+      .attention-sub {
+        font-size: 12px;
+        color: #6b7280;
+        margin-top: 2px;
+      }
+
+      .chevron {
+        color: #9ca3af;
+        font-size: 16px;
+      }
+
+      /* ✅ Responsive like screenshot */
+      @media (max-width: 992px) {
+        .attention-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .attention-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
 
@@ -4547,16 +4647,35 @@
               </div>
               <div class="mb-2">
                 <div class="input-icon w-120 position-relative">
-                  <span class="input-icon-addon">
-                    <i class="ti ti-calendar text-gray-9"></i>
-                  </span>
-                  <input
-                    type="text"
-                    class="form-control yearpicker"
-                    value="2025"
-                  />
+                  <button
+                    class="btn btn-light border dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    All Properties
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">All Properties</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Garden House</a></li>
+                    <li><a class="dropdown-item" href="#">Crown Lodge</a></li>
+                    <li><a class="dropdown-item" href="#">Trident Elite</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Royal Orchid Suites</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Taj Gateway</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Marriott Waterfront</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">The Grand Hyatt</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
+
               <div class="ms-2 head-icons">
                 <a
                   href="javascript:void(0);"
@@ -4858,6 +4977,159 @@
             </div>
             <!-- /Employees By Department -->
           </div>
+
+          <!-- Critical Action Card -->
+          <div class="attention-wrapper">
+            <div class="attention-title">
+              <i class="ti ti-alert-circle"></i>
+              Items Requiring Immediate Attention
+            </div>
+
+            <div class="attention-grid">
+              <!-- ITEM 1 -->
+              <a href="compliance.html" class="attention-link">
+                <div class="attention-card">
+                  <div class="attention-left">
+                    <div class="icon-danger">
+                      <i class="ti ti-shield"></i>
+                    </div>
+                    <div>
+                      <div class="attention-text">
+                        Fire Safety Certificate Expired
+                      </div>
+                      <div class="attention-sub">Riverside Hotel</div>
+                    </div>
+                  </div>
+                  <i class="ti ti-chevron-right chevron"></i>
+                </div>
+              </a>
+
+              <!-- ITEM 2 -->
+              <a href="compliance.html" class="attention-link">
+                <div class="attention-card">
+                  <div class="attention-left">
+                    <div class="icon-danger">
+                      <i class="ti ti-shield"></i>
+                    </div>
+                    <div>
+                      <div class="attention-text">
+                        Gas Safety Certificate Expired
+                      </div>
+                      <div class="attention-sub">Riverside Hotel</div>
+                    </div>
+                  </div>
+                  <i class="ti ti-chevron-right chevron"></i>
+                </div>
+              </a>
+
+              <!-- ITEM 3 -->
+              <a href="compliance.html" class="attention-link">
+                <div class="attention-card">
+                  <div class="attention-left">
+                    <div class="icon-danger">
+                      <i class="ti ti-shield"></i>
+                    </div>
+                    <div>
+                      <div class="attention-text">
+                        Electrical Installation Certificate Expired
+                      </div>
+                      <div class="attention-sub">Riverside Hotel</div>
+                    </div>
+                  </div>
+                  <i class="ti ti-chevron-right chevron"></i>
+                </div>
+              </a>
+
+              <!-- ITEM 4 -->
+              <a href="incidents.html" class="attention-link">
+                <div class="attention-card">
+                  <div class="attention-left">
+                    <div class="icon-warning">
+                      <i class="ti ti-alert-triangle"></i>
+                    </div>
+                    <div>
+                      <div class="attention-text">Complaint</div>
+                      <div class="attention-sub">Crown Lodge Hotel</div>
+                    </div>
+                  </div>
+                  <i class="ti ti-chevron-right chevron"></i>
+                </div>
+              </a>
+
+              <!-- ITEM 5 -->
+              <a href="incidents.html" class="attention-link">
+                <div class="attention-card">
+                  <div class="attention-left">
+                    <div class="icon-warning">
+                      <i class="ti ti-alert-triangle"></i>
+                    </div>
+                    <div>
+                      <div class="attention-text">Self Harm</div>
+                      <div class="attention-sub">Harbour View Hotel</div>
+                    </div>
+                  </div>
+                  <i class="ti ti-chevron-right chevron"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Employees By Department -->
+            <!-- <div class="col-xxl-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-header pb-2 d-flex align-items-center justify-content-between flex-wrap"
+                >
+                  <h5 class="mb-2">Employees By Department</h5>
+                  <div class="dropdown mb-2">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn btn-white border btn-sm d-inline-flex align-items-center"
+                      data-bs-toggle="dropdown"
+                    >
+                      <i class="ti ti-calendar me-1"></i>This Week
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end p-3">
+                      <li>
+                        <a
+                          href="javascript:void(0);"
+                          class="dropdown-item rounded-1"
+                          >This Month</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="javascript:void(0);"
+                          class="dropdown-item rounded-1"
+                          >This Week</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="javascript:void(0);"
+                          class="dropdown-item rounded-1"
+                          >Last Week</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div id="emp-department"></div>
+                  <p class="fs-13">
+                    <i class="ti ti-circle-filled me-2 fs-8 text-primary"></i>No
+                    of Employees increased by
+                    <span class="text-success fw-bold">+20%</span> from last
+                    Week
+                  </p>
+                </div>
+              </div>
+            </div> -->
+            <!-- /Employees By Department -->
+          </div>
+
+          <!-- /Critical Action Card -->
 
           <div class="row">
             <!-- Total Employee -->

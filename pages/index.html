@@ -325,6 +325,46 @@
         transform: translateY(-2px);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
       }
+
+      .dropdown .ti-building {
+        /* background: #eef2f7; */
+        padding: 6px;
+        border-radius: 8px;
+        font-size: 12px;
+      }
+
+      /* Tabs style */
+      .move-tabs {
+        background: #f1f3f7;
+        padding: 6px;
+        border-radius: 10px;
+        display: inline-flex;
+        gap: 6px;
+      }
+
+      .move-tabs .btn {
+        border-radius: 8px;
+      }
+
+      .property-tabs-wrapper {
+        margin-top: 10px;
+        margin-left: 8px;
+        width: 80%;
+      }
+
+      .property-tabs-wrapper {
+        margin-top: 10px;
+        margin-left: 8px;
+        width: 35%;
+      }
+
+      #propertyTabs .nav-item {
+        margin: 0 !important;
+      }
+
+      #propertyTabs .nav-link {
+        min-width: auto;
+      }
     </style>
   </head>
 
@@ -4733,7 +4773,7 @@
             <div
               class="d-flex my-xl-auto right-content align-items-center flex-wrap"
             >
-              <div class="me-2 mb-2">
+              <!-- <div class="me-2 mb-2">
                 <div class="dropdown">
                   <a
                     href="javascript:void(0);"
@@ -4760,18 +4800,76 @@
                     </li>
                   </ul>
                 </div>
+              </div> -->
+              <div class="me-2 mb-2">
+                <ul
+                  class="nav nav-pills mb-0 gap-0"
+                  id="propertyTabs"
+                  role="tablist"
+                >
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active px-3 py-1"
+                      id="overview-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#allmeals"
+                      type="button"
+                    >
+                      7D
+                    </button>
+                  </li>
+
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link px-3 py-1"
+                      id="maintenance-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#breakfast"
+                      type="button"
+                    >
+                      30D
+                    </button>
+                  </li>
+
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link px-3 py-1"
+                      id="lunch-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#lunch"
+                      type="button"
+                    >
+                      90D
+                    </button>
+                  </li>
+
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link px-3 py-1"
+                      id="dinner-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#dinner"
+                      type="button"
+                    >
+                      1Y
+                    </button>
+                  </li>
+                </ul>
               </div>
-              <div class="mb-2">
-                <div class="input-icon w-120 position-relative">
+
+              <div class="mb-2 ms-2">
+                <div class="dropdown">
                   <button
-                    class="btn btn-light border dropdown-toggle"
+                    class="btn btn-light border dropdown-toggle d-flex align-items-center gap-2 px-3 py-2 rounded-3"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    All Properties
+                    <i class="ti ti-building"></i>
+                    <span>All Properties</span>
                   </button>
-                  <ul class="dropdown-menu">
+
+                  <ul class="dropdown-menu rounded-3 shadow-sm">
                     <li>
                       <a class="dropdown-item" href="#">All Properties</a>
                     </li>
@@ -4809,7 +4907,7 @@
           <!-- /Breadcrumb -->
 
           <!-- Welcome Wrap -->
-          <div class="card border-0">
+          <!-- <div class="card border-0">
             <div
               class="card-body d-flex align-items-center justify-content-between flex-wrap pb-1"
             >
@@ -4858,7 +4956,7 @@
                 >
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- /Welcome Wrap -->
 
           <div class="row">
@@ -6322,7 +6420,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         /* =============================
-     ✅ COMPLIANCE STATUS DONUT
+      COMPLIANCE STATUS DONUT
   ============================== */
         var complianceOptions = {
           chart: {
@@ -6330,7 +6428,7 @@
             height: 250,
             events: {
               dataPointSelection: function () {
-                // 👉 Open compliance page on click
+                //  Open compliance page on click
                 window.location.href = "compliance.html";
               },
             },
@@ -6350,7 +6448,7 @@
         ).render();
 
         /* =============================
-     ✅ MAINTENANCE PRIORITY DONUT
+      MAINTENANCE PRIORITY DONUT
   ============================== */
         var priorityOptions = {
           chart: {
@@ -6378,78 +6476,88 @@
         ).render();
       });
     </script>
-   <script>
-  const overallTrendsOptions = {
-    chart: {
-      type: "area",
-      height: 320,
-      toolbar: { show: false },
-      zoom: { enabled: false }
-    },
+    <script>
+      const overallTrendsOptions = {
+        chart: {
+          type: "area",
+          height: 320,
+          toolbar: { show: false },
+          zoom: { enabled: false },
+        },
 
-    series: [
-      {
-        name: "Incidents",
-        data: [4, 3, 3, 7, 4, 3, 5, 8, 9, 7, 4, 0]
-      },
-      {
-        name: "Resolved",
-        data: [1, 1, 1, 5, 1, 1, 2, 4, 3, 0, 1, 0]
-      }
-    ],
+        series: [
+          {
+            name: "Incidents",
+            data: [4, 3, 3, 7, 4, 3, 5, 8, 9, 7, 4, 0],
+          },
+          {
+            name: "Resolved",
+            data: [1, 1, 1, 5, 1, 1, 2, 4, 3, 0, 1, 0],
+          },
+        ],
 
-    colors: ["#3B82F6", "#10B981"],
+        colors: ["#3B82F6", "#10B981"],
 
-    stroke: {
-      curve: "smooth",
-      width: 3
-    },
+        stroke: {
+          curve: "smooth",
+          width: 3,
+        },
 
-    fill: {
-      type: "gradient",
-      gradient: {
-        shadeIntensity: 1,
-        opacityFrom: 0.35,
-        opacityTo: 0.05,
-        stops: [0, 90, 100]
-      }
-    },
+        fill: {
+          type: "gradient",
+          gradient: {
+            shadeIntensity: 1,
+            opacityFrom: 0.35,
+            opacityTo: 0.05,
+            stops: [0, 90, 100],
+          },
+        },
 
-    markers: {
-      size: 5,
-      colors: ["#fff"],
-      strokeColors: ["#3B82F6", "#10B981"],
-      strokeWidth: 3,
-      hover: { size: 7 }
-    },
+        markers: {
+          size: 5,
+          colors: ["#fff"],
+          strokeColors: ["#3B82F6", "#10B981"],
+          strokeWidth: 3,
+          hover: { size: 7 },
+        },
 
-    xaxis: {
-      categories: [
-        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-      ]
-    },
+        xaxis: {
+          categories: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+        },
 
-    yaxis: {
-      min: 0,
-      max: 12,
-      tickAmount: 4
-    },
+        yaxis: {
+          min: 0,
+          max: 12,
+          tickAmount: 4,
+        },
 
-    grid: {
-      borderColor: "#e5e7eb",
-      strokeDashArray: 4
-    },
+        grid: {
+          borderColor: "#e5e7eb",
+          strokeDashArray: 4,
+        },
 
-    tooltip: {
-      shared: true,
-      intersect: false,
-      custom: function ({ series, dataPointIndex, w }) {
-        const month = w.globals.labels[dataPointIndex];
-        const incidents = series[0][dataPointIndex];
-        const resolved = series[1][dataPointIndex];
+        tooltip: {
+          shared: true,
+          intersect: false,
+          custom: function ({ series, dataPointIndex, w }) {
+            const month = w.globals.labels[dataPointIndex];
+            const incidents = series[0][dataPointIndex];
+            const resolved = series[1][dataPointIndex];
 
-        return `
+            return `
           <div style="
             background:#fff;
             padding:12px 14px;
@@ -6462,19 +6570,18 @@
             <span style="color:#10B981">●</span> Resolved: <b>${resolved}</b>
           </div>
         `;
-      }
-    },
+          },
+        },
 
-    legend: { show: false }
-  };
+        legend: { show: false },
+      };
 
-  const overallTrendsChart = new ApexCharts(
-    document.querySelector("#overallTrendsChart"),
-    overallTrendsOptions
-  );
+      const overallTrendsChart = new ApexCharts(
+        document.querySelector("#overallTrendsChart"),
+        overallTrendsOptions
+      );
 
-  overallTrendsChart.render();
-</script>
-
+      overallTrendsChart.render();
+    </script>
   </body>
 </html>

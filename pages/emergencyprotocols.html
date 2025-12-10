@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
-    <title>AIRE Tasks - Operations Hub</title>
+    <title>Emergency Protocols</title>
 
     <!-- Favicon -->
     <link
@@ -38,10 +38,10 @@
 
     <style>
       /* Sidebar scroll fix */
-      /* .sidebar-inner {
+      .sidebar-inner {
         overflow-y: auto !important;
         height: calc(100vh - 60px) !important;
-      } */
+      }
       /* Active menu */
       .sidebar-menu ul li a.active {
         background: #f5f5f5 !important;
@@ -53,18 +53,18 @@
       }
 
       /* Mini sidebar collapse */
-      /* .mini-sidebar .sidebar {
+      .mini-sidebar .sidebar {
         width: 60px !important;
       }
 
       .mini-sidebar .sidebar .sidebar-menu ul li a span {
-        display: none !important; 
+        display: none !important; /* hide menu text */
       }
 
       .mini-sidebar .sidebar .sidebar-menu ul li a i {
         margin-right: 0 !important;
         font-size: 20px;
-      } */
+      }
 
       /* Card-style background for the whole tab bar */
       #taskTabs {
@@ -117,7 +117,7 @@
   <body>
     <!-- Sidebar -->
 
-    <!-- <div id="sidebar-container"></div> -->
+    <div id="sidebar-container"></div>
 
     <!-- /Sidebar -->
     <div class="main-wrapper">
@@ -211,462 +211,6 @@
       </div>
       <!-- /Header -->
 
-      
-      <!-- Sidebar -->
-
-      <div class="sidebar" id="sidebar">
-        <div class="sidebar-logo">
-          <a href="index.html" class="logo logo-normal">
-            <img src="../assets/img/logo.svg" alt="Logo" />
-          </a>
-          <a href="index.html" class="logo-small">
-            <img src="../assets/img/logo-small.svg" alt="Logo" />
-          </a>
-        </div>
-
-        <div class="sidebar-inner slimscroll">
-          <div id="sidebar-menu" class="sidebar-menu">
-            <ul>
-              <li class="menu-title">
-                <span>MAIN</span>
-              </li>
-
-              <li>
-                <a href="index.html">
-                  <i class="ti ti-smart-home"></i>
-                  <span>Dashboard</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>Property</span>
-              </li>
-              <li>
-                <a href="property.html">
-                  <i class="ti ti-building"></i>
-                  <span>Property</span>
-                </a>
-              </li>
-              <li>
-                <a href="propertydetails.html">
-                  <i class="ti ti-building-community"></i>
-                  <span>Property Details</span>
-                </a>
-              </li>
-              <li>
-                <a href="bookings.html">
-                  <i class="ti ti-calendar-event"></i>
-                  <span>Bookings</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>CONTACTS</span>
-              </li>
-              <li>
-                <a href="contacts.html">
-                  <i class="ti ti-user"></i>
-                  <span>Contacts</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>OPERATION HUB</span>
-              </li>
-              <li>
-                <a href="maintenance.html">
-                  <i class="ti ti-settings"></i>
-                  <span>Maintenance</span>
-                </a>
-              </li>
-              <li>
-                <a href="compliance.html">
-                  <i class="ti ti-user-check"></i>
-                  <span>Compliance</span>
-                </a>
-              </li>
-              <li>
-                <a href="complaints.html">
-                  <i class="ti ti-filter"></i>
-                  <span>Complaints</span>
-                </a>
-              </li>
-              <li>
-                <a href="airetasks.html">
-                  <i class="ti ti-device-analytics"></i>
-                  <span>AIRE Tasks</span>
-                </a>
-              </li>
-              <li>
-                <a href="litigation.html">
-                  <i class="ti ti-briefcase"></i>
-                  <span>Litigation</span>
-                </a>
-              </li>
-              <li>
-                <a href="inspections.html">
-                  <i class="ti ti-clipboard-check"></i>
-                  <span>Inspections</span>
-                </a>
-              </li>
-              <li class="submenu">
-                <a href="javascript:void(0);" class="submenu-toggle">
-                  <i class="ti ti-shield"></i>
-                  <span>Safeguarding</span>
-                  <span class="menu-arrow"></span>
-                </a>
-
-                <ul class="submenu-list">
-                  <li>
-                    <a href="safeguarding.html">
-                      <i class="ti ti-user-plus"></i>
-                      Referrals
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="risk-assessment.html">
-                      <i class="ti ti-alert-circle"></i>
-                      Risk Assessment
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="vulnerable-users.html">
-                      <i class="ti ti-heart"></i>
-                      Vulnerable Users
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="multi-agency.html">
-                      <i class="ti ti-network"></i>
-                      Multi-Agency
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="migranthelp.html">
-                  <i class="ti ti-target"></i>
-                  <span>Migrant Help</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>SU Data</span>
-              </li>
-              <li>
-                <a href="suprofiles.html">
-                  <i class="ti ti-user-circle"></i>
-                  <span>SU Profiles</span>
-                </a>
-              </li>
-              <li>
-                <a href="analytics.html">
-                  <i class="ti ti-chart-bar"></i>
-                  <span>Analytics</span>
-                </a>
-              </li>
-              <li>
-                <a href="demographics.html">
-                  <i class="ti ti-device-analytics"></i>
-                  <span>Demographics</span>
-                </a>
-              </li>
-              <li>
-                <a href="accommodation.html">
-                  <i class="ti ti-clock-hour-3"></i>
-                  <span>Accommodation History</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="move-in&out.html">
-                  <i class="ti ti-home"></i>
-                  <span>Move-In/Out</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="meals.html">
-                  <i class="ti ti-tools-kitchen-2"></i>
-                  <span>Meals</span>
-                </a>
-              </li>
-              <li>
-                <a href="pparupload.html">
-                  <i class="ti ti-upload"></i>
-                  <span>PPAR Upload</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="report.html">
-                  <i class="ti ti-file"></i>
-                  <span>Reports</span>
-                </a>
-              </li>
-
-              <!-- <li>
-                <a href="casedocumentation.html">
-                  <i class="ti ti-file-description"></i>
-                  <span>Case Documents</span>
-                </a>
-              </li> -->
-
-              <li class="menu-title">
-                <span>ESCALATIONS</span>
-              </li>
-
-              <li>
-                <a href="incidents.html">
-                  <i class="ti ti-alert-triangle"></i>
-                  <span>Incidents</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="complaintsfromincidents.html">
-                  <i class="ti ti-flag"></i>
-                  <span>Complaints</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="vcsorganisations.html">
-                  <i class="ti ti-briefcase"></i>
-                  <span>VCS Organisations</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="casemanagement.html">
-                  <i class="ti ti-briefcase-2"></i>
-                  <span>Case Management</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="emergencyprotocols.html">
-                  <i class="ti ti-first-aid-kit"></i>
-                  <span>Emergency Protocols</span>
-                </a>
-              </li>
-
-              <!-- ================= HSE ================= -->
-
-              <li class="menu-title">
-                <span>HSE</span>
-              </li>
-
-              <li>
-                <a href="hseincidents.html">
-                  <i class="ti ti-alert-triangle"></i>
-                  <span>HSE Incidents</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="riskmanagement.html">
-                  <i class="ti ti-alert-circle"></i>
-                  <span>Risk Management</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="training.html">
-                  <i class="ti ti-school"></i>
-                  <span>Training</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="audits.html">
-                  <i class="ti ti-clipboard-check"></i>
-                  <span>Audits</span>
-                </a>
-              </li>
-
-              <!-- ================= FINANCE ================= -->
-
-              <li class="menu-title">
-                <span>FINANCE</span>
-              </li>
-
-              <li>
-                <a href="budget.html">
-                  <i class="ti ti-currency-dollar"></i>
-                  <span>Budget</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="invoicing.html">
-                  <i class="ti ti-file-invoice"></i>
-                  <span>Invoicing</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="expenses.html">
-                  <i class="ti ti-credit-card"></i>
-                  <span>Expenses</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="financereport.html">
-                  <i class="ti ti-file-report"></i>
-                  <span>Reports</span>
-                </a>
-              </li>
-
-              <!-- ================= EMPLOYEES ================= -->
-
-              <li class="menu-title">
-                <span>EMPLOYEES</span>
-              </li>
-
-              <li>
-                <a href="employees.html">
-                  <i class="ti ti-users"></i>
-                  <span>Employee List</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="hrmanagement.html">
-                  <i class="ti ti-id-badge"></i>
-                  <span>HR Management</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="performance.html">
-                  <i class="ti ti-chart-bar"></i>
-                  <span>Performance</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="employeetraining.html">
-                  <i class="ti ti-book"></i>
-                  <span>Training</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="payroll.html">
-                  <i class="ti ti-wallet"></i>
-                  <span>Payroll</span>
-                </a>
-              </li>
-
-              <!-- modified -->
-
-              <!-- <li class="menu-title">
-                <span>PROJECTS</span>
-              </li>
-              <li>
-                <a href="projects.html">
-                  <i class="ti ti-box"></i>
-                  <span>Projects</span>
-                </a>
-              </li>
-              <li>
-                <a href="tasks.html">
-                  <i class="ti ti-list-check"></i>
-                  <span>Tasks</span>
-                </a>
-              </li>
-              <li>
-                <a href="activities.html">
-                  <i class="ti ti-activity"></i>
-                  <span>Activities</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>REPORTS</span>
-              </li>
-              <li>
-                <a href="employee-report.html">
-                  <i class="ti ti-file-analytics"></i>
-                  <span>Employee Report</span>
-                </a>
-              </li>
-              <li>
-                <a href="user-report.html">
-                  <i class="ti ti-report"></i>
-                  <span>User Report</span>
-                </a>
-              </li>
-              <li>
-                <a href="company-report.html">
-                  <i class="ti ti-report-money"></i>
-                  <span>Company Report</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>PROFILE</span>
-              </li>
-              <li>
-                <a href="profile.html">
-                  <i class="ti ti-user-circle"></i>
-                  <span>My Profile</span>
-                </a>
-              </li>
-              <li>
-                <a href="profile-settings.html">
-                  <i class="ti ti-settings"></i>
-                  <span>Profile Settings</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>AUTH</span>
-              </li>
-              <li>
-                <a href="login.html">
-                  <i class="ti ti-login"></i>
-                  <span>Login</span>
-                </a>
-              </li>
-              <li>
-                <a href="register.html">
-                  <i class="ti ti-forms"></i>
-                  <span>Register</span>
-                </a>
-              </li>
-              <li>
-                <a href="forgot-password.html">
-                  <i class="ti ti-lock"></i>
-                  <span>Forgot Password</span>
-                </a>
-              </li>
-              <li>
-                <a href="reset-password.html">
-                  <i class="ti ti-key"></i>
-                  <span>Reset Password</span>
-                </a>
-              </li>
-              <li>
-                <a href="two-step-verification.html">
-                  <i class="ti ti-shield-check"></i>
-                  <span>Two-Step Verification</span>
-                </a>
-              </li> -->
-
-              <!-- modified -->
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- /Sidebar -->
-
       <!-- Page Wrapper -->
       <div class="page-wrapper">
         <div class="content container-fluid">
@@ -687,15 +231,15 @@
             class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
           >
             <div class="my-auto mb-2">
-              <h2 class="page-title">AIRE Tasks</h2>
+              <h2 class="page-title">Emergency Protocols</h2>
               <nav>
                 <ol class="breadcrumb mb-0">
                   <li class="breadcrumb-item">
                     <a href="index.html"><i class="ti ti-smart-home"></i></a>
                   </li>
-                  <li class="breadcrumb-item">Operations Hub</li>
+                  <li class="breadcrumb-item">Escalations</li>
                   <li class="breadcrumb-item active" aria-current="page">
-                    AIRE Tasks
+                    Emergency Protocols
                   </li>
                 </ol>
               </nav>
@@ -1291,12 +835,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Emergency Protocols
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>EMP-2025-</strong><br />
                       <small class="text-muted">e5198a6e</small>
                     </td>
 
@@ -1329,12 +873,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Emergency Protocols
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>EMP-2025-</strong><br />
                       <small>c51690eb</small>
                     </td>
 
@@ -1363,12 +907,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Emergency Protocols
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>EMP-2025-</strong><br />
                       <small>cda9bd4e</small>
                     </td>
 
@@ -1395,7 +939,7 @@
                     </td>
                   </tr>
 
-                  <!-- ✅ NEW ROWS ADDED -->
+                  <!-- NEW ROWS ADDED -->
 
                   <tr>
                     <td><input class="form-check-input" type="checkbox" /></td>
@@ -1403,12 +947,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Emergency Protocols
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>EMP-2025-</strong><br />
                       <small>2b9c6ef8</small>
                     </td>
 
@@ -1441,12 +985,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Emergency Protocols
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>EMP-2025-</strong><br />
                       <small>f3c0c417</small>
                     </td>
 
@@ -1475,12 +1019,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Emergency Protocols
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>EMP-2025-</strong><br />
                       <small>ca81318f</small>
                     </td>
 
@@ -1513,12 +1057,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Emergency Protocols
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>EMP-2025-</strong><br />
                       <small>576b7ce4</small>
                     </td>
 
@@ -1554,7 +1098,7 @@
                 <!-- ✅ HEADER -->
                 <div class="modal-header">
                   <div>
-                    <h4 class="modal-title">AIRE Task</h4>
+                    <h4 class="modal-title">Accommodation History</h4>
                     <p class="text-muted mb-0">
                       Standard form for reporting tasks
                     </p>
@@ -1716,6 +1260,10 @@
         });
     </script>
 
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+
     <script>
       // Sidebar toggle (collapse / expand)
       $(document).on("click", "#toggle_btn", function () {
@@ -1874,50 +1422,5 @@
         }
       });
     </script>
-
-      <!-- jQuery -->
-    <script src="../assets/js/jquery-3.7.1.min.js"></script>
-
-    <!-- Bootstrap Core JS -->
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Feather Icon JS -->
-    <script src="../assets/js/feather.min.js"></script>
-
-    <!-- Slimscroll JS -->
-    <script src="../assets/js/jquery.slimscroll.min.js"></script>
-
-    <!-- Chart JS -->
-    <script src="../assets/plugins/apexchart/apexcharts.min.js"></script>
-    <script src="../assets/plugins/apexchart/chart-data.js"></script>
-
-    <!-- Chart JS -->
-    <script src="../assets/plugins/chartjs/chart.min.js"></script>
-    <script src="../assets/plugins/chartjs/chart-data.js"></script>
-
-    <!-- Datetimepicker JS -->
-    <script src="../assets/js/moment.min.js"></script>
-    <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
-
-    <!-- Daterangepikcer JS -->
-    <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
-
-    <!-- Summernote JS -->
-    <script src="../assets/plugins/summernote/summernote-lite.min.js"></script>
-
-    <!-- Bootstrap Tagsinput JS -->
-    <script src="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
-
-    <!-- Select2 JS -->
-    <script src="../assets/plugins/select2/js/select2.min.js"></script>
-
-    <!-- Color Picker JS -->
-    <script src="../assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
-
-    <!-- Custom JS -->
-    <script src="../assets/js/todo.js"></script>
-    <script src="../assets/js/theme-colorpicker.js"></script>
-    <script src="../assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   </body>
 </html>

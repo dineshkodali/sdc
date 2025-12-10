@@ -68,15 +68,15 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
 
     <style>
-      .sidebar-inner {
+      /* .sidebar-inner {
         overflow-y: auto !important;
         height: calc(100vh - 60px) !important;
-      }
+      } */
 
-      .sidebar-menu ul li a.active {
+      /* .sidebar-menu ul li a.active {
         background: #f5f5f5 !important;
         color: #333 !important;
-      }
+      } */
 
       /* Hotel Card Styling */
       .hotel-card {
@@ -181,7 +181,7 @@
   <body>
     <!-- Sidebar -->
 
-    <div id="sidebar-container"></div>
+    <!-- <div id="sidebar-container"></div> -->
 
     <!-- /Sidebar -->
     <div class="main-wrapper">
@@ -199,7 +199,9 @@
 
           <a id="mobile_btn" class="mobile_btn" href="#sidebar">
             <span class="bar-icon">
-              <span></span><span></span><span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </span>
           </a>
 
@@ -213,64 +215,1846 @@
                 >
                   <i class="ti ti-arrow-bar-to-left"></i>
                 </a>
-
+                <!-- Search -->
                 <div class="input-group input-group-flat d-inline-flex me-1">
-                  <span class="input-icon-addon"
-                    ><i class="ti ti-search"></i
-                  ></span>
+                  <span class="input-icon-addon">
+                    <i class="ti ti-search"></i>
+                  </span>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Search…"
+                    placeholder="Search in HRMS"
                   />
-                  <span class="input-group-text"><kbd>CTRL + /</kbd></span>
+                  <span class="input-group-text">
+                    <kbd>CTRL + / </kbd>
+                  </span>
                 </div>
+                <!-- /Search -->
+                <div class="dropdown crm-dropdown">
+                  <a
+                    href="#"
+                    class="btn btn-menubar me-1"
+                    data-bs-toggle="dropdown"
+                  >
+                    <i class="ti ti-layout-grid"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-lg dropdown-menu-start">
+                    <div class="card mb-0 border-0 shadow-none">
+                      <div class="card-header">
+                        <h4>CRM</h4>
+                      </div>
+                      <div class="card-body pb-1">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <a
+                              href="contacts.html"
+                              class="d-flex align-items-center justify-content-between p-2 crm-link mb-3"
+                            >
+                              <span class="d-flex align-items-center me-3">
+                                <i
+                                  class="ti ti-user-shield text-default me-2"
+                                ></i
+                                >Contacts
+                              </span>
+                              <i class="ti ti-arrow-right"></i>
+                            </a>
+                            <a
+                              href="pipeline.html"
+                              class="d-flex align-items-center justify-content-between p-2 crm-link mb-3"
+                            >
+                              <span class="d-flex align-items-center me-3">
+                                <i
+                                  class="ti ti-timeline-event-text text-default me-2"
+                                ></i
+                                >Pipeline
+                              </span>
+                              <i class="ti ti-arrow-right"></i>
+                            </a>
+                          </div>
+                          <div class="col-sm-6">
+                            <a
+                              href="companies-grid.html"
+                              class="d-flex align-items-center justify-content-between p-2 crm-link mb-3"
+                            >
+                              <span class="d-flex align-items-center me-3">
+                                <i class="ti ti-building text-default me-2"></i
+                                >Companies
+                              </span>
+                              <i class="ti ti-arrow-right"></i>
+                            </a>
 
+                            <a
+                              href="activity.html"
+                              class="d-flex align-items-center justify-content-between p-2 crm-link mb-3"
+                            >
+                              <span class="d-flex align-items-center me-3">
+                                <i class="ti ti-activity text-default me-2"></i
+                                >Activities
+                              </span>
+                              <i class="ti ti-arrow-right"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <a href="profile-settings.html" class="btn btn-menubar">
                   <i class="ti ti-settings-cog"></i>
                 </a>
               </div>
 
-              <div class="d-flex align-items-center">
-                <a href="#" class="btn btn-menubar btnFullscreen">
-                  <i class="ti ti-maximize"></i>
-                </a>
-                <a href="chat.html" class="btn btn-menubar position-relative">
-                  <i class="ti ti-brand-hipchat"></i>
-                  <span class="badge bg-info rounded-pill header-badge">5</span>
-                </a>
-                <a href="email.html" class="btn btn-menubar">
-                  <i class="ti ti-mail"></i>
-                </a>
+              <!-- Horizontal Single -->
+              <div class="sidebar sidebar-horizontal" id="horizontal-single">
+                <div class="sidebar-menu">
+                  <div class="main-menu">
+                    <ul class="nav-menu">
+                      <li class="menu-title">
+                        <span>Main</span>
+                      </li>
+                      <li class="submenu">
+                        <a href="#" class="active">
+                          <i class="ti ti-smart-home"></i><span>Dashboard</span>
+                          <span class="menu-arrow"></span>
+                        </a>
+                        <ul>
+                          <li>
+                            <a href="index.html" class="active"
+                              >Admin Dashboard</a
+                            >
+                          </li>
+                          <li>
+                            <a href="employee-dashboard.html"
+                              >Employee Dashboard</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="submenu">
+                        <a href="#">
+                          <i class="ti ti-user-star"></i
+                          ><span>Super Admin</span>
+                          <span class="menu-arrow"></span>
+                        </a>
+                        <ul>
+                          <li><a href="dashboard.html">Dashboard</a></li>
+                          <li><a href="companies.html">Companies</a></li>
+                          <li><a href="subscription.html">Subscriptions</a></li>
+                          <li><a href="packages.html">Packages</a></li>
+                          <li><a href="domain.html">Domain</a></li>
+                          <li>
+                            <a href="purchase-transaction.html"
+                              >Purchase Transaction</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="submenu">
+                        <a href="#">
+                          <i class="ti ti-layout-grid-add"></i
+                          ><span>Applications</span>
+                          <span class="menu-arrow"></span>
+                        </a>
+                        <ul>
+                          <li><a href="chat.html">Chat</a></li>
+                          <li class="submenu submenu-two">
+                            <a href="call.html"
+                              >Calls<span
+                                class="menu-arrow inside-submenu"
+                              ></span
+                            ></a>
+                            <ul>
+                              <li><a href="voice-call.html">Voice Call</a></li>
+                              <li><a href="video-call.html">Video Call</a></li>
+                              <li>
+                                <a href="outgoing-call.html">Outgoing Call</a>
+                              </li>
+                              <li>
+                                <a href="incoming-call.html">Incoming Call</a>
+                              </li>
+                              <li>
+                                <a href="call-history.html">Call History</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li><a href="calendar.html">Calendar</a></li>
+                          <li><a href="email.html">Email</a></li>
+                          <li><a href="todo.html">To Do</a></li>
+                          <li><a href="notes.html">Notes</a></li>
+                          <li><a href="file-manager.html">File Manager</a></li>
+                          <li><a href="kanban-view.html">Kanban</a></li>
+                          <li><a href="invoices.html">Invoices</a></li>
+                        </ul>
+                      </li>
+                      <li class="submenu">
+                        <a href="#">
+                          <i class="ti ti-layout-board-split"></i
+                          ><span>Layouts</span>
+                          <span class="menu-arrow"></span>
+                        </a>
+                        <ul>
+                          <li>
+                            <a href="layout-horizontal.html">
+                              <span>Horizontal</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-detached.html">
+                              <span>Detached</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-modern.html">
+                              <span>Modern</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-two-column.html">
+                              <span>Two Column </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-hovered.html">
+                              <span>Hovered</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-box.html">
+                              <span>Boxed</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-horizontal-single.html">
+                              <span>Horizontal Single</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-horizontal-overlay.html">
+                              <span>Horizontal Overlay</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-horizontal-box.html">
+                              <span>Horizontal Box</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-horizontal-sidemenu.html">
+                              <span>Menu Aside</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-vertical-transparent.html">
+                              <span>Transparent</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-without-header.html">
+                              <span>Without Header</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-rtl.html">
+                              <span>RTL</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="layout-dark.html">
+                              <span>Dark</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="submenu">
+                        <a href="#">
+                          <i class="ti ti-user-star"></i><span>Projects</span>
+                          <span class="menu-arrow"></span>
+                        </a>
+                        <ul>
+                          <li>
+                            <a href="clients-grid.html"
+                              ><span>Clients</span>
+                            </a>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Projects</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li><a href="projects-grid.html">Projects</a></li>
+                              <li><a href="tasks.html">Tasks</a></li>
+                              <li><a href="task-board.html">Task Board</a></li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="call.html"
+                              >Crm<span class="menu-arrow"></span
+                            ></a>
+                            <ul>
+                              <li>
+                                <a href="contacts-grid.html"
+                                  ><span>Contacts</span></a
+                                >
+                              </li>
+                              <li>
+                                <a href="companies-grid.html"
+                                  ><span>Companies</span></a
+                                >
+                              </li>
+                              <li>
+                                <a href="pipeline.html"
+                                  ><span>Pipeline</span></a
+                                >
+                              </li>
+                              <li>
+                                <a href="analytics.html"
+                                  ><span>Analytics</span></a
+                                >
+                              </li>
+                              <li>
+                                <a href="activity.html"
+                                  ><span>Activities</span></a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Employees</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li>
+                                <a href="employees.html">Employee Lists</a>
+                              </li>
+                              <li>
+                                <a href="employees-grid.html">Employee Grid</a>
+                              </li>
+                              <li>
+                                <a href="employee-details.html"
+                                  >Employee Details</a
+                                >
+                              </li>
+                              <li>
+                                <a href="departments.html">Departments</a>
+                              </li>
+                              <li>
+                                <a href="designations.html">Designations</a>
+                              </li>
+                              <li><a href="policy.html">Policies</a></li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Tickets</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li><a href="tickets.html">Tickets</a></li>
+                              <li>
+                                <a href="ticket-details.html">Ticket Details</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="holidays.html"><span>Holidays</span></a>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Attendance</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >Leaves<span class="menu-arrow"></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="leaves.html">Leaves (Admin)</a>
+                                  </li>
+                                  <li>
+                                    <a href="leaves-employee.html"
+                                      >Leave (Employee)</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="leave-settings.html"
+                                      >Leave Settings</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="attendance-admin.html"
+                                  >Attendance (Admin)</a
+                                >
+                              </li>
+                              <li>
+                                <a href="attendance-employee.html"
+                                  >Attendance (Employee)</a
+                                >
+                              </li>
+                              <li><a href="timesheets.html">Timesheets</a></li>
+                              <li>
+                                <a href="schedule-timing.html"
+                                  >Shift & Schedule</a
+                                >
+                              </li>
+                              <li><a href="overtime.html">Overtime</a></li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Performance</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li>
+                                <a href="performance-indicator.html"
+                                  >Performance Indicator</a
+                                >
+                              </li>
+                              <li>
+                                <a href="performance-review.html"
+                                  >Performance Review</a
+                                >
+                              </li>
+                              <li>
+                                <a href="performance-appraisal.html"
+                                  >Performance Appraisal</a
+                                >
+                              </li>
+                              <li>
+                                <a href="goal-tracking.html">Goal List</a>
+                              </li>
+                              <li><a href="goal-type.html">Goal Type</a></li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Training</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li><a href="training.html">Training List</a></li>
+                              <li><a href="trainers.html">Trainers</a></li>
+                              <li>
+                                <a href="training-type.html">Training Type</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="promotion.html"><span>Promotion</span></a>
+                          </li>
+                          <li>
+                            <a href="resignation.html"
+                              ><span>Resignation</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="termination.html"
+                              ><span>Termination</span></a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="submenu">
+                        <a href="#">
+                          <i class="ti ti-user-star"></i
+                          ><span>Administration</span>
+                          <span class="menu-arrow"></span>
+                        </a>
+                        <ul>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Sales</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li><a href="estimates.html">Estimates</a></li>
+                              <li><a href="invoices.html">Invoices</a></li>
+                              <li><a href="payments.html">Payments</a></li>
+                              <li><a href="expenses.html">Expenses</a></li>
+                              <li>
+                                <a href="provident-fund.html">Provident Fund</a>
+                              </li>
+                              <li><a href="taxes.html">Taxes</a></li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Accounting</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li><a href="categories.html">Categories</a></li>
+                              <li><a href="budgets.html">Budgets</a></li>
+                              <li>
+                                <a href="budget-expenses.html"
+                                  >Budget Expenses</a
+                                >
+                              </li>
+                              <li>
+                                <a href="budget-revenues.html"
+                                  >Budget Revenues</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Payroll</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li>
+                                <a href="employee-salary.html"
+                                  >Employee Salary</a
+                                >
+                              </li>
+                              <li><a href="payslip.html">Payslip</a></li>
+                              <li><a href="payroll.html">Payroll Items</a></li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Assets</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li><a href="assets.html">Assets</a></li>
+                              <li>
+                                <a href="asset-categories.html"
+                                  >Asset Categories</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Help & Supports</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li>
+                                <a href="knowledgebase.html">Knowledge Base</a>
+                              </li>
+                              <li><a href="activity.html">Activities</a></li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>User Management</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li><a href="users.html">Users</a></li>
+                              <li>
+                                <a href="roles-permissions.html"
+                                  >Roles & Permissions</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Reports</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li>
+                                <a href="expenses-report.html"
+                                  >Expense Report</a
+                                >
+                              </li>
+                              <li>
+                                <a href="invoice-report.html">Invoice Report</a>
+                              </li>
+                              <li>
+                                <a href="payment-report.html">Payment Report</a>
+                              </li>
+                              <li>
+                                <a href="project-report.html">Project Report</a>
+                              </li>
+                              <li>
+                                <a href="task-report.html">Task Report</a>
+                              </li>
+                              <li>
+                                <a href="user-report.html">User Report</a>
+                              </li>
+                              <li>
+                                <a href="employee-report.html"
+                                  >Employee Report</a
+                                >
+                              </li>
+                              <li>
+                                <a href="payslip-report.html">Payslip Report</a>
+                              </li>
+                              <li>
+                                <a href="attendance-report.html"
+                                  >Attendance Report</a
+                                >
+                              </li>
+                              <li>
+                                <a href="leave-report.html">Leave Report</a>
+                              </li>
+                              <li>
+                                <a href="daily-report.html">Daily Report</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Settings</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >General Settings<span
+                                    class="menu-arrow"
+                                  ></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="profile-settings.html">Profile</a>
+                                  </li>
+                                  <li>
+                                    <a href="security-settings.html"
+                                      >Security</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="notification-settings.html"
+                                      >Notifications</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="connected-apps.html"
+                                      >Connected Apps</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >Website Settings<span
+                                    class="menu-arrow"
+                                  ></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="bussiness-settings.html"
+                                      >Business Settings</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="seo-settings.html">SEO Settings</a>
+                                  </li>
+                                  <li>
+                                    <a href="localization-settings.html"
+                                      >Localization</a
+                                    >
+                                  </li>
+                                  <li><a href="prefixes.html">Prefixes</a></li>
+                                  <li>
+                                    <a href="preferences.html">Preferences</a>
+                                  </li>
+                                  <li>
+                                    <a href="performance-appraisal.html"
+                                      >Appearance</a
+                                    >
+                                  </li>
+                                  <li><a href="language.html">Language</a></li>
+                                  <li>
+                                    <a href="authentication-settings.html"
+                                      >Authentication</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="ai-settings.html">AI Settings</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >App Settings<span class="menu-arrow"></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="salary-settings.html"
+                                      >Salary Settings</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="approval-settings.html"
+                                      >Approval Settings</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="invoice-settings.html"
+                                      >Invoice Settings</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="leave-type.html">Leave Type</a>
+                                  </li>
+                                  <li>
+                                    <a href="custom-fields.html"
+                                      >Custom Fields</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >System Settings<span
+                                    class="menu-arrow"
+                                  ></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="email-settings.html"
+                                      >Email Settings</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="email-template.html"
+                                      >Email Templates</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="sms-settings.html">SMS Settings</a>
+                                  </li>
+                                  <li>
+                                    <a href="sms-template.html"
+                                      >SMS Templates</a
+                                    >
+                                  </li>
+                                  <li><a href="otp-settings.html">OTP</a></li>
+                                  <li><a href="gdpr.html">GDPR Cookies</a></li>
+                                  <li>
+                                    <a href="maintenance-mode.html"
+                                      >Maintenance Mode</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >Financial Settings<span
+                                    class="menu-arrow"
+                                  ></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="payment-gateways.html"
+                                      >Payment Gateways</a
+                                    >
+                                  </li>
+                                  <li><a href="tax-rates.html">Tax Rate</a></li>
+                                  <li>
+                                    <a href="currencies.html">Currencies</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >Other Settings<span class="menu-arrow"></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="custom-css.html">Custom CSS</a>
+                                  </li>
+                                  <li>
+                                    <a href="custom-js.html">Custom JS</a>
+                                  </li>
+                                  <li><a href="cronjob.html">Cronjob</a></li>
+                                  <li>
+                                    <a href="storage-settings.html">Storage</a>
+                                  </li>
+                                  <li>
+                                    <a href="ban-ip-address.html"
+                                      >Ban IP Address</a
+                                    >
+                                  </li>
+                                  <li><a href="backup.html">Backup</a></li>
+                                  <li>
+                                    <a href="clear-cache.html">Clear Cache</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="submenu">
+                        <a href="#">
+                          <i class="ti ti-page-break"></i><span>Pages</span>
+                          <span class="menu-arrow"></span>
+                        </a>
+                        <ul>
+                          <li>
+                            <a href="starter.html"><span>Starter</span></a>
+                          </li>
+                          <li>
+                            <a href="profile.html"><span>Profile</span></a>
+                          </li>
+                          <li>
+                            <a href="gallery.html"><span>Gallery</span></a>
+                          </li>
+                          <li>
+                            <a href="search-result.html"
+                              ><span>Search Results</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="timeline.html"><span>Timeline</span></a>
+                          </li>
+                          <li>
+                            <a href="pricing.html"><span>Pricing</span></a>
+                          </li>
+                          <li>
+                            <a href="coming-soon.html"
+                              ><span>Coming Soon</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="under-maintenance.html"
+                              ><span>Under Maintenance</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="under-construction.html"
+                              ><span>Under Construction</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="api-keys.html"><span>API Keys</span></a>
+                          </li>
+                          <li>
+                            <a href="privacy-policy.html"
+                              ><span>Privacy Policy</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="terms-condition.html"
+                              ><span>Terms & Conditions</span></a
+                            >
+                          </li>
+                          <li class="submenu">
+                            <a href="#"
+                              ><span>Content</span>
+                              <span class="menu-arrow"></span
+                            ></a>
+                            <ul>
+                              <li><a href="pages.html">Pages</a></li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >Blogs<span class="menu-arrow"></span
+                                ></a>
+                                <ul>
+                                  <li><a href="blogs.html">All Blogs</a></li>
+                                  <li>
+                                    <a href="blog-categories.html"
+                                      >Categories</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="blog-comments.html">Comments</a>
+                                  </li>
+                                  <li><a href="blog-tags.html">Tags</a></li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >Locations<span class="menu-arrow"></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="countries.html">Countries</a>
+                                  </li>
+                                  <li><a href="states.html">States</a></li>
+                                  <li><a href="cities.html">Cities</a></li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="testimonials.html">Testimonials</a>
+                              </li>
+                              <li><a href="faq.html">FAQ’S</a></li>
+                            </ul>
+                          </li>
+                          <li class="submenu">
+                            <a href="#">
+                              <span>Authentication</span>
+                              <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                              <li class="submenu">
+                                <a href="javascript:void(0);" class=""
+                                  >Login<span class="menu-arrow"></span
+                                ></a>
+                                <ul>
+                                  <li><a href="login.html">Cover</a></li>
+                                  <li>
+                                    <a href="login-2.html">Illustration</a>
+                                  </li>
+                                  <li><a href="login-3.html">Basic</a></li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);" class=""
+                                  >Register<span class="menu-arrow"></span
+                                ></a>
+                                <ul>
+                                  <li><a href="register.html">Cover</a></li>
+                                  <li>
+                                    <a href="register-2.html">Illustration</a>
+                                  </li>
+                                  <li><a href="register-3.html">Basic</a></li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >Forgot Password<span
+                                    class="menu-arrow"
+                                  ></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="forgot-password.html">Cover</a>
+                                  </li>
+                                  <li>
+                                    <a href="forgot-password-2.html"
+                                      >Illustration</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="forgot-password-3.html">Basic</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >Reset Password<span class="menu-arrow"></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="reset-password.html">Cover</a>
+                                  </li>
+                                  <li>
+                                    <a href="reset-password-2.html"
+                                      >Illustration</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="reset-password-3.html">Basic</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >Email Verification<span
+                                    class="menu-arrow"
+                                  ></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="email-verification.html">Cover</a>
+                                  </li>
+                                  <li>
+                                    <a href="email-verification-2.html"
+                                      >Illustration</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="email-verification-3.html"
+                                      >Basic</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="submenu">
+                                <a href="javascript:void(0);"
+                                  >2 Step Verification<span
+                                    class="menu-arrow"
+                                  ></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="two-step-verification.html"
+                                      >Cover</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="two-step-verification-2.html"
+                                      >Illustration</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="two-step-verification-3.html"
+                                      >Basic</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="lock-screen.html">Lock Screen</a>
+                              </li>
+                              <li><a href="error-404.html">404 Error</a></li>
+                              <li><a href="error-500.html">500 Error</a></li>
+                            </ul>
+                          </li>
 
-                <div class="dropdown profile-dropdown">
+                          <li><a href="#">Documentation</a></li>
+                          <li><a href="#">Change Log</a></li>
+                          <li class="submenu">
+                            <a href="javascript:void(0);"
+                              ><span>Multi Level</span
+                              ><span class="menu-arrow"></span
+                            ></a>
+                            <ul>
+                              <li>
+                                <a href="javascript:void(0);">Multilevel 1</a>
+                              </li>
+                              <li class="submenu submenu-two">
+                                <a href="javascript:void(0);"
+                                  >Multilevel 2<span
+                                    class="menu-arrow inside-submenu"
+                                  ></span
+                                ></a>
+                                <ul>
+                                  <li>
+                                    <a href="javascript:void(0);"
+                                      >Multilevel 2.1</a
+                                    >
+                                  </li>
+                                  <li class="submenu submenu-two submenu-three">
+                                    <a href="javascript:void(0);"
+                                      >Multilevel 2.2<span
+                                        class="menu-arrow inside-submenu inside-submenu-two"
+                                      ></span
+                                    ></a>
+                                    <ul>
+                                      <li>
+                                        <a href="javascript:void(0);"
+                                          >Multilevel 2.2.1</a
+                                        >
+                                      </li>
+                                      <li>
+                                        <a href="javascript:void(0);"
+                                          >Multilevel 2.2.2</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Multilevel 3</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Horizontal Single -->
+
+              <div class="d-flex align-items-center">
+                <div class="me-1">
+                  <a href="#" class="btn btn-menubar btnFullscreen">
+                    <i class="ti ti-maximize"></i>
+                  </a>
+                </div>
+                <div class="dropdown me-1">
+                  <a href="#" class="btn btn-menubar" data-bs-toggle="dropdown">
+                    <i class="ti ti-layout-grid-remove"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end">
+                    <div class="card mb-0 border-0 shadow-none">
+                      <div class="card-header">
+                        <h4>Applications</h4>
+                      </div>
+                      <div class="card-body">
+                        <a href="calendar.html" class="d-block pb-2">
+                          <span
+                            class="avatar avatar-md bg-transparent-dark me-2"
+                            ><i class="ti ti-calendar text-gray-9"></i></span
+                          >Calendar
+                        </a>
+                        <a href="todo.html" class="d-block py-2">
+                          <span
+                            class="avatar avatar-md bg-transparent-dark me-2"
+                            ><i class="ti ti-subtask text-gray-9"></i></span
+                          >To Do
+                        </a>
+                        <a href="notes.html" class="d-block py-2">
+                          <span
+                            class="avatar avatar-md bg-transparent-dark me-2"
+                            ><i class="ti ti-notes text-gray-9"></i></span
+                          >Notes
+                        </a>
+                        <a href="file-manager.html" class="d-block py-2">
+                          <span
+                            class="avatar avatar-md bg-transparent-dark me-2"
+                            ><i class="ti ti-folder text-gray-9"></i></span
+                          >File Manager
+                        </a>
+                        <a href="kanban-view.html" class="d-block py-2">
+                          <span
+                            class="avatar avatar-md bg-transparent-dark me-2"
+                            ><i
+                              class="ti ti-layout-kanban text-gray-9"
+                            ></i></span
+                          >Kanban
+                        </a>
+                        <a href="invoices.html" class="d-block py-2 pb-0">
+                          <span
+                            class="avatar avatar-md bg-transparent-dark me-2"
+                            ><i
+                              class="ti ti-file-invoice text-gray-9"
+                            ></i></span
+                          >Invoices
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="me-1">
+                  <a href="chat.html" class="btn btn-menubar position-relative">
+                    <i class="ti ti-brand-hipchat"></i>
+                    <span
+                      class="badge bg-info rounded-pill d-flex align-items-center justify-content-center header-badge"
+                      >5</span
+                    >
+                  </a>
+                </div>
+                <div class="me-1">
+                  <a href="email.html" class="btn btn-menubar">
+                    <i class="ti ti-mail"></i>
+                  </a>
+                </div>
+                <div class="me-1 notification_item">
                   <a
                     href="#"
+                    class="btn btn-menubar position-relative me-1"
+                    id="notification_popup"
+                    data-bs-toggle="dropdown"
+                  >
+                    <i class="ti ti-bell"></i>
+                    <span class="notification-status-dot"></span>
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-end notification-dropdown p-4"
+                  >
+                    <div
+                      class="d-flex align-items-center justify-content-between border-bottom p-0 pb-3 mb-3"
+                    >
+                      <h4 class="notification-title">Notifications (2)</h4>
+                      <div class="d-flex align-items-center">
+                        <a href="#" class="text-primary fs-15 me-3 lh-1"
+                          >Mark all as read</a
+                        >
+                        <div class="dropdown">
+                          <a
+                            href="javascript:void(0);"
+                            class="bg-white dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                          >
+                            <i class="ti ti-calendar-due me-1"></i>Today
+                          </a>
+                          <ul class="dropdown-menu mt-2 p-3">
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                              >
+                                This Week
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                              >
+                                Last Week
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="javascript:void(0);"
+                                class="dropdown-item rounded-1"
+                              >
+                                Last Month
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="noti-content">
+                      <div class="d-flex flex-column">
+                        <div class="border-bottom mb-3 pb-3">
+                          <a href="activity.html">
+                            <div class="d-flex">
+                              <span class="avatar avatar-lg me-2 flex-shrink-0">
+                                <img
+                                  src="../assets/img/profiles/avatar-27.jpg"
+                                  alt="Profile"
+                                />
+                              </span>
+                              <div class="flex-grow-1">
+                                <p class="mb-1">
+                                  <span class="text-dark fw-semibold"
+                                    >Shawn</span
+                                  >
+                                  performance in Math is below the threshold.
+                                </p>
+                                <span>Just Now</span>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="border-bottom mb-3 pb-3">
+                          <a href="activity.html" class="pb-0">
+                            <div class="d-flex">
+                              <span class="avatar avatar-lg me-2 flex-shrink-0">
+                                <img
+                                  src="../assets/img/profiles/avatar-23.jpg"
+                                  alt="Profile"
+                                />
+                              </span>
+                              <div class="flex-grow-1">
+                                <p class="mb-1">
+                                  <span class="text-dark fw-semibold"
+                                    >Sylvia</span
+                                  >
+                                  added appointment on 02:00 PM
+                                </p>
+                                <span>10 mins ago</span>
+                                <div
+                                  class="d-flex justify-content-start align-items-center mt-1"
+                                >
+                                  <span class="btn btn-light btn-sm me-2"
+                                    >Deny</span
+                                  >
+                                  <span class="btn btn-primary btn-sm"
+                                    >Approve</span
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="border-bottom mb-3 pb-3">
+                          <a href="activity.html">
+                            <div class="d-flex">
+                              <span class="avatar avatar-lg me-2 flex-shrink-0">
+                                <img
+                                  src="../assets/img/profiles/avatar-25.jpg"
+                                  alt="Profile"
+                                />
+                              </span>
+                              <div class="flex-grow-1">
+                                <p class="mb-1">
+                                  New student record
+                                  <span class="text-dark fw-semibold">
+                                    George</span
+                                  >
+                                  is created by
+                                  <span class="text-dark fw-semibold"
+                                    >Teressa</span
+                                  >
+                                </p>
+                                <span>2 hrs ago</span>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="border-0 mb-3 pb-0">
+                          <a href="activity.html">
+                            <div class="d-flex">
+                              <span class="avatar avatar-lg me-2 flex-shrink-0">
+                                <img
+                                  src="../assets/img/profiles/avatar-01.jpg"
+                                  alt="Profile"
+                                />
+                              </span>
+                              <div class="flex-grow-1">
+                                <p class="mb-1">
+                                  A new teacher record for
+                                  <span class="text-dark fw-semibold"
+                                    >Elisa</span
+                                  >
+                                </p>
+                                <span>09:45 AM</span>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex p-0">
+                      <a href="#" class="btn btn-light w-100 me-2">Cancel</a>
+                      <a href="activity.html" class="btn btn-primary w-100"
+                        >View All</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown profile-dropdown">
+                  <a
+                    href="javascript:void(0);"
                     class="dropdown-toggle d-flex align-items-center"
                     data-bs-toggle="dropdown"
                   >
                     <span class="avatar avatar-sm online">
                       <img
                         src="../assets/img/profiles/avatar-12.jpg"
-                        class="rounded-circle"
-                        alt=""
+                        alt="Img"
+                        class="img-fluid rounded-circle"
                       />
                     </span>
                   </a>
                   <div class="dropdown-menu shadow-none">
-                    <a class="dropdown-item" href="profile.html">My Profile</a>
-                    <a class="dropdown-item" href="profile-settings.html"
-                      >Settings</a
-                    >
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    <div class="card mb-0">
+                      <div class="card-header">
+                        <div class="d-flex align-items-center">
+                          <span class="avatar avatar-lg me-2 avatar-rounded">
+                            <img
+                              src="../assets/img/profiles/avatar-12.jpg"
+                              alt="img"
+                            />
+                          </span>
+                          <div>
+                            <h5 class="mb-0">Kevin Larry</h5>
+                            <p class="fs-12 fw-medium mb-0">
+                              warren@example.com
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <a
+                          class="dropdown-item d-inline-flex align-items-center p-0 py-2"
+                          href="profile.html"
+                        >
+                          <i class="ti ti-user-circle me-1"></i>My Profile
+                        </a>
+                        <a
+                          class="dropdown-item d-inline-flex align-items-center p-0 py-2"
+                          href="bussiness-settings.html"
+                        >
+                          <i class="ti ti-settings me-1"></i>Settings
+                        </a>
+
+                        <a
+                          class="dropdown-item d-inline-flex align-items-center p-0 py-2"
+                          href="profile-settings.html"
+                        >
+                          <i class="ti ti-circle-arrow-up me-1"></i>My Account
+                        </a>
+                        <a
+                          class="dropdown-item d-inline-flex align-items-center p-0 py-2"
+                          href="knowledgebase.html"
+                        >
+                          <i class="ti ti-question-mark me-1"></i>Knowledge Base
+                        </a>
+                      </div>
+                      <div class="card-footer">
+                        <a
+                          class="dropdown-item d-inline-flex align-items-center p-0 py-2"
+                          href="login.html"
+                        >
+                          <i class="ti ti-login me-2"></i>Logout
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Mobile Menu -->
+          <div class="dropdown mobile-user-menu">
+            <a
+              href="javascript:void(0);"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              ><i class="fa fa-ellipsis-v"></i
+            ></a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <a class="dropdown-item" href="profile.html">My Profile</a>
+              <a class="dropdown-item" href="profile-settings.html">Settings</a>
+              <a class="dropdown-item" href="login.html">Logout</a>
+            </div>
+          </div>
+          <!-- /Mobile Menu -->
         </div>
       </div>
       <!-- /HEADER -->
+
+      <!-- Sidebar -->
+
+       <div class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+          <a href="index.html" class="logo logo-normal">
+            <img src="../assets/img/logo.svg" alt="Logo" />
+          </a>
+          <a href="index.html" class="logo-small">
+            <img src="../assets/img/logo-small.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <div class="sidebar-inner slimscroll">
+          <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+              <li class="menu-title">
+                <span>MAIN</span>
+              </li>
+
+              <li>
+                <a href="index.html">
+                  <i class="ti ti-smart-home"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>Property</span>
+              </li>
+              <li>
+                <a href="property.html">
+                  <i class="ti ti-building"></i>
+                  <span>Property</span>
+                </a>
+              </li>
+              <li>
+                <a href="propertydetails.html">
+                  <i class="ti ti-building-community"></i>
+                  <span>Property Details</span>
+                </a>
+              </li>
+              <li>
+                <a href="bookings.html">
+                  <i class="ti ti-calendar-event"></i>
+                  <span>Bookings</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>CONTACTS</span>
+              </li>
+              <li>
+                <a href="contacts.html">
+                  <i class="ti ti-user"></i>
+                  <span>Contacts</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>OPERATION HUB</span>
+              </li>
+              <li>
+                <a href="maintenance.html">
+                  <i class="ti ti-settings"></i>
+                  <span>Maintenance</span>
+                </a>
+              </li>
+              <li>
+                <a href="compliance.html">
+                  <i class="ti ti-user-check"></i>
+                  <span>Compliance</span>
+                </a>
+              </li>
+              <li>
+                <a href="complaints.html">
+                  <i class="ti ti-filter"></i>
+                  <span>Complaints</span>
+                </a>
+              </li>
+              <li>
+                <a href="airetasks.html">
+                  <i class="ti ti-device-analytics"></i>
+                  <span>AIRE Tasks</span>
+                </a>
+              </li>
+              <li>
+                <a href="litigation.html">
+                  <i class="ti ti-briefcase"></i>
+                  <span>Litigation</span>
+                </a>
+              </li>
+              <li>
+                <a href="inspections.html">
+                  <i class="ti ti-clipboard-check"></i>
+                  <span>Inspections</span>
+                </a>
+              </li>
+              <li class="submenu">
+                <a href="javascript:void(0);" class="submenu-toggle">
+                  <i class="ti ti-shield"></i>
+                  <span>Safeguarding</span>
+                  <span class="menu-arrow"></span>
+                </a>
+
+                <ul class="submenu-list">
+                  <li>
+                    <a href="safeguarding.html">
+                      <i class="ti ti-user-plus"></i>
+                      Referrals
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="risk-assessment.html">
+                      <i class="ti ti-alert-circle"></i>
+                      Risk Assessment
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="vulnerable-users.html">
+                      <i class="ti ti-heart"></i>
+                      Vulnerable Users
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="multi-agency.html">
+                      <i class="ti ti-network"></i>
+                      Multi-Agency
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="migranthelp.html">
+                  <i class="ti ti-target"></i>
+                  <span>Migrant Help</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>SU Data</span>
+              </li>
+              <li>
+                <a href="suprofiles.html">
+                  <i class="ti ti-user-circle"></i>
+                  <span>SU Profiles</span>
+                </a>
+              </li>
+              <li>
+                <a href="analytics.html">
+                  <i class="ti ti-chart-bar"></i>
+                  <span>Analytics</span>
+                </a>
+              </li>
+              <li>
+                <a href="demographics.html">
+                  <i class="ti ti-device-analytics"></i>
+                  <span>Demographics</span>
+                </a>
+              </li>
+              <li>
+                <a href="accommodation.html">
+                  <i class="ti ti-clock-hour-3"></i>
+                  <span>Accommodation History</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="move-in&out.html">
+                  <i class="ti ti-home"></i>
+                  <span>Move-In/Out</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="meals.html">
+                  <i class="ti ti-tools-kitchen-2"></i>
+                  <span>Meals</span>
+                </a>
+              </li>
+              <li>
+                <a href="pparupload.html">
+                  <i class="ti ti-upload"></i>
+                  <span>PPAR Upload</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="report.html">
+                  <i class="ti ti-file"></i>
+                  <span>Reports</span>
+                </a>
+              </li>
+
+              <!-- <li>
+                <a href="casedocumentation.html">
+                  <i class="ti ti-file-description"></i>
+                  <span>Case Documents</span>
+                </a>
+              </li> -->
+
+              <li class="menu-title">
+                <span>ESCALATIONS</span>
+              </li>
+
+              <li>
+                <a href="incidents.html">
+                  <i class="ti ti-alert-triangle"></i>
+                  <span>Incidents</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="complaintsfromincidents.html">
+                  <i class="ti ti-flag"></i>
+                  <span>Complaints</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="vcsorganisations.html">
+                  <i class="ti ti-briefcase"></i>
+                  <span>VCS Organisations</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="casemanagement.html">
+                  <i class="ti ti-briefcase-2"></i>
+                  <span>Case Management</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="emergencyprotocols.html">
+                  <i class="ti ti-first-aid-kit"></i>
+                  <span>Emergency Protocols</span>
+                </a>
+              </li>
+
+              <!-- ================= HSE ================= -->
+
+              <li class="menu-title">
+                <span>HSE</span>
+              </li>
+
+              <li>
+                <a href="hseincidents.html">
+                  <i class="ti ti-alert-triangle"></i>
+                  <span>HSE Incidents</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="riskmanagement.html">
+                  <i class="ti ti-alert-circle"></i>
+                  <span>Risk Management</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="training.html">
+                  <i class="ti ti-school"></i>
+                  <span>Training</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="audits.html">
+                  <i class="ti ti-clipboard-check"></i>
+                  <span>Audits</span>
+                </a>
+              </li>
+
+              <!-- ================= FINANCE ================= -->
+
+              <li class="menu-title">
+                <span>FINANCE</span>
+              </li>
+
+              <li>
+                <a href="budget.html">
+                  <i class="ti ti-currency-dollar"></i>
+                  <span>Budget</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="invoicing.html">
+                  <i class="ti ti-file-invoice"></i>
+                  <span>Invoicing</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="expenses.html">
+                  <i class="ti ti-credit-card"></i>
+                  <span>Expenses</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="financereport.html">
+                  <i class="ti ti-file-report"></i>
+                  <span>Reports</span>
+                </a>
+              </li>
+
+              <!-- ================= EMPLOYEES ================= -->
+
+              <li class="menu-title">
+                <span>EMPLOYEES</span>
+              </li>
+
+              <li>
+                <a href="employees.html">
+                  <i class="ti ti-users"></i>
+                  <span>Employee List</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="hrmanagement.html">
+                  <i class="ti ti-id-badge"></i>
+                  <span>HR Management</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="performance.html">
+                  <i class="ti ti-chart-bar"></i>
+                  <span>Performance</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="employeetraining.html">
+                  <i class="ti ti-book"></i>
+                  <span>Training</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="payroll.html">
+                  <i class="ti ti-wallet"></i>
+                  <span>Payroll</span>
+                </a>
+              </li>
+
+              <!-- modified -->
+
+              <!-- <li class="menu-title">
+                <span>PROJECTS</span>
+              </li>
+              <li>
+                <a href="projects.html">
+                  <i class="ti ti-box"></i>
+                  <span>Projects</span>
+                </a>
+              </li>
+              <li>
+                <a href="tasks.html">
+                  <i class="ti ti-list-check"></i>
+                  <span>Tasks</span>
+                </a>
+              </li>
+              <li>
+                <a href="activities.html">
+                  <i class="ti ti-activity"></i>
+                  <span>Activities</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>REPORTS</span>
+              </li>
+              <li>
+                <a href="employee-report.html">
+                  <i class="ti ti-file-analytics"></i>
+                  <span>Employee Report</span>
+                </a>
+              </li>
+              <li>
+                <a href="user-report.html">
+                  <i class="ti ti-report"></i>
+                  <span>User Report</span>
+                </a>
+              </li>
+              <li>
+                <a href="company-report.html">
+                  <i class="ti ti-report-money"></i>
+                  <span>Company Report</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>PROFILE</span>
+              </li>
+              <li>
+                <a href="profile.html">
+                  <i class="ti ti-user-circle"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <a href="profile-settings.html">
+                  <i class="ti ti-settings"></i>
+                  <span>Profile Settings</span>
+                </a>
+              </li>
+
+              <li class="menu-title">
+                <span>AUTH</span>
+              </li>
+              <li>
+                <a href="login.html">
+                  <i class="ti ti-login"></i>
+                  <span>Login</span>
+                </a>
+              </li>
+              <li>
+                <a href="register.html">
+                  <i class="ti ti-forms"></i>
+                  <span>Register</span>
+                </a>
+              </li>
+              <li>
+                <a href="forgot-password.html">
+                  <i class="ti ti-lock"></i>
+                  <span>Forgot Password</span>
+                </a>
+              </li>
+              <li>
+                <a href="reset-password.html">
+                  <i class="ti ti-key"></i>
+                  <span>Reset Password</span>
+                </a>
+              </li>
+              <li>
+                <a href="two-step-verification.html">
+                  <i class="ti ti-shield-check"></i>
+                  <span>Two-Step Verification</span>
+                </a>
+              </li> -->
+
+              <!-- modified -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
 
       <!-- PAGE WRAPPER -->
       <div class="page-wrapper">
@@ -2409,12 +4193,37 @@
     </div>
 
     <!-- JS Files -->
+
     <script>
+      // Load the sidebar HTML
       fetch("../assets/includes/sidebar.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("sidebar-container").innerHTML = data;
+          // nothing else needed here – click handler below will work automatically
         });
+
+      // Global delegated click handler for submenu toggles
+      document.addEventListener("click", function (e) {
+        const toggle = e.target.closest(".submenu-toggle");
+        if (!toggle) return; // click was not on a submenu toggle
+
+        e.preventDefault();
+
+        const sidebar = document.getElementById("sidebar-container");
+        const currentSubmenu = toggle.closest(".submenu");
+        const isOpen = currentSubmenu.classList.contains("open");
+
+        // Close all submenus in the sidebar first
+        sidebar
+          .querySelectorAll(".submenu.open")
+          .forEach((li) => li.classList.remove("open"));
+
+        // Toggle current submenu
+        if (!isOpen) {
+          currentSubmenu.classList.add("open");
+        }
+      });
     </script>
 
     <script>
@@ -2431,9 +4240,7 @@
       }
     </script>
 
-    <script src="../assets/js/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/script.js"></script>
+    
     <script>
       // Sidebar toggle (collapse / expand)
       $(document).on("click", "#toggle_btn", function () {
@@ -2465,5 +4272,49 @@
         document.getElementById("selectedType").innerText = el.innerText.trim();
       }
     </script>
+      <!-- jQuery -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="../assets/js/feather.min.js"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="../assets/js/jquery.slimscroll.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="../assets/plugins/apexchart/apexcharts.min.js"></script>
+    <script src="../assets/plugins/apexchart/chart-data.js"></script>
+
+    <!-- Chart JS -->
+    <script src="../assets/plugins/chartjs/chart.min.js"></script>
+    <script src="../assets/plugins/chartjs/chart-data.js"></script>
+
+    <!-- Datetimepicker JS -->
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Daterangepikcer JS -->
+    <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <!-- Summernote JS -->
+    <script src="../assets/plugins/summernote/summernote-lite.min.js"></script>
+
+    <!-- Bootstrap Tagsinput JS -->
+    <script src="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="../assets/plugins/select2/js/select2.min.js"></script>
+
+    <!-- Color Picker JS -->
+    <script src="../assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/todo.js"></script>
+    <script src="../assets/js/theme-colorpicker.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   </body>
 </html>

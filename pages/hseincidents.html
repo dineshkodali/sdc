@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
-    <title>AIRE Tasks - Operations Hub</title>
+    <title>HSE Incidents</title>
 
     <!-- Favicon -->
     <link
@@ -38,10 +38,10 @@
 
     <style>
       /* Sidebar scroll fix */
-      /* .sidebar-inner {
+      .sidebar-inner {
         overflow-y: auto !important;
         height: calc(100vh - 60px) !important;
-      } */
+      }
       /* Active menu */
       .sidebar-menu ul li a.active {
         background: #f5f5f5 !important;
@@ -53,18 +53,18 @@
       }
 
       /* Mini sidebar collapse */
-      /* .mini-sidebar .sidebar {
+      .mini-sidebar .sidebar {
         width: 60px !important;
       }
 
       .mini-sidebar .sidebar .sidebar-menu ul li a span {
-        display: none !important; 
+        display: none !important; /* hide menu text */
       }
 
       .mini-sidebar .sidebar .sidebar-menu ul li a i {
         margin-right: 0 !important;
         font-size: 20px;
-      } */
+      }
 
       /* Card-style background for the whole tab bar */
       #taskTabs {
@@ -117,7 +117,7 @@
   <body>
     <!-- Sidebar -->
 
-    <!-- <div id="sidebar-container"></div> -->
+    <div id="sidebar-container"></div>
 
     <!-- /Sidebar -->
     <div class="main-wrapper">
@@ -211,462 +211,6 @@
       </div>
       <!-- /Header -->
 
-      
-      <!-- Sidebar -->
-
-      <div class="sidebar" id="sidebar">
-        <div class="sidebar-logo">
-          <a href="index.html" class="logo logo-normal">
-            <img src="../assets/img/logo.svg" alt="Logo" />
-          </a>
-          <a href="index.html" class="logo-small">
-            <img src="../assets/img/logo-small.svg" alt="Logo" />
-          </a>
-        </div>
-
-        <div class="sidebar-inner slimscroll">
-          <div id="sidebar-menu" class="sidebar-menu">
-            <ul>
-              <li class="menu-title">
-                <span>MAIN</span>
-              </li>
-
-              <li>
-                <a href="index.html">
-                  <i class="ti ti-smart-home"></i>
-                  <span>Dashboard</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>Property</span>
-              </li>
-              <li>
-                <a href="property.html">
-                  <i class="ti ti-building"></i>
-                  <span>Property</span>
-                </a>
-              </li>
-              <li>
-                <a href="propertydetails.html">
-                  <i class="ti ti-building-community"></i>
-                  <span>Property Details</span>
-                </a>
-              </li>
-              <li>
-                <a href="bookings.html">
-                  <i class="ti ti-calendar-event"></i>
-                  <span>Bookings</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>CONTACTS</span>
-              </li>
-              <li>
-                <a href="contacts.html">
-                  <i class="ti ti-user"></i>
-                  <span>Contacts</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>OPERATION HUB</span>
-              </li>
-              <li>
-                <a href="maintenance.html">
-                  <i class="ti ti-settings"></i>
-                  <span>Maintenance</span>
-                </a>
-              </li>
-              <li>
-                <a href="compliance.html">
-                  <i class="ti ti-user-check"></i>
-                  <span>Compliance</span>
-                </a>
-              </li>
-              <li>
-                <a href="complaints.html">
-                  <i class="ti ti-filter"></i>
-                  <span>Complaints</span>
-                </a>
-              </li>
-              <li>
-                <a href="airetasks.html">
-                  <i class="ti ti-device-analytics"></i>
-                  <span>AIRE Tasks</span>
-                </a>
-              </li>
-              <li>
-                <a href="litigation.html">
-                  <i class="ti ti-briefcase"></i>
-                  <span>Litigation</span>
-                </a>
-              </li>
-              <li>
-                <a href="inspections.html">
-                  <i class="ti ti-clipboard-check"></i>
-                  <span>Inspections</span>
-                </a>
-              </li>
-              <li class="submenu">
-                <a href="javascript:void(0);" class="submenu-toggle">
-                  <i class="ti ti-shield"></i>
-                  <span>Safeguarding</span>
-                  <span class="menu-arrow"></span>
-                </a>
-
-                <ul class="submenu-list">
-                  <li>
-                    <a href="safeguarding.html">
-                      <i class="ti ti-user-plus"></i>
-                      Referrals
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="risk-assessment.html">
-                      <i class="ti ti-alert-circle"></i>
-                      Risk Assessment
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="vulnerable-users.html">
-                      <i class="ti ti-heart"></i>
-                      Vulnerable Users
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="multi-agency.html">
-                      <i class="ti ti-network"></i>
-                      Multi-Agency
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="migranthelp.html">
-                  <i class="ti ti-target"></i>
-                  <span>Migrant Help</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>SU Data</span>
-              </li>
-              <li>
-                <a href="suprofiles.html">
-                  <i class="ti ti-user-circle"></i>
-                  <span>SU Profiles</span>
-                </a>
-              </li>
-              <li>
-                <a href="analytics.html">
-                  <i class="ti ti-chart-bar"></i>
-                  <span>Analytics</span>
-                </a>
-              </li>
-              <li>
-                <a href="demographics.html">
-                  <i class="ti ti-device-analytics"></i>
-                  <span>Demographics</span>
-                </a>
-              </li>
-              <li>
-                <a href="accommodation.html">
-                  <i class="ti ti-clock-hour-3"></i>
-                  <span>Accommodation History</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="move-in&out.html">
-                  <i class="ti ti-home"></i>
-                  <span>Move-In/Out</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="meals.html">
-                  <i class="ti ti-tools-kitchen-2"></i>
-                  <span>Meals</span>
-                </a>
-              </li>
-              <li>
-                <a href="pparupload.html">
-                  <i class="ti ti-upload"></i>
-                  <span>PPAR Upload</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="report.html">
-                  <i class="ti ti-file"></i>
-                  <span>Reports</span>
-                </a>
-              </li>
-
-              <!-- <li>
-                <a href="casedocumentation.html">
-                  <i class="ti ti-file-description"></i>
-                  <span>Case Documents</span>
-                </a>
-              </li> -->
-
-              <li class="menu-title">
-                <span>ESCALATIONS</span>
-              </li>
-
-              <li>
-                <a href="incidents.html">
-                  <i class="ti ti-alert-triangle"></i>
-                  <span>Incidents</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="complaintsfromincidents.html">
-                  <i class="ti ti-flag"></i>
-                  <span>Complaints</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="vcsorganisations.html">
-                  <i class="ti ti-briefcase"></i>
-                  <span>VCS Organisations</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="casemanagement.html">
-                  <i class="ti ti-briefcase-2"></i>
-                  <span>Case Management</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="emergencyprotocols.html">
-                  <i class="ti ti-first-aid-kit"></i>
-                  <span>Emergency Protocols</span>
-                </a>
-              </li>
-
-              <!-- ================= HSE ================= -->
-
-              <li class="menu-title">
-                <span>HSE</span>
-              </li>
-
-              <li>
-                <a href="hseincidents.html">
-                  <i class="ti ti-alert-triangle"></i>
-                  <span>HSE Incidents</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="riskmanagement.html">
-                  <i class="ti ti-alert-circle"></i>
-                  <span>Risk Management</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="training.html">
-                  <i class="ti ti-school"></i>
-                  <span>Training</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="audits.html">
-                  <i class="ti ti-clipboard-check"></i>
-                  <span>Audits</span>
-                </a>
-              </li>
-
-              <!-- ================= FINANCE ================= -->
-
-              <li class="menu-title">
-                <span>FINANCE</span>
-              </li>
-
-              <li>
-                <a href="budget.html">
-                  <i class="ti ti-currency-dollar"></i>
-                  <span>Budget</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="invoicing.html">
-                  <i class="ti ti-file-invoice"></i>
-                  <span>Invoicing</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="expenses.html">
-                  <i class="ti ti-credit-card"></i>
-                  <span>Expenses</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="financereport.html">
-                  <i class="ti ti-file-report"></i>
-                  <span>Reports</span>
-                </a>
-              </li>
-
-              <!-- ================= EMPLOYEES ================= -->
-
-              <li class="menu-title">
-                <span>EMPLOYEES</span>
-              </li>
-
-              <li>
-                <a href="employees.html">
-                  <i class="ti ti-users"></i>
-                  <span>Employee List</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="hrmanagement.html">
-                  <i class="ti ti-id-badge"></i>
-                  <span>HR Management</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="performance.html">
-                  <i class="ti ti-chart-bar"></i>
-                  <span>Performance</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="employeetraining.html">
-                  <i class="ti ti-book"></i>
-                  <span>Training</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="payroll.html">
-                  <i class="ti ti-wallet"></i>
-                  <span>Payroll</span>
-                </a>
-              </li>
-
-              <!-- modified -->
-
-              <!-- <li class="menu-title">
-                <span>PROJECTS</span>
-              </li>
-              <li>
-                <a href="projects.html">
-                  <i class="ti ti-box"></i>
-                  <span>Projects</span>
-                </a>
-              </li>
-              <li>
-                <a href="tasks.html">
-                  <i class="ti ti-list-check"></i>
-                  <span>Tasks</span>
-                </a>
-              </li>
-              <li>
-                <a href="activities.html">
-                  <i class="ti ti-activity"></i>
-                  <span>Activities</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>REPORTS</span>
-              </li>
-              <li>
-                <a href="employee-report.html">
-                  <i class="ti ti-file-analytics"></i>
-                  <span>Employee Report</span>
-                </a>
-              </li>
-              <li>
-                <a href="user-report.html">
-                  <i class="ti ti-report"></i>
-                  <span>User Report</span>
-                </a>
-              </li>
-              <li>
-                <a href="company-report.html">
-                  <i class="ti ti-report-money"></i>
-                  <span>Company Report</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>PROFILE</span>
-              </li>
-              <li>
-                <a href="profile.html">
-                  <i class="ti ti-user-circle"></i>
-                  <span>My Profile</span>
-                </a>
-              </li>
-              <li>
-                <a href="profile-settings.html">
-                  <i class="ti ti-settings"></i>
-                  <span>Profile Settings</span>
-                </a>
-              </li>
-
-              <li class="menu-title">
-                <span>AUTH</span>
-              </li>
-              <li>
-                <a href="login.html">
-                  <i class="ti ti-login"></i>
-                  <span>Login</span>
-                </a>
-              </li>
-              <li>
-                <a href="register.html">
-                  <i class="ti ti-forms"></i>
-                  <span>Register</span>
-                </a>
-              </li>
-              <li>
-                <a href="forgot-password.html">
-                  <i class="ti ti-lock"></i>
-                  <span>Forgot Password</span>
-                </a>
-              </li>
-              <li>
-                <a href="reset-password.html">
-                  <i class="ti ti-key"></i>
-                  <span>Reset Password</span>
-                </a>
-              </li>
-              <li>
-                <a href="two-step-verification.html">
-                  <i class="ti ti-shield-check"></i>
-                  <span>Two-Step Verification</span>
-                </a>
-              </li> -->
-
-              <!-- modified -->
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- /Sidebar -->
-
       <!-- Page Wrapper -->
       <div class="page-wrapper">
         <div class="content container-fluid">
@@ -687,15 +231,15 @@
             class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
           >
             <div class="my-auto mb-2">
-              <h2 class="page-title">AIRE Tasks</h2>
+              <h2 class="page-title">HSE Incidents</h2>
               <nav>
                 <ol class="breadcrumb mb-0">
                   <li class="breadcrumb-item">
                     <a href="index.html"><i class="ti ti-smart-home"></i></a>
                   </li>
-                  <li class="breadcrumb-item">Operations Hub</li>
+                  <li class="breadcrumb-item">HSE</li>
                   <li class="breadcrumb-item active" aria-current="page">
-                    AIRE Tasks
+                    HSE Incidents
                   </li>
                 </ol>
               </nav>
@@ -709,7 +253,7 @@
                   data-bs-toggle="modal"
                   data-bs-target="#taskModal"
                   class="btn btn-primary d-flex align-items-center"
-                  ><i class="ti ti-plus me-2"></i>Add Task</a
+                  ><i class="ti ti-plus me-2"></i>Report HSE Incident</a
                 >
               </div>
             </div>
@@ -726,12 +270,12 @@
                   <div class="d-flex align-items-center overflow-hidden">
                     <div>
                       <span class="avatar avatar-lg bg-info rounded-circle"
-                        ><i class="ti ti-building-skyscraper"></i
+                        ><i class="ti ti-shield-exclamation"></i
                       ></span>
                     </div>
                     <div class="ms-2 overflow-hidden">
                       <p class="fs-12 fw-medium mb-1 text-truncate">
-                        Total Tasks
+                        Total HSE Incidents
                       </p>
                       <h4>16</h4>
                     </div>
@@ -749,12 +293,12 @@
                 >
                   <div class="d-flex align-items-center overflow-hidden">
                     <div>
-                      <span class="avatar avatar-lg bg-danger rounded-circle"
-                        ><i class="ti ti-alert-triangle"></i
+                      <span class="avatar avatar-lg bg-primary rounded-circle"
+                        ><i class="ti ti-shield-exclamation"></i
                       ></span>
                     </div>
                     <div class="ms-2 overflow-hidden">
-                      <p class="fs-12 fw-medium mb-1 text-truncate">Overdue</p>
+                      <p class="fs-12 fw-medium mb-1 text-truncate">Open</p>
                       <h4>9</h4>
                     </div>
                   </div>
@@ -771,13 +315,13 @@
                 >
                   <div class="d-flex align-items-center overflow-hidden">
                     <div>
-                      <span class="avatar avatar-lg bg-primary rounded-circle"
-                        ><i class="ti ti-clock"></i
+                      <span class="avatar avatar-lg bg-purple rounded-circle"
+                        ><i class="ti ti-shield-exclamation"></i
                       ></span>
                     </div>
                     <div class="ms-2 overflow-hidden">
                       <p class="fs-12 fw-medium mb-1 text-truncate">
-                        Due This Week
+                        Investigating
                       </p>
                       <h4>6</h4>
                     </div>
@@ -795,13 +339,13 @@
                 >
                   <div class="d-flex align-items-center overflow-hidden">
                     <div>
-                      <span class="avatar avatar-lg bg-success rounded-circle"
-                        ><i class="ti ti-circle-check"></i
+                      <span class="avatar avatar-lg bg-pink rounded-circle"
+                        ><i class="ti ti-shield-exclamation"></i
                       ></span>
                     </div>
                     <div class="ms-2 overflow-hidden">
                       <p class="fs-12 fw-medium mb-1 text-truncate">
-                        Completed
+                        High/Critical
                       </p>
                       <h4>4</h4>
                     </div>
@@ -843,7 +387,7 @@
               class="d-flex align-items-center justify-content-between flex-wrap gap-3 border-bottom pb-3"
             >
               <div>
-                <h5 class="mb-0 fw-semibold">All Work Orders</h5>
+                <h5 class="mb-0 fw-semibold">HSE Records</h5>
                 <small class="text-muted">120 total records</small>
               </div>
 
@@ -913,7 +457,7 @@
                   data-bs-target="#taskModal"
                   class="btn btn-primary d-flex align-items-center gap-2"
                 >
-                  <i class="ti ti-upload"></i> Create Task
+                  <i class="ti ti-upload"></i>Report HSE Incident
                 </a>
               </div>
             </div>
@@ -1291,12 +835,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Accommodation History
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>ACH-2025-</strong><br />
                       <small class="text-muted">e5198a6e</small>
                     </td>
 
@@ -1329,12 +873,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Accommodation History
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>ACH-2025-</strong><br />
                       <small>c51690eb</small>
                     </td>
 
@@ -1363,12 +907,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Accommodation History
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>ACH-2025-</strong><br />
                       <small>cda9bd4e</small>
                     </td>
 
@@ -1395,7 +939,7 @@
                     </td>
                   </tr>
 
-                  <!-- ✅ NEW ROWS ADDED -->
+                  <!-- NEW ROWS ADDED -->
 
                   <tr>
                     <td><input class="form-check-input" type="checkbox" /></td>
@@ -1403,12 +947,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Accommodation History
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>ACH-2025-</strong><br />
                       <small>2b9c6ef8</small>
                     </td>
 
@@ -1441,12 +985,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Accommodation History
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>ACH-2025-</strong><br />
                       <small>f3c0c417</small>
                     </td>
 
@@ -1475,12 +1019,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Accommodation History
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>ACH-2025-</strong><br />
                       <small>ca81318f</small>
                     </td>
 
@@ -1513,12 +1057,12 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        AIRE Tasks
+                        Accommodation History
                       </span>
                     </td>
 
                     <td>
-                      <strong>AIRE-2025-</strong><br />
+                      <strong>ACH-2025-</strong><br />
                       <small>576b7ce4</small>
                     </td>
 
@@ -1550,156 +1094,117 @@
             <div
               class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable"
             >
-              <div class="modal-content">
-                <!-- ✅ HEADER -->
-                <div class="modal-header">
-                  <div>
-                    <h4 class="modal-title">AIRE Task</h4>
-                    <p class="text-muted mb-0">
-                      Standard form for reporting tasks
-                    </p>
-                  </div>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                  ></button>
-                </div>
+              <div class="modal-content rounded-4 border-0 shadow-lg">
 
-                <!-- ✅ BODY -->
-                <div class="modal-body">
-                  <!-- Title -->
-                  <div class="mb-3">
-                    <label class="form-label"
-                      >Title <span class="text-danger">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Brief description of task"
-                    />
-                  </div>
+  <!-- ✅ HEADER -->
+  <div class="modal-header border-0 pb-0">
+    <div>
+      <h5 class="fw-semibold mb-1">Report HSE Incident</h5>
+      <p class="text-muted small mb-0">
+        Report a health, safety & environment incident. All fields marked with * are required.
+      </p>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+  </div>
 
-                  <!-- Description -->
-                  <div class="mb-3">
-                    <label class="form-label"
-                      >Description <span class="text-danger">*</span></label
-                    >
-                    <textarea
-                      class="form-control"
-                      rows="3"
-                      placeholder="Detailed description of the maintenance issue..."
-                    ></textarea>
-                  </div>
+  <!-- ✅ BODY -->
+  <div class="modal-body pt-4">
 
-                  <!-- Property & Category -->
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label"
-                        >Property <span class="text-danger">*</span></label
-                      >
-                      <select class="form-select">
-                        <option selected disabled>Select property</option>
-                        <option>Garden House Hotel</option>
-                        <option>Crown Lodge Hotel</option>
-                        <option>Trident Elite</option>
-                        <option>Marriott Waterfront</option>
-                      </select>
-                    </div>
+    <!-- Row 1 -->
+    <div class="row g-3 mb-3">
+      <div class="col-md-6">
+        <label class="form-label">Incident Type <span class="text-danger">*</span></label>
+        <select class="form-select">
+          <option selected disabled>Select type</option>
+          <option>Slip/Trip/Fall</option>
+          <option>Manual Handling Injury</option>
+          <option>Fire Safety Issue</option>
+          <option>Chemical Exposure</option>
+          <option>Electrical Hazard</option>
+          <option>RIDDOR Reportable</option>
+          <option>Near Miss</option>
+          <option>First Aid</option>
+          <option>Environmental Hazard</option>
+          <option>Equipment Failure</option>
+          <option>Security Breach</option>
+          <option>COVID-19 Related</option>
+        </select>
+      </div>
 
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label"
-                        >Category <span class="text-danger">*</span></label
-                      >
-                      <select class="form-select">
-                        <option selected disabled>Select category</option>
-                        <option>Plumbing</option>
-                        <option>Electrical</option>
-                        <option>HVAC</option>
-                        <option>Structural</option>
-                        <option>Appliances</option>
-                        <option>Doors & Windows</option>
-                        <option>Flooring</option>
-                        <option>Roofing</option>
-                        <option>Pest Control</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-                  </div>
+      <div class="col-md-6">
+        <label class="form-label">Severity <span class="text-danger">*</span></label>
+        <select class="form-select">
+          <option>Low</option>
+          <option selected>Medium</option>
+          <option>High</option>
+          <option>Critical</option>
+        </select>
+      </div>
+    </div>
 
-                  <!-- Priority & Reported By -->
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label"
-                        >Priority <span class="text-danger">*</span></label
-                      >
-                      <select class="form-select">
-                        <option>low</option>
-                        <option selected>medium</option>
-                        <option>high</option>
-                        <option>emergency</option>
-                      </select>
-                    </div>
+    <!-- Row 2 -->
+    <div class="row g-3 mb-3">
+      <div class="col-md-6">
+        <label class="form-label">Property <span class="text-danger">*</span></label>
+        <select class="form-select">
+          <option selected disabled>Select property</option>
+          <option>Garden House Hotel</option>
+          <option>Crown Lodge Hotel</option>
+          <option>Trident Elite</option>
+          <option>Marriott Waterfront</option>
+        </select>
+      </div>
 
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label"
-                        >Reported By <span class="text-danger">*</span></label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Name of person reporting"
-                      />
-                    </div>
-                  </div>
+      <div class="col-md-6">
+        <label class="form-label">Affected Person (Optional)</label>
+        <select class="form-select">
+          <option selected disabled>Select person</option>
+          <option>John Smith</option>
+          <option>Mary Johnson</option>
+        </select>
+      </div>
+    </div>
 
-                  <!-- Assigned To & Scheduled Date -->
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label">Assigned To</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Name of assignee"
-                      />
-                    </div>
+    <!-- Reported By -->
+    <div class="mb-3">
+      <label class="form-label">Reported By <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" placeholder="Your name">
+    </div>
 
-                    <div class="col-md-6 mb-3">
-                      <label class="form-label">Scheduled Date</label>
-                      <div class="input-group">
-                        <input type="date" class="form-control" />
-                        <span class="input-group-text">
-                          <i class="ti ti-calendar"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+    <!-- Incident Details -->
+    <div class="mb-3">
+      <label class="form-label">Incident Details <span class="text-danger">*</span></label>
+      <textarea
+        class="form-control"
+        rows="4"
+        placeholder="Describe what happened, including location, persons involved, and any immediate actions taken..."
+      ></textarea>
+    </div>
 
-                  <!-- Estimated Cost -->
-                  <!-- <div class="mb-3">
-                    <label class="form-label">Estimated Cost</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Estimated cost in £"
-                    />
-                  </div> -->
-                </div>
+    <!-- Assigned Investigator -->
+    <div class="mb-3">
+      <label class="form-label">Assigned Investigator (Optional)</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Person or team to investigate"
+      />
+    </div>
 
-                <!-- ✅ FOOTER -->
-                <div class="modal-footer d-flex justify-content-end gap-2">
-                  <button
-                    type="button"
-                    class="btn btn-outline-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Cancel
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    Submit Form
-                  </button>
-                </div>
-              </div>
+  </div>
+
+  <!-- ✅ FOOTER -->
+  <div class="modal-footer border-0 pt-0">
+    <button type="button" class="btn btn-light px-4" data-bs-dismiss="modal">
+      Cancel
+    </button>
+    <button type="button" class="btn btn-success px-4">
+      Report Incident
+    </button>
+  </div>
+
+</div>
+
             </div>
           </div>
         </div>
@@ -1715,6 +1220,10 @@
           document.getElementById("sidebar-container").innerHTML = data;
         });
     </script>
+
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
 
     <script>
       // Sidebar toggle (collapse / expand)
@@ -1874,50 +1383,5 @@
         }
       });
     </script>
-
-      <!-- jQuery -->
-    <script src="../assets/js/jquery-3.7.1.min.js"></script>
-
-    <!-- Bootstrap Core JS -->
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Feather Icon JS -->
-    <script src="../assets/js/feather.min.js"></script>
-
-    <!-- Slimscroll JS -->
-    <script src="../assets/js/jquery.slimscroll.min.js"></script>
-
-    <!-- Chart JS -->
-    <script src="../assets/plugins/apexchart/apexcharts.min.js"></script>
-    <script src="../assets/plugins/apexchart/chart-data.js"></script>
-
-    <!-- Chart JS -->
-    <script src="../assets/plugins/chartjs/chart.min.js"></script>
-    <script src="../assets/plugins/chartjs/chart-data.js"></script>
-
-    <!-- Datetimepicker JS -->
-    <script src="../assets/js/moment.min.js"></script>
-    <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
-
-    <!-- Daterangepikcer JS -->
-    <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
-
-    <!-- Summernote JS -->
-    <script src="../assets/plugins/summernote/summernote-lite.min.js"></script>
-
-    <!-- Bootstrap Tagsinput JS -->
-    <script src="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
-
-    <!-- Select2 JS -->
-    <script src="../assets/plugins/select2/js/select2.min.js"></script>
-
-    <!-- Color Picker JS -->
-    <script src="../assets/plugins/@simonwep/pickr/pickr.es5.min.js"></script>
-
-    <!-- Custom JS -->
-    <script src="../assets/js/todo.js"></script>
-    <script src="../assets/js/theme-colorpicker.js"></script>
-    <script src="../assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   </body>
 </html>

@@ -34097,4 +34097,25 @@ th:hover .category-menu-btn {
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
+    /* Hide submenu by default */
+.submenu-list {
+  display: none;
+  padding-left: 40px;
+}
+
+/* Show when parent li has .open */
+.submenu.open .submenu-list {
+  display: block;
+}
+
+/* Arrow rotation */
+.menu-arrow {
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+.submenu.open .menu-arrow {
+  transform: rotate(90deg);
+}
+
+
 /*# sourceMappingURL=style.css.map */

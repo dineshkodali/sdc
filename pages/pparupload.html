@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>PPAR File Upload</title>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/favicon.png"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+
+    <!-- Feather CSS -->
+    <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+
+    <!-- Tabler Icons -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/tabler-icons/tabler-icons.min.css"
+    />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/fontawesome/css/all.min.css"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <style>
+      /* Sidebar scroll fix */
+      .sidebar-inner {
+        overflow-y: auto !important;
+        height: calc(100vh - 60px) !important;
+      }
+      /* Active menu */
+      .sidebar-menu ul li a.active {
+        background: #f5f5f5 !important;
+        color: #333 !important;
+      }
+      .sidebar-menu ul li a:hover {
+        background: #f0f0f0 !important;
+        color: #333 !important;
+      }
+
+      /* Mini sidebar collapse */
+      .mini-sidebar .sidebar {
+        width: 60px !important;
+      }
+
+      .mini-sidebar .sidebar .sidebar-menu ul li a span {
+        display: none !important; /* hide menu text */
+      }
+
+      .mini-sidebar .sidebar .sidebar-menu ul li a i {
+        margin-right: 0 !important;
+        font-size: 20px;
+      }
+
+      /* Card-style background for the whole tab bar */
+      #taskTabs {
+        background: #f5f7fa; /* light card background */
+        padding: 8px 10px;
+        border-radius: 10px;
+        display: inline-flex;
+        gap: 8px;
+        border: 1px solid #e3e6eb;
+      }
+
+      /* Individual tabs */
+      #taskTabs .nav-link {
+        border-radius: 8px;
+        color: #444;
+        font-weight: 500;
+        padding: 8px 14px;
+        border: none;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* Active tab (white card look) */
+      #taskTabs .nav-link.active {
+        background: #ffffff;
+        color: #000;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Hover effect */
+      #taskTabs .nav-link:hover {
+        background: #ffffff;
+      }
+
+      .card .table thead th {
+        background: #fff;
+        font-size: 12px;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .avatar {
+        border-radius: 50%;
+      }
+       .upload-btn {
+    background: #9ee7df;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 12px;
+    border: none;
+  }
+
+  .upload-btn:hover {
+    background: #7ddfd4;
+    color: white;
+  }
+
+  .file-format-list li {
+    margin-bottom: 8px;
+    color: #4b5563;
+    font-size: 14px;
+  }
+
+  .form-select.bg-light {
+    background-color: #f7f7f7;
+  }
+
+  input[type="file"] {
+    background-color: #f7f7f7;
+  }
+    </style>
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+
+    <div id="sidebar-container"></div>
+
+    <!-- /Sidebar -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <div class="header">
+        <div class="main-header">
+          <div class="header-left">
+            <a href="index.html" class="logo">
+              <img src="../assets/img/logo.svg" alt="Logo" />
+            </a>
+            <a href="index.html" class="dark-logo">
+              <img src="../assets/img/logo-white.svg" alt="Logo" />
+            </a>
+          </div>
+
+          <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+            <span class="bar-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </a>
+
+          <div class="header-user">
+            <div class="nav user-menu nav-list">
+              <div class="me-auto d-flex align-items-center" id="header-search">
+                <a
+                  id="toggle_btn"
+                  href="javascript:void(0);"
+                  class="btn btn-menubar me-1"
+                >
+                  <i class="ti ti-arrow-bar-to-left"></i>
+                </a>
+
+                <div class="input-group input-group-flat d-inline-flex me-1">
+                  <span class="input-icon-addon">
+                    <i class="ti ti-search"></i>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search in HRMS"
+                  />
+                  <span class="input-group-text">
+                    <kbd>CTRL + /</kbd>
+                  </span>
+                </div>
+
+                <a href="profile-settings.html" class="btn btn-menubar">
+                  <i class="ti ti-settings-cog"></i>
+                </a>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-menubar btnFullscreen">
+                  <i class="ti ti-maximize"></i>
+                </a>
+                <a href="chat.html" class="btn btn-menubar position-relative">
+                  <i class="ti ti-brand-hipchat"></i>
+                </a>
+                <a href="email.html" class="btn btn-menubar">
+                  <i class="ti ti-mail"></i>
+                </a>
+
+                <div class="dropdown profile-dropdown">
+                  <a
+                    href="#"
+                    class="dropdown-toggle d-flex align-items-center"
+                    data-bs-toggle="dropdown"
+                  >
+                    <span class="avatar avatar-sm online">
+                      <img
+                        src="../assets/img/profiles/avatar-12.jpg"
+                        class="rounded-circle"
+                        alt=""
+                      />
+                    </span>
+                  </a>
+                  <div class="dropdown-menu shadow-none">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="profile-settings.html"
+                      >Settings</a
+                    >
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Header -->
+
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          <!-- <div class="page-header">
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="page-title">Operations Hub / AIRE Tasks</h3>
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item">Operations Hub</li>
+                  <li class="breadcrumb-item active">AIRE Tasks</li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Breadcrumb -->
+          <div
+            class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
+          >
+            <div class="my-auto mb-2">
+              <h2 class="page-title">PPAR File Upload</h2>
+              <nav>
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item">
+                    <a href="index.html"><i class="ti ti-smart-home"></i></a>
+                  </li>
+                  <li class="breadcrumb-item">SU Data</li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Upload Files
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <!-- /Breadcrumb -->
+
+          <div class="row">
+            <!-- Total Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-info rounded-circle"
+                        ><i class="ti ti-building-skyscraper"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Total Tasks
+                      </p>
+                      <h4>16</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Total Plans -->
+
+            <!-- Total Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-danger rounded-circle"
+                        ><i class="ti ti-alert-triangle"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">Overdue</p>
+                      <h4>9</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Total Plans -->
+
+            <!-- Inactive Plans -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-primary rounded-circle"
+                        ><i class="ti ti-clock"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Due This Week
+                      </p>
+                      <h4>6</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Inactive Companies -->
+
+            <!-- No of Plans  -->
+            <div class="col-lg-3 col-md-6 d-flex">
+              <div class="card flex-fill">
+                <div
+                  class="card-body d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center overflow-hidden">
+                    <div>
+                      <span class="avatar avatar-lg bg-success rounded-circle"
+                        ><i class="ti ti-circle-check"></i
+                      ></span>
+                    </div>
+                    <div class="ms-2 overflow-hidden">
+                      <p class="fs-12 fw-medium mb-1 text-truncate">
+                        Completed
+                      </p>
+                      <h4>4</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /No of Plans -->
+          </div>
+
+          <!-- Filters Row -->
+          <!-- <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="mb-0">
+              Tasks Database <span class="text-muted">6 items</span>
+            </h4>
+
+            <div class="d-flex gap-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search tasks..."
+                style="width: 240px"
+              />
+              <button class="btn btn-light">
+                <i class="ti ti-filter"></i> Filter
+              </button>
+              <button class="btn btn-light">
+                <i class="ti ti-layout-grid"></i> View
+              </button>
+              <button class="btn btn-success">
+                <i class="ti ti-plus"></i> New
+              </button>
+            </div>
+          </div> -->
+
+          <div class="card shadow-sm rounded-4 p-4 mb-4">
+            <h5 class="fw-semibold mb-1">Upload PPAR File</h5>
+            <p class="text-muted mb-4">
+              Select a property and upload an Excel or CSV file containing room
+              and bedspace data
+            </p>
+
+            <!-- Property -->
+            <div class="mb-3">
+              <label class="form-label fw-medium">Property</label>
+              <select class="form-select rounded-3 bg-light">
+                <option selected>Victoria Suites</option>
+                <option>The Grand Hyatt</option>
+                <option>Royal Orchid Suites</option>
+                <option>Taj Gateway</option>
+                <option>Marriott Waterfront</option>
+                <option>Garden House</option>
+                <option>Crown Lodge</option>
+              </select>
+            </div>
+
+            <!-- File Upload -->
+            <div class="mb-2">
+              <label class="form-label fw-medium">PPAR File</label>
+              <div class="input-group">
+                <input type="file" class="form-control" />
+              </div>
+              <small class="text-muted"
+                >Accepted formats: .xlsx, .xls, .csv</small
+              >
+            </div>
+
+            <!-- Upload Button -->
+            <button class="btn bg-primary mt-4 upload-btn">
+              <i class="ti ti-upload me-2"></i> Upload and Process
+            </button>
+          </div>
+
+          <div class="card shadow-sm rounded-4 p-4">
+            <h5 class="fw-semibold mb-3">File Format Requirements</h5>
+            <p class="text-muted mb-3">
+              Your PPAR file should include the following columns
+              (case-insensitive):
+            </p>
+
+            <ul class="ps-3 file-format-list">
+              <li>
+                <strong>Floor or Floor Number:</strong> Numeric floor number
+              </li>
+              <li>
+                <strong>Room or Room Number:</strong> Room identifier (e.g.,
+                "101", "A1")
+              </li>
+              <li>
+                <strong>Room Type or Type:</strong> single, shared, dormitory,
+                or family
+              </li>
+              <li>
+                <strong>Beds or Bedspaces:</strong> Total number of beds in the
+                room
+              </li>
+              <li><strong>Kitchen (optional):</strong> Yes/No or True/False</li>
+              <li>
+                <strong>Bathroom (optional):</strong> Yes/No or True/False
+              </li>
+              <li>
+                <strong>Size (optional):</strong> Room size in square meters
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Wrapper -->
+    </div>
+
+    <!-- JS Files -->
+    <script>
+      fetch("../assets/includes/sidebar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("sidebar-container").innerHTML = data;
+        });
+    </script>
+
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+      // Sidebar toggle (collapse / expand)
+      $(document).on("click", "#toggle_btn", function () {
+        $("body").toggleClass("mini-sidebar");
+
+        if (!$("body").hasClass("mini-sidebar")) {
+          $(".subdrop + ul").slideDown();
+        } else {
+          $(".subdrop + ul").slideUp();
+        }
+
+        return false;
+      });
+    </script>
+
+    <script>
+      function toggleGenericMenu(event, btn) {
+        event.stopPropagation();
+
+        const dropdown = btn.closest("th").querySelector(".category-dropdown");
+        const isOpen = !dropdown.classList.contains("d-none");
+
+        // Close all first
+        document.querySelectorAll(".category-dropdown").forEach((menu) => {
+          menu.classList.add("d-none");
+        });
+
+        // Toggle only this one
+        if (!isOpen) {
+          dropdown.classList.remove("d-none");
+        }
+      }
+
+      /* Close all dropdowns on outside click */
+      document.addEventListener("click", function () {
+        document.querySelectorAll(".category-dropdown").forEach((menu) => {
+          menu.classList.add("d-none");
+        });
+      });
+
+      /* Prevent dropdown click from closing itself */
+      document.querySelectorAll(".category-dropdown").forEach((dd) => {
+        dd.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+      });
+    </script>
+
+    <script>
+      let genericSortState = {}; // keeps state per column
+
+      function toggleGenericSort(el) {
+        const th = el.closest("th");
+        const colIndex = Number(th.dataset.col);
+        if (Number.isNaN(colIndex)) return;
+
+        const table = document.querySelector("table");
+        const tbody = table.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+
+        // ✅ init only once
+        if (!(colIndex in genericSortState)) {
+          genericSortState[colIndex] = true; // first time: A → Z
+        }
+        const isAZ = genericSortState[colIndex];
+
+        rows.sort((a, b) => {
+          let A = a.children[colIndex].innerText.trim();
+          let B = b.children[colIndex].innerText.trim();
+
+          // Try date sort first
+          if (!isNaN(Date.parse(A)) && !isNaN(Date.parse(B))) {
+            return isAZ ? new Date(A) - new Date(B) : new Date(B) - new Date(A);
+          }
+
+          A = A.toUpperCase();
+          B = B.toUpperCase();
+          return isAZ ? A.localeCompare(B) : B.localeCompare(A);
+        });
+
+        rows.forEach((row) => tbody.appendChild(row));
+
+        // Update label text
+        const label = el.querySelector(".sort-label");
+        if (label) {
+          label.innerText = isAZ ? "Sort Z → A" : "Sort A → Z";
+        }
+
+        // ✅ flip state for next click
+        genericSortState[colIndex] = !isAZ;
+
+        const dropdown = th.querySelector(".category-dropdown");
+        if (dropdown) dropdown.classList.add("d-none");
+      }
+    </script>
+
+    <script>
+      function hideGenericColumn(el) {
+        const th = el.closest("th");
+        const colIndex = parseInt(th.dataset.col);
+        const table = document.querySelector("table");
+
+        // Hide header
+        th.style.display = "none";
+
+        // Hide column cells
+        table.querySelectorAll("tbody tr").forEach((row) => {
+          row.children[colIndex].style.display = "none";
+        });
+      }
+    </script>
+
+    <script>
+      let isCategorySortedAZ = true; // default state
+
+      function toggleCategorySort() {
+        const table = document.querySelector("table");
+        const tbody = table.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+
+        rows.sort((a, b) => {
+          const catA = a.children[2].innerText.trim().toUpperCase(); // Category column
+          const catB = b.children[2].innerText.trim().toUpperCase();
+
+          return isCategorySortedAZ
+            ? catA.localeCompare(catB) // A → Z
+            : catB.localeCompare(catA); // Z → A
+        });
+
+        // Re-append rows
+        rows.forEach((row) => tbody.appendChild(row));
+
+        // Toggle label text
+        const label = document.getElementById("sortLabel");
+        label.innerText = isCategorySortedAZ ? "Sort Z → A" : "Sort A → Z";
+
+        // Flip state
+        isCategorySortedAZ = !isCategorySortedAZ;
+
+        // Close dropdown
+        document.getElementById("categoryDropdown").classList.add("d-none");
+      }
+    </script>
+    <script>
+      function toggleCategoryMenu(event) {
+        event.stopPropagation();
+        const dropdown = document.getElementById("categoryDropdown");
+        dropdown.classList.toggle("d-none");
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function () {
+        const dd = document.getElementById("categoryDropdown");
+        if (dd && !dd.classList.contains("d-none")) {
+          dd.classList.add("d-none");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1609,12 +1609,6 @@
                   <span>Bookings</span>
                 </a>
               </li>
-              <li>
-                <a href="inspections.html">
-                  <i class="ti ti-clipboard-check"></i>
-                  <span>Inspections</span>
-                </a>
-              </li>
 
               <li class="menu-title">
                 <span>CONTACTS</span>
@@ -1660,11 +1654,49 @@
                 </a>
               </li>
               <li>
-                <a href="safeguarding.html">
-                  <i class="ti ti-activity"></i>
-                  <span>Safeguarding</span>
+                <a href="inspections.html">
+                  <i class="ti ti-clipboard-check"></i>
+                  <span>Inspections</span>
                 </a>
               </li>
+              <li class="submenu">
+                <a href="javascript:void(0);" class="submenu-toggle">
+                  <i class="ti ti-shield"></i>
+                  <span>Safeguarding</span>
+                  <span class="menu-arrow"></span>
+                </a>
+
+                <ul class="submenu-list">
+                  <li>
+                    <a href="safeguarding.html">
+                      <i class="ti ti-user-plus"></i>
+                      Referrals
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="risk-assessment.html">
+                      <i class="ti ti-alert-circle"></i>
+                      Risk Assessment
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="vulnerable-users.html">
+                      <i class="ti ti-heart"></i>
+                      Vulnerable Users
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="multi-agency.html">
+                      <i class="ti ti-network"></i>
+                      Multi-Agency
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
               <li>
                 <a href="migranthelp.html">
                   <i class="ti ti-target"></i>
@@ -7888,5 +7920,22 @@
     <!-- Custom JS -->
     <script src="../assets/js/theme-colorpicker.js"></script>
     <script src="../assets/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".submenu-toggle").forEach((toggle) => {
+          toggle.addEventListener("click", function () {
+            const parent = this.closest(".submenu");
+
+            // Close other open submenus
+            document.querySelectorAll(".submenu").forEach((item) => {
+              if (item !== parent) item.classList.remove("open");
+            });
+
+            // Toggle current
+            parent.classList.toggle("open");
+          });
+        });
+      });
+    </script>
   </body>
 </html>

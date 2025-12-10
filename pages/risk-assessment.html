@@ -6,19 +6,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
-    <title>Budget Management</title>
+    <title>Risk Assessments</title>
 
     <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="../assets/img/favicon.png"
-    />
+    <link rel="shortcut icon" href="../assets/img/favicon.png" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 
-    <!-- Feather CSS -->
+    <!-- Feather Icons -->
     <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
 
     <!-- Tabler Icons -->
@@ -35,84 +31,92 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-
-    <style>
-      /* Sidebar scroll fix */
-      /* .sidebar-inner {
-        overflow-y: auto !important;
-        height: calc(100vh - 60px) !important;
-      }
-      
-      .sidebar-menu ul li a.active {
-        background: #f5f5f5 !important;
-        color: #333 !important;
-      }
-      .sidebar-menu ul li a:hover {
-        background: #f0f0f0 !important;
-        color: #333 !important;
-      } */
-
-      /* Mini sidebar collapse */
-      /* .mini-sidebar .sidebar {
-        width: 60px !important;
-      }
-
-      .mini-sidebar .sidebar .sidebar-menu ul li a span {
-        display: none !important;
-      }
-
-      .mini-sidebar .sidebar .sidebar-menu ul li a i {
-        margin-right: 0 !important;
-        font-size: 20px;
-      } */
-
-      /* Card-style background for the whole tab bar */
-      #taskTabs {
-        background: #f5f7fa; /* light card background */
-        padding: 8px 10px;
-        border-radius: 10px;
-        display: inline-flex;
-        gap: 8px;
-        border: 1px solid #e3e6eb;
-      }
-
-      /* Individual tabs */
-      #taskTabs .nav-link {
-        border-radius: 8px;
-        color: #444;
-        font-weight: 500;
-        padding: 8px 14px;
-        border: none;
-        background: transparent;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      /* Active tab (white card look) */
-      #taskTabs .nav-link.active {
-        background: #ffffff;
-        color: #000;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-      }
-
-      /* Hover effect */
-      #taskTabs .nav-link:hover {
-        background: #ffffff;
-      }
-
-      .card .table thead th {
-        background: #fff;
-        font-size: 12px;
-        color: #6b7280;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-      .avatar {
-        border-radius: 50%;
-      }
-    </style>
   </head>
+
+  <style>
+    /* .sidebar-inner {
+      overflow-y: auto !important;
+      height: calc(100vh - 60px) !important;
+    }
+
+    
+    .sidebar-menu ul li a.active {
+      background: #f5f5f5 !important;
+      color: #333 !important;
+    }
+
+    .sidebar-menu ul li a:hover {
+      background: #f0f0f0 !important;
+      color: #333 !important;
+    } */
+    /* Mini sidebar collapse */
+    /* .mini-sidebar .sidebar {
+      width: 60px !important;
+    }
+
+    .mini-sidebar .sidebar .sidebar-menu ul li a span {
+      display: none !important; 
+    }
+
+    .mini-sidebar .sidebar .sidebar-menu ul li a i {
+      margin-right: 0 !important;
+      font-size: 20px;
+    } */
+
+    /* Card-style background for the whole tab bar */
+    #taskTabs {
+      background: #f5f7fa; /* light card background */
+      padding: 8px 10px;
+      border-radius: 10px;
+      display: inline-flex;
+      gap: 8px;
+      border: 1px solid #e3e6eb;
+    }
+
+    /* Individual tabs */
+    #taskTabs .nav-link {
+      border-radius: 8px;
+      color: #444;
+      font-weight: 500;
+      padding: 8px 14px;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Active tab (white card look) */
+    #taskTabs .nav-link.active {
+      background: #ffffff;
+      color: #000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Hover effect */
+    #taskTabs .nav-link:hover {
+      background: #ffffff;
+    }
+    .card .table thead th {
+      background: #fff;
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .avatar {
+      /* width: 36px;
+      height: 36px; */
+      border-radius: 50%;
+      /* display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 13px;
+      box-shadow: none !important;
+      border: none !important; */
+    }
+  </style>
 
   <body>
     <!-- Sidebar -->
@@ -134,11 +138,9 @@
           </div>
 
           <a id="mobile_btn" class="mobile_btn" href="#sidebar">
-            <span class="bar-icon">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
+            <span class="bar-icon"
+              ><span></span><span></span><span></span
+            ></span>
           </a>
 
           <div class="header-user">
@@ -152,18 +154,16 @@
                   <i class="ti ti-arrow-bar-to-left"></i>
                 </a>
 
-                <div class="input-group input-group-flat d-inline-flex me-1">
-                  <span class="input-icon-addon">
-                    <i class="ti ti-search"></i>
-                  </span>
+                <div class="input-group input-group-flat me-1">
+                  <span class="input-icon-addon"
+                    ><i class="ti ti-search"></i
+                  ></span>
                   <input
                     type="text"
                     class="form-control"
                     placeholder="Search in HRMS"
                   />
-                  <span class="input-group-text">
-                    <kbd>CTRL + /</kbd>
-                  </span>
+                  <span class="input-group-text"><kbd>CTRL + /</kbd></span>
                 </div>
 
                 <a href="profile-settings.html" class="btn btn-menubar">
@@ -177,22 +177,18 @@
                 </a>
                 <a href="chat.html" class="btn btn-menubar position-relative">
                   <i class="ti ti-brand-hipchat"></i>
+                  <span class="badge bg-info rounded-pill header-badge">5</span>
                 </a>
                 <a href="email.html" class="btn btn-menubar">
                   <i class="ti ti-mail"></i>
                 </a>
 
                 <div class="dropdown profile-dropdown">
-                  <a
-                    href="#"
-                    class="dropdown-toggle d-flex align-items-center"
-                    data-bs-toggle="dropdown"
-                  >
+                  <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                     <span class="avatar avatar-sm online">
                       <img
                         src="../assets/img/profiles/avatar-12.jpg"
                         class="rounded-circle"
-                        alt=""
                       />
                     </span>
                   </a>
@@ -666,19 +662,16 @@
 
       <!-- /Sidebar -->
 
-      <!-- Page Wrapper -->
+      <!-- Page Content -->
       <div class="page-wrapper">
         <div class="content container-fluid">
+          <!-- Page Header -->
           <!-- <div class="page-header">
-            <div class="row align-items-center">
-              <div class="col">
-                <h3 class="page-title">Operations Hub / AIRE Tasks</h3>
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item">Operations Hub</li>
-                  <li class="breadcrumb-item active">AIRE Tasks</li>
-                </ul>
-              </div>
-            </div>
+            <h3 class="page-title">Operations Hub / Safeguarding</h3>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item">Operations Hub</li>
+              <li class="breadcrumb-item active">Safeguarding</li>
+            </ul>
           </div> -->
 
           <!-- Breadcrumb -->
@@ -686,15 +679,16 @@
             class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3"
           >
             <div class="my-auto mb-2">
-              <h2 class="page-title">Budget Management</h2>
+              <h2 class="page-title">Risk Assessments</h2>
               <nav>
                 <ol class="breadcrumb mb-0">
                   <li class="breadcrumb-item">
                     <a href="index.html"><i class="ti ti-smart-home"></i></a>
                   </li>
-                  <li class="breadcrumb-item">Finance</li>
+                  <li class="breadcrumb-item">Operations Hub</li>
+                   <li class="breadcrumb-item">Safeguarding</li>
                   <li class="breadcrumb-item active" aria-current="page">
-                    Budget Management
+                  Risk Assessments
                   </li>
                 </ol>
               </nav>
@@ -708,13 +702,14 @@
                   data-bs-toggle="modal"
                   data-bs-target="#taskModal"
                   class="btn btn-primary d-flex align-items-center"
-                  ><i class="ti ti-plus me-2"></i>Add Task</a
+                  ><i class="ti ti-plus me-2"></i>New Referral</a
                 >
               </div>
             </div>
           </div>
           <!-- /Breadcrumb -->
 
+          <!-- Metrics Cards -->
           <div class="row">
             <!-- Total Plans -->
             <div class="col-lg-3 col-md-6 d-flex">
@@ -725,14 +720,14 @@
                   <div class="d-flex align-items-center overflow-hidden">
                     <div>
                       <span class="avatar avatar-lg bg-info rounded-circle"
-                        ><i class="ti ti-building-skyscraper"></i
+                        ><i class="ti ti-user-check"></i
                       ></span>
                     </div>
                     <div class="ms-2 overflow-hidden">
                       <p class="fs-12 fw-medium mb-1 text-truncate">
-                        Total Tasks
+                        New Referrals
                       </p>
-                      <h4>16</h4>
+                      <h4>12</h4>
                     </div>
                   </div>
                 </div>
@@ -748,13 +743,13 @@
                 >
                   <div class="d-flex align-items-center overflow-hidden">
                     <div>
-                      <span class="avatar avatar-lg bg-danger rounded-circle"
-                        ><i class="ti ti-alert-triangle"></i
+                      <span class="avatar avatar-lg bg-primary rounded-circle"
+                        ><i class="ti ti-user-check"></i
                       ></span>
                     </div>
                     <div class="ms-2 overflow-hidden">
-                      <p class="fs-12 fw-medium mb-1 text-truncate">Overdue</p>
-                      <h4>9</h4>
+                      <p class="fs-12 fw-medium mb-1 text-truncate">Under Review</p>
+                      <h4>4</h4>
                     </div>
                   </div>
                 </div>
@@ -770,15 +765,15 @@
                 >
                   <div class="d-flex align-items-center overflow-hidden">
                     <div>
-                      <span class="avatar avatar-lg bg-primary rounded-circle"
-                        ><i class="ti ti-clock"></i
+                      <span class="avatar avatar-lg bg-pink rounded-circle"
+                        ><i class="ti ti-user-check"></i
                       ></span>
                     </div>
                     <div class="ms-2 overflow-hidden">
                       <p class="fs-12 fw-medium mb-1 text-truncate">
-                        Due This Week
+                        Escalated
                       </p>
-                      <h4>6</h4>
+                      <h4>3</h4>
                     </div>
                   </div>
                 </div>
@@ -795,14 +790,14 @@
                   <div class="d-flex align-items-center overflow-hidden">
                     <div>
                       <span class="avatar avatar-lg bg-success rounded-circle"
-                        ><i class="ti ti-circle-check"></i
+                        ><i class="ti ti-user-check"></i
                       ></span>
                     </div>
                     <div class="ms-2 overflow-hidden">
                       <p class="fs-12 fw-medium mb-1 text-truncate">
-                        Completed
+                        Resolved
                       </p>
-                      <h4>4</h4>
+                      <h4>5</h4>
                     </div>
                   </div>
                 </div>
@@ -810,31 +805,9 @@
             </div>
             <!-- /No of Plans -->
           </div>
+          <!-- Metrics Cards -->
 
-          <!-- Filters Row -->
-          <!-- <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="mb-0">
-              Tasks Database <span class="text-muted">6 items</span>
-            </h4>
-
-            <div class="d-flex gap-2">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search tasks..."
-                style="width: 240px"
-              />
-              <button class="btn btn-light">
-                <i class="ti ti-filter"></i> Filter
-              </button>
-              <button class="btn btn-light">
-                <i class="ti ti-layout-grid"></i> View
-              </button>
-              <button class="btn btn-success">
-                <i class="ti ti-plus"></i> New
-              </button>
-            </div>
-          </div> -->
+          
 
           <div class="card shadow-sm rounded-4 p-3">
             <!-- ✅ HEADER ROW -->
@@ -842,7 +815,7 @@
               class="d-flex align-items-center justify-content-between flex-wrap gap-3 border-bottom pb-3"
             >
               <div>
-                <h5 class="mb-0 fw-semibold">All Tasks</h5>
+                <h5 class="mb-0 fw-semibold">All Work Orders</h5>
                 <small class="text-muted">120 total records</small>
               </div>
 
@@ -912,7 +885,7 @@
                   data-bs-target="#taskModal"
                   class="btn btn-primary d-flex align-items-center gap-2"
                 >
-                  <i class="ti ti-upload"></i> Create Task
+                  <i class="ti ti-upload"></i> Create Referral
                 </a>
               </div>
             </div>
@@ -955,7 +928,7 @@
                 </ul>
               </div>
               <!--  ALL PROPERTIES -->
-              <div class="dropdown">
+              <!-- <div class="dropdown">
                 <button
                   class="btn btn-light border dropdown-toggle"
                   type="button"
@@ -970,7 +943,7 @@
                   <li><a class="dropdown-item" href="#">Crown Lodge</a></li>
                   <li><a class="dropdown-item" href="#">Trident Elite</a></li>
                 </ul>
-              </div>
+              </div> -->
             </div>
 
             <!-- ✅ TABLE (NOW INSIDE SAME CARD) -->
@@ -1290,19 +1263,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Budget Management
+                        Risk Assessments
                       </span>
                     </td>
 
                     <td>
-                      <strong>BMT-2025-</strong><br />
+                      <strong>RAST-2025-</strong><br />
                       <small class="text-muted">e5198a6e</small>
                     </td>
 
                     <td>
-                      <strong>Passport & VISA Verification</strong><br />
+                      <strong>Vulnerable Resident Safety Concern</strong><br />
                       <small class="text-muted">
-                        Operation work required as per inspection report.
+                        Safeguarding work required as per inspection report.
                       </small>
                     </td>
 
@@ -1328,19 +1301,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Budget Management
+                        Risk Assessments
                       </span>
                     </td>
 
                     <td>
-                      <strong>BMT-2025-</strong><br />
+                      <strong>RAST-2025-</strong><br />
                       <small>c51690eb</small>
                     </td>
 
                     <td>
-                      <strong>Resident Data Update</strong><br />
+                      <strong>Workplace Harassment Case</strong><br />
                       <small class="text-muted">
-                        Operation work required as per inspection report.
+                        Safeguarding work required as per inspection report.
                       </small>
                     </td>
 
@@ -1362,19 +1335,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Budget Management
+                        Risk Assessments
                       </span>
                     </td>
 
                     <td>
-                      <strong>BMT-2025-</strong><br />
+                      <strong>RAST-2025-</strong><br />
                       <small>cda9bd4e</small>
                     </td>
 
                     <td>
-                      <strong>AIRE Annual Reporting</strong><br />
+                      <strong>Routine Welfare Check</strong><br />
                       <small class="text-muted">
-                        Operation work required as per inspection report.
+                        Safeguarding work required as per inspection report.
                       </small>
                     </td>
 
@@ -1394,7 +1367,7 @@
                     </td>
                   </tr>
 
-                  <!-- NEW ROWS ADDED -->
+                  <!-- ✅ NEW ROWS ADDED -->
 
                   <tr>
                     <td><input class="form-check-input" type="checkbox" /></td>
@@ -1402,19 +1375,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Budget Management
+                        Risk Assessments
                       </span>
                     </td>
 
                     <td>
-                      <strong>BMT-2025-</strong><br />
+                      <strong>RAST-2025-</strong><br />
                       <small>2b9c6ef8</small>
                     </td>
 
                     <td>
-                      <strong>Immigrant Status Validation</strong><br />
+                      <strong>Domestic Risk Concern</strong><br />
                       <small class="text-muted">
-                        Operation work required as per inspection report.
+                        Safeguarding work required as per inspection report.
                       </small>
                     </td>
 
@@ -1440,19 +1413,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Budget Management
+                        Risk Assessments
                       </span>
                     </td>
 
                     <td>
-                      <strong>BMT-2025-</strong><br />
+                      <strong>RAST-2025-</strong><br />
                       <small>f3c0c417</small>
                     </td>
 
                     <td>
-                      <strong>Address Verification Support</strong><br />
+                      <strong>Behavioural Conflict - Staff Member</strong><br />
                       <small class="text-muted">
-                        Operation work required as per inspection report.
+                        Safeguarding work required as per inspection report.
                       </small>
                     </td>
 
@@ -1474,19 +1447,19 @@
                       <span
                         class="badge rounded-pill border text-warning bg-light"
                       >
-                        Budget Management
+                        Risk Assessments
                       </span>
                     </td>
 
                     <td>
-                      <strong>BMT-2025-</strong><br />
+                      <strong>RAST-2025-</strong><br />
                       <small>ca81318f</small>
                     </td>
 
                     <td>
-                      <strong>Residency Renewal Assistance</strong><br />
+                      <strong>Resident Support Follow-Up</strong><br />
                       <small class="text-muted">
-                        Operation work required as per inspection report.
+                        Safeguarding work required as per inspection report.
                       </small>
                     </td>
 
@@ -1506,43 +1479,11 @@
                     </td>
                   </tr>
 
-                  <tr>
-                    <td><input class="form-check-input" type="checkbox" /></td>
-                    <td>
-                      <span
-                        class="badge rounded-pill border text-warning bg-light"
-                      >
-                        Budget Management
-                      </span>
-                    </td>
-
-                    <td>
-                      <strong>BMT-2025-</strong><br />
-                      <small>576b7ce4</small>
-                    </td>
-
-                    <td>
-                      <strong>Fix extractor fan</strong><br />
-                      <small class="text-muted">
-                        Maintenance work required as per inspection report.
-                      </small>
-                    </td>
-
-                    <td><span class="text-success">● Low</span></td>
-                    <td><span class="text-warning">● Pending</span></td>
-
-                    <td class="text-muted">Unassigned</td>
-                    <td>Apr 24, 2025</td>
-
-                    <td>
-                      <i class="ti ti-edit me-2"></i>
-                      <i class="ti ti-trash"></i>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+
 
           <!-- /Task Modal -->
           <div class="modal fade" id="taskModal" tabindex="-1">
@@ -1553,7 +1494,7 @@
                 <!-- ✅ HEADER -->
                 <div class="modal-header">
                   <div>
-                    <h4 class="modal-title">Budget Management</h4>
+                    <h4 class="modal-title">Risk Assessments</h4>
                     <p class="text-muted mb-0">
                       Standard form for reporting tasks
                     </p>
@@ -1714,6 +1655,77 @@
           document.getElementById("sidebar-container").innerHTML = data;
         });
     </script>
+
+    <!-- Case View Modal -->
+    <div class="modal fade" id="caseModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Case Details</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div id="caseContent">
+              <!-- Auto-filled content goes here -->
+              Loading...
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button class="btn btn-primary">Edit Case</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // When clicking a table row OR edit icon → open modal
+      $(document).on("click", "table tbody tr, .ti-edit", function (e) {
+        e.stopPropagation(); // Avoid double triggers
+
+        const row = $(this).closest("tr");
+        const caseTitle = row.find("td:nth-child(1)").text();
+        const opened = row.find("td:nth-child(2)").text();
+        const category = row.find("td:nth-child(3)").text();
+        const location = row.find("td:nth-child(4)").text();
+        const reportedBy = row.find("td:nth-child(5)").text();
+        const status = row.find("td:nth-child(6)").text();
+        const action = row.find("td:nth-child(7)").text();
+        const dueDate = row.find("td:nth-child(8)").text();
+        const closed = row.find("td:nth-child(9)").text();
+
+        // Fill modal content
+        $("#caseContent").html(`
+      <div class="row g-3">
+        <div class="col-md-6"><strong>Case Title:</strong> ${caseTitle}</div>
+        <div class="col-md-6"><strong>Date Opened:</strong> ${opened}</div>
+        
+        <div class="col-md-6"><strong>Category:</strong> ${category}</div>
+        <div class="col-md-6"><strong>Location:</strong> ${location}</div>
+
+        <div class="col-md-6"><strong>Reported By:</strong> ${reportedBy}</div>
+        <div class="col-md-6"><strong>Status:</strong> ${status}</div>
+
+        <div class="col-md-6"><strong>Action:</strong> ${action}</div>
+        <div class="col-md-6"><strong>Due Date:</strong> ${dueDate}</div>
+
+        <div class="col-md-12"><strong>Closed:</strong> ${closed}</div>
+      </div>
+    `);
+
+        // Show popup
+        const modal = new bootstrap.Modal(document.getElementById("caseModal"));
+        modal.show();
+      });
+    </script>
+
     <script>
       // Sidebar toggle (collapse / expand)
       $(document).on("click", "#toggle_btn", function () {

@@ -138,6 +138,44 @@
         margin-left: 8px;
         width: 25%;
       }
+
+      .tabs-compact {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background: #f3f4f6; /* soft grey background */
+        padding: 4px 6px 4px 2px;
+        border-radius: 8px; /* rounded capsule */
+        display: inline-flex;
+      }
+
+      /* Reduce space between tabs */
+      .tabs-compact .nav-pills {
+        gap: 0px !important; /* exact spacing seen in screenshot */
+      }
+
+      /* Inactive tabs (look flat + text only) */
+      .tabs-compact .nav-link {
+        padding: 10px 10px 10px 10px !important; /* compact padding */
+        border-radius: 4px !important;
+        background: transparent !important;
+        color: #6b7280 !important; /* muted grey text */
+        font-weight: 500;
+        /* height: 30px; */
+      }
+
+      /* Active tab (white rounded pill) */
+      .tabs-compact .nav-link.active {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: 0 0 0 1px #e5e7eb inset; /* subtle border */
+        /* height: 30px; */
+        padding: 10px 10px 10px 10px !important; /* compact padding */
+      }
+
+      /* Hover effect (soft fade) */
+      .tabs-compact .nav-link:hover {
+        background: #ffffff70 !important;
+      }
     </style>
   </head>
 
@@ -233,7 +271,7 @@
       </div>
       <!-- /Header -->
 
-       <!-- Sidebar -->
+      <!-- Sidebar -->
 
       <div class="sidebar" id="sidebar">
         <div class="sidebar-logo">
@@ -822,7 +860,7 @@
             </li>
           </ul> -->
 
-          <div class="property-tabs-wrapper">
+          <div class="tabs-compact">
             <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
               <li class="nav-item" role="presentation">
                 <button
@@ -857,7 +895,7 @@
               id="overview"
               role="tabpanel"
             >
-              <div class="card p-4 ">
+              <div class="card p-4">
                 <!-- Header -->
                 <h4 class="mb-1">Recent Move-Ins (Last 30 Days)</h4>
                 <p class="text-muted mb-4">
@@ -878,7 +916,7 @@
 
             <!-- ✅ MAINTENANCE TAB (Recent Move-Outs) -->
             <div class="tab-pane fade" id="maintenance" role="tabpanel">
-              <div class="card p-4 ">
+              <div class="card p-4">
                 <!-- Header -->
                 <h4 class="mb-1">Recent Move-Outs (Last 30 Days)</h4>
                 <p class="text-muted mb-4">
@@ -1420,7 +1458,7 @@
       });
     </script>
 
-      <!-- jQuery -->
+    <!-- jQuery -->
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
     <!-- Bootstrap Core JS -->

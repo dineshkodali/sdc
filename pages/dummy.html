@@ -1,581 +1,80 @@
 <div
-  class="shadcn-card rounded-2xl bg-card text-card-foreground transition-all duration-200"
-  data-testid="card-overall-trends"
-  style="box-shadow: var(--ios-shadow)"
+  role="tablist"
+  aria-orientation="horizontal"
+  class="items-center justify-center text-muted-foreground hidden md:inline-flex h-auto p-1 bg-gray-100 dark:bg-gray-800 rounded-lg w-fit"
+  tabindex="0"
+  data-orientation="horizontal"
+  style="outline: none"
 >
-  <div
-    class="space-y-1.5 p-6 flex flex-row items-start justify-between gap-4 pb-2"
+  <button
+    type="button"
+    role="tab"
+    aria-selected="false"
+    aria-controls="radix-:rod:-content-all"
+    data-state="inactive"
+    id="radix-:rod:-trigger-all"
+    class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground data-[state=active]:shadow-sm px-4 py-2 text-sm rounded-md data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700"
+    data-testid="tab-all"
+    tabindex="-1"
+    data-orientation="horizontal"
+    data-radix-collection-item=""
   >
-    <div class="flex items-start gap-3">
-      <div
-        class="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/30"
-        style="box-shadow: rgba(59, 130, 246, 0.15) 0px 2px 8px"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-trending-up h-5 w-5 text-blue-600 dark:text-blue-400"
-        >
-          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-          <polyline points="16 7 22 7 22 13"></polyline>
-        </svg>
-      </div>
-      <div>
-        <div class="tracking-tight text-base font-semibold">Overall Trends</div>
-        <p class="text-sm text-muted-foreground">Incidents &amp; Resolutions</p>
-      </div>
-    </div>
-    <button
-      type="button"
-      role="combobox"
-      aria-controls="radix-:r8:"
-      aria-expanded="false"
-      aria-autocomplete="none"
-      dir="ltr"
-      data-state="closed"
-      class="flex items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 w-[130px] h-9"
-      data-testid="select-trends-period"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="lucide lucide-calendar h-4 w-4 mr-2 text-muted-foreground"
-      >
-        <path d="M8 2v4"></path>
-        <path d="M16 2v4"></path>
-        <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-        <path d="M3 10h18"></path></svg><span style="pointer-events: none">This Year</span
-      ><svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="lucide lucide-chevron-down h-4 w-4 opacity-50"
-        aria-hidden="true"
-      >
-        <path d="m6 9 6 6 6-6"></path>
-      </svg>
-    </button>
-  </div>
-  <div class="p-6 pt-0">
-    <div class="flex items-center justify-center gap-8 mb-4">
-      <div class="flex items-center gap-2.5">
-        <div
-          class="w-3 h-3 rounded-full bg-blue-500"
-          style="box-shadow: rgba(59, 130, 246, 0.5) 0px 2px 6px"
-        ></div>
-        <span class="text-sm font-medium text-foreground">Incidents</span>
-      </div>
-      <div class="flex items-center gap-2.5">
-        <div
-          class="w-3 h-3 rounded-full bg-emerald-500"
-          style="box-shadow: rgba(16, 185, 129, 0.5) 0px 2px 6px"
-        ></div>
-        <span class="text-sm font-medium text-foreground">Resolved</span>
-      </div>
-    </div>
-    <div class="h-64">
-      <div
-        class="recharts-responsive-container"
-        style="width: 100%; height: 100%; min-width: 0px"
-      >
-        <div
-          class="recharts-wrapper"
-          style="
-            position: relative;
-            cursor: default;
-            width: 100%;
-            height: 100%;
-            max-height: 256px;
-            max-width: 1120px;
-          "
-        >
-          <svg
-            class="recharts-surface"
-            width="1120"
-            height="256"
-            viewBox="0 0 1120 256"
-            style="width: 100%; height: 100%"
-          >
-            <title></title>
-            <desc></desc>
-            <defs>
-              <clipPath id="recharts1-clip">
-                <rect x="35" y="10" height="216" width="1075"></rect>
-              </clipPath>
-            </defs>
-            <defs>
-              <linearGradient
-                id="incidentsGradient"
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="1"
-              >
-                <stop
-                  offset="0%"
-                  stop-color="#3B82F6"
-                  stop-opacity="0.25"
-                ></stop>
-                <stop
-                  offset="100%"
-                  stop-color="#3B82F6"
-                  stop-opacity="0.02"
-                ></stop>
-              </linearGradient>
-              <linearGradient id="resolvedGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="0%"
-                  stop-color="#10B981"
-                  stop-opacity="0.25"
-                ></stop>
-                <stop
-                  offset="100%"
-                  stop-color="#10B981"
-                  stop-opacity="0.02"
-                ></stop>
-              </linearGradient>
-            </defs>
-            <g class="recharts-cartesian-grid">
-              <g class="recharts-cartesian-grid-horizontal">
-                <line
-                  stroke-dasharray="3 3"
-                  stroke="hsl(var(--border))"
-                  opacity="0.4"
-                  fill="none"
-                  x="35"
-                  y="10"
-                  width="1075"
-                  height="216"
-                  x1="35"
-                  y1="226"
-                  x2="1110"
-                  y2="226"
-                ></line>
-                <line
-                  stroke-dasharray="3 3"
-                  stroke="hsl(var(--border))"
-                  opacity="0.4"
-                  fill="none"
-                  x="35"
-                  y="10"
-                  width="1075"
-                  height="216"
-                  x1="35"
-                  y1="172"
-                  x2="1110"
-                  y2="172"
-                ></line>
-                <line
-                  stroke-dasharray="3 3"
-                  stroke="hsl(var(--border))"
-                  opacity="0.4"
-                  fill="none"
-                  x="35"
-                  y="10"
-                  width="1075"
-                  height="216"
-                  x1="35"
-                  y1="118"
-                  x2="1110"
-                  y2="118"
-                ></line>
-                <line
-                  stroke-dasharray="3 3"
-                  stroke="hsl(var(--border))"
-                  opacity="0.4"
-                  fill="none"
-                  x="35"
-                  y="10"
-                  width="1075"
-                  height="216"
-                  x1="35"
-                  y1="64"
-                  x2="1110"
-                  y2="64"
-                ></line>
-                <line
-                  stroke-dasharray="3 3"
-                  stroke="hsl(var(--border))"
-                  opacity="0.4"
-                  fill="none"
-                  x="35"
-                  y="10"
-                  width="1075"
-                  height="216"
-                  x1="35"
-                  y1="10"
-                  x2="1110"
-                  y2="10"
-                ></line>
-              </g>
-            </g>
-            <g
-              class="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
-            >
-              <g class="recharts-cartesian-axis-ticks">
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="35"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="35" dy="0.71em">Jan</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="132.72727272727275"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="132.72727272727275" dy="0.71em">Feb</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="230.45454545454547"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="230.45454545454547" dy="0.71em">Mar</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="328.1818181818182"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="328.1818181818182" dy="0.71em">Apr</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="425.90909090909093"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="425.90909090909093" dy="0.71em">May</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="523.6363636363637"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="523.6363636363637" dy="0.71em">Jun</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="621.3636363636364"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="621.3636363636364" dy="0.71em">Jul</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="719.0909090909091"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="719.0909090909091" dy="0.71em">Aug</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="816.8181818181819"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="816.8181818181819" dy="0.71em">Sep</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="914.5454545454546"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="914.5454545454546" dy="0.71em">Oct</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="1012.2727272727274"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="1012.2727272727274" dy="0.71em">Nov</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="bottom"
-                    width="1075"
-                    height="30"
-                    stroke="none"
-                    font-size="12"
-                    x="1109.0062494277954"
-                    y="244"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="middle"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="1109.0062494277954" dy="0.71em">Dec</tspan>
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g
-              class="recharts-layer recharts-cartesian-axis recharts-yAxis yAxis"
-            >
-              <g class="recharts-cartesian-axis-ticks">
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="left"
-                    width="35"
-                    height="216"
-                    stroke="none"
-                    font-size="12"
-                    x="27"
-                    y="226"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="end"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="27" dy="0.355em">0</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="left"
-                    width="35"
-                    height="216"
-                    stroke="none"
-                    font-size="12"
-                    x="27"
-                    y="172"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="end"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="27" dy="0.355em">3</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="left"
-                    width="35"
-                    height="216"
-                    stroke="none"
-                    font-size="12"
-                    x="27"
-                    y="118"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="end"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="27" dy="0.355em">6</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="left"
-                    width="35"
-                    height="216"
-                    stroke="none"
-                    font-size="12"
-                    x="27"
-                    y="64"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="end"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="27" dy="0.355em">9</tspan>
-                  </text>
-                </g>
-                <g class="recharts-layer recharts-cartesian-axis-tick">
-                  <text
-                    orientation="left"
-                    width="35"
-                    height="216"
-                    stroke="none"
-                    font-size="12"
-                    x="27"
-                    y="10"
-                    class="recharts-text recharts-cartesian-axis-tick-value"
-                    text-anchor="end"
-                    fill="hsl(var(--muted-foreground))"
-                  >
-                    <tspan x="27" dy="0.355em">12</tspan>
-                  </text>
-                </g>
-              </g>
-            </g>
-            <g class="recharts-layer recharts-area">
-              <g class="recharts-layer">
-                <path
-                  stroke-width="2.5"
-                  fill="url(#incidentsGradient)"
-                  fill-opacity="0.6"
-                  width="1075"
-                  height="216"
-                  stroke="none"
-                  class="recharts-curve recharts-area-area"
-                  d="M35,154C67.576,163,100.152,172,132.727,172C165.303,172,197.879,172,230.455,172C263.03,172,295.606,100,328.182,100C360.758,100,393.333,142,425.909,154C458.485,166,491.061,172,523.636,172C556.212,172,588.788,151,621.364,136C653.939,121,686.515,94,719.091,82C751.667,70,784.242,64,816.818,64C849.394,64,881.97,82,914.545,100C947.121,118,979.697,151,1012.273,172C1044.848,193,1077.424,209.5,1110,226L1110,226C1077.424,226,1044.848,226,1012.273,226C979.697,226,947.121,226,914.545,226C881.97,226,849.394,226,816.818,226C784.242,226,751.667,226,719.091,226C686.515,226,653.939,226,621.364,226C588.788,226,556.212,226,523.636,226C491.061,226,458.485,226,425.909,226C393.333,226,360.758,226,328.182,226C295.606,226,263.03,226,230.455,226C197.879,226,165.303,226,132.727,226C100.152,226,67.576,226,35,226Z"
-                ></path>
-                <path
-                  stroke="#3B82F6"
-                  stroke-width="2.5"
-                  fill="none"
-                  fill-opacity="0.6"
-                  width="1075"
-                  height="216"
-                  class="recharts-curve recharts-area-curve"
-                  d="M35,154C67.576,163,100.152,172,132.727,172C165.303,172,197.879,172,230.455,172C263.03,172,295.606,100,328.182,100C360.758,100,393.333,142,425.909,154C458.485,166,491.061,172,523.636,172C556.212,172,588.788,151,621.364,136C653.939,121,686.515,94,719.091,82C751.667,70,784.242,64,816.818,64C849.394,64,881.97,82,914.545,100C947.121,118,979.697,151,1012.273,172C1044.848,193,1077.424,209.5,1110,226"
-                ></path>
-              </g>
-            </g>
-            <g class="recharts-layer recharts-area">
-              <g class="recharts-layer">
-                <path
-                  stroke-width="2.5"
-                  fill="url(#resolvedGradient)"
-                  fill-opacity="0.6"
-                  width="1075"
-                  height="216"
-                  stroke="none"
-                  class="recharts-curve recharts-area-area"
-                  d="M35,208C67.576,208,100.152,208,132.727,208C165.303,208,197.879,208,230.455,208C263.03,208,295.606,136,328.182,136C360.758,136,393.333,208,425.909,208C458.485,208,491.061,208,523.636,208C556.212,208,588.788,199,621.364,190C653.939,181,686.515,154,719.091,154C751.667,154,784.242,160,816.818,172C849.394,184,881.97,226,914.545,226C947.121,226,979.697,208,1012.273,208C1044.848,208,1077.424,217,1110,226L1110,226C1077.424,226,1044.848,226,1012.273,226C979.697,226,947.121,226,914.545,226C881.97,226,849.394,226,816.818,226C784.242,226,751.667,226,719.091,226C686.515,226,653.939,226,621.364,226C588.788,226,556.212,226,523.636,226C491.061,226,458.485,226,425.909,226C393.333,226,360.758,226,328.182,226C295.606,226,263.03,226,230.455,226C197.879,226,165.303,226,132.727,226C100.152,226,67.576,226,35,226Z"
-                ></path>
-                <path
-                  stroke="#10B981"
-                  stroke-width="2.5"
-                  fill="none"
-                  fill-opacity="0.6"
-                  width="1075"
-                  height="216"
-                  class="recharts-curve recharts-area-curve"
-                  d="M35,208C67.576,208,100.152,208,132.727,208C165.303,208,197.879,208,230.455,208C263.03,208,295.606,136,328.182,136C360.758,136,393.333,208,425.909,208C458.485,208,491.061,208,523.636,208C556.212,208,588.788,199,621.364,190C653.939,181,686.515,154,719.091,154C751.667,154,784.242,160,816.818,172C849.394,184,881.97,226,914.545,226C947.121,226,979.697,208,1012.273,208C1044.848,208,1077.424,217,1110,226"
-                ></path>
-              </g>
-            </g>
-          </svg>
-          <div
-            tabindex="-1"
-            class="recharts-tooltip-wrapper recharts-tooltip-wrapper-right recharts-tooltip-wrapper-bottom"
-            style="
-              visibility: hidden;
-              pointer-events: none;
-              position: absolute;
-              top: 0px;
-              left: 0px;
-              transform: translate(142.727px, 77px);
-            "
-          ></div>
-        </div>
-      </div>
-    </div>
-  </div>
+    All Bookings</button
+  ><button
+    type="button"
+    role="tab"
+    aria-selected="false"
+    aria-controls="radix-:rod:-content-checked-in"
+    data-state="inactive"
+    id="radix-:rod:-trigger-checked-in"
+    class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground data-[state=active]:shadow-sm px-4 py-2 text-sm rounded-md data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700"
+    data-testid="tab-checked-in"
+    tabindex="-1"
+    data-orientation="horizontal"
+    data-radix-collection-item=""
+  >
+    Checked In</button
+  ><button
+    type="button"
+    role="tab"
+    aria-selected="false"
+    aria-controls="radix-:rod:-content-arriving-today"
+    data-state="inactive"
+    id="radix-:rod:-trigger-arriving-today"
+    class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground data-[state=active]:shadow-sm px-4 py-2 text-sm rounded-md data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700"
+    data-testid="tab-arriving-today"
+    tabindex="-1"
+    data-orientation="horizontal"
+    data-radix-collection-item=""
+  >
+    Arriving Today</button
+  ><button
+    type="button"
+    role="tab"
+    aria-selected="false"
+    aria-controls="radix-:rod:-content-late-checkout"
+    data-state="inactive"
+    id="radix-:rod:-trigger-late-checkout"
+    class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground data-[state=active]:shadow-sm px-4 py-2 text-sm rounded-md data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700"
+    data-testid="tab-late-checkout"
+    tabindex="-1"
+    data-orientation="horizontal"
+    data-radix-collection-item=""
+  >
+    Late Checkout</button
+  ><button
+    type="button"
+    role="tab"
+    aria-selected="true"
+    aria-controls="radix-:rod:-content-pending"
+    data-state="active"
+    id="radix-:rod:-trigger-pending"
+    class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground data-[state=active]:shadow-sm px-4 py-2 text-sm rounded-md data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700"
+    data-testid="tab-pending"
+    tabindex="0"
+    data-orientation="horizontal"
+    data-radix-collection-item=""
+  >
+    Pending
+  </button>
 </div>

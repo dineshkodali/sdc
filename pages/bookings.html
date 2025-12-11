@@ -167,17 +167,69 @@
         padding: 6px;
         border-radius: 10px;
         display: inline-flex;
-        gap: 6px;
+        gap: 2px;
       }
 
       .move-tabs .btn {
-        border-radius: 8px;
+        border-radius: 4px;
       }
 
-      .property-tabs-wrapper {
-        margin-top: 10px;
-        margin-left: 8px;
-        width: 55%;
+      /* Outer soft rounded container */
+
+      /* .tabs-compact {
+        display: inline-flex !important;
+        background: #f3f4f6;
+        padding: 4px;
+        border-radius: 10px;
+      }
+
+      .tabs-compact .nav-link {
+        padding: 6px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #6b7280;
+      }
+
+      .tabs-compact .nav-link.active {
+        background: white;
+        color: #111827;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      } */
+
+      .tabs-compact {
+        background: #f3f4f6; /* soft grey background */
+        padding: 4px 6px 4px 2px;
+        border-radius: 8px; /* rounded capsule */
+        display: inline-flex;
+      }
+
+      /* Reduce space between tabs */
+      .tabs-compact .nav-pills {
+        gap: 0px !important; /* exact spacing seen in screenshot */
+      }
+
+      /* Inactive tabs (look flat + text only) */
+      .tabs-compact .nav-link {
+        padding: 10px 10px 10px 10px !important; /* compact padding */
+        border-radius: 4px !important;
+        background: transparent !important;
+        color: #6b7280 !important; /* muted grey text */
+        font-weight: 500;
+        /* height: 30px; */
+      }
+
+      /* Active tab (white rounded pill) */
+      .tabs-compact .nav-link.active {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: 0 0 0 1px #e5e7eb inset; /* subtle border */
+        /* height: 30px; */
+        padding: 10px 10px 10px 10px !important; /* compact padding */
+      }
+
+      /* Hover effect (soft fade) */
+      .tabs-compact .nav-link:hover {
+        background: #ffffff70 !important;
       }
 
       .card {
@@ -890,7 +942,7 @@
               class="d-flex flex-wrap justify-content-between align-items-center gap-3 pb-3 border-bottom"
             >
               <!-- LEFT: Tabs -->
-              <div class="property-tabs-wrapper flex-grow-1">
+              <div class="tabs-compact">
                 <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
                   <li class="nav-item">
                     <button

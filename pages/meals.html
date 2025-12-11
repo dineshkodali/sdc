@@ -150,6 +150,51 @@
         border: 1px solid #eef0f3;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
+
+      /* Wrapper shrinks to fit content, no extra space */
+      .meals-tabs-wrapper {
+        margin-bottom: 10px;
+        width: fit-content;
+        padding: 6px;
+        background: #f3f4f6;
+        border-radius: 10px;
+      }
+
+      /* Arrange tabs tightly */
+      .meals-tabs-wrapper .nav {
+        display: flex;
+        gap: 0px;
+      }
+
+      /* Default tab */
+      .meals-tabs-wrapper .nav-link {
+        color: #6b7280;
+        background: transparent;
+        border-radius: 6px;
+        padding: 6px 16px 10px 10px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      /* Active tab style */
+      .meals-tabs-wrapper .nav-link.active {
+        background: #ffffff;
+        color: #111827;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        padding: 6px 16px 10px 10px;
+      }
+
+      /* .table-light th{
+         background: #ffffff;
+      } */
+
+      thead th {
+      background: #f3f4f6;
+      font-size: 12px;
+      color: #6b7280;
+      /* text-transform: uppercase; */
+      letter-spacing: 0.05em;
+    }
     </style>
   </head>
 
@@ -246,7 +291,7 @@
       </div>
       <!-- /Header -->
 
-       <!-- Sidebar -->
+      <!-- Sidebar -->
 
       <div class="sidebar" id="sidebar">
         <div class="sidebar-logo">
@@ -924,51 +969,45 @@
 
           <!-- Tabs -->
 
-          <div class="property-tabs-wrapper">
-            <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
-              <li class="nav-item" role="presentation">
+          <div class="meals-tabs-wrapper">
+            <ul class="nav nav-pills mb-0 p-1" id="propertyTabs" role="tablist">
+              <li class="nav-item m-0 p-0" role="presentation">
                 <button
-                  class="nav-link active"
-                  id="overview-tab"
+                  class="nav-link active px-2 py-10"
                   data-bs-toggle="pill"
                   data-bs-target="#allmeals"
-                  type="button"
                 >
                   All Meals
                 </button>
               </li>
 
-              <li class="nav-item" role="presentation">
+              <li class="nav-item m-0 p-0" role="presentation">
                 <button
-                  class="nav-link"
-                  id="maintenance-tab"
+                  class="nav-link px-2 py-10"
                   data-bs-toggle="pill"
                   data-bs-target="#breakfast"
-                  type="button"
                 >
-                  Breakfast(9)
+                  Breakfast (9)
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+
+              <li class="nav-item m-0 p-0" role="presentation">
                 <button
-                  class="nav-link"
-                  id="maintenance-tab"
+                  class="nav-link px-2 py-10"
                   data-bs-toggle="pill"
                   data-bs-target="#lunch"
-                  type="button"
                 >
-                  Lunch(9)
+                  Lunch (9)
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+
+              <li class="nav-item m-0 p-0" role="presentation">
                 <button
-                  class="nav-link"
-                  id="maintenance-tab"
+                  class="nav-link px-2 py-10"
                   data-bs-toggle="pill"
                   data-bs-target="#dinner"
-                  type="button"
                 >
-                  Dinner(9)
+                  Dinner (9)
                 </button>
               </li>
             </ul>
@@ -1016,7 +1055,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1035,7 +1074,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1054,7 +1093,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1073,7 +1112,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1092,7 +1131,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1138,7 +1177,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1156,7 +1195,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1174,7 +1213,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1192,7 +1231,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1210,7 +1249,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1256,7 +1295,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1274,7 +1313,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1292,7 +1331,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1310,7 +1349,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1328,7 +1367,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1374,7 +1413,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1392,7 +1431,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1410,7 +1449,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1428,7 +1467,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1446,7 +1485,7 @@
                           </span>
                         </td>
                         <td class="text-end">
-                          <button class="btn btn-dark btn-sm">
+                          <button class="btn btn-primary btn-sm">
                             Mark Consumed
                           </button>
                         </td>
@@ -1762,7 +1801,7 @@
         return false;
       });
     </script>
-      <!-- jQuery -->
+    <!-- jQuery -->
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
     <!-- Bootstrap Core JS -->

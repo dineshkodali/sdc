@@ -132,7 +132,7 @@
       .move-tabs .btn {
         border-radius: 8px;
       }
-
+/* 
       .property-tabs-wrapper {
         margin-top: 10px;
         margin-left: 8px;
@@ -143,7 +143,7 @@
         margin-top: 10px;
         margin-left: 8px;
         width: 35%;
-      }
+      } */
 
       .card {
         border-radius: 14px;
@@ -179,6 +179,38 @@
         background-color: #f2f4f7;
         border: 1px solid #e4e7ec;
       }
+
+      /* Outer wrapper shrinks to fit content */
+.profile-tabs-wrapper {
+  width: fit-content;
+  padding: 6px;
+  background: #f3f4f6; /* light grey bar like your example */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Align tabs tightly in a row */
+.profile-tabs-wrapper .nav {
+  display: flex;
+  gap: 0px; /* adjust spacing between tabs */
+}
+
+/* Default tab button */
+.profile-tabs-wrapper .nav-link {
+  color: #6b7280;
+  background: transparent;
+  border-radius: 6px;
+  padding: 6px 10px 10px 10px;
+  font-size: 14px;
+}
+
+/* Active button styling */
+.profile-tabs-wrapper .nav-link.active {
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
     </style>
   </head>
 
@@ -275,7 +307,7 @@
       </div>
       <!-- /Header -->
 
-       <!-- Sidebar -->
+      <!-- Sidebar -->
 
       <div class="sidebar" id="sidebar">
         <div class="sidebar-logo">
@@ -845,49 +877,43 @@
 
           <!-- Tabs -->
 
-          <div class="property-tabs-wrapper">
-            <ul class="nav nav-pills mb-0" id="propertyTabs" role="tablist">
-              <li class="nav-item" role="presentation">
+          <div class="profile-tabs-wrapper">
+            <ul class="nav nav-pills mb-0 p-1 gap-0" id="propertyTabs" role="tablist">
+              <li class="nav-item m-0 p-0" role="presentation">
                 <button
-                  class="nav-link active"
-                  id="overview-tab"
+                  class="nav-link active px-6 py-10"
                   data-bs-toggle="pill"
                   data-bs-target="#allmeals"
-                  type="button"
                 >
                   Profile
                 </button>
               </li>
 
-              <li class="nav-item" role="presentation">
+              <li class="nav-item m-0 p-0" role="presentation">
                 <button
-                  class="nav-link"
-                  id="maintenance-tab"
+                  class="nav-link px-6 py-10"
                   data-bs-toggle="pill"
                   data-bs-target="#breakfast"
-                  type="button"
                 >
                   Documents
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+
+              <li class="nav-item m-0 p-0" role="presentation">
                 <button
-                  class="nav-link"
-                  id="maintenance-tab"
+                  class="nav-link px-6 py-10"
                   data-bs-toggle="pill"
                   data-bs-target="#lunch"
-                  type="button"
                 >
                   Health & Diet
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+
+              <li class="nav-item m-0 p-0" role="presentation">
                 <button
-                  class="nav-link"
-                  id="maintenance-tab"
+                  class="nav-link px-6 py-10"
                   data-bs-toggle="pill"
                   data-bs-target="#dinner"
-                  type="button"
                 >
                   Checklists
                 </button>
@@ -1346,7 +1372,6 @@
       }
     </script>
 
- 
     <script>
       // Sidebar toggle (collapse / expand)
       $(document).on("click", "#toggle_btn", function () {
@@ -1362,7 +1387,7 @@
       });
     </script>
 
-      <!-- jQuery -->
+    <!-- jQuery -->
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
     <!-- Bootstrap Core JS -->

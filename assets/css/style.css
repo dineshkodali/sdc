@@ -34117,5 +34117,40 @@ th:hover .category-menu-btn {
   transform: rotate(90deg);
 }
 
+      /* Keep submenu closer to parent */
+.sidebar-menu .submenu-list {
+  padding-left: 32px !important;  /* Reduce indent */
+  margin-top: 4px !important;     /* Pull submenu closer to Safeguarding */
+  margin-bottom: 6px !important;
+  border-left: 1px solid #e5e7eb; /* Slim vertical line like screenshot */
+}
+
+/* Reduce gap between submenu items */
+.sidebar-menu .submenu-list li a {
+  padding: 6px 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #4b5563 !important;   
+}
+
+/* Icon alignment */
+.sidebar-menu .submenu-list li a i {
+  font-size: 18px !important;
+  width: 20px;
+  color: #4b5563 !important;   
+}
+
+/* Highlight active submenu item */
+.sidebar-menu .submenu-list li.active a
+/* .sidebar-menu .submenu-list li a:hover */
+ {
+  background: #f3f4f6 !important;
+  border-radius: 6px;
+  padding-left: 10px !important;
+}
+
+
 
 /*# sourceMappingURL=style.css.map */

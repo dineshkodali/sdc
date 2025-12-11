@@ -8,7 +8,7 @@
     />
     <title>Maintenance - Operations Hub</title>
 
-    <!-- Favicon -->
+  <!-- Favicon -->
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -18,8 +18,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 
-    <!-- Feather CSS -->
+    <!-- Feather Icons -->
     <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+
+    <!-- Select2 CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/select2/css/select2.min.css"
+    />
 
     <!-- Tabler Icons -->
     <link
@@ -31,6 +37,31 @@
     <link
       rel="stylesheet"
       href="../assets/plugins/fontawesome/css/all.min.css"
+    />
+
+    <!-- Color Picker Css -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/flatpickr/flatpickr.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/@simonwep/pickr/themes/nano.min.css"
+    />
+
+    <!-- Daterangepikcer CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/daterangepicker/daterangepicker.css"
+    />
+
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="../assets/css/dataTables.bootstrap5.min.css" />
+
+    <!-- Select2 CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/select2/css/select2.min.css"
     />
 
     <!-- Main CSS -->
@@ -475,6 +506,12 @@
       border-top: none !important;
       border-bottom: none !important;
     }
+
+    .dropdown-item.active {
+        background: #212529 !important;
+        color: #fff !important;
+        border-radius: 6px;
+      }
 
     /* ================================
    ✅ GLOBAL MOBILE COMPACT FIXES
@@ -2635,6 +2672,7 @@
                       </select>
                     </div>
                   </div>
+                
 
                   <!-- Priority & Reported By -->
                   <div class="row">

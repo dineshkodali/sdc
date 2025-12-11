@@ -175,6 +175,8 @@
         border: 1px solid #eef0f3;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
+
+      
     </style>
   </head>
 
@@ -1603,7 +1605,7 @@
 
       <!-- Sidebar -->
 
-       <div class="sidebar" id="sidebar">
+      <div class="sidebar" id="sidebar">
         <div class="sidebar-logo">
           <a href="index.html" class="logo logo-normal">
             <img src="../assets/img/logo.svg" alt="Logo" />
@@ -4061,7 +4063,7 @@
                 </div>
 
                 <!-- Property Type -->
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <div class="mb-3">
                     <label class="form-label">Property Type</label>
                     <select class="form-control">
@@ -4069,13 +4071,34 @@
                       <option>Self-contained</option>
                     </select>
                   </div>
+                </div> -->
+
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Property Type</label>
+                    <select class="select">
+                      <option>Hotel Style</option>
+                      <option>Self-contained</option>
+                    </select>
+                  </div>
                 </div>
 
                 <!-- Status -->
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <div class="mb-3">
                     <label class="form-label">Status</label>
                     <select class="form-control">
+                      <option>Active</option>
+                      <option>Inactive</option>
+                    </select>
+                  </div>
+                </div> -->
+
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Active</label>
+                    <select class="select">
+                      <!-- <option>Select</option> -->
                       <option>Active</option>
                       <option>Inactive</option>
                     </select>
@@ -4240,7 +4263,6 @@
       }
     </script>
 
-    
     <script>
       // Sidebar toggle (collapse / expand)
       $(document).on("click", "#toggle_btn", function () {
@@ -4272,7 +4294,7 @@
         document.getElementById("selectedType").innerText = el.innerText.trim();
       }
     </script>
-      <!-- jQuery -->
+    <!-- jQuery -->
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
     <!-- Bootstrap Core JS -->

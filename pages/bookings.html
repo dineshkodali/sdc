@@ -9,13 +9,23 @@
     <title>Bookings</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../assets/img/favicon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/favicon.png"
+    />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 
     <!-- Feather Icons -->
     <link rel="stylesheet" href="../assets/plugins/icons/feather/feather.css" />
+
+    <!-- Select2 CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/select2/css/select2.min.css"
+    />
 
     <!-- Tabler Icons -->
     <link
@@ -27,6 +37,31 @@
     <link
       rel="stylesheet"
       href="../assets/plugins/fontawesome/css/all.min.css"
+    />
+
+    <!-- Color Picker Css -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/flatpickr/flatpickr.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/@simonwep/pickr/themes/nano.min.css"
+    />
+
+    <!-- Daterangepikcer CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/daterangepicker/daterangepicker.css"
+    />
+
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="../assets/css/dataTables.bootstrap5.min.css" />
+
+    <!-- Select2 CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/select2/css/select2.min.css"
     />
 
     <!-- Main CSS -->
@@ -71,17 +106,23 @@
       }
 
       /* Mini sidebar collapse */
-      .mini-sidebar .sidebar {
+      /* .mini-sidebar .sidebar {
         width: 60px !important;
       }
 
       .mini-sidebar .sidebar .sidebar-menu ul li a span {
-        display: none !important; /* hide menu text */
+        display: none !important;
       }
 
       .mini-sidebar .sidebar .sidebar-menu ul li a i {
         margin-right: 0 !important;
         font-size: 20px;
+      } */
+
+      .dropdown-item.active {
+        background: #212529 !important;
+        color: #fff !important;
+        border-radius: 6px;
       }
 
       /* Page background like reference */
@@ -144,7 +185,7 @@
         border: 1px solid #eef0f3;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
-      
+
       .card .table thead th {
         background: #fff;
         font-size: 12px;
@@ -248,7 +289,6 @@
       </div>
       <!-- /Header -->
 
-      
       <!-- Sidebar -->
 
       <div class="sidebar" id="sidebar">
@@ -1244,15 +1284,18 @@
       <!-- /Page Wrapper -->
 
       <!-- /Process Move-In -->
-      <div class="modal fade" id="newBookingModal" tabindex="-1">
-        <div
-          class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-        >
+
+      <!-- /Process Move-In -->
+
+      <!-- Add Employee -->
+      <!-- NEW BOOKING MODAL -->
+      <div class="modal fade" id="newBookingModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
-            <!-- ✅ HEADER -->
+            <!-- HEADER -->
             <div class="modal-header">
               <div>
-                <h4 class="modal-title fw-semibold">New Booking</h4>
+                <h4 class="modal-title">New Booking</h4>
                 <p class="text-muted mb-0">
                   Register a new arrival. This will create a booking and service
                   user record.
@@ -1265,75 +1308,81 @@
               ></button>
             </div>
 
-            <!-- ✅ BODY -->
+            <!-- BODY -->
             <div class="modal-body">
-              <div class="row g-3">
-                <!-- First Name -->
-                <div class="col-md-6">
+              <div class="row">
+                <!-- First / Last Name -->
+                <div class="col-md-6 mb-3">
                   <label class="form-label">First Name *</label>
-                  <input type="text" class="form-control" />
+                  <input type="text" class="form-control" placeholder="John" />
                 </div>
 
-                <!-- Last Name -->
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                   <label class="form-label">Last Name *</label>
-                  <input type="text" class="form-control" />
+                  <input type="text" class="form-control" placeholder="Doe" />
                 </div>
 
-                <!-- Date of Birth -->
-                <div class="col-md-6">
+                <!-- DOB + Nationality -->
+                <div class="col-md-6 mb-3">
                   <label class="form-label">Date of Birth *</label>
                   <div class="input-group">
                     <input type="date" class="form-control" />
-                    <span class="input-group-text"
+                    <!-- <span class="input-group-text"
                       ><i class="ti ti-calendar"></i
-                    ></span>
+                    ></span> -->
                   </div>
                 </div>
 
-                <!-- Nationality -->
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                   <label class="form-label">Nationality *</label>
-                  <input type="text" class="form-control" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="British"
+                  />
                 </div>
 
                 <!-- Home Office Reference -->
-                <div class="col-12">
+                <div class="col-md-12 mb-3">
                   <label class="form-label">Home Office Reference *</label>
-                  <input type="text" class="form-control" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="ABC123456"
+                  />
                 </div>
 
-                <!-- Property -->
-                <div class="col-md-6">
+                <!-- Property + Room -->
+                <div class="col-md-6 mb-3">
                   <label class="form-label">Property *</label>
-                  <select class="form-select">
-                    <option selected disabled>Select property</option>
+                  <select class="select">
+                    <option>Select property</option>
                     <option>Garden House Hotel</option>
                     <option>Crown Lodge Hotel</option>
+                    <option>Parkview Apartments</option>
                   </select>
                 </div>
 
-                <!-- Room -->
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                   <label class="form-label">Room *</label>
-                  <select class="form-select">
+                  <select class="select">
                     <option selected disabled>Select property first</option>
                   </select>
                 </div>
 
-                <!-- Check-in Date -->
-                <div class="col-12">
+                <!-- Check-in date -->
+                <div class="col-md-12 mb-3">
                   <label class="form-label">Check-in Date</label>
                   <div class="input-group">
                     <input type="date" class="form-control" />
-                    <span class="input-group-text"
+                    <!-- <span class="input-group-text"
                       ><i class="ti ti-calendar"></i
-                    ></span>
+                    ></span> -->
                   </div>
                 </div>
 
                 <!-- Vulnerabilities -->
-                <div class="col-12">
+                <div class="col-md-12 mb-3">
                   <label class="form-label">Vulnerabilities</label>
                   <input
                     type="text"
@@ -1343,38 +1392,38 @@
                 </div>
 
                 <!-- Medical Conditions -->
-                <div class="col-12">
+                <div class="col-md-12 mb-3">
                   <label class="form-label">Medical Conditions</label>
-                  <textarea class="form-control" rows="3"></textarea>
+                  <textarea class="form-control" rows="2"></textarea>
                 </div>
 
                 <!-- Dietary Requirements -->
-                <div class="col-12">
+                <div class="col-md-12 mb-3">
                   <label class="form-label">Dietary Requirements</label>
-                  <textarea class="form-control" rows="3"></textarea>
+                  <textarea class="form-control" rows="2"></textarea>
                 </div>
 
                 <!-- Status -->
-                <div class="col-12">
+                <div class="col-md-12 mb-3">
                   <label class="form-label">Status *</label>
                   <select class="form-select">
-                    <option selected>Active</option>
+                    <option>Active</option>
                     <option>Inactive</option>
                   </select>
                 </div>
               </div>
             </div>
 
-            <!-- ✅ FOOTER -->
-            <div class="modal-footer d-flex justify-content-end gap-2">
+            <!-- FOOTER -->
+            <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-outline-secondary"
+                class="btn btn-outline-secondary me-3"
                 data-bs-dismiss="modal"
               >
                 Cancel
               </button>
-              <button type="button" class="btn btn-primary px-4">
+              <button type="button" class="btn btn-primary">
                 Create Booking
               </button>
             </div>
@@ -1382,7 +1431,7 @@
         </div>
       </div>
 
-      <!-- /Process Move-In -->
+      <!-- /Add Employee -->
     </div>
     <!-- /Main Wrapper -->
 
@@ -1454,7 +1503,7 @@
       });
     </script>
 
-      <!-- jQuery -->
+    <!-- jQuery -->
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
     <!-- Bootstrap Core JS -->

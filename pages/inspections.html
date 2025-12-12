@@ -577,7 +577,6 @@
       </div>
       <!-- /Header -->
 
-      
       <!-- Sidebar -->
 
       <div class="sidebar" id="sidebar">
@@ -1047,7 +1046,7 @@
                   <li class="breadcrumb-item">
                     <a href="index.html"><i class="ti ti-smart-home"></i></a>
                   </li>
-                  <li class="breadcrumb-item">Property</li>
+                  <li class="breadcrumb-item">Operation Hub</li>
                   <li class="breadcrumb-item active" aria-current="page">
                     Inspections
                   </li>
@@ -1205,7 +1204,7 @@
                     <i class="ti ti-list"></i> View
                     <i class="ti ti-chevron-down"></i>
                   </button>
-                   <ul class="dropdown-menu">
+                  <ul class="dropdown-menu">
                     <li>
                       <button
                         class="dropdown-item active"
@@ -1893,376 +1892,378 @@
               </table>
             </div>
 
-            <div id="boardView" style="display: none;margin-top: 6px;">
-            <div class="row g-4">
-              <!-- OPEN -->
-              <div class="col-md-3">
-                <!-- HEADER ONLY (colored) -->
-                <div class="kanban-header-box" style="background: #f6f7f9">
-                  <span>Open</span>
-                  <span class="kanban-count">1</span>
+            <div id="boardView" style="display: none; margin-top: 6px">
+              <div class="row g-4">
+                <!-- OPEN -->
+                <div class="col-md-3">
+                  <!-- HEADER ONLY (colored) -->
+                  <div class="kanban-header-box" style="background: #f6f7f9">
+                    <span>Open</span>
+                    <span class="kanban-count">1</span>
+                  </div>
+
+                  <!-- WHITE CARDS AREA -->
+                  <div class="kanban-column">
+                    <div class="kanban-card-container">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-semibold">Fire Safety Equipment</h6>
+                        <div>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </div>
+                      </div>
+
+                      <span class="cat-pill cat2">CAT2</span>
+
+                      <p class="small">
+                        <i class="ti ti-calendar-event me-1"></i> Sep 30
+                      </p>
+
+                      <p class="small"><strong>Site:</strong> Parmiter</p>
+                      <p class="small"><strong>Room:</strong> Room 100</p>
+                      <p class="small mb-0">
+                        <strong>Raised By:</strong> Safety Officer
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <!-- WHITE CARDS AREA -->
-                <div class="kanban-column">
-                  <div class="kanban-card-container">
-                    <div class="d-flex justify-content-between">
-                      <h6 class="fw-semibold">Fire Safety Equipment</h6>
-                      <div>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
+                <!-- IN PROGRESS -->
+                <div class="col-md-3">
+                  <!-- HEADER (colored only) -->
+                  <div class="kanban-header-box" style="background: #e6f0ff">
+                    <span>In Progress</span>
+                    <span class="kanban-count">0</span>
+                  </div>
+
+                  <!-- WHITE CONTENT AREA -->
+                  <div class="kanban-column">
+                    <p class="text-center text-muted mt-5">No tasks</p>
+                  </div>
+                </div>
+
+                <!-- UNDER REVIEW -->
+                <div class="col-md-3">
+                  <!-- HEADER (colored only) -->
+                  <div class="kanban-header-box" style="background: #f3eaff">
+                    <span>Under Review</span>
+                    <span class="kanban-count">1</span>
+                  </div>
+
+                  <!-- WHITE CONTENT AREA -->
+                  <div class="kanban-column">
+                    <div class="kanban-card-container shadow-sm mb-3">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-semibold">Electrical Safety Audit</h6>
+                        <div>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </div>
                       </div>
+
+                      <span class="cat-pill cat1">CAT1</span>
+
+                      <p class="small">
+                        <i class="ti ti-calendar-event me-1"></i> Mar 12
+                      </p>
+
+                      <p class="small"><strong>Site:</strong> Building C</p>
+                      <p class="small"><strong>Room:</strong> Main Panel</p>
+                      <p class="small mb-0">
+                        <strong>Raised By:</strong> Maintenance Team
+                      </p>
                     </div>
+                  </div>
+                </div>
 
-                    <span class="cat-pill cat2">CAT2</span>
+                <!-- COMPLETED -->
+                <div class="col-md-3">
+                  <!-- HEADER (colored only) -->
+                  <div class="kanban-header-box" style="background: #e7ffe9">
+                    <span>Completed</span>
+                    <span class="kanban-count">1</span>
+                  </div>
 
-                    <p class="small">
-                      <i class="ti ti-calendar-event me-1"></i> Sep 30
-                    </p>
+                  <!-- WHITE CARD AREA -->
+                  <div class="kanban-column">
+                    <div class="kanban-card-container shadow-sm mb-3">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-semibold">Generator Testing</h6>
+                        <div>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </div>
+                      </div>
 
-                    <p class="small"><strong>Site:</strong> Parmiter</p>
-                    <p class="small"><strong>Room:</strong> Room 100</p>
-                    <p class="small mb-0">
-                      <strong>Raised By:</strong> Safety Officer
-                    </p>
+                      <span class="cat-pill cat3">CAT3</span>
+
+                      <p class="small">
+                        <i class="ti ti-calendar-event me-1"></i> Mar 10
+                      </p>
+
+                      <p class="small"><strong>Site:</strong> Building D</p>
+                      <p class="small"><strong>Room:</strong> Generator Room</p>
+                      <p class="small mb-0">
+                        <strong>Raised By:</strong> Scheduled Maintenance
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DASHBOARD -->
+            <div id="dashboardView" style="display: none; margin-top: 6px">
+              <div class="card mb-3">
+                <div
+                  class="card-body d-flex justify-content-between align-items-center"
+                >
+                  <div>
+                    <strong>Compare Period:</strong>
+                    <select class="form-select d-inline-block w-auto ms-2">
+                      <option>Month-over-Month</option>
+                      <option>Year-over-Year</option>
+                    </select>
+
+                    <button class="btn btn-light ms-2">
+                      Nov 2025 vs Oct 2025
+                    </button>
                   </div>
                 </div>
               </div>
 
-              <!-- IN PROGRESS -->
-              <div class="col-md-3">
-                <!-- HEADER (colored only) -->
-                <div class="kanban-header-box" style="background: #e6f0ff">
-                  <span>In Progress</span>
-                  <span class="kanban-count">0</span>
-                </div>
+              <!-- METRICS ROW -->
 
-                <!-- WHITE CONTENT AREA -->
-                <div class="kanban-column">
-                  <p class="text-center text-muted mt-5">No tasks</p>
-                </div>
-              </div>
-
-              <!-- UNDER REVIEW -->
-              <div class="col-md-3">
-                <!-- HEADER (colored only) -->
-                <div class="kanban-header-box" style="background: #f3eaff">
-                  <span>Under Review</span>
-                  <span class="kanban-count">1</span>
-                </div>
-
-                <!-- WHITE CONTENT AREA -->
-                <div class="kanban-column">
-                  <div class="kanban-card-container shadow-sm mb-3">
-                    <div class="d-flex justify-content-between">
-                      <h6 class="fw-semibold">Electrical Safety Audit</h6>
-                      <div>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
-                      </div>
+              <!-- DASHBOARD METRICS -->
+              <div class="row g-4 mb-4">
+                <!-- Total Tasks -->
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-top">
+                      <span class="metric-number">6</span>
+                      <i class="ti ti-chart-bar metric-icon text-info"></i>
                     </div>
+                    <div class="metric-title">Total Tasks</div>
+                    <div class="metric-previous">4 Previous</div>
+                  </div>
+                </div>
 
-                    <span class="cat-pill cat1">CAT1</span>
+                <!-- Completed -->
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-top">
+                      <span class="metric-number">1</span>
+                      <i
+                        class="ti ti-circle-check metric-icon text-success"
+                      ></i>
+                    </div>
+                    <div class="metric-title">Completed</div>
+                    <div class="metric-previous">0 Previous</div>
+                  </div>
+                </div>
 
-                    <p class="small">
-                      <i class="ti ti-calendar-event me-1"></i> Mar 12
-                    </p>
+                <!-- In Progress -->
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-top">
+                      <span class="metric-number">1</span>
+                      <i
+                        class="ti ti-trending-up metric-icon"
+                        style="color: #ff8b47"
+                      ></i>
+                    </div>
+                    <div class="metric-title">In Progress</div>
+                    <div class="metric-previous">0 Previous</div>
+                  </div>
+                </div>
 
-                    <p class="small"><strong>Site:</strong> Building C</p>
-                    <p class="small"><strong>Room:</strong> Main Panel</p>
-                    <p class="small mb-0">
-                      <strong>Raised By:</strong> Maintenance Team
-                    </p>
+                <!-- Overdue -->
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-top">
+                      <span class="metric-number">3</span>
+                      <i class="ti ti-alert-circle metric-icon text-danger"></i>
+                    </div>
+                    <div class="metric-title">Overdue</div>
+                    <div class="metric-previous">0 Previous</div>
                   </div>
                 </div>
               </div>
 
-              <!-- COMPLETED -->
-              <div class="col-md-3">
-                <!-- HEADER (colored only) -->
-                <div class="kanban-header-box" style="background: #e7ffe9">
-                  <span>Completed</span>
-                  <span class="kanban-count">1</span>
-                </div>
+              <!-- CHART ROW -->
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="card p-4 equal-height-card">
+                    <h6 class="mb-4">Priority Distribution</h6>
 
-                <!-- WHITE CARD AREA -->
-                <div class="kanban-column">
-                  <div class="kanban-card-container shadow-sm mb-3">
-                    <div class="d-flex justify-content-between">
-                      <h6 class="fw-semibold">Generator Testing</h6>
-                      <div>
-                        <i class="ti ti-edit me-2"></i>
-                        <i class="ti ti-trash"></i>
+                    <!-- CAT1 -->
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="dot dot-red me-2"></span>
+                      <span class="me-auto">CAT1</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div id="bar-cat1" class="progress-bar bar-grey"></div>
                       </div>
+
+                      <span id="count-cat1" class="fw-bold">0</span>
+                      <small id="percent-cat1" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
                     </div>
 
-                    <span class="cat-pill cat3">CAT3</span>
+                    <!-- CAT2 -->
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="dot dot-yellow me-2"></span>
+                      <span class="me-auto">CAT2</span>
 
-                    <p class="small">
-                      <i class="ti ti-calendar-event me-1"></i> Mar 10
-                    </p>
+                      <div class="progress progress-custom me-3">
+                        <div id="bar-cat2" class="progress-bar bar-grey"></div>
+                      </div>
 
-                    <p class="small"><strong>Site:</strong> Building D</p>
-                    <p class="small"><strong>Room:</strong> Generator Room</p>
-                    <p class="small mb-0">
-                      <strong>Raised By:</strong> Scheduled Maintenance
-                    </p>
+                      <span id="count-cat2" class="fw-bold">0</span>
+                      <small id="percent-cat2" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+
+                    <!-- CAT3 -->
+                    <div class="d-flex align-items-center">
+                      <span class="dot dot-green me-2"></span>
+                      <span class="me-auto">CAT3</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div id="bar-cat3" class="progress-bar bar-grey"></div>
+                      </div>
+
+                      <span id="count-cat3" class="fw-bold">0</span>
+                      <small id="percent-cat3" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
                   </div>
                 </div>
+
+                <div class="col-md-6">
+                  <div class="card p-4 equal-height-card">
+                    <h6 class="mb-4">Status Distribution</h6>
+
+                    <!-- Open -->
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="dot dot-gray me-2"></span>
+                      <span class="me-auto">Open</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div id="bar-open" class="progress-bar bar-grey"></div>
+                      </div>
+
+                      <span id="count-open" class="fw-bold">0</span>
+                      <small id="percent-open" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+
+                    <!-- In Progress -->
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="dot dot-blue me-2"></span>
+                      <span class="me-auto">In Progress</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div
+                          id="bar-progress"
+                          class="progress-bar bar-grey"
+                        ></div>
+                      </div>
+
+                      <span id="count-progress" class="fw-bold">0</span>
+                      <small id="percent-progress" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+
+                    <!-- Under Review -->
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="dot dot-purple me-2"></span>
+                      <span class="me-auto">Under Review</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div
+                          id="bar-review"
+                          class="progress-bar bar-grey"
+                        ></div>
+                      </div>
+
+                      <span id="count-review" class="fw-bold">0</span>
+                      <small id="percent-review" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+
+                    <!-- Completed -->
+                    <div class="d-flex align-items-center">
+                      <span class="dot dot-green me-2"></span>
+                      <span class="me-auto">Completed</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div
+                          id="bar-complete"
+                          class="progress-bar bar-grey"
+                        ></div>
+                      </div>
+
+                      <span id="count-complete" class="fw-bold">0</span>
+                      <small id="percent-complete" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BOTTOM CHARTS -->
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="card p-3" style="height: 320px">
+                    <h6 class="mb-3">Defects Summary</h6>
+
+                    <div class="chart-wrapper" style="height: 240px">
+                      <canvas id="defectsChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="card p-4 priority-breakdown-card">
+                    <h6 class="mb-0">Priority Breakdown</h6>
+
+                    <!-- Empty Chart Area -->
+                    <div class="chart-placeholder">
+                      <!-- (Intentionally empty like your reference image) -->
+                    </div>
+
+                    <!-- Legend at Bottom -->
+                    <div class="priority-legend">
+                      <span class="legend-item">
+                        <span class="legend-box red"></span> CAT1
+                      </span>
+                      <span class="legend-item">
+                        <span class="legend-box yellow"></span> CAT2
+                      </span>
+                      <span class="legend-item">
+                        <span class="legend-box green"></span> CAT3
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-3 mt-3">
+                <h6>Top Raised Defects</h6>
+                <p class="text-center text-muted mt-4">
+                  No defects data available
+                </p>
               </div>
             </div>
           </div>
-
-          <!-- DASHBOARD -->
-          <div id="dashboardView" style="display: none;margin-top: 6px;">
-            <div class="card mb-3">
-              <div
-                class="card-body d-flex justify-content-between align-items-center"
-              >
-                <div>
-                  <strong>Compare Period:</strong>
-                  <select class="form-select d-inline-block w-auto ms-2">
-                    <option>Month-over-Month</option>
-                    <option>Year-over-Year</option>
-                  </select>
-
-                  <button class="btn btn-light ms-2">
-                    Nov 2025 vs Oct 2025
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- METRICS ROW -->
-
-            <!-- DASHBOARD METRICS -->
-            <div class="row g-4 mb-4">
-              <!-- Total Tasks -->
-              <div class="col-md-3">
-                <div class="metric-card">
-                  <div class="metric-top">
-                    <span class="metric-number">6</span>
-                    <i class="ti ti-chart-bar metric-icon text-info"></i>
-                  </div>
-                  <div class="metric-title">Total Tasks</div>
-                  <div class="metric-previous">4 Previous</div>
-                </div>
-              </div>
-
-              <!-- Completed -->
-              <div class="col-md-3">
-                <div class="metric-card">
-                  <div class="metric-top">
-                    <span class="metric-number">1</span>
-                    <i class="ti ti-circle-check metric-icon text-success"></i>
-                  </div>
-                  <div class="metric-title">Completed</div>
-                  <div class="metric-previous">0 Previous</div>
-                </div>
-              </div>
-
-              <!-- In Progress -->
-              <div class="col-md-3">
-                <div class="metric-card">
-                  <div class="metric-top">
-                    <span class="metric-number">1</span>
-                    <i
-                      class="ti ti-trending-up metric-icon"
-                      style="color: #ff8b47"
-                    ></i>
-                  </div>
-                  <div class="metric-title">In Progress</div>
-                  <div class="metric-previous">0 Previous</div>
-                </div>
-              </div>
-
-              <!-- Overdue -->
-              <div class="col-md-3">
-                <div class="metric-card">
-                  <div class="metric-top">
-                    <span class="metric-number">3</span>
-                    <i class="ti ti-alert-circle metric-icon text-danger"></i>
-                  </div>
-                  <div class="metric-title">Overdue</div>
-                  <div class="metric-previous">0 Previous</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- CHART ROW -->
-            <div class="row g-3 mt-3">
-              <div class="col-md-6">
-                <div class="card p-4 equal-height-card">
-                  <h6 class="mb-4">Priority Distribution</h6>
-
-                  <!-- CAT1 -->
-                  <div class="d-flex align-items-center mb-3">
-                    <span class="dot dot-red me-2"></span>
-                    <span class="me-auto">CAT1</span>
-
-                    <div class="progress progress-custom me-3">
-                      <div id="bar-cat1" class="progress-bar bar-grey"></div>
-                    </div>
-
-                    <span id="count-cat1" class="fw-bold">0</span>
-                    <small id="percent-cat1" class="text-muted ms-2"
-                      >(0.0%)</small
-                    >
-                  </div>
-
-                  <!-- CAT2 -->
-                  <div class="d-flex align-items-center mb-3">
-                    <span class="dot dot-yellow me-2"></span>
-                    <span class="me-auto">CAT2</span>
-
-                    <div class="progress progress-custom me-3">
-                      <div id="bar-cat2" class="progress-bar bar-grey"></div>
-                    </div>
-
-                    <span id="count-cat2" class="fw-bold">0</span>
-                    <small id="percent-cat2" class="text-muted ms-2"
-                      >(0.0%)</small
-                    >
-                  </div>
-
-                  <!-- CAT3 -->
-                  <div class="d-flex align-items-center">
-                    <span class="dot dot-green me-2"></span>
-                    <span class="me-auto">CAT3</span>
-
-                    <div class="progress progress-custom me-3">
-                      <div id="bar-cat3" class="progress-bar bar-grey"></div>
-                    </div>
-
-                    <span id="count-cat3" class="fw-bold">0</span>
-                    <small id="percent-cat3" class="text-muted ms-2"
-                      >(0.0%)</small
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="card p-4 equal-height-card">
-                  <h6 class="mb-4">Status Distribution</h6>
-
-                  <!-- Open -->
-                  <div class="d-flex align-items-center mb-3">
-                    <span class="dot dot-gray me-2"></span>
-                    <span class="me-auto">Open</span>
-
-                    <div class="progress progress-custom me-3">
-                      <div id="bar-open" class="progress-bar bar-grey"></div>
-                    </div>
-
-                    <span id="count-open" class="fw-bold">0</span>
-                    <small id="percent-open" class="text-muted ms-2"
-                      >(0.0%)</small
-                    >
-                  </div>
-
-                  <!-- In Progress -->
-                  <div class="d-flex align-items-center mb-3">
-                    <span class="dot dot-blue me-2"></span>
-                    <span class="me-auto">In Progress</span>
-
-                    <div class="progress progress-custom me-3">
-                      <div
-                        id="bar-progress"
-                        class="progress-bar bar-grey"
-                      ></div>
-                    </div>
-
-                    <span id="count-progress" class="fw-bold">0</span>
-                    <small id="percent-progress" class="text-muted ms-2"
-                      >(0.0%)</small
-                    >
-                  </div>
-
-                  <!-- Under Review -->
-                  <div class="d-flex align-items-center mb-3">
-                    <span class="dot dot-purple me-2"></span>
-                    <span class="me-auto">Under Review</span>
-
-                    <div class="progress progress-custom me-3">
-                      <div id="bar-review" class="progress-bar bar-grey"></div>
-                    </div>
-
-                    <span id="count-review" class="fw-bold">0</span>
-                    <small id="percent-review" class="text-muted ms-2"
-                      >(0.0%)</small
-                    >
-                  </div>
-
-                  <!-- Completed -->
-                  <div class="d-flex align-items-center">
-                    <span class="dot dot-green me-2"></span>
-                    <span class="me-auto">Completed</span>
-
-                    <div class="progress progress-custom me-3">
-                      <div
-                        id="bar-complete"
-                        class="progress-bar bar-grey"
-                      ></div>
-                    </div>
-
-                    <span id="count-complete" class="fw-bold">0</span>
-                    <small id="percent-complete" class="text-muted ms-2"
-                      >(0.0%)</small
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- BOTTOM CHARTS -->
-            <div class="row g-3 mt-3">
-              <div class="col-md-6">
-                <div class="card p-3" style="height: 320px">
-                  <h6 class="mb-3">Defects Summary</h6>
-
-                  <div class="chart-wrapper" style="height: 240px">
-                    <canvas id="defectsChart"></canvas>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="card p-4 priority-breakdown-card">
-                  <h6 class="mb-0">Priority Breakdown</h6>
-
-                  <!-- Empty Chart Area -->
-                  <div class="chart-placeholder">
-                    <!-- (Intentionally empty like your reference image) -->
-                  </div>
-
-                  <!-- Legend at Bottom -->
-                  <div class="priority-legend">
-                    <span class="legend-item">
-                      <span class="legend-box red"></span> CAT1
-                    </span>
-                    <span class="legend-item">
-                      <span class="legend-box yellow"></span> CAT2
-                    </span>
-                    <span class="legend-item">
-                      <span class="legend-box green"></span> CAT3
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card p-3 mt-3">
-              <h6>Top Raised Defects</h6>
-              <p class="text-center text-muted mt-4">
-                No defects data available
-              </p>
-            </div>
-          </div>
-
-          </div>
-
-          
 
           <!-- /Inspection Modal -->
           <div class="modal fade" id="inspectionModal" tabindex="-1">
@@ -2454,7 +2455,6 @@
         });
     </script>
 
-   
     <script>
       // Show current time live
       setInterval(() => {
@@ -2462,7 +2462,6 @@
           new Date().toLocaleTimeString();
       }, 1000);
     </script>
- 
 
     <script>
       document.querySelectorAll("#taskTabs .nav-link").forEach((tab) => {
@@ -2487,8 +2486,6 @@
         });
       });
     </script>
-
-
 
     <script>
       function toggleGenericMenu(event, btn) {
@@ -2634,7 +2631,7 @@
       });
     </script>
 
-       <script>
+    <script>
       // Show current time live
       setInterval(() => {
         document.getElementById("current-time").innerHTML =
@@ -2749,7 +2746,7 @@
       });
     </script>
 
-     <script>
+    <script>
       function showTableView() {
         document.getElementById("tableView").style.display = "block";
         document.getElementById("dashboardView").style.display = "none";
@@ -2927,8 +2924,7 @@
       });
     </script>
 
-
-      <!-- jQuery -->
+    <!-- jQuery -->
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
     <!-- Bootstrap Core JS -->

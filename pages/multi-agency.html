@@ -116,6 +116,234 @@
       box-shadow: none !important;
       border: none !important; */
     }
+
+    
+    .kanban-header-box {
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .kanban-count {
+      background: #fff;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .kanban-column {
+      padding: 10px;
+      border-radius: 12px;
+      background: transparent;
+    }
+
+    .kanban-card-container {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 18px;
+      border: none;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      margin-bottom: 16px;
+    }
+
+    /* CATEGORY LABELS */
+    .cat1 {
+      background: #fde1e1;
+      color: #c64a4a;
+    }
+    .cat2 {
+      background: #fff5c7;
+      color: #b38a00;
+    }
+    .cat3 {
+      background: #dbffe7;
+      color: #2e7d32;
+    }
+
+    .cat-pill {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .metric-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px 24px;
+      border: 1px solid #e5e5e5;
+      transition: 0.2s ease;
+    }
+
+    .metric-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .metric-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .metric-number {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1c1c1c;
+    }
+
+    .metric-icon {
+      font-size: 32px;
+      opacity: 0.9;
+    }
+
+    .metric-title {
+      margin-top: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #445;
+    }
+
+    .metric-previous {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #999;
+    }
+    /* Dots stay same */
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot-red {
+      background-color: #ff4d4f;
+    }
+    .dot-yellow {
+      background-color: #f6c23e;
+    }
+    .dot-green {
+      background-color: #1cc88a;
+    }
+    .dot-gray {
+      background-color: #6c757d;
+    }
+    .dot-blue {
+      background-color: #4e73df;
+    }
+    .dot-purple {
+      background-color: #9b51e0;
+    }
+
+    /* EXACT PLAIN GREY BAR LIKE YOUR 2ND IMAGE */
+    .progress-custom {
+      width: 180px;
+      height: 8px;
+      border-radius: 10px;
+      background-color: #e5e7eb; /* light grey */
+      overflow: hidden;
+    }
+
+    /* KILLS BOOTSTRAP ORANGE COMPLETELY */
+    .bar-grey {
+      background-color: #e5e7eb !important; /* SAME as container */
+      width: 100% !important; /* FULL BAR ALWAYS */
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    /* EXTRA SAFETY: remove Bootstrap fill effect */
+    .progress-bar {
+      background-image: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Force both cards to same height */
+    .equal-height-card {
+      min-height: 240px; /* adjust if needed */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Vertical spacing inside cards like reference */
+    .equal-height-card .d-flex {
+      margin-bottom: 16px;
+    }
+
+    .equal-height-card .d-flex:last-child {
+      margin-bottom: 0;
+    }
+    .priority-breakdown-card {
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-placeholder {
+      flex: 1; /* takes full empty space */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .priority-legend {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-box {
+      width: 14px;
+      height: 10px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .legend-box.red {
+      background-color: #ff4d4f;
+    }
+
+    .legend-box.yellow {
+      background-color: #f6c23e;
+    }
+
+    .legend-box.green {
+      background-color: #1cc88a;
+    }
+
+    /* Widget dashboard */
+    .widget-placeholder {
+      background: #f8fafc;
+      border: 2px dashed #d1d5db;
+      border-radius: 14px;
+      padding: 60px 20px;
+    }
+
+    .widget-box {
+      text-align: center;
+      color: #6b7280;
+    }
+
+    .widget-icon {
+      font-size: 42px;
+      color: #9ca3af;
+    }
   </style>
 
   <body>
@@ -846,9 +1074,25 @@
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="dropdown-item active" href="#">Table View</a>
+                      <button
+                        class="dropdown-item active"
+                        onclick="showTableView()"
+                      >
+                        Table View
+                      </button>
                     </li>
-                    <li><a class="dropdown-item" href="#">Card View</a></li>
+
+                    <li>
+                      <button class="dropdown-item" onclick="showDashboard()">
+                        Dashboard View
+                      </button>
+                    </li>
+
+                    <li>
+                      <button class="dropdown-item" onclick="showBoardView()">
+                        Board View
+                      </button>
+                    </li>
                   </ul>
                 </div>
 
@@ -947,7 +1191,7 @@
             </div>
 
             <!-- ✅ TABLE (NOW INSIDE SAME CARD) -->
-            <div class="table-responsive mt-3">
+            <div id="tableView" class="table-responsive mt-3">
               <table class="table mb-0">
                 <thead>
                   <tr>
@@ -1482,6 +1726,379 @@
                 </tbody>
               </table>
             </div>
+
+            <div id="boardView" style="display: none; margin-top: 6px">
+              <div class="row g-4">
+                <!-- OPEN -->
+                <div class="col-md-3">
+                  <!-- HEADER ONLY (colored) -->
+                  <div class="kanban-header-box" style="background: #f6f7f9">
+                    <span>Open</span>
+                    <span class="kanban-count">1</span>
+                  </div>
+
+                  <!-- WHITE CARDS AREA -->
+                  <div class="kanban-column">
+                    <div class="kanban-card-container">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-semibold">Fire Safety Equipment</h6>
+                        <div>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </div>
+                      </div>
+
+                      <span class="cat-pill cat2">CAT2</span>
+
+                      <p class="small">
+                        <i class="ti ti-calendar-event me-1"></i> Sep 30
+                      </p>
+
+                      <p class="small"><strong>Site:</strong> Parmiter</p>
+                      <p class="small"><strong>Room:</strong> Room 100</p>
+                      <p class="small mb-0">
+                        <strong>Raised By:</strong> Safety Officer
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- IN PROGRESS -->
+                <div class="col-md-3">
+                  <!-- HEADER (colored only) -->
+                  <div class="kanban-header-box" style="background: #e6f0ff">
+                    <span>In Progress</span>
+                    <span class="kanban-count">0</span>
+                  </div>
+
+                  <!-- WHITE CONTENT AREA -->
+                  <div class="kanban-column">
+                    <p class="text-center text-muted mt-5">No tasks</p>
+                  </div>
+                </div>
+
+                <!-- UNDER REVIEW -->
+                <div class="col-md-3">
+                  <!-- HEADER (colored only) -->
+                  <div class="kanban-header-box" style="background: #f3eaff">
+                    <span>Under Review</span>
+                    <span class="kanban-count">1</span>
+                  </div>
+
+                  <!-- WHITE CONTENT AREA -->
+                  <div class="kanban-column">
+                    <div class="kanban-card-container shadow-sm mb-3">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-semibold">Electrical Safety Audit</h6>
+                        <div>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </div>
+                      </div>
+
+                      <span class="cat-pill cat1">CAT1</span>
+
+                      <p class="small">
+                        <i class="ti ti-calendar-event me-1"></i> Mar 12
+                      </p>
+
+                      <p class="small"><strong>Site:</strong> Building C</p>
+                      <p class="small"><strong>Room:</strong> Main Panel</p>
+                      <p class="small mb-0">
+                        <strong>Raised By:</strong> Maintenance Team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- COMPLETED -->
+                <div class="col-md-3">
+                  <!-- HEADER (colored only) -->
+                  <div class="kanban-header-box" style="background: #e7ffe9">
+                    <span>Completed</span>
+                    <span class="kanban-count">1</span>
+                  </div>
+
+                  <!-- WHITE CARD AREA -->
+                  <div class="kanban-column">
+                    <div class="kanban-card-container shadow-sm mb-3">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-semibold">Generator Testing</h6>
+                        <div>
+                          <i class="ti ti-edit me-2"></i>
+                          <i class="ti ti-trash"></i>
+                        </div>
+                      </div>
+
+                      <span class="cat-pill cat3">CAT3</span>
+
+                      <p class="small">
+                        <i class="ti ti-calendar-event me-1"></i> Mar 10
+                      </p>
+
+                      <p class="small"><strong>Site:</strong> Building D</p>
+                      <p class="small"><strong>Room:</strong> Generator Room</p>
+                      <p class="small mb-0">
+                        <strong>Raised By:</strong> Scheduled Maintenance
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DASHBOARD -->
+            <div id="dashboardView" style="display: none; margin-top: 6px">
+              <div class="card mb-3">
+                <div
+                  class="card-body d-flex justify-content-between align-items-center"
+                >
+                  <div>
+                    <strong>Compare Period:</strong>
+                    <select class="form-select d-inline-block w-auto ms-2">
+                      <option>Month-over-Month</option>
+                      <option>Year-over-Year</option>
+                    </select>
+
+                    <button class="btn btn-light ms-2">
+                      Nov 2025 vs Oct 2025
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- METRICS ROW -->
+
+              <!-- DASHBOARD METRICS -->
+              <div class="row g-4 mb-4">
+                <!-- Total Tasks -->
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-top">
+                      <span class="metric-number">6</span>
+                      <i class="ti ti-chart-bar metric-icon text-info"></i>
+                    </div>
+                    <div class="metric-title">Total Tasks</div>
+                    <div class="metric-previous">4 Previous</div>
+                  </div>
+                </div>
+
+                <!-- Completed -->
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-top">
+                      <span class="metric-number">1</span>
+                      <i
+                        class="ti ti-circle-check metric-icon text-success"
+                      ></i>
+                    </div>
+                    <div class="metric-title">Completed</div>
+                    <div class="metric-previous">0 Previous</div>
+                  </div>
+                </div>
+
+                <!-- In Progress -->
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-top">
+                      <span class="metric-number">1</span>
+                      <i
+                        class="ti ti-trending-up metric-icon"
+                        style="color: #ff8b47"
+                      ></i>
+                    </div>
+                    <div class="metric-title">In Progress</div>
+                    <div class="metric-previous">0 Previous</div>
+                  </div>
+                </div>
+
+                <!-- Overdue -->
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-top">
+                      <span class="metric-number">3</span>
+                      <i class="ti ti-alert-circle metric-icon text-danger"></i>
+                    </div>
+                    <div class="metric-title">Overdue</div>
+                    <div class="metric-previous">0 Previous</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CHART ROW -->
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="card p-4 equal-height-card">
+                    <h6 class="mb-4">Priority Distribution</h6>
+
+                    <!-- CAT1 -->
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="dot dot-red me-2"></span>
+                      <span class="me-auto">CAT1</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div id="bar-cat1" class="progress-bar bar-grey"></div>
+                      </div>
+
+                      <span id="count-cat1" class="fw-bold">0</span>
+                      <small id="percent-cat1" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+
+                    <!-- CAT2 -->
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="dot dot-yellow me-2"></span>
+                      <span class="me-auto">CAT2</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div id="bar-cat2" class="progress-bar bar-grey"></div>
+                      </div>
+
+                      <span id="count-cat2" class="fw-bold">0</span>
+                      <small id="percent-cat2" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+
+                    <!-- CAT3 -->
+                    <div class="d-flex align-items-center">
+                      <span class="dot dot-green me-2"></span>
+                      <span class="me-auto">CAT3</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div id="bar-cat3" class="progress-bar bar-grey"></div>
+                      </div>
+
+                      <span id="count-cat3" class="fw-bold">0</span>
+                      <small id="percent-cat3" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="card p-4 equal-height-card">
+                    <h6 class="mb-4">Status Distribution</h6>
+
+                    <!-- Open -->
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="dot dot-gray me-2"></span>
+                      <span class="me-auto">Open</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div id="bar-open" class="progress-bar bar-grey"></div>
+                      </div>
+
+                      <span id="count-open" class="fw-bold">0</span>
+                      <small id="percent-open" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+
+                    <!-- In Progress -->
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="dot dot-blue me-2"></span>
+                      <span class="me-auto">In Progress</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div
+                          id="bar-progress"
+                          class="progress-bar bar-grey"
+                        ></div>
+                      </div>
+
+                      <span id="count-progress" class="fw-bold">0</span>
+                      <small id="percent-progress" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+
+                    <!-- Under Review -->
+                    <div class="d-flex align-items-center mb-3">
+                      <span class="dot dot-purple me-2"></span>
+                      <span class="me-auto">Under Review</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div
+                          id="bar-review"
+                          class="progress-bar bar-grey"
+                        ></div>
+                      </div>
+
+                      <span id="count-review" class="fw-bold">0</span>
+                      <small id="percent-review" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+
+                    <!-- Completed -->
+                    <div class="d-flex align-items-center">
+                      <span class="dot dot-green me-2"></span>
+                      <span class="me-auto">Completed</span>
+
+                      <div class="progress progress-custom me-3">
+                        <div
+                          id="bar-complete"
+                          class="progress-bar bar-grey"
+                        ></div>
+                      </div>
+
+                      <span id="count-complete" class="fw-bold">0</span>
+                      <small id="percent-complete" class="text-muted ms-2"
+                        >(0.0%)</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BOTTOM CHARTS -->
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="card p-3" style="height: 320px">
+                    <h6 class="mb-3">Defects Summary</h6>
+
+                    <div class="chart-wrapper" style="height: 240px">
+                      <canvas id="defectsChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="card p-4 priority-breakdown-card">
+                    <h6 class="mb-0">Priority Breakdown</h6>
+
+                    <!-- Empty Chart Area -->
+                    <div class="chart-placeholder">
+                      <!-- (Intentionally empty like your reference image) -->
+                    </div>
+
+                    <!-- Legend at Bottom -->
+                    <div class="priority-legend">
+                      <span class="legend-item">
+                        <span class="legend-box red"></span> CAT1
+                      </span>
+                      <span class="legend-item">
+                        <span class="legend-box yellow"></span> CAT2
+                      </span>
+                      <span class="legend-item">
+                        <span class="legend-box green"></span> CAT3
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-3 mt-3">
+                <h6>Top Raised Defects</h6>
+                <p class="text-center text-muted mt-4">
+                  No defects data available
+                </p>
+              </div>
+            </div>
+
           </div>
 
 
@@ -1881,6 +2498,299 @@
         const dd = document.getElementById("categoryDropdown");
         if (dd && !dd.classList.contains("d-none")) {
           dd.classList.add("d-none");
+        }
+      });
+    </script>
+
+     <script>
+      // Show current time live
+      setInterval(() => {
+        document.getElementById("current-time").innerHTML =
+          new Date().toLocaleTimeString();
+      }, 1000);
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#toggle_btn").on("click", function () {
+          if ($("body").hasClass("mini-sidebar")) {
+            $("body").removeClass("mini-sidebar");
+            $(".sidebar").css("width", "260px");
+          } else {
+            $("body").addClass("mini-sidebar");
+            $(".sidebar").css("width", "60px");
+          }
+        });
+      });
+    </script>
+    <script>
+      document
+        .getElementById("mobile_btn")
+        .addEventListener("click", function () {
+          document.body.classList.toggle("mini-sidebar");
+        });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const rows = document.querySelectorAll("tbody tr");
+
+        let cat1 = 0,
+          cat2 = 0,
+          cat3 = 0;
+
+        rows.forEach((row) => {
+          const category = row.children[2].innerText.trim(); // Category column index = 2
+
+          if (category === "CAT1") cat1++;
+          if (category === "CAT2") cat2++;
+          if (category === "CAT3") cat3++;
+        });
+
+        const total = cat1 + cat2 + cat3;
+
+        const percent1 = total ? ((cat1 / total) * 100).toFixed(1) : 0;
+        const percent2 = total ? ((cat2 / total) * 100).toFixed(1) : 0;
+        const percent3 = total ? ((cat3 / total) * 100).toFixed(1) : 0;
+
+        // Update numbers
+        document.getElementById("count-cat1").innerText = cat1;
+        document.getElementById("count-cat2").innerText = cat2;
+        document.getElementById("count-cat3").innerText = cat3;
+
+        document.getElementById("percent-cat1").innerText = `(${percent1}%)`;
+        document.getElementById("percent-cat2").innerText = `(${percent2}%)`;
+        document.getElementById("percent-cat3").innerText = `(${percent3}%)`;
+
+        // Update bars
+        document.getElementById("bar-cat1").style.width = percent1 + "%";
+        document.getElementById("bar-cat2").style.width = percent2 + "%";
+        document.getElementById("bar-cat3").style.width = percent3 + "%";
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const rows = document.querySelectorAll("tbody tr");
+
+        let open = 0,
+          progress = 0,
+          review = 0,
+          complete = 0;
+
+        rows.forEach((row) => {
+          const status = row.children[6].innerText.trim(); // Status column
+
+          if (status === "Open") open++;
+          if (status === "In Progress") progress++;
+          if (status === "Under Review") review++;
+          if (status === "Completed") complete++;
+        });
+
+        const total = open + progress + review + complete;
+
+        const pOpen = total ? ((open / total) * 100).toFixed(1) : 0;
+        const pProgress = total ? ((progress / total) * 100).toFixed(1) : 0;
+        const pReview = total ? ((review / total) * 100).toFixed(1) : 0;
+        const pComplete = total ? ((complete / total) * 100).toFixed(1) : 0;
+
+        // Numbers
+        document.getElementById("count-open").innerText = open;
+        document.getElementById("count-progress").innerText = progress;
+        document.getElementById("count-review").innerText = review;
+        document.getElementById("count-complete").innerText = complete;
+
+        // Percentages
+        document.getElementById("percent-open").innerText = `(${pOpen}%)`;
+        document.getElementById(
+          "percent-progress"
+        ).innerText = `(${pProgress}%)`;
+        document.getElementById("percent-review").innerText = `(${pReview}%)`;
+        document.getElementById(
+          "percent-complete"
+        ).innerText = `(${pComplete}%)`;
+
+        // Bars
+        document.getElementById("bar-open").style.width = pOpen + "%";
+        document.getElementById("bar-progress").style.width = pProgress + "%";
+        document.getElementById("bar-review").style.width = pReview + "%";
+        document.getElementById("bar-complete").style.width = pComplete + "%";
+      });
+    </script>
+
+    <script>
+      function showTableView() {
+        document.getElementById("tableView").style.display = "block";
+        document.getElementById("dashboardView").style.display = "none";
+        document.getElementById("boardView").style.display = "none";
+
+        updateDropdownActive("Table View");
+      }
+
+      function showDashboard() {
+        document.getElementById("tableView").style.display = "none";
+        document.getElementById("dashboardView").style.display = "block";
+        document.getElementById("boardView").style.display = "none";
+
+        updateDropdownActive("Dashboard View");
+      }
+
+      function showBoardView() {
+        document.getElementById("tableView").style.display = "none";
+        document.getElementById("dashboardView").style.display = "none";
+        document.getElementById("boardView").style.display = "block";
+
+        updateDropdownActive("Board View");
+      }
+
+      function updateDropdownActive(label) {
+        let items = document.querySelectorAll(".dropdown-menu .dropdown-item");
+        items.forEach((item) => {
+          item.classList.remove("active");
+          if (item.innerText.trim() === label) {
+            item.classList.add("active");
+          }
+        });
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const ctx = document.getElementById("defectsChart").getContext("2d");
+
+        const labels = [
+          "Total No of Defects",
+          "Pending Defects",
+          "Total Over Due Defects",
+        ];
+
+        const currentData = [4, 3, 2]; // example values
+        const previousData = [0, 0, 0]; // always zero as shown in image
+
+        new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: "Current Period",
+                data: currentData,
+                backgroundColor: "#F4A261",
+                hoverBackgroundColor: "#d88948",
+              },
+              {
+                label: "Previous Period",
+                data: previousData,
+                backgroundColor: "#F6C7A7",
+                hoverBackgroundColor: "#e0b398",
+              },
+            ],
+          },
+
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+
+            // GRID + AXIS STYLING
+            scales: {
+              x: {
+                ticks: {
+                  maxRotation: 45,
+                  minRotation: 45,
+                },
+                grid: { display: false },
+              },
+              y: {
+                beginAtZero: true,
+                grid: {
+                  color: "#e6e6e6",
+                  borderDash: [4, 4],
+                },
+              },
+            },
+
+            // ⭐ HIGHLIGHT BAR ON HOVER (grey background block)
+            plugins: {
+              tooltip: {
+                enabled: false, // fully custom tooltip
+                external: customTooltip,
+              },
+              legend: {
+                labels: { usePointStyle: true },
+              },
+            },
+
+            // Highlight background effect
+            hover: {
+              mode: "nearest",
+              intersect: true,
+            },
+          },
+        });
+
+        // ⭐ CUSTOM TOOLTIP FUNCTION (matches your attached image)
+        function customTooltip(context) {
+          const tooltipEl = getOrCreateTooltip(context.chart);
+
+          const tooltipModel = context.tooltip;
+
+          if (tooltipModel.opacity === 0) {
+            tooltipEl.style.opacity = 0;
+            return;
+          }
+
+          if (tooltipModel.body) {
+            const labelIndex = tooltipModel.dataPoints[0].dataIndex;
+
+            const titles = [
+              "Total No of Defects",
+              "Pending Defects",
+              "Total Over Due Defects",
+            ];
+
+            const innerHtml = `
+        <div style="
+          background: white;
+          padding: 12px 16px;
+          border-radius: 6px;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+          border: 1px solid #ddd;
+          width: 180px;
+        ">
+          <strong>${titles[labelIndex]}</strong><br/><br/>
+
+          <span style="color:#E76F51;">Previous Period :</span><br/>
+          <small>Previous: 0</small><br/><br/>
+
+          <span style="color:#E76F51;">Previous Period :</span><br/>
+          <small>Previous: 0</small>
+        </div>
+      `;
+
+            tooltipEl.innerHTML = innerHtml;
+          }
+
+          const { offsetLeft: positionX, offsetTop: positionY } =
+            context.chart.canvas;
+
+          tooltipEl.style.opacity = 1;
+          tooltipEl.style.left = positionX + tooltipModel.caretX + "px";
+          tooltipEl.style.top = positionY + tooltipModel.caretY + "px";
+        }
+
+        // Creates floating tooltip element
+        function getOrCreateTooltip(chart) {
+          let tooltipEl =
+            chart.canvas.parentNode.querySelector(".chartjs-tooltip");
+
+          if (!tooltipEl) {
+            tooltipEl = document.createElement("div");
+            tooltipEl.classList.add("chartjs-tooltip");
+            tooltipEl.style.position = "absolute";
+            tooltipEl.style.pointerEvents = "none";
+            tooltipEl.style.transition = "all 0.1s ease";
+            chart.canvas.parentNode.appendChild(tooltipEl);
+          }
+          return tooltipEl;
         }
       });
     </script>
